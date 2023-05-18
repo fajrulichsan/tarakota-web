@@ -1,19 +1,8 @@
-import { Fragment, useEffect } from "react";
-import $ from "jquery";
+import { Fragment } from 'react'
 
-const LoginComponent = () => {
-
-    useEffect(() => {
-      $("#showPassword").click(function() {
-        if($(this).is(":checked")){
-            $("input[name='password']").attr("type","text");
-        }else{
-             $("input[name='password']").attr("type","password");
-        }
-      })
-    }, [])
-    
-    return (
+const Registrasi = () => {
+  return (
+    <Fragment>
         <Fragment>
             <div className="flex flex-col space-y-2 w-full h-screen justify-center">
                 <div className="flex flex-col space-y-6 bg-gray-50 w-60 mx-auto p-10">
@@ -26,6 +15,10 @@ const LoginComponent = () => {
                         <input className="bg-gray-200 " type="password" placeholder="Password" name="password"/>
                     </div>
                     <div>
+                        <p>Konfirmasi Password</p>
+                        <input className="bg-gray-200 " type="password" placeholder="Konfirmasi Password" name="confirmationPassword"/>
+                    </div>
+                    <div>
                         <input  type="checkbox" id="showPassword"/>Show Password
                     </div>
                     <div className="flex">
@@ -35,7 +28,8 @@ const LoginComponent = () => {
                 </div>
             </div>
         </Fragment>
-    );
-};
+    </Fragment>
+  )
+}
 
-export default LoginComponent;
+export default Registrasi;
