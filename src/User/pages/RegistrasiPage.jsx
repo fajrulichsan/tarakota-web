@@ -1,4 +1,4 @@
-import RegistrasiComponent from '../Registrasi/RegistrasiComponent';
+import RegistrasiComponent from '../RegistrasiPage/RegistrasiComponent';
 
 const RegistrasiPage = () => {
   return (
