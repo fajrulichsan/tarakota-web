@@ -1,8 +1,8 @@
-import RegistrasiComponent from '../RegistrasiPage/RegistrasiComponent';
+import RegisForm from "../RegistrasiPage/RegisForm";
 
 const RegistrasiPage = () => {
   return (
-    <RegistrasiComponent/>
+    <RegisForm/>
   )
 }
 
