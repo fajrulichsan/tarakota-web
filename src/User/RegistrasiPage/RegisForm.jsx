@@ -68,10 +68,7 @@ const RegisForm = () => {
     const handleSignUpFirebase = ({auth, email, password}) => {
         const result = new Promise((resolve, reject) => {
             createUserWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    // Signed in
-                    const user = userCredential.user; //TODO : add user to localstorage
-                    console.log(user);
+                .then(() => {
                     sendEmailVerification(auth.currentUser).then(() =>
                         // send email notification
                         resolve(true)
@@ -125,68 +122,70 @@ const RegisForm = () => {
     return (
         <Fragment>
             {loading && <Loader />}
-            <div className="container mx-auto pt-8">
-                <h2 className="text-2xl font-bold mb-4">Registration</h2>
-                <div>
-                    <label className="block mb-2">Email:</label>
-                    <input
-                        type="email"
-                        className="border border-gray-300 p-2 mb-2"
-                        value={email}
-                        onChange={handleEmailChange}
-                    />
-                    {errorEmail && (
-                        <p className="text-red-500 mb-4">{errorEmail}</p>
-                    )}
-                </div>
-                <div>
-                    <label className="block mb-2">Password:</label>
-                    <input
-                        type={showPassword ? "text" : "password"}
-                        className="border border-gray-300 p-2 mb-2"
-                        value={password}
-                        onChange={handlePasswordChange}
-                    />
-                    {errorPassword && (
-                        <p className="text-red-500 mb-4">{errorPassword}</p>
-                    )}
-                </div>
-                <div>
-                    <label className="block mb-2">Confirm Password:</label>
-                    <input
-                        type={showPassword ? "text" : "password"}
-                        className="border border-gray-300 p-2 mb-2"
-                        value={confirmPassword}
-                        onChange={handleConfirmPasswordChange}
-                    />
-                    {errorConfirmPassword && (
-                        <p className="text-red-500 mb-4">
-                            {errorConfirmPassword}
-                        </p>
-                    )}
-                </div>
-                <div className="flex items-center mb-4">
-                    <input
-                        type="checkbox"
-                        className="mr-2"
-                        checked={showPassword}
-                        onChange={handleShowPasswordChange}
-                    />
-                    <label>Show Password</label>
-                </div>
+            <div className="w-full h-screen flex justify-center items-center">
+                <div className="mx-auto pt-8">
+                    <h2 className="text-2xl font-bold mb-4">Registration</h2>
+                    <div>
+                        <label className="block mb-2">Email:</label>
+                        <input
+                            type="email"
+                            className="border border-gray-300 p-2 mb-2"
+                            value={email}
+                            onChange={handleEmailChange}
+                        />
+                        {errorEmail && (
+                            <p className="text-red-500 mb-4">{errorEmail}</p>
+                        )}
+                    </div>
+                    <div>
+                        <label className="block mb-2">Password:</label>
+                        <input
+                            type={showPassword ? "text" : "password"}
+                            className="border border-gray-300 p-2 mb-2"
+                            value={password}
+                            onChange={handlePasswordChange}
+                        />
+                        {errorPassword && (
+                            <p className="text-red-500 mb-4">{errorPassword}</p>
+                        )}
+                    </div>
+                    <div>
+                        <label className="block mb-2">Confirm Password:</label>
+                        <input
+                            type={showPassword ? "text" : "password"}
+                            className="border border-gray-300 p-2 mb-2"
+                            value={confirmPassword}
+                            onChange={handleConfirmPasswordChange}
+                        />
+                        {errorConfirmPassword && (
+                            <p className="text-red-500 mb-4">
+                                {errorConfirmPassword}
+                            </p>
+                        )}
+                    </div>
+                    <div className="flex items-center mb-4">
+                        <input
+                            type="checkbox"
+                            className="mr-2"
+                            checked={showPassword}
+                            onChange={handleShowPasswordChange}
+                        />
+                        <label>Show Password</label>
+                    </div>
 
-                <button
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2"
-                    onClick={handleRegistration}
-                >
-                    Register
-                </button>
-                <button
-                    className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4"
-                    onClick={() => navigate("/login")}
-                >
-                    Login
-                </button>
+                    <button
+                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2"
+                        onClick={handleRegistration}
+                    >
+                        Register
+                    </button>
+                    <button
+                        className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4"
+                        onClick={() => navigate("/login")}
+                    >
+                        Login
+                    </button>
+                </div>
             </div>
         </Fragment>
     );
