@@ -1,0 +1,29 @@
+.color-gray{
+    color: #767676;
+}
+
+.color-main{
+    color: #E85738;
+}
+
+.bg-main{
+    background: #E85738;
+}
+
+.input-field{
+    background: #FFFFFF;
+    border: 2px solid #767676;
+    width: 100%;
+    border-radius: 2em;
+    padding: 8px 54px;
+    background-repeat: no-repeat;
+    background-position: 1em;
+}
+
+.bg-icon-email{
+    background-image: url("../../assets/img/email.svg");
+}
+
+.bg-icon-pass{
+    background-image: url("../../assets/img/password.svg");
+}

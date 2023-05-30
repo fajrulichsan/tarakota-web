@@ -1,7 +1,13 @@
-
-import {createBrowserRouter} from 'react-router-dom'
-import {DashboardPage, ErrorPage, LandingPage, LoginPage, RegistrasiPage} from '../User/pages/index';
-import ProtectedRoute from '../Contexts/ProtectedRoute';
+import { createBrowserRouter } from "react-router-dom";
+import {
+    DashboardPage,
+    ErrorPage,
+    LandingPage,
+    LoginPage,
+    RegistrasiPage,
+    ResetPasswordPage
+} from "../User/pages/index";
+import ProtectedRoute from "../Contexts/ProtectedRoute";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -17,13 +23,19 @@ const router = createBrowserRouter([
         element: <RegistrasiPage />,
     },
     {
+        path : "/reset-password",
+        element: <ResetPasswordPage/>
+    },
+    {
         path: "/auth",
-        element : <ProtectedRoute/>,
+        element: <ProtectedRoute />,
         errorElement: <ErrorPage />,
-        children : [{
-            path : "dashboard",
-            element : <DashboardPage/>
-        }]
+        children: [
+            {
+                path: "dashboard",
+                element: <DashboardPage />,
+            },
+        ],
     },
 ]);
 
