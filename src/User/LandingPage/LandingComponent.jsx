@@ -22,13 +22,16 @@ const LandingComponent = () => {
     }, [])
     
 
-
   return (
-    <Fragment>
-    <h1 className='flex justify-center bg-red-200'>Ini adalah Landing</h1>
-    <p>Berhasil di verifikasi</p>
-    </Fragment>
-  )
+      <Fragment>
+          <div className="flex justify-center items-center h-screen">
+              <h1 className="text-center text-4xl md:text-6xl lg:text-7xl">
+                  Development Web Tarakota
+              </h1>
+          </div>
+      </Fragment>
+  );
+
 }
 
 export default LandingComponent;
