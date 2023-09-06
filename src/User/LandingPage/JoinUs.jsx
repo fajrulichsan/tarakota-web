@@ -1,5 +1,5 @@
 import React from 'react';
-import bgJoinUs from '../../assets/img/bg-join-us.png';
+import bgJoinUs from '../../assets/img/bg-join.svg';
 const JoinUs = () => {
   return (
     <div className="bg-cover bg-center" style={{ backgroundImage: `url(${bgJoinUs})` }}>
