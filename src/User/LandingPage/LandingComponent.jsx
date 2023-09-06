@@ -5,21 +5,21 @@ import { useLocation } from "react-router-dom";
 const LandingComponent = () => {
   const location = useLocation();
 
-    const searchParams  = new URLSearchParams(location.search);
-    const mode = searchParams.get('mode');
-    const actionCode = searchParams.get('oobCode');
-    const continueUrl = searchParams.get('continueUrl');
-    const lang = searchParams.get('lang') || 'en';
+    // const searchParams  = new URLSearchParams(location.search);
+    // const mode = searchParams.get('mode');
+    // const actionCode = searchParams.get('oobCode');
+    // const continueUrl = searchParams.get('continueUrl');
+    // // const lang = searchParams.get('lang') || 'en';
 
-    console.log(mode, actionCode, continueUrl, lang)
+    // console.log(mode, actionCode, continueUrl, lang)
     
-    useEffect(() => {
-      applyActionCode(auth, actionCode).then((resp) => {
-            console.log(resp)
-          }).catch((error) => {
-            console.log(error)
-          });
-    }, [])
+    // useEffect(() => {
+    //   applyActionCode(auth, actionCode).then((resp) => {
+    //         console.log(resp)
+    //       }).catch((error) => {
+    //         console.log(error)
+    //       });
+    // }, [])
     
 
   return (

@@ -11,12 +11,12 @@ import ProtectedRoute from "../Contexts/ProtectedRoute";
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <LandingPage />,
+        element: <ErrorPage/>,
         errorElement: <ErrorPage />,
     },
     {
-        path: "/login",
-        element: <LoginPage />,
+        path: "/dev",
+        element: <LandingPage />,
     },
     {
         path: "/registrasi",
