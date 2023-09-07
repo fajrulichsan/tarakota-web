@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo from '../assets/img/logo.svg';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,11 +9,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-blue-500 p-4">
+    <nav className="bg-blue-200 p-4 px-5 md:px-20">
       <div className="container mx-auto flex items-center justify-between">
-        {/* Logo Perusahaan */}
         <div className="text-white text-2xl font-bold">
-          Logo Perusahaan
+          <img className='w-40' src={logo}/>
         </div>
 
         {/* Hamburger Button (hanya muncul di perangkat mobile) */}

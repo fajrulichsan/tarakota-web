@@ -1,32 +1,27 @@
-import React, { Fragment } from "react";
-import './slider.css'
+import React from 'react';
+import './css/slider-logo.css'
 
 const OurClient = () => {
   return (
-    <div className="slider-container">
-      <span className="arrow-left"></span>
-      <span className="arrow-right"></span>
-      <div className="slider" id="slider">
-        <div className="slide prev-2">1</div>
-        <div className="slide prev-1">2</div>
-        <div className="slide active">3</div>
-        <div className="slide next-1">4</div>
-        <div className="slide next-2">5</div>
-        <div className="slide">6</div>
-        <div className="slide">7</div>
-        <div className="slide">8</div>
-      </div>
-      <div className="dots">
-        <span></span>
-        <span></span>
-        <span className="active"></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
+    <>
+      <section className="slider">
+        <div className="logo-slider">
+          <img src="https://i.postimg.cc/1XhzhCXf/client-logo-1.png" alt="" />
+          <img src="https://i.postimg.cc/j2HSsHnv/client-logo-2.png" alt="" />
+          <img src="https://i.postimg.cc/44Vdbg2t/client-logo-3.png" alt="" />
+          <img src="https://i.postimg.cc/ZKmqwMXQ/client-logo-4.png" alt="" />
+          <img src="https://i.postimg.cc/1XhzhCXf/client-logo-1.png" alt="" />
+          <img src="https://i.postimg.cc/j2HSsHnv/client-logo-2.png" alt="" />
+          <img src="https://i.postimg.cc/44Vdbg2t/client-logo-3.png" alt="" />
+          <img src="https://i.postimg.cc/ZKmqwMXQ/client-logo-4.png" alt="" />
+          <img src="https://i.postimg.cc/1XhzhCXf/client-logo-1.png" alt="" />
+          <img src="https://i.postimg.cc/j2HSsHnv/client-logo-2.png" alt="" />
+          <img src="https://i.postimg.cc/44Vdbg2t/client-logo-3.png" alt="" />
+          <img src="https://i.postimg.cc/ZKmqwMXQ/client-logo-4.png" alt="" />
+        </div>
+        
+      </section>
+    </>
   );
 };
 
