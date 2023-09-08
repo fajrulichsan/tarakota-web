@@ -1,16 +1,20 @@
 import React from "react";
-import bgJoinUs from '../../assets/img/bg-join.svg';
+import buttonPlayVideo from '../../assets/img/button-play-video.svg';
+import videoProfileImage from '../../assets/img/video-profile-image.svg'
+
 const ProfileVideo = () => {
   return (
-    <div className="w-[370px] h-[76.05px] text-21xl text-black bg-white">
-      <b className="inline-block w-[370px]">TARAKOTA</b>
-      <img
-        className="w-1 h-[28.05px] mt-2"
-        alt=""
-        src={bgJoinUs}
-      />
-      <div className="text-5xl text-justify inline-block w-[163.75px] h-[18px] transform rotate-0.99 transform-origin-0-0">
-        Profile Video
+    <div className="grid grid-cols-5 mt-20 relative">
+      <div className=" col-span-1 h-[30em]" style={{background: "#E85738"}}></div>
+      <div className="col-span-2"></div>
+      <div className="col-span-2 flex flex-col justify-center">
+        <h1 className="text-4xl font-bold tracking-wider">Tarakota</h1>
+        <div className="h-6 border-l-4 border-orange-500 flex items-center">
+          <p className="font-medium text-2xl flex-grow px-2">Profile Video</p>
+        </div>
+      </div>
+      <div className="absolute w-[35em] h-[20em] top-20 left-40 rounded-lg flex justify-center items-center hover:cursor-pointer" style={{backgroundImage: `url(${videoProfileImage})`}}>
+        <img src={buttonPlayVideo} />
       </div>
     </div>
   );

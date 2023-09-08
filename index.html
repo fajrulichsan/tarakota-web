@@ -10,10 +10,16 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.min.css"
     />
+
+    <!-- font style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pragati+Narrow&display=swap" rel="stylesheet">
+
     <title>Vite + React</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root" style="max-width: 1440px"></div>
     <script type="module" src="/src/Main/main.jsx"></script>
 
     <!-- remove coming soon -->
@@ -22,7 +28,7 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
      <script>
       var Slider = (function() {
-    var initSlider = function() {
+        var initSlider = function() {
         var dir = $("html").attr("dir");
         var swipeHandler = new Hammer(document.getElementById("slider"));
         swipeHandler.on('swipeleft', function(e) {
