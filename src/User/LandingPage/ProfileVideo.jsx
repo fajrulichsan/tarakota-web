@@ -5,7 +5,7 @@ import videoProfileImage from '../../assets/img/video-profile-image.svg'
 const ProfileVideo = () => {
   return (
     <div className="grid grid-cols-5 mt-20 relative">
-      <div className=" col-span-1 h-[30em]" style={{background: "#E85738"}}></div>
+      <div className=" col-span-1 h-[35em]" style={{background: "#E85738"}}></div>
       <div className="col-span-2"></div>
       <div className="col-span-2 flex flex-col justify-center">
         <h1 className="text-4xl font-bold tracking-wider">Tarakota</h1>

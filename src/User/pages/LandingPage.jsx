@@ -12,9 +12,9 @@ const LandingPage = () => {
     <Fragment>
       <Navbar/>
       <ProfileVideo/>
-      <LandingComponent/>
-      <ProjectSlider/>
-      <OurClient/>
+      {/* <LandingComponent/> */}
+      {/* <ProjectSlider/> */}
+      {/* <OurClient/> */}
       <JoinUs/>
       <Footer/>
     </Fragment>
