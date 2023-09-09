@@ -5,13 +5,13 @@ import {
 } from "../User/pages/index";
 import ProtectedRoute from "../Contexts/ProtectedRoute";
 const router = createBrowserRouter([
+    // {
+    //     path: "/",
+    //     element: <ErrorPage/>,
+    //     errorElement: <ErrorPage />,
+    // },
     {
         path: "/",
-        element: <ErrorPage/>,
-        errorElement: <ErrorPage />,
-    },
-    {
-        path: "/dev",
         element: <LandingPage />,
     },
     // {
