@@ -9,7 +9,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-blue-200 p-4 px-5 md:px-20 z-10" style={{maxWidth: '1440px'}}>
+    <nav className="fixed top-0 left-0 w-full bg-transparent p-4 px-5 md:px-20 z-20" style={{maxWidth: '1440px'}}>
       <div className="container mx-auto flex items-center justify-between">
         <div className="text-white text-2xl font-bold">
           <img className='w-40' src={logo} alt="Logo" />

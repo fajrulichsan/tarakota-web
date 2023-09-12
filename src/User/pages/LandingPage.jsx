@@ -11,12 +11,12 @@ import SliderBanner from "../LandingPage/SliderBanner"
 const LandingPage = () => {
   return (
     <Fragment>
-      {/* <Navbar/> */}
+      <Navbar/>
+      <SliderBanner/>
       <ProfileVideo/>
       {/* <LandingComponent/> */}
       {/* <ProjectSlider/> */}
       {/* <OurClient/> */}
-      {/* <SliderBanner/> */}
       <JoinUs/>
       {/* <Footer/> */}
     </Fragment>

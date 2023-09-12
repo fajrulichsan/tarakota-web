@@ -4,7 +4,7 @@ import videoProfileImage from "../../assets/img/video-profile-image.svg";
 
 const ProfileVideo = () => {
   return (
-    <div className="grid grid-cols-4 relative">
+    <div className="grid grid-cols-4 relative" style={{marginTop : "-7px"}}>
       <div
         className=" col-span-1 h-[35em]"
         style={{ background: "#E85738" }}
