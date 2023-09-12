@@ -1,53 +1,85 @@
 import React from 'react';
+import { facebook, twitter, youtube, instagram } from "../assets/img/index";
 
 const Footer = () => {
+  const socialMediaIcon = [
+    facebook,
+    twitter,
+    youtube,
+    instagram,
+  ];
   return (
-    <footer className="bg-gray-800 text-white py-8">
+    <footer className="bg-gray-800 h-[25em] text-white py-8">
       <div className="container mx-auto flex flex-wrap justify-between">
-        <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
-          <h3 className="text-xl font-bold mb-4">Tentang Kami</h3>
-          <p className="text-gray-400">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget
-            quam eu leo congue tempor.
-          </p>
-        </div>
-        <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
-          <h3 className="text-xl font-bold mb-4">Layanan</h3>
+        {/* Subkategori Tambahan */}
+        <div className="w-full md:w-1/2 lg:w-1/5 px-4 mb-8">
+          <h3 className="text-2xl font-bold mb-4">All Product</h3>
           <ul>
             <li className="mb-2">
-              <a href="#" className="text-gray-400 hover:text-white">
-                Layanan 1
+              <a href="#" className="text-lg text-gray-400 hover:text-white">
+                Product 1
               </a>
             </li>
             <li className="mb-2">
-              <a href="#" className="text-gray-400 hover:text-white">
-                Layanan 2
+              <a href="#" className="text-lg text-gray-400 hover:text-white">
+                Product 2
               </a>
             </li>
-            <li className="mb-2">
-              <a href="#" className="text-gray-400 hover:text-white">
-                Layanan 3
-              </a>
-            </li>
-            <li className="mb-2">
-              <a href="#" className="text-gray-400 hover:text-white">
-                Layanan 4
-              </a>
-            </li>
+            {/* Tambahkan item produk lainnya sesuai kebutuhan */}
           </ul>
         </div>
-        <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
-          <h3 className="text-xl font-bold mb-4">Kontak Kami</h3>
-          <p className="text-gray-400">
-            Alamat: Jalan Lorem Ipsum No. 123, Kota Ipsum
-          </p>
-          <p className="text-gray-400">Email: info@example.com</p>
-          <p className="text-gray-400">Telepon: (123) 456-7890</p>
+        <div className="w-full md:w-1/2 lg:w-1/5 px-4 mb-8">
+          <h3 className="text-2xl font-bold mb-4">Customer Service</h3>
+          <ul>
+            <li className="mb-2">
+              <a href="#" className="text-lg text-gray-400 hover:text-white">
+                Layanan Pelanggan 1
+              </a>
+            </li>
+            <li className="mb-2">
+              <a href="#" className="text-lg text-gray-400 hover:text-white">
+                Layanan Pelanggan 2
+              </a>
+            </li>
+            {/* Tambahkan layanan pelanggan lainnya sesuai kebutuhan */}
+          </ul>
         </div>
-        <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
-          <h3 className="text-xl font-bold mb-4">Ikuti Kami</h3>
+        <div className="w-full md:w-1/2 lg:w-1/5 px-4 mb-8">
+          <h3 className="text-2xl font-bold mb-4">About</h3>
+          <ul>
+            <li className="mb-2">
+              <a href="#" className="text-lg text-gray-400 hover:text-white">
+                Tentang Kami 1
+              </a>
+            </li>
+            <li className="mb-2">
+              <a href="#" className="text-lg text-gray-400 hover:text-white">
+                Tentang Kami 2
+              </a>
+            </li>
+            {/* Tambahkan informasi tentang kami lainnya sesuai kebutuhan */}
+          </ul>
+        </div>
+        <div className="w-full md:w-1/2 lg:w-1/5 px-4 mb-8">
+          <h3 className="text-2xl font-bold mb-4">Inspiration</h3>
+          <ul>
+            <li className="mb-2">
+              <a href="#" className="text-lg text-gray-400 hover:text-white">
+                Inspirasi 1
+              </a>
+            </li>
+            <li className="mb-2">
+              <a href="#" className="text-lg text-gray-400 hover:text-white">
+                Inspirasi 2
+              </a>
+            </li>
+            {/* Tambahkan inspirasi lainnya sesuai kebutuhan */}
+          </ul>
+        </div>
+        <div className="w-full md:w-1/2 lg:w-1/5 px-4 mb-8">
+          <h3 className="text-2xl font-bold mb-4">Follow Us</h3>
           <div className="flex space-x-4">
-            <a
+            {/* <a
               href="#"
               className="text-gray-400 hover:text-white transition duration-300"
             >
@@ -70,7 +102,15 @@ const Footer = () => {
               className="text-gray-400 hover:text-white transition duration-300"
             >
               <i className="fab fa-linkedin"></i>
-            </a>
+            </a> */}
+            {socialMediaIcon.map((icon, index) => (
+                  <img
+                    key={index}
+                    src={icon}
+                    alt={`Social Media Icon ${index}`}
+                    className="w-6"
+                  />
+                ))}
           </div>
         </div>
       </div>
@@ -79,3 +119,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

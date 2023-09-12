@@ -18,7 +18,7 @@ const LandingPage = () => {
       {/* <ProjectSlider/> */}
       {/* <OurClient/> */}
       <JoinUs/>
-      {/* <Footer/> */}
+      <Footer/>
     </Fragment>
   )
 }
