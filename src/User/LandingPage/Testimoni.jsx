@@ -53,7 +53,7 @@ const Testimoni = () => {
   };
 
   return (
-      <div className="mx-auto py-20">
+      <div className="mx-auto py-10 pb-20">
         <div>
             <h2 className="text-3xl font-bold text-center tracking-wider">Kata Mereka Tentang Tarakota</h2>
             <hr className="text-3xl w-32 mx-auto font-bold text-center border-b-4 border-orange-500"></hr>
