@@ -1,7 +1,6 @@
 import { Fragment } from "react"
 import Footer from "../../Component/Footer"
 import Navbar from "../../Component/Navbar"
-import BrandSlider from "../LandingPage/BrandSlider"
 import Carousel from "../LandingPage/Carousel"
 import JoinUs from "../LandingPage/JoinUs"
 import LandingComponent from "../LandingPage/LandingComponent"
@@ -20,8 +19,7 @@ const LandingPage = () => {
       {/* <ProjectSlider/> */}
       <ProfileVideo/>
       {/* <LandingComponent/> */}
-      {/* <OurClient/> */}
-      <BrandSlider/>
+      <OurClient/>
       <Testimoni/>
       <JoinUs/>
       <Footer/>
