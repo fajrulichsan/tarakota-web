@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import logo from "../assets/img/logo.svg";
+import { useLocation } from "react-router-dom";
+import {logo} from "../assets/img/index";
 
 const menuNavbar = [
   {
@@ -23,6 +24,7 @@ const menuNavbar = [
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isGoldNavbar, setIsGoldNavbar] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -40,22 +42,17 @@ const Navbar = () => {
     };
 
     // Tambahkan event listener untuk scroll
-    window.addEventListener("scroll", handleScroll);
+    if(location.pathname === "/"){
+      window.addEventListener("scroll", handleScroll);
+    }else{
+      setIsGoldNavbar(true)
+    }
 
     // Hapus event listener saat komponen dibongkar
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  // const navbarStyle = {
-  //   backgroundColor: isGoldNavbar ? "#F9F5EC" : "transparent",
-  //   color: isGoldNavbar ? "#373131" : "white",
-  //   boxShadow: isGoldNavbar
-  //     ? "7px 11px 30px 0px rgba(212, 183, 84, 0.50)"
-  //     : "none",
-  //   maxWidth: "1440px",
-  // };
 
   const navbarStyle = {
     backgroundColor: isGoldNavbar ? "#F9F5EC" : "transparent",
