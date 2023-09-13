@@ -72,11 +72,12 @@ const sosialMediaIcon = [
 const Footer = () => {
 
   return (
-    <footer className="bg-gray-800 relative h-[25em]">
+    <footer className="bg-gray-800 relative h-[25em]"  style={{
+      borderRadius: "90px 0px 0px 0px"}}>
       <div
         className="absolute inset-0 h-[25em] text-white p-24"
         style={{
-          borderRadius: "100px 0px 0px 0px",
+          borderRadius: "90px 0px 0px 0px",
           background:
             "linear-gradient(116deg, #E85738 -14.86%, rgba(0, 0, 0, 0.00) 20.3%)",
         }}
@@ -147,8 +148,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <hr></hr>
-
       </div>
     </footer>
   );

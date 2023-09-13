@@ -1,18 +1,82 @@
-import React, { useState } from 'react';
-import logo from '../assets/img/logo.svg';
+import React, { useState, useEffect } from "react";
+import logo from "../assets/img/logo.svg";
+
+const menuNavbar = [
+  {
+    title: "Project",
+    href: "#",
+  },
+  {
+    title: "Estimasi",
+    href: "#",
+  },
+  {
+    title: "Kerjasama",
+    href: "#",
+  },
+  {
+    title: "Tentang Kamil",
+    href: "#",
+  },
+];
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isGoldNavbar, setIsGoldNavbar] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 60) {
+        setIsGoldNavbar(true);
+      } else {
+        setIsGoldNavbar(false);
+      }
+    };
+
+    // Tambahkan event listener untuk scroll
+    window.addEventListener("scroll", handleScroll);
+
+    // Hapus event listener saat komponen dibongkar
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // const navbarStyle = {
+  //   backgroundColor: isGoldNavbar ? "#F9F5EC" : "transparent",
+  //   color: isGoldNavbar ? "#373131" : "white",
+  //   boxShadow: isGoldNavbar
+  //     ? "7px 11px 30px 0px rgba(212, 183, 84, 0.50)"
+  //     : "none",
+  //   maxWidth: "1440px",
+  // };
+
+  const navbarStyle = {
+    backgroundColor: isGoldNavbar ? "#F9F5EC" : "transparent",
+    color: isGoldNavbar ? "#373131" : "white",
+    boxShadow: isGoldNavbar
+      ? "7px 11px 30px 0px rgba(212, 183, 84, 0.50)"
+      : "none",
+    maxWidth: "1440px",
+    transition: "background-color 0.3s ease-in-out", // Tambahkan efek transisi
+  };
+
+  const navbarClasses = isGoldNavbar ? "fade-in" : "";
+
   return (
-    <nav className="fixed top-0 left-0 w-full bg-transparent p-4 px-5 md:px-20 z-20" style={{maxWidth: '1440px'}}>
+    <nav
+      className={`fixed top-0 left-0 w-full bg-transparent p-4 px-5 md:px-20 z-20 ${navbarClasses}`}
+      style={navbarStyle}
+    >
       <div className="container mx-auto flex items-center justify-between">
         <div className="text-white text-2xl font-bold">
-          <img className='w-40' src={logo} alt="Logo" />
+          <img className="w-40" src={logo} alt="Logo" />
         </div>
 
         {/* Hamburger Button (hanya muncul di perangkat mobile) */}
@@ -58,29 +122,16 @@ const Navbar = () => {
         {/* Menu (hanya muncul di perangkat desktop) */}
         <ul
           className={`${
-            isMenuOpen ? 'block' : 'hidden'
-          } lg:flex lg:space-x-10 text-white mt-4 lg:mt-0`}
+            isMenuOpen ? "block" : "hidden"
+          } lg:flex lg:space-x-10 mt-4 lg:mt-0`}
         >
-          <li>
-            <a href="#" className="hover:text-blue-300">
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-blue-300">
-              Estimasi
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-blue-300">
-              Partner
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-blue-300">
-              About Us
-            </a>
-          </li>
+          {menuNavbar.map((data, index) => (
+            <li key={index}>
+              <a href={data.href} className="hover:text-blue-300 text-xl">
+                {data.title}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
@@ -88,5 +139,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-

@@ -40,7 +40,7 @@ const JoinUs = () => {
   return (
     <div
       ref={backgroundRef}
-      className="bg-cover bg-center h-[40em]"
+      className="bg-cover bg-center h-[40em] my-10"
       style={{ backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}
     >
       <div className="bg-gradient-to-r from-black via-transparent h-[40em] flex flex-col space-y-3 justify-center text-white px-20">
