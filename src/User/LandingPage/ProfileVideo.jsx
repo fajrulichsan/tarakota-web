@@ -1,6 +1,5 @@
 import React from "react";
-import buttonPlayVideo from "../../assets/img/button-play-video.svg";
-import videoProfileImage from "../../assets/img/video-profile-image.svg";
+import {buttonPlayVideo, videoProfileImage} from '../../assets/img/index'
 
 const ProfileVideo = () => {
   return (

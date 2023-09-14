@@ -3,22 +3,42 @@
 // feat : slider banner
 export {default as bgBannerSlider} from './bg-banner-slider.svg';
 
+//feat : video profile
+export {default as buttonPlayVideo} from './icon/button-play-video.svg';
+export {default as videoProfileImage} from './video-profile-image.svg';
 
 // feat : testimoni
 export {default as profileTestimoni} from './profile-testimoni.svg';
-export {default as iconTestimoni} from './icon-testimoni.svg';
-export {default as previousButton} from './previous-button.svg';
-export {default as nextButton} from './next-button.svg';
+export {default as iconTestimoni} from './icon/icon-testimoni.svg';
+export {default as previousButton} from './icon/previous-button.svg';
+export {default as nextButton} from './icon/next-button.svg';
 
 // feat : footer
-export {default as logo} from './logo.svg';
-export {default as facebookWhite} from './facebook-white.svg';
-export {default as twitterWhite} from './twiter-white.svg';
-export {default as instagramWhite} from './instagram-white.svg';
-export {default as youtubeWhite} from './youtube-white.svg';
+export {default as logo} from './icon/logo.svg';
+export {default as facebookWhite} from './icon/facebook-white.svg';
+export {default as twitterWhite} from './icon/twiter-white.svg';
+export {default as instagramWhite} from './icon/instagram-white.svg';
+export {default as youtubeWhite} from './icon/youtube-white.svg';
 
 // sosial media
-export {default as facebook} from './facebook.svg';
-export {default as instagram} from './instagram.svg';
-export {default as twitter} from './twiter.svg';
-export {default as youtube} from './youtube.svg';
+export {default as facebook} from './icon/facebook.svg';
+export {default as instagram} from './icon/instagram.svg';
+export {default as twitter} from './icon/twiter.svg';
+export {default as youtube} from './icon/youtube.svg';
+
+// client logo
+export {default as airMancur} from './client/air-mancur.svg';
+export {default as ba} from './client/ba.svg';
+export {default as cnearc} from './client/cnearc.svg';
+export {default as dankos} from './client/dankos.svg';
+export {default as enseval} from './client/enseval.svg';
+export {default as fima} from './client/fima.svg';
+export {default as forsta} from './client/forsta.svg';
+export {default as kalbe} from './client/kalbe.svg';
+export {default as kasual} from './client/kasual.svg';
+export {default as komet} from './client/komet.svg';
+export {default as oneject} from './client/oneject.svg';
+export {default as wook} from './client/wook.svg';
+
+
+

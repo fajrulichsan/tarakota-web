@@ -3,6 +3,8 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+import {airMancur, ba, cnearc, dankos, enseval, fima, forsta, kalbe, kasual, komet, oneject, wook} from '../../assets/img/index'
+
 const OurClient = () => {
   const settings = {
     slidesToShow: 6,
@@ -28,15 +30,7 @@ const OurClient = () => {
     ],
   };
 
-  const brands = [
-    'https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg',
-    'https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg',
-    'https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg',
-    'https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg',
-    'https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg',
-    'https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg',
-    'https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg',
-  ];
+  const brands = [airMancur, ba, cnearc, dankos, enseval, fima, forsta, kalbe, komet, kasual, oneject, wook];
 
   return (
     <div className="py-16">
@@ -44,10 +38,10 @@ const OurClient = () => {
             <h2 className='text-3xl font-bold text-center tracking-wider'>Our Client</h2>
             <hr className=' mx-auto w-20 border-b-4 border-orange-500'></hr>
         </div>
-      <Slider {...settings} className="py-10">
+      <Slider {...settings} className="pt-20">
         {brands.map((brand, index) => (
-          <div key={index} className="slide">
-            <img src={brand} alt={`Brand ${index + 1}`} />
+          <div key={index} className="slideitems-center flex justify-center">
+            <img className='mx-auto'  src={brand} alt={`Brand ${index + 1}`} />
           </div>
         ))}
       </Slider>
