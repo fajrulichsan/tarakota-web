@@ -4,6 +4,7 @@ import {
     LandingPage,
 } from "../User/pages/index";
 import ProtectedRoute from "../Contexts/ProtectedRoute";
+import ProjectPage from "../User/pages/ProjectPage";
 const router = createBrowserRouter([
     // {
     //     path: "/",
@@ -14,6 +15,11 @@ const router = createBrowserRouter([
         path: "/",
         element: <LandingPage />,
     },
+    {
+        path: "/project",
+        element: <ProjectPage/>,
+    },
+
     // {
     //     path: "/registrasi",
     //     element: <RegistrasiPage />,

@@ -5,7 +5,7 @@ import {logo} from "../assets/img/index";
 const menuNavbar = [
   {
     title: "Project",
-    href: "#",
+    href: "/project",
   },
   {
     title: "Estimasi",
