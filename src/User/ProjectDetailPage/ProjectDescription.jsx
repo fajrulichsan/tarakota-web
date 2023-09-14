@@ -48,10 +48,10 @@ const ProjectDescription = () => {
           </table>
         </div>
         <div className="flex space-x-10 justify-center">
-          <button className="py-2 w-auto px-10 bg-gray-800 text-white rounded-full">
+          <button className="py-2 w-auto px-10 bg-gray-800 text-white rounded-full" style={{boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)"}}>
             Pesan Sekarang
           </button>
-          <button className="py-2 w-auto px-10 bg-white border-2 border-gray-800 text-black rounded-full">
+          <button className="py-2 w-auto px-10 bg-white border-2 border-gray-800 text-black rounded-full" style={{boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)"}}>
             Pesan Sekarang
           </button>
         </div>
