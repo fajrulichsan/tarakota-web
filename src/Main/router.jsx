@@ -5,6 +5,7 @@ import {
 } from "../User/pages/index";
 import ProtectedRoute from "../Contexts/ProtectedRoute";
 import ProjectPage from "../User/pages/ProjectPage";
+import ProjectDetailPage from "../User/pages/ProjectDetailPage";
 const router = createBrowserRouter([
     // {
     //     path: "/",
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
         path: "/project",
         element: <ProjectPage/>,
     },
+    {
+        path: "/project/:id",
+        element: <ProjectDetailPage/>
+    }
 
     // {
     //     path: "/registrasi",

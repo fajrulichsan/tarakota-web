@@ -42,7 +42,8 @@ const Navbar = () => {
     };
 
     // Tambahkan event listener untuk scroll
-    if(location.pathname === "/"){
+    const projectPathRegex = /^\/project\/\d+$/;
+    if(location.pathname === "/" || projectPathRegex.test(location.pathname)){
       window.addEventListener("scroll", handleScroll);
     }else{
       setIsGoldNavbar(true)
