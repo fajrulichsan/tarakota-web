@@ -8,11 +8,6 @@ import ProjectPage from "../User/pages/ProjectPage";
 import ProjectDetailPage from "../User/pages/ProjectDetailPage";
 import Estimation from "../User/pages/Estimation";
 const router = createBrowserRouter([
-    // {
-    //     path: "/",
-    //     element: <ErrorPage/>,
-    //     errorElement: <ErrorPage />,
-    // },
     {
         path: "/",
         element: <LandingPage />,
