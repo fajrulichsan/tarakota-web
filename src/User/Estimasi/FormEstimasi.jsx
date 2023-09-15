@@ -12,7 +12,7 @@ const FormEstimasi = () => {
   // Fungsi untuk mengambil data Provinsi dari API
   const fetchProvinces = async () => {
     try {
-      const response = await fetch("http://www.emsifa.com/api-wilayah-indonesia/api/provinces.json");
+      const response = await fetch("https://www.emsifa.com/api-wilayah-indonesia/api/provinces.json");
       const data = await response.json();
       setProvinces(data);
     } catch (error) {
@@ -23,7 +23,7 @@ const FormEstimasi = () => {
   // Fungsi untuk mengambil data Kota/Kabupaten berdasarkan Provinsi yang dipilih
   const fetchCities = async (selectedProvince) => {
     try {
-      const response = await fetch(`http://www.emsifa.com/api-wilayah-indonesia/api/regencies/${selectedProvince}.json`);
+      const response = await fetch(`https://www.emsifa.com/api-wilayah-indonesia/api/regencies/${selectedProvince}.json`);
       const data = await response.json();
       setCities(data);
     } catch (error) {
@@ -34,7 +34,7 @@ const FormEstimasi = () => {
   // Fungsi untuk mengambil data Kecamatan berdasarkan Kota/Kabupaten yang dipilih
   const fetchDistricts = async (selectedCity) => {
     try {
-      const response = await fetch(`http://www.emsifa.com/api-wilayah-indonesia/api/districts/${selectedCity}.json`);
+      const response = await fetch(`https://www.emsifa.com/api-wilayah-indonesia/api/districts/${selectedCity}.json`);
       const data = await response.json();
       setDistricts(data);
     } catch (error) {
