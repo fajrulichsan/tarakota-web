@@ -6,6 +6,7 @@ import {
 import ProtectedRoute from "../Contexts/ProtectedRoute";
 import ProjectPage from "../User/pages/ProjectPage";
 import ProjectDetailPage from "../User/pages/ProjectDetailPage";
+import Estimation from "../User/pages/Estimation";
 const router = createBrowserRouter([
     // {
     //     path: "/",
@@ -23,27 +24,11 @@ const router = createBrowserRouter([
     {
         path: "/project/:id",
         element: <ProjectDetailPage/>
+    },
+    {
+        path: "/estimasi",
+        element: <Estimation/>
     }
-
-    // {
-    //     path: "/registrasi",
-    //     element: <RegistrasiPage />,
-    // },
-    // {
-    //     path : "/reset-password",
-    //     element: <ResetPasswordPage/>
-    // },
-    // {
-    //     path: "/auth",
-    //     element: <ProtectedRoute />,
-    //     errorElement: <ErrorPage />,
-    //     children: [
-    //         {
-    //             path: "dashboard",
-    //             element: <DashboardPage />,
-    //         },
-    //     ],
-    // },
 ]);
 
 export default router;

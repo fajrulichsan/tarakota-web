@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import {logo} from "../assets/img/index";
 
 const menuNavbar = [
@@ -9,7 +9,7 @@ const menuNavbar = [
   },
   {
     title: "Estimasi",
-    href: "#",
+    href: "/estimasi",
   },
   {
     title: "Kerjasama",
@@ -25,6 +25,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isGoldNavbar, setIsGoldNavbar] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -43,7 +44,7 @@ const Navbar = () => {
 
     // Tambahkan event listener untuk scroll
     const projectPathRegex = /^\/project\/\d+$/;
-    if(location.pathname === "/" || projectPathRegex.test(location.pathname)){
+    if(location.pathname === "/" || projectPathRegex.test(location.pathname) || location.pathname === "/estimasi"){
       window.addEventListener("scroll", handleScroll);
     }else{
       setIsGoldNavbar(true)
@@ -74,7 +75,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between">
         <div className="text-white text-2xl font-bold">
-          <img className="w-40" src={logo} alt="Logo" />
+          <img onClick={() => navigate("/") } className="w-40 hover:cursor-pointer" src={logo} alt="Logo" />
         </div>
 
         {/* Hamburger Button (hanya muncul di perangkat mobile) */}
