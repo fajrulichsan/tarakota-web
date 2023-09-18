@@ -69,6 +69,21 @@ const sosialMediaIcon = [
   }
 ]
 
+const kerjasamaList = [
+  {
+    title : "Bersama Tarakota",
+    href : "#"
+  },
+  {
+    title : "With you Tarakota",
+    href : "#"
+  },
+  {
+    title : "Bangun Tarakota",
+    href : "#"
+  }
+]
+
 const Footer = () => {
 
   return (
@@ -118,6 +133,21 @@ const Footer = () => {
             <h3 className="text-2xl font-bold mb-4">Tentang</h3>
             <ul>
             {aboutList.map((data, index) => (
+                <li key={index} className="mb-2">
+                  <a
+                    href={data.href}
+                    className="text-lg text-gray-400 hover:text-white"
+                  >
+                    {data.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="w-full md:w-1/2 lg:w-1/5 px-4 mb-8">
+            <h3 className="text-2xl font-bold mb-4">Kerjasama</h3>
+            <ul>
+            {kerjasamaList.map((data, index) => (
                 <li key={index} className="mb-2">
                   <a
                     href={data.href}
