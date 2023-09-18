@@ -16,8 +16,8 @@ const menuNavbar = [
     href: "#",
   },
   {
-    title: "Tentang Kamil",
-    href: "#",
+    title: "Tentang Kami",
+    href: "/tentang-kami",
   },
 ];
 

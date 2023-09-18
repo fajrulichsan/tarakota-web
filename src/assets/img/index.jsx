@@ -42,3 +42,5 @@ export {default as wook} from './client/wook.svg';
 
 
 
+// about us page
+export {default as bgVisiMisiAboutUs} from './bg-visi-misi-about-us.svg';

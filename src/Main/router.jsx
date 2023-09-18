@@ -7,6 +7,7 @@ import ProtectedRoute from "../Contexts/ProtectedRoute";
 import ProjectPage from "../User/pages/ProjectPage";
 import ProjectDetailPage from "../User/pages/ProjectDetailPage";
 import Estimation from "../User/pages/Estimation";
+import AboutUs from "../User/pages/AboutUs";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     {
         path: "/estimasi",
         element: <Estimation/>
+    },
+    {
+        path: "/tentang-kami",
+        element: <AboutUs/>
     }
 ]);
 
