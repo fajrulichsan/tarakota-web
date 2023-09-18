@@ -8,6 +8,7 @@ import ProjectPage from "../User/pages/ProjectPage";
 import ProjectDetailPage from "../User/pages/ProjectDetailPage";
 import Estimation from "../User/pages/Estimation";
 import AboutUs from "../User/pages/AboutUs";
+import ServicePage from "../User/pages/ServicePage";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
     {
         path: "/tentang-kami",
         element: <AboutUs/>
+    },
+    {
+        path: "/service",
+        element: <ServicePage/>
     }
 ]);
 

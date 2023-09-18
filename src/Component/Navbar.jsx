@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import {logo} from "../assets/img/index";
+import { logo } from "../assets/img/index";
 
 const menuNavbar = [
   {
@@ -31,8 +31,6 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY >= 60) {
@@ -44,10 +42,15 @@ const Navbar = () => {
 
     // Tambahkan event listener untuk scroll
     const projectPathRegex = /^\/project\/\d+$/;
-    if(location.pathname === "/" || projectPathRegex.test(location.pathname) || location.pathname === "/estimasi"){
+    if (
+      location.pathname === "/" ||
+      projectPathRegex.test(location.pathname) ||
+      location.pathname === "/estimasi" ||
+      location.pathname === "/service"
+    ) {
       window.addEventListener("scroll", handleScroll);
-    }else{
-      setIsGoldNavbar(true)
+    } else {
+      setIsGoldNavbar(true);
     }
 
     // Hapus event listener saat komponen dibongkar
@@ -75,7 +78,12 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between">
         <div className="text-white text-2xl font-bold">
-          <img onClick={() => navigate("/") } className="w-40 hover:cursor-pointer" src={logo} alt="Logo" />
+          <img
+            onClick={() => navigate("/")}
+            className="w-40 hover:cursor-pointer"
+            src={logo}
+            alt="Logo"
+          />
         </div>
 
         {/* Hamburger Button (hanya muncul di perangkat mobile) */}
