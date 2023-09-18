@@ -7,6 +7,9 @@ export {default as bgBannerSlider} from './bg-banner-slider.svg';
 export {default as buttonPlayVideo} from './icon/button-play-video.svg';
 export {default as videoProfileImage} from './video-profile-image.svg';
 
+//feat : reason
+export {default as reasonImage} from './reason-image.svg';
+
 // feat : testimoni
 export {default as profileTestimoni} from './profile-testimoni.svg';
 export {default as iconTestimoni} from './icon/icon-testimoni.svg';

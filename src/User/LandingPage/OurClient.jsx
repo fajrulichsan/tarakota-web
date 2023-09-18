@@ -33,7 +33,7 @@ const OurClient = () => {
   const brands = [airMancur, ba, cnearc, dankos, enseval, fima, forsta, kalbe, komet, kasual, oneject, wook];
 
   return (
-    <div className="py-16">
+    <div className="py-10">
         <div>
             <h2 className='text-3xl font-bold text-center tracking-wider'>Our Client</h2>
             <hr className=' mx-auto w-20 border-b-4 border-orange-500'></hr>
