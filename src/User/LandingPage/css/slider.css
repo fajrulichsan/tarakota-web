@@ -1,11 +1,10 @@
 .slider-container {
     display: block;
-    height: 270px;
     width: auto;
     margin: 0 auto;
     position: relative;
-    max-width: 1300px;
-    margin-top: 20px;
+    /* max-width: 1300px; */
+    margin-top: 10em;
     margin-bottom: 60px;
   }
   
@@ -87,8 +86,8 @@
   
   .slider-container .slider .slide {
     display: inline-block;
-    width: 80%;
-    height: 270px;
+    width: 400px;
+    height: 600px;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -122,24 +121,24 @@
   }
   
   .slider-container .slider .slide.prev-2 {
-    transform: translate3d(-105%, -50%, 0) scale3d(.4, .4, 1);
+    transform: translate3d(-165%, -50%, 0) scale3d(.4, .4, 1);
     z-index: 1;
     opacity: 0.5;
   }
   
   .slider-container .slider .slide.prev-1 {
-    transform: translate3d(-85%, -50%, 0) scale3d(.6, .6, 1);
+    transform: translate3d(-120%, -50%, 0) scale3d(.6, .6, 1);
     z-index: 2;
   }
   
   .slider-container .slider .slide.next-1 {
     z-index: 2;
-    transform: translate3d(-15%, -50%, 0) scale3d(.6, .6, 1);
+    transform: translate3d(10%, -50%, 0) scale3d(.6, .6, 1);
   }
   
   .slider-container .slider .slide.next-2 {
     z-index: 1;
-    transform: translate3d(5%, -50%, 0) scale3d(.4, .4, 1);
+    transform: translate3d(45%, -50%, 0) scale3d(.4, .4, 1);
     opacity: 0.5;
   }
   

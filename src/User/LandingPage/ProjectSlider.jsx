@@ -3,7 +3,7 @@ import './css/slider.css'
 
 const ProjectSlider = () => {
   return (
-    <div className="slider-container">
+    <div className="slider-container h-[30em]">
       <span className="arrow-left"></span>
       <span className="arrow-right"></span>
       <div className="slider" id="slider">
@@ -12,9 +12,9 @@ const ProjectSlider = () => {
         <div className="slide active">3</div>
         <div className="slide next-1">4</div>
         <div className="slide next-2">5</div>
-        <div className="slide">6</div>
+        {/* <div className="slide">6</div>
         <div className="slide">7</div>
-        <div className="slide">8</div>
+        <div className="slide">8</div> */}
       </div>
       <div className="dots">
         <span></span>

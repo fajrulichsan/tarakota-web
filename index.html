@@ -27,80 +27,148 @@
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
      <script>
-      var Slider = (function() {
-        var initSlider = function() {
-        var dir = $("html").attr("dir");
-        var swipeHandler = new Hammer(document.getElementById("slider"));
-        swipeHandler.on('swipeleft', function(e) {
-            if (dir == "rtl")
-                $(".arrow-left").trigger("click");
-            else
-                $(".arrow-right").trigger("click");
-        });
+//       var Slider = (function() {
+//         var initSlider = function() {
+//         var dir = $("html").attr("dir");
+//         var swipeHandler = new Hammer(document.getElementById("slider"));
+//         swipeHandler.on('swipeleft', function(e) {
+//             if (dir == "rtl")
+//                 $(".arrow-left").trigger("click");
+//             else
+//                 $(".arrow-right").trigger("click");
+//         });
 
-        swipeHandler.on('swiperight', function(e) {
-            if (dir == "rtl")
-                $(".arrow-right").trigger("click");
-            else
-                $(".arrow-left").trigger("click");
-        });
+//         swipeHandler.on('swiperight', function(e) {
+//             if (dir == "rtl")
+//                 $(".arrow-right").trigger("click");
+//             else
+//                 $(".arrow-left").trigger("click");
+//         });
 
-        $(".arrow-right , .arrow-left").click(function(event) {
-            var nextActiveSlide = $(".slide.active").next();
+//         $(".arrow-right , .arrow-left").click(function(event) {
+//             var nextActiveSlide = $(".slide.active").next();
 
-            if ($(this).hasClass("arrow-left"))
-                nextActiveSlide = $(".slide.active").prev();
+//             if ($(this).hasClass("arrow-left"))
+//                 nextActiveSlide = $(".slide.active").prev();
 
-            if (nextActiveSlide.length > 0) {
-                var nextActiveIndex = nextActiveSlide.index();
-                $(".dots span").removeClass("active");
-                $($(".dots").children()[nextActiveIndex]).addClass("active");
+//             if (nextActiveSlide.length > 0) {
+//                 var nextActiveIndex = nextActiveSlide.index();
+//                 $(".dots span").removeClass("active");
+//                 $($(".dots").children()[nextActiveIndex]).addClass("active");
 
-                updateSlides(nextActiveSlide);
-            }
-        });
+//                 updateSlides(nextActiveSlide);
+//             }
+//         });
 
-        $(".dots span").click(function(event) {
-            var slideIndex = $(this).index();
-            var nextActiveSlide = $($(".slider").children()[slideIndex]);
-            $(".dots span").removeClass("active");
-            $(this).addClass("active");
+//         $(".dots span").click(function(event) {
+//             var slideIndex = $(this).index();
+//             var nextActiveSlide = $($(".slider").children()[slideIndex]);
+//             $(".dots span").removeClass("active");
+//             $(this).addClass("active");
 
-            updateSlides(nextActiveSlide);
-        });
+//             updateSlides(nextActiveSlide);
+//         });
 
-        var updateSlides = function(nextActiveSlide) {
-            var nextActiveSlideIndex = $(nextActiveSlide).index();
+//         var updateSlides = function(nextActiveSlide) {
+//             var nextActiveSlideIndex = $(nextActiveSlide).index();
 
-            $(".slide").removeClass("prev-1");
-            $(".slide").removeClass("next-1");
-            $(".slide").removeClass("active");
-            $(".slide").removeClass("prev-2");
-            $(".slide").removeClass("next-2");
+//             $(".slide").removeClass("prev-1");
+//             $(".slide").removeClass("next-1");
+//             $(".slide").removeClass("active");
+//             $(".slide").removeClass("prev-2");
+//             $(".slide").removeClass("next-2");
 
-            nextActiveSlide.addClass("active");
+//             nextActiveSlide.addClass("active");
 
-            nextActiveSlide.prev().addClass("prev-1");
-            nextActiveSlide.prev().prev().addClass("prev-2");
-            nextActiveSlide.addClass("active");
-            nextActiveSlide.next().addClass("next-1");
-            nextActiveSlide.next().next().addClass("next-2");
-        }
+//             nextActiveSlide.prev().addClass("prev-1");
+//             nextActiveSlide.prev().prev().addClass("prev-2");
+//             nextActiveSlide.addClass("active");
+//             nextActiveSlide.next().addClass("next-1");
+//             nextActiveSlide.next().next().addClass("next-2");
+//         }
 
-        var updateToNextSlide = function(nextActiveSlide)
-        {
+//         var updateToNextSlide = function(nextActiveSlide)
+//         {
             
-        }
-    }
-    return {
-        init: function() {
-            initSlider();
-        }
-    }
+//         }
+//     }
+//     return {
+//         init: function() {
+//             initSlider();
+//         }
+//     }
+// })();
+
+// $(function() {
+//     Slider.init();
+// });
+
+var Slider = (function () {
+  var initSlider = function () {
+    var dir = $("html").attr("dir");
+    var slideCount = $(".slide").length;
+    var currentIndex = 0;
+
+    var swipeHandler = new Hammer(document.getElementById("slider"));
+    swipeHandler.on("swipeleft", function (e) {
+      if (dir == "rtl") $(".arrow-left").trigger("click");
+      else $(".arrow-right").trigger("click");
+    });
+
+    swipeHandler.on("swiperight", function (e) {
+      if (dir == "rtl") $(".arrow-right").trigger("click");
+      else $(".arrow-left").trigger("click");
+    });
+
+    $(".arrow-right, .arrow-left").click(function (event) {
+      if ($(this).hasClass("arrow-left")) {
+        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+      } else {
+        currentIndex = (currentIndex + 1) % slideCount;
+      }
+
+      updateSlides(currentIndex);
+    });
+
+    $(".dots span").click(function (event) {
+      currentIndex = $(this).index();
+      updateSlides(currentIndex);
+    });
+
+    var updateSlides = function (currentIndex) {
+      $(".dots span").removeClass("active");
+      $($(".dots").children()[currentIndex]).addClass("active");
+
+      $(".slide").removeClass("prev-1");
+      $(".slide").removeClass("next-1");
+      $(".slide").removeClass("active");
+      $(".slide").removeClass("prev-2");
+      $(".slide").removeClass("next-2");
+
+      var currentSlide = $(".slide")[currentIndex];
+      var prevIndex = (currentIndex - 1 + slideCount) % slideCount;
+      var nextIndex = (currentIndex + 1) % slideCount;
+
+      var prevSlide = $(".slide")[prevIndex];
+      var nextSlide = $(".slide")[nextIndex];
+
+      $(currentSlide).addClass("active");
+      $(prevSlide).addClass("prev-1");
+      $(prevSlide).prev().addClass("prev-2");
+      $(nextSlide).addClass("next-1");
+      $(nextSlide).next().addClass("next-2");
+    };
+  };
+
+  return {
+    init: function () {
+      initSlider();
+    },
+  };
 })();
 
-$(function() {
-    Slider.init();
+$(function () {
+  Slider.init();
 });
 
      </script>
