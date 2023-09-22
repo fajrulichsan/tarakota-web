@@ -12,13 +12,13 @@ const LandingPage = () => {
   return (
     <Fragment>
       <Navbar/>
-      <SliderBanner/>
+      {/* <SliderBanner/> */}
       {/* <Carousel/> */}
       {/* <ProjectSlider/> */}
       <ProfileVideo/>
       {/* <LandingComponent/> */}
-      <Reason/>
-      <OurClient/>
+      {/* <Reason/> */}
+      {/* <OurClient/> */}
       <Testimoni/>
       <JoinUs/>
       <Footer/>
