@@ -47,3 +47,8 @@ export {default as wook} from './client/wook.svg';
 
 // about us page
 export {default as bgVisiMisiAboutUs} from './bg-visi-misi-about-us.svg';
+
+
+// bangun page
+export {default as bangunBanner} from './bangun-banner.svg';
+export {default as bangunIntroduction} from './bangun-introduction.svg';
