@@ -52,11 +52,11 @@ const aboutList = [
 
 const sosialMediaIcon = [
   {
-    icon : facebookWhite,
+    icon : instagramWhite,
     href : "#"
   },
   {
-    icon : instagramWhite,
+    icon : facebookWhite,
     href : "#"
   },
   {
@@ -71,15 +71,19 @@ const sosialMediaIcon = [
 
 const kerjasamaList = [
   {
-    title : "Bersama Tarakota",
+    title : "BisnisTarakota",
     href : "#"
   },
   {
-    title : "With you Tarakota",
+    title : "BersamaTarakota",
     href : "#"
   },
   {
-    title : "Bangun Tarakota",
+    title : "BangunTarakota",
+    href : "#"
+  },
+  {
+    title : "BagibagiTarakota",
     href : "#"
   }
 ]
@@ -87,26 +91,23 @@ const kerjasamaList = [
 const Footer = () => {
 
   return (
-    <footer className="bg-gray-800 relative h-[25em]"  style={{
-      borderRadius: "90px 0px 0px 0px"}}>
       <div
-        className="absolute inset-0 h-[25em] text-white p-24"
+        className="h-[25em] md:h-[30em] text-white md:p-20"
         style={{
-          borderRadius: "90px 0px 0px 0px",
           background:
-            "linear-gradient(116deg, #E85738 -14.86%, rgba(0, 0, 0, 0.00) 20.3%)",
+            "#1B1B1B",
         }}
       >
-        <img src={logo}></img>
-        <div className="mx-auto flex flex-wrap justify-evenly mt-10">
-          <div className="w-full md:w-1/2 lg:w-1/5 px-4 mb-8">
-            <h3 className="text-2xl font-bold mb-4">Produk</h3>
+        <img className="mx-auto md:mx-0 md:pt-10 pt-10 w-40 md:w-60" src={logo}></img>
+        <div className="grid grid-cols-6 md:grid-cols-10 gap-5 mt-5 md:mt-10">
+          <div className="col-span-2 md:col-span-2 mx-auto">
+            <h3 className="text-md md:text-2xl font-bold md:mb-4">Produk</h3>
             <ul>
               {productList.map((data, index) => (
-                <li key={index} className="mb-2">
+                <li key={index} className="md:mb-2">
                   <a
                     href={data.href}
-                    className="text-lg text-gray-400 hover:text-white"
+                    className="text-sm md:text-lg text-gray-400 hover:text-white"
                   >
                     {data.title}
                   </a>
@@ -114,14 +115,14 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="w-full md:w-1/2 lg:w-1/5 px-4 mb-8">
-            <h3 className="text-2xl font-bold mb-4">Customer Service</h3>
+          <div className="col-span-2 md:col-span-2 mx-auto">
+            <h3 className="text-md md:text-2xl font-bold md:mb-4">Customer Service</h3>
             <ul>
             {customerServiceList.map((data, index) => (
-                <li key={index} className="mb-2">
+                <li key={index} className="md:mb-2">
                   <a
                     href={data.href}
-                    className="text-lg text-gray-400 hover:text-white"
+                    className="text-sm md:text-lg text-gray-400 hover:text-white"
                   >
                     {data.title}
                   </a>
@@ -129,14 +130,14 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="w-full md:w-1/2 lg:w-1/5 px-4 mb-8">
-            <h3 className="text-2xl font-bold mb-4">Tentang</h3>
+          <div className="col-span-2 md:col-span-2 mx-auto">
+            <h3 className="text-md md:text-2xl font-bold md:mb-4">Tentang</h3>
             <ul>
             {aboutList.map((data, index) => (
-                <li key={index} className="mb-2">
+                <li key={index} className="md:mb-2">
                   <a
                     href={data.href}
-                    className="text-lg text-gray-400 hover:text-white"
+                    className="text-sm md:text-lg text-gray-400 hover:text-white"
                   >
                     {data.title}
                   </a>
@@ -144,14 +145,14 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="w-full md:w-1/2 lg:w-1/5 px-4 mb-8">
-            <h3 className="text-2xl font-bold mb-4">Kerjasama</h3>
+          <div className="col-span-2 col-start-2 md:col-span-2 mx-auto">
+            <h3 className="text-md md:text-2xl font-bold md:mb-4">Kerjasama</h3>
             <ul>
             {kerjasamaList.map((data, index) => (
-                <li key={index} className="mb-2">
+                <li key={index} className="md:mb-2">
                   <a
                     href={data.href}
-                    className="text-lg text-gray-400 hover:text-white"
+                    className="text-sm md:text-lg text-gray-400 hover:text-white"
                   >
                     {data.title}
                   </a>
@@ -159,8 +160,8 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="w-full md:w-1/2 lg:w-1/5 px-4 mb-8">
-            <h3 className="text-2xl font-bold mb-4">Follow Us</h3>
+          <div className="col-span-2 md:col-span-2 mx-auto">
+            <h3 className="text-md md:text-2xl font-bold md:mb-4">Follow Us</h3>
             <div className="flex space-x-4">
                {sosialMediaIcon.map((data, index) => (
                 <a
@@ -179,7 +180,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
   );
 };
 
