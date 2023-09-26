@@ -10,6 +10,7 @@ import Estimation from "../User/pages/Estimation";
 import AboutUs from "../User/pages/AboutUs";
 import ServicePage from "../User/pages/ServicePage";
 import BangunPage from "../User/pages/BangunPage";
+import BisnisPage from "../User/pages/BisnisPage";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
     {
         path: "/bangun",
         element: <BangunPage/>
+    },
+    {
+        path: "/bisnis",
+        element: <BisnisPage/>
     }
 ]);
 

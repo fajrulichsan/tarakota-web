@@ -52,3 +52,10 @@ export {default as bgVisiMisiAboutUs} from './bg-visi-misi-about-us.svg';
 // bangun page
 export {default as bangunBanner} from './bangun-banner.svg';
 export {default as bangunIntroduction} from './bangun-introduction.svg';
+
+// bisnis page
+export {default as perjalananKarir} from './perjalanan-karir.svg';
+export {default as leftArrowBgWhite} from './icon/left-arrow-bg-white.svg';
+export {default as rightArrowBgWhite} from './icon/right-arrow-bg-white.svg';
+export {default as leftArrowBgTera} from './icon/left-arrow-bg-tera.svg';
+
