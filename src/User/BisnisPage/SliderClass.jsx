@@ -26,9 +26,7 @@ const carouselData = [
 ];
 
 const styleCardTesti = {
-  // borderRadius: '50px',
   border: "5px solid #FFF",
-  background: "#F9F5EC",
   boxShadow: "0px 4px 25px 0px rgba(0, 0, 0, 0.08)",
 };
 
@@ -92,7 +90,7 @@ const SliderClass = () => {
               .map((item) => (
                 <div
                   key={item.id}
-                  className="p-5 px-16 flex justify-between items-center space-x-5 rounded-3xl"
+                  className="p-5 px-16 flex justify-between items-center space-x-5 relative rounded-3xl"
                   style={styleCardTesti}
                 >
                   <div className="md:w-1/2 lg:w-80 rounded-lg">
@@ -106,6 +104,9 @@ const SliderClass = () => {
                         ))}
                       </ul>
                     </div>
+                  </div>
+                  <div className="w-7 h-7 rounded-full absolute -top-4 left-1/2 -translate-x-8 bg-tera flex justify-center items-center text-white">
+                    {item.id}
                   </div>
                 </div>
               ))}
