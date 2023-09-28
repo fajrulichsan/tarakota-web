@@ -11,6 +11,7 @@ import AboutUs from "../User/pages/AboutUs";
 import ServicePage from "../User/pages/ServicePage";
 import BangunPage from "../User/pages/BangunPage";
 import BisnisPage from "../User/pages/BisnisPage";
+import BagiBagiPage from "../User/pages/BagiBagiPage";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -37,12 +38,16 @@ const router = createBrowserRouter([
         element: <ServicePage/>
     },
     {
-        path: "/bangun",
+        path: "/bangun-tarakota",
         element: <BangunPage/>
     },
     {
-        path: "/bisnis",
+        path: "/bisnis-tarakota",
         element: <BisnisPage/>
+    },
+    {
+        path: "/bagibagi-tarakota",
+        element: <BagiBagiPage/>
     }
 ]);
 
