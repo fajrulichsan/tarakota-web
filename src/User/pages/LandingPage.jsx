@@ -6,19 +6,18 @@ import OurClient from "../LandingPage/OurClient"
 import ProfileVideo from "../LandingPage/ProfileVideo"
 import ProjectSlider from "../LandingPage/ProjectSlider"
 import Reason from "../LandingPage/Reason"
+import Service from "../LandingPage/Service"
 import SliderBanner from "../LandingPage/SliderBanner"
 import Testimoni from "../LandingPage/Testimoni"
 const LandingPage = () => {
   return (
     <Fragment>
       <Navbar/>
-      {/* <SliderBanner/> */}
-      {/* <Carousel/> */}
-      {/* <ProjectSlider/> */}
+      <SliderBanner/>
       <ProfileVideo/>
-      {/* <LandingComponent/> */}
-      {/* <Reason/> */}
-      {/* <OurClient/> */}
+      <Service/>
+      <Reason/>
+      <OurClient/>
       <Testimoni/>
       <JoinUs/>
       <Footer/>

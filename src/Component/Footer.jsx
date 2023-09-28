@@ -72,19 +72,19 @@ const sosialMediaIcon = [
 const kerjasamaList = [
   {
     title : "BisnisTarakota",
-    href : "#"
+    href : "/bisnis-tarakota"
   },
   {
     title : "BersamaTarakota",
-    href : "#"
+    href : "/bersama-tarakota"
   },
   {
     title : "BangunTarakota",
-    href : "#"
+    href : "/bangun-tarakota"
   },
   {
     title : "BagibagiTarakota",
-    href : "#"
+    href : "/bagibagi-tarakota"
   }
 ]
 
