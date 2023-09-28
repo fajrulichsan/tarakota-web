@@ -12,6 +12,7 @@ import ServicePage from "../User/pages/ServicePage";
 import BangunPage from "../User/pages/BangunPage";
 import BisnisPage from "../User/pages/BisnisPage";
 import BagiBagiPage from "../User/pages/BagiBagiPage";
+import BersamaPage from "../User/pages/BersamaPage";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
     {
         path: "/bagibagi-tarakota",
         element: <BagiBagiPage/>
+    },
+    {
+        path: "/bersama-tarakota",
+        element: <BersamaPage/>
     }
 ]);
 
