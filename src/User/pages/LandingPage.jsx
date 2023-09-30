@@ -12,6 +12,7 @@ import Testimoni from "../LandingPage/Testimoni"
 const LandingPage = () => {
   return (
     <Fragment>
+      <div className="mx-auto">
       <Navbar/>
       <SliderBanner/>
       <ProfileVideo/>
@@ -21,6 +22,7 @@ const LandingPage = () => {
       <Testimoni/>
       <JoinUs/>
       <Footer/>
+      </div>
     </Fragment>
   )
 }
