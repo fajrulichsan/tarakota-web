@@ -47,7 +47,7 @@ const Navbar = () => {
       projectPathRegex.test(location.pathname) ||
       location.pathname === "/estimasi" ||
       location.pathname === "/service" ||
-      location.pathname === "/bisnis"
+      location.pathname === "/bisnis-tarakota"
     ) {
       window.addEventListener("scroll", handleScroll);
     } else {

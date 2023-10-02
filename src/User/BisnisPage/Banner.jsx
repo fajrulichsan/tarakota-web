@@ -19,7 +19,7 @@ const Banner = () => {
       <Slider>
         <div className="hover:cursor-pointer">
           <div
-            className="h-[30em] relative"
+            className="h-[20em] md:h-[25em] lg:h-[30em] bg-center bg-cover bg-no-repeat  relative"
             style={{
               backgroundImage: `url(${bgBannerSlider})`,
             }}
@@ -32,11 +32,11 @@ const Banner = () => {
               }}
             >
               <div
-                className="h-full grid grid-cols-3 px-40 "
+                className="h-full grid grid-cols-3 px-10 md:px-20 lg:px-40 "
                 style={{ zIndex: 1 }}
               >
                 <h1
-                  className="text-5xl col-span-2 flex items-center font-bold text-white tracking-widest"
+                  className="text-3xl md:text-4xl lg:text-5xl col-span-3 lg:col-span-2 flex items-end py-10 md:items-center font-bold text-white tracking-widest"
                   style={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
                 >
                   Cashflow Mengalir dari Program Representatif BisnisTarakota

@@ -25,22 +25,22 @@ const classList = [
 
 const ClassTarakota = () => {
   return (
-    <div className="px-32">
+    <div className="px-5 md:px-20 lg:px-32">
       <div>
-        <h1 className="text-4xl text-tera font-bold">
+        <h1 className="text-lg md:text-2xl lg:text-4xl text-tera font-bold">
           Ngobrolin Program BisnisTarakota, Bukan yang Biasa-biasa Aja
         </h1>
-        <p className="text-2xl">
+        <p className="text-sm md:text-lg lg:text-2xl">
           Sebagai seorang representatif arsitektur, kamu bakal dapetin dukungan
           online yang bisa kamu pelajari di mana aja. Ada beberapa kelas keren
           yang bakal kamu ikuti:
         </p>
       </div>
-      <div className="grid grid-cols-12 gap-6 my-10">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-3 lg:gap-6 my-4 md:my-6 lg:my-10">
         {classList.map((data) => (
-          <div key={data.id} className={`col-span-5 ${data.id % 2 == 1 ? "col-start-2" : ""}`}>
+          <div key={data.id} className={`col-span-1 md:col-span-6 lg:col-span-5 ${data.id % 2 == 1 ? "lg:col-start-2" : ""}`}>
             <div
-              className="rounded-3xl p-8 space-y-3"
+              className="rounded-xl lg:rounded-3xl p-3 md:p-5 lg:p-8 space-y-1 md:space-y-2 lg:space-y-3"
               style={{
                 border: "5px solid #FFF",
                 background: "#F9F5EC",
@@ -49,17 +49,17 @@ const ClassTarakota = () => {
                 boxShadow: "0px 4px 25px 0px rgba(0, 0, 0, 0.08)",
               }}
             >
-              <h1 className="text-2xl font-bold text-tera text-center">
+              <h1 className="text-md md:text-xl lg:text-2xl font-bold text-tera text-center">
                 {data.title}
               </h1>
-              <p className="text-xl text-justify">
+              <p className="text-sm md:text-lg lg:text-xl text-justify">
                 {data.body}
               </p>
             </div>
           </div>
         ))}
       </div>
-      <p className="text-2xl text-justify">
+      <p className="text-sm md:text-lg lg:text-2xl text-justify">
       Jadi begini, kalau kamu memutuskan untuk gabung bareng kita di Program Representatif BisnisTarakota ini, dunia arsitektur bakal jadi petualangan seru yang siap banget kita eksplor bareng! Di sini, kita nggak cuma tawarin pekerjaan biasa, tapi juga pengalaman belajar yang seru banget sebagai seorang representatif bisnis di industri arsitektur. Nah, inilah yang bakal kamu dapatkan:
       </p>
     </div>

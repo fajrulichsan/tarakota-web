@@ -37,11 +37,11 @@ const PerjalananKarir = () => {
     const [currentProgram, setcurrentProgram] = useState(1)
 
     return (
-    <div className="px-32 py-20">
-      <div className="grid grid-cols-2 gap-10">
+    <div className="py-5 px-5 md:px-20 lg:px-32 md:py-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div className="col-span-1 relative">
           <div
-            className="w-full h-96 bg-cover bg-no-repeat bg-center"
+            className="w-full h-60 md:h-80 lg:h-96 bg-cover bg-no-repeat bg-center"
             style={{ backgroundImage: `url(${perjalananKarir})` }}
           ></div>
 
@@ -51,11 +51,11 @@ const PerjalananKarir = () => {
               className={`${data.position} ${currentProgram === data.id ? "bg-tera text-white" : "bg-[#F9F5EC] text-tera"} w-fit px-3 py-1.5 rounded-full absolute hover:cursor-pointer`}
               onClick = {() => setcurrentProgram(data.id)}
               style={{
-                border: "6px solid transparent",
+                border: "2px solid transparent",
                 boxShadow: "0px 4px 30px 0px rgba(212, 183, 84, 0.50)",
               }}
             >
-              <p className="text-lg font-medium">{data.title}</p>
+              <p className="text-sm md:text-md lg:text-lg font-medium">{data.title}</p>
             </div>
           ))}
         </div>
@@ -69,7 +69,7 @@ const PerjalananKarir = () => {
               boxShadow: "0px 4px 30px 0px rgba(212, 183, 84, 0.50)",
             }}
           >
-            <p className="text-xl text-justify text-white">
+            <p className="text-sm md:text-lg lg:text-xl text-justify text-white">
             {programList.find((item) => item.id === currentProgram).description}
             </p>
             <img
@@ -79,7 +79,7 @@ const PerjalananKarir = () => {
           </div>
         </div>
       </div>
-      <p className="text-2xl mt-16 text-justify">Masing-masing dari 4 Program BisnisTarakota ini memainkan peran penting dalam menjalankan penghubungan antara klien dan perusahaan, membantu menciptakan peluang bisnis yang saling menguntungkan. Ini adalah kesempatan untuk memanfaatkan keterampilan komunikasi dan kepemimpinanmu dalam mengembangkan relasi bisnis yang berhasil.</p>
+      <p className="text-sm md:text-lg lg:text-2xl mt-4 md:mt-10 lg:mt-16 text-justify">Masing-masing dari 4 Program BisnisTarakota ini memainkan peran penting dalam menjalankan penghubungan antara klien dan perusahaan, membantu menciptakan peluang bisnis yang saling menguntungkan. Ini adalah kesempatan untuk memanfaatkan keterampilan komunikasi dan kepemimpinanmu dalam mengembangkan relasi bisnis yang berhasil.</p>
     </div>
   );
 };

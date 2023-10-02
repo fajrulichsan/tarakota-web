@@ -33,7 +33,7 @@ const JenjangKarir = () => {
   return (
     <Fragment>
       <div
-        className="w-full h-[20em] relative bg-center bg-cover bg-no-repeat"
+        className="w-full h-[10em] md:h-[20em] relative bg-center bg-cover bg-no-repeat"
         style={{ backgroundImage: `url(${bgBannerSlider})` }}
       >
         <div
@@ -44,40 +44,24 @@ const JenjangKarir = () => {
           }}
         ></div>
       </div>
-      <div className="px-32 py-20">
-        <div className="grid grid-cols-9 gap-20">
-          <div className="col-span-6">
-            <p className="text-2xl text-justify">
-              Jika kamu ngerasa punya semangat buat menjelajahi karir di dunia
-              arsitektur yang penuh peluang, ayo kita eksplor lebih dalam
-              tentang jenjang karir yang penuh potensi ini. Dari peran 'Start-Up
-              Scout' hingga 'Growth Director,' di dunia arsitektur ini, kita
-              pake bahasa kekinian buat nggambarkan perjalanan karir seru ini.
-              Yuk, kita diskusiin gimana tiap tahapannya bisa bantuin kamu
-              menuju sukses!
-            </p>
-            <div
-              className="rounded-2xl p-10 mt-8 relative"
-              style={{
-                background: "#404042",
-                boxShadow: "7px 11px 30px 0px #D4B754",
-              }}
-            >
-              <p className="text-2xl text-white">
-                {
-                  JenjangKarirList.find(
-                    (item) => item.id === currentJenjangKarir
-                  ).description
-                }
+      <div className="px-5 py-5 md:px-20 lg:px-32 md:py-10 lg:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-9 gap-5 md:gap-10">
+          <div className="col-span-1 md:col-span-6">
+            <p className="text-sm md:text-lg lg:text-2xl text-justify">
+                Jika kamu ngerasa punya semangat buat menjelajahi karir di dunia
+                arsitektur yang penuh peluang, ayo kita eksplor lebih dalam
+                tentang jenjang karir yang penuh potensi ini. Dari peran 'Start-Up
+                Scout' hingga 'Growth Director,' di dunia arsitektur ini, kita
+                pake bahasa kekinian buat nggambarkan perjalanan karir seru ini.
+                Yuk, kita diskusiin gimana tiap tahapannya bisa bantuin kamu
+                menuju sukses!
               </p>
-
-              <div className="w-6 h-6 bg-tera rounded-full absolute top-1/2 -translate-y-2 right-0 translate-x-3"></div>
-            </div>
           </div>
-          <div className="col-span-3">
-            <div className="flex flex-col space-y-6">
+          <div className="col-span-1 md:col-span-3 row-span-2">
+            <div className="grid grid-cols-6 md:grid-cols-1 gap-5">
               {JenjangKarirList.map((data) => (
-                <div
+                <div className="col-span-3 md:col-span-1">
+                  <div
                   key={data.id}
                   className="rounded-full flex justify-center relative hover:cursor-pointer"
                   onClick={() => setCurrentJenjangKarir(data.id)}
@@ -87,16 +71,37 @@ const JenjangKarir = () => {
                     boxShadow: "0px 2px 20px 0px rgba(212, 183, 84, 0.50)",
                   }}
                 >
-                  <p className="text-2xl text-tera font-semibold">
+                  <p className="text-sm md:text-lg lg:text-2xl text-tera font-semibold">
                     {data.title}
                   </p>
                   {data.id === currentJenjangKarir && (
-                    <div className="w-5 h-5 bg-tera rounded-full absolute top-1/2 -translate-y-2 left-0 -translate-x-4"></div>
+                    <div className="w-4 h-4 md:w-5 md:h-5 bg-tera rounded-full absolute top-1/2 -translate-y-2 left-0 -translate-x-4"></div>
                   )}
                 </div>
+                </div>
+                
               ))}
             </div>
           </div>
+          <div className="col-span-1 md:col-span-6">
+            <div
+              className="rounded-xl md:rounded-2xl p-5 md:p-8 lg:p-10 relative"
+              style={{
+                background: "#404042",
+                boxShadow: "7px 11px 30px 0px #D4B754",
+              }}
+            >
+              <p className="text-sm md:text-lg lg:text-2xl text-white">
+                {
+                  JenjangKarirList.find(
+                    (item) => item.id === currentJenjangKarir
+                  ).description
+                }
+              </p>
+              <div className="w-4 h-4 md:w-6 md:h-6 bg-tera rounded-full absolute top-0 right-1/2 md:top-1/2 -translate-y-2 md:right-0 translate-x-2 md:translate-x-3"></div>
+            </div>
+          </div>
+          
         </div>
       </div>
     </Fragment>
