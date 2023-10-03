@@ -23,7 +23,7 @@ const Komisi = () => {
               <p className="text-sm md:text-lg lg:text-2xl">Tier 1: Komisi 2,5% total pendapatan</p>
             </div>
           </div>
-          <div className="col-span-1 md:col-span-6 lg:col-span-4 md:col-start-2 lg:col-start-2">
+          <div className="col-span-1 md:col-span-6 lg:col-span-4 md:col-start-1 lg:col-start-3">
             <div className="w-full py-2 md:py-3 bg-tera text-white text-center rounded-xl">
               <p className="text-sm md:text-lg lg:text-2xl">Tier 2: Komisi 1,5% total pendapatan</p>
             </div>
@@ -36,21 +36,21 @@ const Komisi = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-12 gap-2 mt-10 md:mt-20">
-        <div className="col-span-12 md:col-span-6 md:col-start-4">
-            <div className="rounded-xl text-white p-5 md:p-16"
+      <div className="grid grid-cols-12 gap-2 mt-10 lg:mt-20">
+        <div className="col-span-12 md:col-span-8 lg:col-span-6 md:col-start-3 lg:col-start-4">
+            <div className="rounded-xl text-white p-5 md:p-10 lg:p-16"
             style={{background: '#404042',
                 boxShadow: '7px 11px 30px 0px #D4B754'}}
             >
-                <p className="text-sm md:text-2xl font-bold">Komisi Super Menggiurkan</p>
-                <p className="text-sm md:text-2xl text-justify">
+                <p className="text-sm md:text-lg lg:text-2xl font-bold">Komisi Super Menggiurkan</p>
+                <p className="text-sm md:text-lg lg:text-2xl text-justify">
                 Semakin sukses kamu, semakin tinggi komisi yang akan mengalir ke rekeningmu. Ini bukan hanya tentang uang, tapi tentang menggapai level finansial yang lebih tinggi.
                 </p>
             </div>
         </div>
         <div className="col-span-12 md:col-span-10 md:col-start-2 text-2xl py-5">
-            <p className="text-sm md:text-2xl text-justify md:text-center">Semua ini adalah hadiah-hadiah yang menunjukkan penghargaan atas dedikasi dan kerja kerasmu. </p>
-            <p className="text-sm md:text-2xl text-justify font-bold md:text-center">Jadilah Representatif BisnisTarakota arsitektur berprestasi dan nikmati manfaat luar biasa ini!</p>
+            <p className="text-sm md:text-lg lg:text-2xl text-justify md:text-center">Semua ini adalah hadiah-hadiah yang menunjukkan penghargaan atas dedikasi dan kerja kerasmu. </p>
+            <p className="text-sm md:text-lg lg:text-2xl text-justify font-bold md:text-center">Jadilah Representatif BisnisTarakota arsitektur berprestasi dan nikmati manfaat luar biasa ini!</p>
         </div>
       </div>
     </div>

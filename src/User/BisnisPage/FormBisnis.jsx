@@ -80,28 +80,28 @@ const bankList = [
 ];
 const FormBisnis = () => {
   return (
-    <div className="px-32 py-20">
+    <div className="px-5 pb-10 md:px-20 lg:px-32 md:py-10 lg:py-20">
       <div
-        className="rounded-3xl p-16 px-24 space-y-4"
+        className="rounded-xl md:rounded-3xl p-5 px-6 md:p-10 lg:p-16 md:px-12 lg:px-24 space-y-4"
         style={{
           boxShadow: "7px 11px 30px 0px #D4B754",
         }}
       >
         {formInput.map((data) => (
           <div key={data.id}>
-            <p className="text-xl">
+            <p className="text-sm md:text-lg lg:text-xl">
               {data.title} <span className="text-red-600">*</span>
             </p>
             <input
               name={data.name}
-              className="w-full text-xl rounded-full h-12 border-2 border-gray-600 px-5 bg-transparent"
+              className="w-full text-sm md:text-lg lg:text-xl rounded-full h-9 md:h-12 border-2 border-gray-600 px-5 bg-transparent"
               placeholder={data.placeholder}
             ></input>
           </div>
         ))}
 
         <div className="">
-          <p className="text-xl">
+          <p className="text-sm md:text-lg lg:text-xl">
             Bank Rekening <span className="text-red-600">*</span>
           </p>
           {bankList.map((data) => (
@@ -113,7 +113,7 @@ const FormBisnis = () => {
                 type="radio"
                 value={data.title}
               ></input>
-              <label htmlFor={data.title} className="text-xl">
+              <label htmlFor={data.title} className="text-sm md:text-lg lg:text-xl">
                 {data.title}
               </label>
             </div>
@@ -121,33 +121,33 @@ const FormBisnis = () => {
 
           <div className="flex items-center space-x-4">
             <input id="bankLain" className="w-4 h-4" name="rekening" type="radio"></input>
-            <label htmlFor="bankLain" className="text-xl w-24">Yang Lain :</label>
+            <label htmlFor="bankLain" className="text-sm md:text-lg lg:text-xl w-24">Yang Lain :</label>
             <input className="w-full bg-transparent border-b-2 border-gray-500"></input>
           </div>
         </div>
         <div>
-          <p className="text-xl">
+          <p className="text-sm md:text-lg lg:text-xl">
             Cabang <span className="text-red-600">*</span>
           </p>
           <input
             name="cabang"
-            className="w-full text-xl rounded-full h-12 border-2 border-gray-600 px-5 bg-transparent"
+            className="w-full text-sm md:text-lg lg:text-xl rounded-full h-9 md:h-12 border-2 border-gray-600 px-5 bg-transparent"
             placeholder="Cabang Bank"
           ></input>
         </div>
         <div>
-          <p className="text-xl">
+          <p className="text-sm md:text-lg lg:text-xl">
             Nama Pemilik Rekening <span className="text-red-600">*</span>
           </p>
           <input
             name="namaPemilikRekening"
-            className="w-full text-xl rounded-full h-12 border-2 border-gray-600 px-5 bg-transparent"
+            className="w-full text-sm md:text-lg lg:text-xl rounded-full h-9 md:h-12 border-2 border-gray-600 px-5 bg-transparent"
             placeholder="Nama Pemilik Rekening"
           ></input>
         </div>
 
         <div className="">
-          <p className="text-xl">
+          <p className="text-sm md:text-lg lg:text-xl">
             Program TarakotaWithU yang dipilih{" "}
             <span className="text-red-600">*</span>
           </p>
@@ -160,14 +160,14 @@ const FormBisnis = () => {
                 value={data.title}
                 type="radio"
               ></input>
-              <label htmlFor={data.title} className="text-xl">
+              <label htmlFor={data.title} className="text-sm md:text-lg lg:text-xl">
                 {data.title}
               </label>
             </div>
           ))}
         </div>
         <div className="flex justify-end">
-            <button className="px-8 w-fit py-1.5 rounded-full bg-tera text-white text-xl mt-6"> Submit </button>
+            <button className="px-8 w-fit py-1.5 rounded-full bg-tera text-white text-sm md:text-lg lg:text-xl mt-6"> Submit </button>
         </div>
       </div>
     </div>
