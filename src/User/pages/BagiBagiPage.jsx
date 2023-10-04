@@ -14,9 +14,9 @@ const BagiBagiPage = () => {
     <Fragment>
         <Navbar/>
         <Banner/>
-        <JenisInvestasi/>
+        {/* <JenisInvestasi/> */}
         <ProfitInvestasi/>
-        <KelebihanInvestasi/>
+        {/* <KelebihanInvestasi/> */}
         <Invitation/>
         <Form/>
         <Footer/>
