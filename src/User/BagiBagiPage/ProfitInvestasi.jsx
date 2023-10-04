@@ -3,7 +3,7 @@ import React from 'react';
 
 const ProfitInvestasi = () => {
   return (
-    <div className='px-5 py-10 md:px-20 lg:px-32 md:py-10'>
+    <div className='px-5 py-5 md:px-20 lg:px-32 md:py-10'>
         <h1 className='text-xl md:text-3xl w-2/3 md:w-full lg:text-4xl text-tera md:text-center font-bold'>Apa yang bisa kamu dapet dari investasi saham?</h1>
         <div className='grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-5 lg:gap-10 mt-4 md:mt-10'>
             <div className='col-span-1 md:col-span-10 lg:col-span-8 md:col-start-2 lg:col-start-3 flex space-x-6 items-center'>
