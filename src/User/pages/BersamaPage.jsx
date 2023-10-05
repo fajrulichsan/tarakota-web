@@ -13,7 +13,7 @@ const BersamaPage = () => {
     <Fragment>
         <Navbar/>
         <Alasan/>
-        <SumberPendapatan/>
+        {/* <SumberPendapatan/> */}
         <Area/>
         <Syarat/>
         <Form/>

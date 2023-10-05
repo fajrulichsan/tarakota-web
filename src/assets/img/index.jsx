@@ -28,6 +28,8 @@ export {default as facebook} from './icon/facebook.svg';
 export {default as instagram} from './icon/instagram.svg';
 export {default as twitter} from './icon/twiter.svg';
 export {default as youtube} from './icon/youtube.svg';
+export {default as whatsapp} from './icon/whatsapp.svg';
+export {default as linekdin} from './icon/linkedin.svg';
 
 // client logo
 export {default as airMancur} from './client/air-mancur.svg';

@@ -48,12 +48,12 @@ const Alasan = () => {
   const [currentProgram, setcurrentProgram] = useState(1);
 
   return (
-    <div className="px-32 py-20">
-      <h1 className="text-4xl text-tera font-bold my-10">
+    <div className="px-5 py-10 md:px-20 lg:px-32 md:py-20">
+      <h1 className="text-xl md:text-2xl lg:text-4xl text-tera font-bold my-10">
         Nah, kenapa kamu harus bergabung dengan Tarakota melalui Program
         Kemitraan BersamaTarakota?
       </h1>
-      <div className="grid grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div className="col-span-1 relative">
           <div
             className="w-full h-96 bg-cover bg-no-repeat bg-center"
@@ -67,14 +67,14 @@ const Alasan = () => {
                 currentProgram === data.id
                   ? "bg-tera text-white"
                   : "bg-[#F9F5EC] text-tera"
-              } w-fit px-3 py-1.5 rounded-full absolute hover:cursor-pointer`}
+              } w-fit px-3 py-1 lg:py-1.5 rounded-full absolute hover:cursor-pointer`}
               onClick={() => setcurrentProgram(data.id)}
               style={{
                 border: "6px solid transparent",
                 boxShadow: "0px 4px 30px 0px rgba(212, 183, 84, 0.50)",
               }}
             >
-              <p className="text-lg font-medium">{data.title}</p>
+              <p className="text-sm md:text-lg font-medium">{data.title}</p>
             </div>
           ))}
         </div>
@@ -88,7 +88,7 @@ const Alasan = () => {
               boxShadow: "0px 4px 30px 0px rgba(212, 183, 84, 0.50)",
             }}
           >
-            <p className="text-xl text-justify text-white">
+            <p className="text-sm md:text-lg lg:text-xl text-justify text-white">
               {
                 programList.find((item) => item.id === currentProgram)
                   .description

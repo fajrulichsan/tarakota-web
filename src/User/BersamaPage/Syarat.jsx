@@ -19,11 +19,11 @@ const syaratList = [
 const Syarat = () => {
   return (
     <Fragment>
-      <div className="px-32 py-20" style={{ background: "#404042" }}>
-        <h1 className="text-4xl text-center font-semibold text-white">
+      <div className="px-5 md:px-20 lg:px-32 py-5 md:py-10 lg:py-20" style={{ background: "#404042" }}>
+        <h1 className="text-lg md:text-2xl lg:text-4xl text-center font-semibold text-white">
           Persyaratan Menjadi Mitra Experience Center Tarakota
         </h1>
-        <hr className="w-60 my-4 mx-auto border-tera border-2 "></hr>
+        <hr className="w-20 md:w-28 lg:w-60 my-4 mx-auto border-tera border-2 "></hr>
         <div className="grid grid-cols-12 gap-10 mt-10">
           {syaratList.map((data) => (
             <div key={data.id} className="col-span-4">
@@ -35,7 +35,7 @@ const Syarat = () => {
                   background: "#F9F5EC",
                 }}
               >
-                <p className="text-xl font-semibold text-center text-tera">
+                <p className="text-sm md:text-lg lg:text-xl font-semibold text-center text-tera">
                   {data.title}
                 </p>
               </div>

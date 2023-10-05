@@ -6,8 +6,12 @@ export default {
   ],
   theme: {
     extend: {
+      dropShadow: {
+        'lg': '0 4px 3px #D4B754',
+      },
       colors:{
         tera : "#E85738",
+        gold : "#D4B754"
       }
     },
   },

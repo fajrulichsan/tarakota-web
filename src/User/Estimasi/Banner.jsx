@@ -4,15 +4,18 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css"
 
-import { facebook, twitter, youtube, instagram, bgBannerSlider } from "../../assets/img/index";
+import { facebook, twitter, youtube, instagram, bgBannerSlider, whatsapp, linekdin } from "../../assets/img/index";
 
 const Banner = () => {
   const socialMediaIcon = [
-    facebook,
+    whatsapp,
+    instagram,
     twitter,
     youtube,
-    instagram,
+    facebook,
+    linekdin,
   ];
+
   const [currentSlide, setCurrentSlide] = React.useState(0);
 
   const settings = {
@@ -56,7 +59,7 @@ const Banner = () => {
       <Slider {...settings}>
         <div className="hover:cursor-pointer">
           <div
-            className="h-[40em] relative"
+            className="h-[40em] relative bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: `url(${bgBannerSlider})`,
             }}
@@ -69,24 +72,24 @@ const Banner = () => {
               }}
             >
               <div
-                className="h-full px-40 flex flex-col items-center justify-center"
+                className="h-full px-5 md:px-40 flex flex-col items-center justify-center"
                 style={{ zIndex: 1 }}
               >
-                <h1 className="text-6xl font-bold text-center text-white tracking-widest" style={{textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}>
-                PT. Wook Global Technology
+                <h1 className="text-4xl md:text-6xl font-bold text-left text-white tracking-widest" style={{textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}>
+                Bingung memperkirakan anggaran keuanganmu?
                 </h1>
-                <p className="text-4xl text-white tracking-widest" style={{textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}>Architecture Commercia</p>
+              </div>
+              <div className="absolute flex space-x-2 md:space-x-3 p-2 md:p-4 md:px-10 rounded-l-full bottom-12 md:bottom-20 right-0 bg-gray-50">
+                {socialMediaIcon.map((icon, index) => (
+                  <img
+                    key={index}
+                    src={icon}
+                    alt={`Social Media Icon ${index}`}
+                    className="w-5 md:w-6"
+                  />
+                ))}
               </div>
             </div>
-            {/* <div className="w-full absolute -bottom-10 px-40">
-              <div className="p-5 rounded-3xl" style={{
-                zIndex : 10,
-                border: '5px solid #F8F3ED',
-                background: '#F9F5EC',
-                boxShadow: '2px 11px 30px 0px #D4B754'}}>
-                <p className="text-5xl text-center font-bold tracking-widest" style={{color: "#E85738"}}>Hitung Perkiraan Biaya Anda!</p>
-              </div>
-            </div> */}
           </div>
         </div>
 

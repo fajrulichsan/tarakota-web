@@ -56,7 +56,7 @@ const Banner = () => {
       <Slider {...settings}>
         <div className="hover:cursor-pointer">
           <div
-            className="h-[40em] relative"
+            className="h-[40em] md:h-[30em] lg:h-[40em] relative bg-center bg-cover bg-no-repeat"
             style={{
               backgroundImage: `url(${bgBannerSlider})`,
             }}
@@ -68,25 +68,24 @@ const Banner = () => {
                   "linear-gradient(40.4deg, #E85738 -4.92%, rgba(0, 0, 0, 0) 60.56%)",
               }}
             >
-              <div
-                className="h-full px-40 flex flex-col items-center justify-center"
-                style={{ zIndex: 1 }}
-              >
-                <h1 className="text-6xl font-bold text-center text-white tracking-widest" style={{textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}>
-                PT. Wook Global Technology
-                </h1>
-                <p className="text-4xl text-white tracking-widest" style={{textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}>Architecture Commercia</p>
-              </div>
             </div>
-            {/* <div className="w-full absolute -bottom-10 px-40">
-              <div className="p-5 rounded-3xl" style={{
-                zIndex : 10,
-                border: '5px solid #F8F3ED',
-                background: '#F9F5EC',
-                boxShadow: '2px 11px 30px 0px #D4B754'}}>
-                <p className="text-5xl text-center font-bold tracking-widest" style={{color: "#E85738"}}>Hitung Perkiraan Biaya Anda!</p>
-              </div>
-            </div> */}
+            <div className="absolute flex md:justify-end justify-center w-full bottom-0 md:bottom-16 lg:bottom-20">
+                <div className="w-fit flex space-x-4 p-1.5 px-8 lg:p-3 lg:px-8 rounded-t-3xl md:rounded-l-full"
+                style={{
+                  // borderRadius: '30px 30px 0px 0px',
+                  background: '#F9F5EC'
+                }}
+                >
+                {socialMediaIcon.map((icon, index) => (
+                  <img
+                    key={index}
+                    src={icon}
+                    alt={`Social Media Icon ${index}`}
+                    className="w-6"
+                  />
+                ))}
+                </div>
+            </div>
           </div>
         </div>
 

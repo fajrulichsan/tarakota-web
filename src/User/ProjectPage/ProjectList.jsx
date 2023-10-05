@@ -253,7 +253,7 @@ const ProjectList = () => {
     </div>
   )}
         </div>
-        <div className="grid grid-cols-3 gap-4 mt-5">
+        <div className="grid grid-cols-3 grid-rows-3 gap-4 mt-5">
           {visibleProjects.map((project) => (
             <div key={project.id} className="relative rounded-2xl">
               <img

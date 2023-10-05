@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark, faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 
 const formInput = [
   {
@@ -198,45 +200,58 @@ const FormEstimasi = () => {
   };
 
   return (
-    <div className="h-auto -mt-2 px-20">
+    <div className="h-auto -mt-2 px-5 md:px-20 my-8 md:my-20">
       <div
-        className="rounded-2xl p-20"
+        className=" p-3 md:p-6 my-5 md:my-10 rounded-md md:rounded-3xl drop-shadow-lg"
         style={{
           background: "#F9F5EC",
-          boxShadow: "7px 11px 30px 0px #D4B754",
+        }}
+      >
+        <p className="text-md md:text-4xl font-bold text-center tracking-wider">
+          Yuk, hitung estimasi biaya mu, sekarang!
+        </p>
+      </div>
+      <div
+        className="rounded-lg md:rounded-2xl p-6 md:p-20 shadow-lg shadow-gold"
+        style={{
+          background: "#F9F5EC",
         }}
       >
         <div
-          className="text-xl border-l-4 border-orange-600 rounded-r-full"
-          style={{ background: "rgba(212, 183, 84, 0.40)" }}
+          className="text-sm md:text-xl border-l-4 px-4 rounded-r-full"
+          style={{
+            background: "rgba(212, 183, 84, 0.40)",
+            borderLeft: "10px solid #D4B754",
+          }}
         >
-          <p>*Catatan</p>
-          <p>
+          <p className="text-md md:text-2xl">*Catatan</p>
+          <p className="text-md md:text-2xl">
             Kolom dengan tanda <span className="text-red-600">*</span>
+            <span className="text-red-600">wajib diisi</span>
           </p>
         </div>
-        <div className="space-y-5 py-10">
+        <div className="space-y-3 md:space-y-5 py-4 md:py-10">
           {formInput.map((data) => (
             <div key={data.id}>
-              <p>
+              <p className="text-sm md:text-xl">
                 {data.title} <span className="text-red-600">*</span>
               </p>
               <input
                 name={data.name}
-                className="w-full rounded-full h-10 border-2 border-gray-600 px-5 bg-transparent"
+                className="w-full text-sm md:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-5 bg-transparent"
                 placeholder={data.placeholder}
               ></input>
             </div>
           ))}
 
           {/* dropdown alamat */}
-          <div className="flex gap-10">
-            <div className="w-1/3">
-              <p>
+          <div className="grid grid-cols-2 gap-x-2 gap-y-3 md:gap-x-10 md:gap-y-5">
+            <div className="col-span-1">
+              <p className="text-sm md:text-xl">
                 Provinsi <span className="text-red-600">*</span>
               </p>
               <select
-                className="w-full rounded-full h-10 border-2 px-5 border-gray-600 bg-transparent"
+                className="w-full text-xs md:text-xl rounded-full h-8 md:h-10 border-2 px-2 md:px-5 border-gray-600 bg-transparent"
                 value={selectedProvince}
                 onChange={handleProvinceChange}
               >
@@ -250,12 +265,12 @@ const FormEstimasi = () => {
                 ))}
               </select>
             </div>
-            <div className="w-1/3">
-              <p>
+            <div className="col-span-1">
+              <p className="text-sm md:text-xl">
                 Kota/Kabupaten <span className="text-red-600">*</span>
               </p>
               <select
-                className="w-full rounded-full h-10 border-2 border-gray-600 px-5 bg-transparent"
+                className="w-full text-xs md:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
                 value={selectedCity}
                 onChange={handleCityChange}
               >
@@ -269,12 +284,12 @@ const FormEstimasi = () => {
                 ))}
               </select>
             </div>
-            <div className="w-1/3">
-              <p>
+            <div className="col-span-1">
+              <p className="text-sm md:text-xl">
                 Kecamatan <span className="text-red-600">*</span>
               </p>
               <select
-                className="w-full rounded-full h-10 border-2 border-gray-600 px-5 bg-transparent"
+                className="w-full text-xs md:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
                 value={selectedDistrict}
                 onChange={(e) => setSelectedDistrict(e.target.value)}
               >
@@ -288,121 +303,148 @@ const FormEstimasi = () => {
                 ))}
               </select>
             </div>
+            <div className="col-span-1">
+              <p className="text-sm md:text-xl">
+                Kode Pos <span className="text-red-600">*</span>
+              </p>
+              <select
+                className="w-full text-xs md:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
+                value={selectedDistrict}
+                onChange={(e) => setSelectedDistrict(e.target.value)}
+              >
+                <option value="" disabled>
+                  Pilih Kode Pos
+                </option>
+                {districts.map((district) => (
+                  <option key={district.id} value={district.id}>
+                    {district.name}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
 
           {/* form kebutuhan project */}
           <div>
-            <p>List Proyek</p>
-            {/* container add request */}
-
+            <p className="text-sm md:text-xl">List Proyek</p>
             {projectForms.map((form, index) => (
               <div
                 key={form.id}
-                className="form-input rounded-2xl p-10 space-y-3 my-7"
+                className="form-input relative rounded-lg md:rounded-2xl p-2 md:p-5 space-y-3 drop-shadow-lg my-2 md:my-5"
                 style={{
                   background: "#F9F5EC",
-                  boxShadow: "7px 11px 30px 0px #D4B754",
                 }}
               >
-                <div className="text-right">
-                  <button
-                    className="text-red-600 hover:text-red-700"
-                    onClick={() => handleRemoveProjectForm(index)}
-                  >
-                    Hapus
-                  </button>
-                </div>
-                <div className="form-input rounded-2xl p-10 space-y-3">
-                  <p>
+                {/* <div className="text-right"> */}
+                <button
+                  className="text-tera absolute top-0 md:top-3 right-3 md:right-5 text-4xl md:text-5xl hover:text-red-700"
+                  onClick={() => handleRemoveProjectForm(index)}
+                >
+                  {/* <FontAwesomeIcon icon={faXmark} size="2xs" style={{color: "#D4B754",}} /> */}
+                  &times;
+                </button>
+                {/* </div> */}
+                <div className="form-input rounded-2xl p-4 space-y-2 md:space-y-3">
+                  <p className="text-sm md:text-xl">
                     {index + 1}. Jenis Kebutuhan{" "}
                     <span className="text-red-600">*</span>
                   </p>
                   {/* ... (checkboxes) */}
-                  <div className="flex space-x-16">
-                    {typeProject.map((data) => (
-                      <div
-                        key={data.id}
-                        className="flex items-center hover:cursor-pointer gap-3"
-                      >
-                        <input id={data.htmlFor} type="checkbox"></input>
-                        <label
-                          className="hover:cursor-pointer"
-                          htmlFor={data.htmlFor}
-                        >
-                          {data.title}
-                        </label>
-                      </div>
-                    ))}
+                  <div className="grid grid-cols-3">
+                    <div className="col-span-3 md:col-span-2 grid grid-cols-3 md:grid-cols-5">
+                      {/* <div className="flex space-x-2 md:space-x-16"> */}
+                        {typeProject.map((data) => (
+                          <div
+                            key={data.id}
+                            className="col-span-1 flex items-center hover:cursor-pointer gap-3"
+                          >
+                            <input id={data.htmlFor} type="checkbox"></input>
+                            <label
+                              className="hover:cursor-pointer text-sm md:text-xl"
+                              htmlFor={data.htmlFor}
+                            >
+                              {data.title}
+                            </label>
+                          </div>
+                        ))}
+                      {/* </div> */}
+                    </div>
                   </div>
-                  <p>
+
+                  <p className="text-sm md:text-xl">
                     Ruangan Kebutuhan <span className="text-red-600">*</span>
                   </p>
                   <input
-                    className="w-full rounded-full h-10 border-2 border-gray-600 px-5 bg-transparent"
+                    className="w-full text-sm md:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
                     placeholder="Contoh : Ruang Tamu"
                   ></input>
-                  <p>
+                  <p className="text-sm md:text-xl">
                     Ukuran Proyek <span className="text-red-600">*</span>
                   </p>
-                  <div className="flex justify-evenly">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-3">
                     {/* ... (input panjang, lebar, dan luas) */}
-                    <div>
-                      <p>
-                        panjang <span className="text-red-600">*</span>
+                    <div className="col-span-1 mx-auto">
+                      <p className="text-sm md:text-xl mb-1">
+                        Panjang <span className="text-red-600">*</span>
                       </p>
                       <input
                         type="number"
-                        className="w-28 rounded-full h-8 border-2 border-gray-600 px-5 bg-transparent"
-                        placeholder="contoh : 4"
+                        className="w-28 md:w-32 text-sm md:text-lg rounded-full h-8 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
+                        placeholder="Contoh : 4"
                         value={form.length}
                         onChange={(e) => handleLengthChange(e, index)}
                       ></input>
-                      <span className="ml-2">Meter</span>
+                      {/* <span className="ml-2 text-sm md:text-lg">Meter</span> */}
                     </div>
-                    <div>
-                      <p>
+                    <div className="col-span-1 mx-auto">
+                      <p className="text-sm md:text-xl mb-1">
                         Lebar <span className="text-red-600">*</span>
                       </p>
                       <input
                         type="number"
-                        className="w-28 rounded-full h-8 border-2 border-gray-600 px-5 bg-transparent"
-                        placeholder="contoh : 4"
+                        className="w-28 md:w-32 text-sm md:text-lg rounded-full h-8 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
+                        placeholder="Contoh : 4"
                         value={form.width}
                         onChange={(e) => handleWidthChange(e, index)}
                       ></input>
-                      <span className="ml-2">Meter</span>
+                      {/* <span className="ml-2 text-sm md:text-lg">Meter</span> */}
                     </div>
-                    <div>
-                      <p>
+                    <div className="col-span-2 md:col-span-1 mx-auto">
+                      <p className="text-sm md:text-xl">
                         Luas <span className="text-red-600">*</span>
                       </p>
-                      <div className="w-40 text-white bg-red-600 rounded-full py-1.5 px-8">
+                      <div className="w-32 md:w-40 text-sm md:text-lg text-white bg-tera rounded-full py-1 text-center">
                         {projectFormsCountArea[index].length *
                           projectFormsCountArea[index].width}{" "}
                         meter persegi
                       </div>
                     </div>
-                    {/* <button onClick={() => handleRemoveProjectForm(index)}>Hapus</button> */}
                   </div>
                 </div>
               </div>
             ))}
 
             {/* add new project  */}
-            <div className="">
-              <button onClick={handleAddProjectForm} className="text-end mt-10">
-                Tambahkan Proyek
-              </button>
+            <div className="flex flex-col">
+              <div className="flex justify-end">
+                <button
+                  onClick={handleAddProjectForm}
+                  className="text-center text-sm md:text-lg bg-tera py-1 px-5 rounded-full text-white mt-5 md:mt-10"
+                >
+                  Tambahkan Proyek
+                </button>
+              </div>
+
               <div>
-                <p>Info Tambahan</p>
+                <p className="text-sm md:text-xl">Info Tambahan</p>
                 <input
-                  className="w-full rounded-full h-10 border-2 border-gray-600 px-5 bg-transparent"
+                  className="w-full text-sm md:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-5 bg-transparent"
                   placeholder="Alamat Proyek"
                 ></input>
               </div>
               <div className="flex justify-end mt-5">
                 <button
-                  className="w-52 py-1.5 right-0 place-items-end text-white rounded-full"
+                  className="w-40 md:w-52 text-sm md:text-lg py-1.5 right-0 place-items-end text-white rounded-full"
                   style={{ background: "#E85738" }}
                 >
                   Kirimkan Hitung Perkiraan
