@@ -15,6 +15,7 @@ const LandingPage = () => {
       <div className="mx-auto">
       <Navbar/>
       <SliderBanner/>
+      <ProjectSlider/>
       <ProfileVideo/>
       <Service/>
       <Reason/>

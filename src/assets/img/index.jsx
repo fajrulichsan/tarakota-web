@@ -3,6 +3,9 @@
 // feat : slider banner
 export {default as bgBannerSlider} from './bg-banner-slider.svg';
 
+// feat : slider project
+export {default as bgProjectSlider} from './bg-project-slider.svg';
+
 //feat : video profile
 export {default as buttonPlayVideo} from './icon/button-play-video.svg';
 export {default as videoProfileImage} from './video-profile-image.svg';

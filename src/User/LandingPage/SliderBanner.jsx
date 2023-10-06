@@ -80,7 +80,7 @@ const SliderBanner = () => {
 
   return (
     <div>
-      <Slider {...settings}>
+      <Slider {...settings} arrows={false}>
         {bannerContentList.map((data) => (
           <div key={data.id} className="hover:cursor-pointer">
             <div
