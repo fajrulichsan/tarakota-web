@@ -2,9 +2,34 @@ import React from "react";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css"
+import "slick-carousel/slick/slick-theme.css";
+import {
+  facebook,
+  twitter,
+  youtube,
+  instagram,
+  bgBannerSlider,
+  linekdin,
+  whatsapp,
+} from "../../assets/img/index";
 
-import { facebook, twitter, youtube, instagram, bgBannerSlider, linekdin, whatsapp } from "../../assets/img/index";
+const bannerContentList = [
+  {
+    id: 1,
+    title: "Pelayanan Konsultasi Desain Modern dan Klasik Terbaik.",
+    bgImage: bgBannerSlider,
+  },
+  {
+    id: 2,
+    title: "Hadir dengan Berbagai Program Bisnis yang Menjanjikan!",
+    bgImage: bgBannerSlider,
+  },
+  {
+    id: 3,
+    title: "Terpecaya Melayani Custumer dengan Sangat Baik.!",
+    bgImage: bgBannerSlider,
+  },
+];
 
 const SliderBanner = () => {
   const socialMediaIcon = [
@@ -56,67 +81,52 @@ const SliderBanner = () => {
   return (
     <div>
       <Slider {...settings}>
-        <div className="hover:cursor-pointer">
-          <div
-            className="h-[40em] relative bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url(${bgBannerSlider})`,
-            }}
-          >
+        {bannerContentList.map((data) => (
+          <div key={data.id} className="hover:cursor-pointer">
             <div
-              className="absolute inset-0"
+              className="h-[40em] relative bg-cover bg-center bg-no-repeat"
               style={{
-                background:
-                  "linear-gradient(40.4deg, #E85738 -4.92%, rgba(0, 0, 0, 0) 60.56%)",
+                backgroundImage: `url(${data.bgImage})`,
               }}
             >
               <div
-                className="h-full md:w-2/3 px-5 md:px-40 space-y-20 flex flex-col justify-center items-center"
-                style={{ zIndex: 1 }}
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(40.4deg, #E85738 -4.92%, rgba(0, 0, 0, 0) 60.56%)",
+                }}
               >
-                <div className="w-full text-left">
-                <p className="text-sm text-white font-medium">Arsitektur Komersial</p>
-                <p className="text-sm text-white font-medium">Arsitektur Residensial</p>
-                </div>
-                
-                <h1 className="text-4xl font-bold md:text-6xl text-white tracking-wide">
-                  The Best Modern Classic Interior Design Consultant
-                </h1>
-              </div>
-              <div className="absolute flex space-x-2 md:space-x-3 p-2 md:p-4 md:px-10 rounded-l-full bottom-16 md:bottom-20 right-0 bg-gray-50">
-                {socialMediaIcon.map((icon, index) => (
-                  <img
-                    key={index}
-                    src={icon}
-                    alt={`Social Media Icon ${index}`}
-                    className="w-5 md:w-6"
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+                <div
+                  className="h-full md:w-10/12 lg:w-2/3 px-5 md:px-20 lg:px-32 space-y-10 md:space-y-16 lg:space-y-20 flex flex-col justify-center items-center"
+                  style={{ zIndex: 1 }}
+                >
+                  <div className="w-full flex space-x-6 text-left">
+                    <p className="text-md md:text-2xl text-white font-medium">
+                      Arsitektur Komersial
+                    </p>
+                    <p className="text-md md:text-2xl text-white font-medium">
+                      Arsitektur Residensial
+                    </p>
+                  </div>
 
-        {/* image slider 2 */}
-        <div className="hover:cursor-pointer">
-          <div
-            className="h-[40em] relative"
-            style={{
-              backgroundImage: `url(${bgBannerSlider})`,
-            }}
-          >
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(40.4deg, #E85738 -4.92%, rgba(0, 0, 0, 0) 60.56%)",
-              }}
-            ></div>
-            <div className="h-full flex items-center justify-center">
-              {/* Konten slide di sini */}
+                  <h1 className="text-4xl md:text-5xl font-bold lg:text-6xl text-white tracking-wide">
+                   {data.title}
+                  </h1>
+                </div>
+                <div className="absolute flex space-x-2 md:space-x-3 p-2 md:p-3 lg:p-4 md:px-6 lg:px-10 rounded-l-full bottom-16 md:bottom-20 right-0 bg-gray-50">
+                  {socialMediaIcon.map((icon, index) => (
+                    <img
+                      key={index}
+                      src={icon}
+                      alt={`Social Media Icon ${index}`}
+                      className="w-5 md:w-6"
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        ))}
       </Slider>
     </div>
   );

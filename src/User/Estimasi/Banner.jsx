@@ -72,10 +72,10 @@ const Banner = () => {
               }}
             >
               <div
-                className="h-full px-5 md:px-40 flex flex-col items-center justify-center"
+                className="h-full px-5 md:px-20 lg:px-32 flex flex-col items-center justify-center"
                 style={{ zIndex: 1 }}
               >
-                <h1 className="text-4xl md:text-6xl font-bold text-left text-white tracking-widest" style={{textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-left text-white tracking-widest" style={{textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}>
                 Bingung memperkirakan anggaran keuanganmu?
                 </h1>
               </div>

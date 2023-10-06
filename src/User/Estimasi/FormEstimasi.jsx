@@ -200,45 +200,45 @@ const FormEstimasi = () => {
   };
 
   return (
-    <div className="h-auto -mt-2 px-5 md:px-20 my-8 md:my-20">
+    <div className="h-auto -mt-2 px-5 md:px-20 my-8 md:my-10 lg:my-20">
       <div
-        className=" p-3 md:p-6 my-5 md:my-10 rounded-md md:rounded-3xl drop-shadow-lg"
+        className=" p-3 md:p-6 my-5 md:my-10 rounded-md md:rounded-2xl lg:rounded-3xl drop-shadow-lg"
         style={{
           background: "#F9F5EC",
         }}
       >
-        <p className="text-md md:text-4xl font-bold text-center tracking-wider">
+        <p className="text-md md:text-3xl lg:text-4xl font-bold text-center tracking-wider">
           Yuk, hitung estimasi biaya mu, sekarang!
         </p>
       </div>
       <div
-        className="rounded-lg md:rounded-2xl p-6 md:p-20 shadow-lg shadow-gold"
+        className="rounded-lg md:rounded-2xl p-6 md:p-12 lg:p-20 shadow-lg shadow-gold"
         style={{
           background: "#F9F5EC",
         }}
       >
         <div
-          className="text-sm md:text-xl border-l-4 px-4 rounded-r-full"
+          className="text-sm md:text-lg lg:text-xl border-l-4 px-4 rounded-r-full"
           style={{
             background: "rgba(212, 183, 84, 0.40)",
             borderLeft: "10px solid #D4B754",
           }}
         >
-          <p className="text-md md:text-2xl">*Catatan</p>
-          <p className="text-md md:text-2xl">
+          <p className="text-sm md:text-lg lg:text-xl">*Catatan</p>
+          <p className="text-sm md:text-lg lg:text-xl">
             Kolom dengan tanda <span className="text-red-600">*</span>
             <span className="text-red-600">wajib diisi</span>
           </p>
         </div>
-        <div className="space-y-3 md:space-y-5 py-4 md:py-10">
+        <div className="space-y-3 md:space-y-5 py-4 md:py-5 lg:py-10">
           {formInput.map((data) => (
             <div key={data.id}>
-              <p className="text-sm md:text-xl">
+              <p className="text-sm md:text-lg lg:text-xl">
                 {data.title} <span className="text-red-600">*</span>
               </p>
               <input
                 name={data.name}
-                className="w-full text-sm md:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-5 bg-transparent"
+                className="w-full text-sm md:text-lg lg:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-5 bg-transparent"
                 placeholder={data.placeholder}
               ></input>
             </div>
@@ -247,7 +247,7 @@ const FormEstimasi = () => {
           {/* dropdown alamat */}
           <div className="grid grid-cols-2 gap-x-2 gap-y-3 md:gap-x-10 md:gap-y-5">
             <div className="col-span-1">
-              <p className="text-sm md:text-xl">
+              <p className="text-sm md:text-lg lg:text-xl">
                 Provinsi <span className="text-red-600">*</span>
               </p>
               <select
@@ -266,7 +266,7 @@ const FormEstimasi = () => {
               </select>
             </div>
             <div className="col-span-1">
-              <p className="text-sm md:text-xl">
+              <p className="text-sm md:text-lg lg:text-xl">
                 Kota/Kabupaten <span className="text-red-600">*</span>
               </p>
               <select
@@ -285,7 +285,7 @@ const FormEstimasi = () => {
               </select>
             </div>
             <div className="col-span-1">
-              <p className="text-sm md:text-xl">
+              <p className="text-sm md:text-lg lg:text-xl">
                 Kecamatan <span className="text-red-600">*</span>
               </p>
               <select
@@ -304,7 +304,7 @@ const FormEstimasi = () => {
               </select>
             </div>
             <div className="col-span-1">
-              <p className="text-sm md:text-xl">
+              <p className="text-sm md:text-lg lg:text-xl">
                 Kode Pos <span className="text-red-600">*</span>
               </p>
               <select
@@ -326,7 +326,7 @@ const FormEstimasi = () => {
 
           {/* form kebutuhan project */}
           <div>
-            <p className="text-sm md:text-xl">List Proyek</p>
+            <p className="text-sm md:text-lg lg:text-xl">List Proyek</p>
             {projectForms.map((form, index) => (
               <div
                 key={form.id}
@@ -340,27 +340,26 @@ const FormEstimasi = () => {
                   className="text-tera absolute top-0 md:top-3 right-3 md:right-5 text-4xl md:text-5xl hover:text-red-700"
                   onClick={() => handleRemoveProjectForm(index)}
                 >
-                  {/* <FontAwesomeIcon icon={faXmark} size="2xs" style={{color: "#D4B754",}} /> */}
                   &times;
                 </button>
                 {/* </div> */}
                 <div className="form-input rounded-2xl p-4 space-y-2 md:space-y-3">
-                  <p className="text-sm md:text-xl">
+                  <p className="text-sm md:text-lg lg:text-xl">
                     {index + 1}. Jenis Kebutuhan{" "}
                     <span className="text-red-600">*</span>
                   </p>
                   {/* ... (checkboxes) */}
                   <div className="grid grid-cols-3">
-                    <div className="col-span-3 md:col-span-2 grid grid-cols-3 md:grid-cols-5">
+                    <div className="col-span-3 md:col-span-3 lg:col-span-2 grid grid-cols-3 md:grid-cols-5">
                       {/* <div className="flex space-x-2 md:space-x-16"> */}
                         {typeProject.map((data) => (
                           <div
                             key={data.id}
-                            className="col-span-1 flex items-center hover:cursor-pointer gap-3"
+                            className="col-span-1 flex items-center hover:cursor-pointer gap-1 md:gap-3"
                           >
                             <input id={data.htmlFor} type="checkbox"></input>
                             <label
-                              className="hover:cursor-pointer text-sm md:text-xl"
+                              className="hover:cursor-pointer text-sm md:text-lg lg:text-xl"
                               htmlFor={data.htmlFor}
                             >
                               {data.title}
@@ -371,20 +370,20 @@ const FormEstimasi = () => {
                     </div>
                   </div>
 
-                  <p className="text-sm md:text-xl">
+                  <p className="text-sm md:text-lg lg:text-xl">
                     Ruangan Kebutuhan <span className="text-red-600">*</span>
                   </p>
                   <input
-                    className="w-full text-sm md:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
+                    className="w-full text-sm md:text-lg lg:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
                     placeholder="Contoh : Ruang Tamu"
                   ></input>
-                  <p className="text-sm md:text-xl">
+                  <p className="text-sm md:text-lg lg:text-xl">
                     Ukuran Proyek <span className="text-red-600">*</span>
                   </p>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-3">
                     {/* ... (input panjang, lebar, dan luas) */}
                     <div className="col-span-1 mx-auto">
-                      <p className="text-sm md:text-xl mb-1">
+                      <p className="text-sm md:text-lg lg:text-xl mb-1">
                         Panjang <span className="text-red-600">*</span>
                       </p>
                       <input
@@ -397,7 +396,7 @@ const FormEstimasi = () => {
                       {/* <span className="ml-2 text-sm md:text-lg">Meter</span> */}
                     </div>
                     <div className="col-span-1 mx-auto">
-                      <p className="text-sm md:text-xl mb-1">
+                      <p className="text-sm md:text-lg lg:text-xl mb-1">
                         Lebar <span className="text-red-600">*</span>
                       </p>
                       <input
@@ -410,7 +409,7 @@ const FormEstimasi = () => {
                       {/* <span className="ml-2 text-sm md:text-lg">Meter</span> */}
                     </div>
                     <div className="col-span-2 md:col-span-1 mx-auto">
-                      <p className="text-sm md:text-xl">
+                      <p className="text-sm md:text-lg lg:text-xl">
                         Luas <span className="text-red-600">*</span>
                       </p>
                       <div className="w-32 md:w-40 text-sm md:text-lg text-white bg-tera rounded-full py-1 text-center">
@@ -429,16 +428,16 @@ const FormEstimasi = () => {
               <div className="flex justify-end">
                 <button
                   onClick={handleAddProjectForm}
-                  className="text-center text-sm md:text-lg bg-tera py-1 px-5 rounded-full text-white mt-5 md:mt-10"
+                  className="text-center text-sm md:text-lg bg-tera py-1 px-5 rounded-full text-white mt-5 md:mt-6 lg:mt-10"
                 >
                   Tambahkan Proyek
                 </button>
               </div>
 
               <div>
-                <p className="text-sm md:text-xl">Info Tambahan</p>
+                <p className="text-sm md:text-lg lg:text-xl">Info Tambahan</p>
                 <input
-                  className="w-full text-sm md:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-5 bg-transparent"
+                  className="w-full text-sm md:text-lg lg:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-5 bg-transparent"
                   placeholder="Alamat Proyek"
                 ></input>
               </div>
