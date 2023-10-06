@@ -13,6 +13,7 @@ import BangunPage from "../User/pages/BangunPage";
 import BisnisPage from "../User/pages/BisnisPage";
 import BagiBagiPage from "../User/pages/BagiBagiPage";
 import BersamaPage from "../User/pages/BersamaPage";
+import DigitaPage from "../User/pages/DigitaPage";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
     {
         path: "/bersama-tarakota",
         element: <BersamaPage/>
+    },
+    {
+        path: "/digita",
+        element: <DigitaPage/>
     }
 ]);
 
