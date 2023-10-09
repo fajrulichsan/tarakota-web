@@ -5,8 +5,8 @@ const Banner = () => {
   return (
     <div className="px-5 pt-24 pb-7 md:py-20 md:px-20">
       <div
-        className="rounded-xl grid grid-cols-1 lg:grid-cols-2 lg:grid-flow-row p-7 md:p-16"
-        style={{ boxShadow: "7px 11px 30px 0px #D4B754" }}
+        className="rounded-xl grid grid-cols-1 lg:grid-cols-2 lg:grid-flow-row p-7 md:p-16 shadow-md md:shadow-lg md:shadow-gold shadow-gold"
+        // style={{ boxShadow: "7px 11px 30px 0px #D4B754" }}
       >
         <div className="col-span-1">
           <div>

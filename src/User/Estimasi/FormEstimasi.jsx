@@ -152,17 +152,6 @@ const FormEstimasi = () => {
     }
   };
 
-  // const fetchWard = async (selectedWard) => {
-  //   try {
-  //     const response = await fetch(
-  //       `https://www.emsifa.com/api-wilayah-indonesia/api/villages/${selectedWard}.json`
-  //     );
-  //     const data = await response.json();
-  //     setWard(data);
-  //   } catch (error) {
-  //     console.error("Error fetching districts:", error);
-  //   }
-  // };
 
   const fetchWards = async (selectedDistrict) => {
     try {
@@ -203,13 +192,6 @@ const FormEstimasi = () => {
     // Mengambil data Kelurahan berdasarkan Kecamatan yang dipilih
     fetchWards(selectedDistrict);
   };
-
-  // const handleDistrictChange = (e) => {
-  //   const selectedDistrict = e.target.value;
-  //   setSelectedDistrict(selectedDistrict);
-  //   // Mengambil data Kecamatan berdasarkan Kota/Kabupaten yang dipilih
-  //   fetchWard(selectedDistrict);
-  // };
 
   // Event handler untuk menambahkan form-input baru
   const handleAddProjectForm = () => {

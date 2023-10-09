@@ -24,10 +24,9 @@ const formInput = [
 const Form = () => {
   return (
     <div
-      className="mx-5 md:mx-20 lg:mx-32 rounded-2xl mb-10 md:mb-20"
+      className="mx-5  md:mx-20 lg:mx-32 rounded-2xl mb-10 md:mb-20 shadow-md md:shadow-lg md:shadow-gold shadow-gold"
       style={{
         background: "#F9F5EC",
-        boxShadow: "7px 11px 30px 0px #D4B754",
       }}
     >
       <div className="space-y-3 md:space-y-5 p-8 md:p-16 lg:px-20 ">
