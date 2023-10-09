@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark, faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 
 const formInput = [
   {
@@ -65,6 +63,8 @@ const FormEstimasi = () => {
   const [selectedCity, setSelectedCity] = useState("");
   const [districts, setDistricts] = useState([]);
   const [selectedDistrict, setSelectedDistrict] = useState("");
+  const [wards, setWards] = useState([]);
+  const [selectedWard, setSelectedWard] = useState("");
 
   // State untuk melacak form-input yang ditambahkan
   const [projectForms, setProjectForms] = useState([{ id: 1 }]);
@@ -152,6 +152,30 @@ const FormEstimasi = () => {
     }
   };
 
+  // const fetchWard = async (selectedWard) => {
+  //   try {
+  //     const response = await fetch(
+  //       `https://www.emsifa.com/api-wilayah-indonesia/api/villages/${selectedWard}.json`
+  //     );
+  //     const data = await response.json();
+  //     setWard(data);
+  //   } catch (error) {
+  //     console.error("Error fetching districts:", error);
+  //   }
+  // };
+
+  const fetchWards = async (selectedDistrict) => {
+    try {
+      const response = await fetch(
+        `https://www.emsifa.com/api-wilayah-indonesia/api/villages/${selectedDistrict}.json`
+      );
+      const data = await response.json();
+      setWards(data);
+    } catch (error) {
+      console.error("Error fetching wards:", error);
+    }
+  };
+
   // Mengambil data Provinsi saat komponen dimuat
   useEffect(() => {
     fetchProvinces();
@@ -172,6 +196,20 @@ const FormEstimasi = () => {
     // Mengambil data Kecamatan berdasarkan Kota/Kabupaten yang dipilih
     fetchDistricts(selectedCity);
   };
+
+  const handleDistrictChange = (e) => {
+    const selectedDistrict = e.target.value;
+    setSelectedDistrict(selectedDistrict);
+    // Mengambil data Kelurahan berdasarkan Kecamatan yang dipilih
+    fetchWards(selectedDistrict);
+  };
+
+  // const handleDistrictChange = (e) => {
+  //   const selectedDistrict = e.target.value;
+  //   setSelectedDistrict(selectedDistrict);
+  //   // Mengambil data Kecamatan berdasarkan Kota/Kabupaten yang dipilih
+  //   fetchWard(selectedDistrict);
+  // };
 
   // Event handler untuk menambahkan form-input baru
   const handleAddProjectForm = () => {
@@ -291,7 +329,8 @@ const FormEstimasi = () => {
               <select
                 className="w-full text-xs md:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
                 value={selectedDistrict}
-                onChange={(e) => setSelectedDistrict(e.target.value)}
+                // onChange={(e) => setSelectedDistrict(e.target.value)}
+                onChange={handleDistrictChange}
               >
                 <option value="" disabled>
                   Pilih Kecamatan
@@ -305,19 +344,19 @@ const FormEstimasi = () => {
             </div>
             <div className="col-span-1">
               <p className="text-sm md:text-lg lg:text-xl">
-                Kode Pos <span className="text-red-600">*</span>
+                Kelurahan <span className="text-red-600">*</span>
               </p>
               <select
-                className="w-full text-xs md:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
-                value={selectedDistrict}
-                onChange={(e) => setSelectedDistrict(e.target.value)}
+                className="w-full text-xs md:text-xl rounded-full h-8 md:h-10 border-2 px-2 md:px-5 border-gray-600 bg-transparent"
+                value={selectedWard}
+                onChange={(e) => setSelectedWard(e.target.value)}
               >
                 <option value="" disabled>
-                  Pilih Kode Pos
+                  Pilih Kelurahan
                 </option>
-                {districts.map((district) => (
-                  <option key={district.id} value={district.id}>
-                    {district.name}
+                {wards.map((ward) => (
+                  <option key={ward.id} value={ward.id}>
+                    {ward.name}
                   </option>
                 ))}
               </select>
@@ -352,20 +391,20 @@ const FormEstimasi = () => {
                   <div className="grid grid-cols-3">
                     <div className="col-span-3 md:col-span-3 lg:col-span-2 grid grid-cols-3 md:grid-cols-5">
                       {/* <div className="flex space-x-2 md:space-x-16"> */}
-                        {typeProject.map((data) => (
-                          <div
-                            key={data.id}
-                            className="col-span-1 flex items-center hover:cursor-pointer gap-1 md:gap-3"
+                      {typeProject.map((data) => (
+                        <div
+                          key={data.id}
+                          className="col-span-1 flex items-center hover:cursor-pointer gap-1 md:gap-3"
+                        >
+                          <input id={data.htmlFor} type="checkbox"></input>
+                          <label
+                            className="hover:cursor-pointer text-sm md:text-lg lg:text-xl"
+                            htmlFor={data.htmlFor}
                           >
-                            <input id={data.htmlFor} type="checkbox"></input>
-                            <label
-                              className="hover:cursor-pointer text-sm md:text-lg lg:text-xl"
-                              htmlFor={data.htmlFor}
-                            >
-                              {data.title}
-                            </label>
-                          </div>
-                        ))}
+                            {data.title}
+                          </label>
+                        </div>
+                      ))}
                       {/* </div> */}
                     </div>
                   </div>
