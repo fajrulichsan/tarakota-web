@@ -4,9 +4,9 @@ import Footer from '../../Component/Footer';
 import Navbar from '../../Component/Navbar';
 import Banner from '../AboutUsPage/Banner';
 import Lokasi from '../AboutUsPage/Lokasi';
+import OurClient from '../AboutUsPage/OurClient';
 import OurTeam from '../AboutUsPage/OurTeam';
 import VisiMisi from '../AboutUsPage/VisiMisi';
-import OurClient from '../LandingPage/OurClient';
 
 const AboutUs = () => {
   return (

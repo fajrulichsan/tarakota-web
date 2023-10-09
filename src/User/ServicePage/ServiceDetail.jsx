@@ -184,11 +184,7 @@ const ServiceDetail = () => {
                 {data.title}
               </h1>
               <div
-                className="rounded-xl p-4 md:p-6 md:mt-2 lg:p-8 lg:mt-5"
-                style={{
-                  boxShadow: `${isMobile ? "3px 3px 5px 1px #D4B754" : "4px 6px 20px 0px #D4B754"}`,
-                  background: "#F8F3ED",
-                }}
+                className="rounded-xl shadow-md shadow-gold p-4 md:p-6 md:mt-2 lg:p-8 lg:mt-5"
               >
                 <p className="text-xs md:text-lg lg:text-2xl text-justify">{data.body}</p>
               </div>

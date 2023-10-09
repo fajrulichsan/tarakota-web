@@ -35,10 +35,9 @@ const VisiMisi = () => {
       </div>
 
       <div
-        className="grid grid-cols-1 md:grid-cols-12 gap-2 p-5 md:p-8 text-white rounded-xl  md:rounded-2xl lg:rounded-3xl mt-10 md:mt-12 lg:mt-20"
+        className="grid grid-cols-1 shadow-md shadow-gold md:grid-cols-12 gap-2 p-5 md:p-8 text-white rounded-xl  md:rounded-2xl lg:rounded-3xl mt-10 md:mt-12 lg:mt-20"
         style={{
           background: "#E85738",
-          boxShadow: "7px 11px 30px 0px rgba(212, 183, 84, 0.50)",
         }}
       >
         <div className="col-span-1 md:col-span-4 flex justify-center items-center">
