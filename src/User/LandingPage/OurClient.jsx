@@ -16,15 +16,15 @@ const OurClient = () => {
     pauseOnHover: false,
     responsive: [
       {
-        breakpoint: 768, // Breakpoint untuk tablet dan perangkat dengan lebar layar yang lebih kecil
+        breakpoint: 1023, // Breakpoint untuk tablet dan perangkat dengan lebar layar yang lebih kecil
         settings: {
-          slidesToShow: 4, // Mengubah jumlah slide untuk tablet
+          slidesToShow: 3, // Mengubah jumlah slide untuk tablet
         },
       },
       {
-        breakpoint: 520, // Breakpoint untuk perangkat mobile
+        breakpoint: 680, // Breakpoint untuk perangkat mobile
         settings: {
-          slidesToShow: 2, // Mengubah jumlah slide untuk perangkat mobile
+          slidesToShow: 1, // Mengubah jumlah slide untuk perangkat mobile
         },
       },
     ],
@@ -33,12 +33,12 @@ const OurClient = () => {
   const brands = [airMancur, ba, cnearc, dankos, enseval, fima, forsta, kalbe, komet, kasual, oneject, wook];
 
   return (
-    <div className="py-10">
-      <div>
-        <h2 className='text-3xl font-bold text-center tracking-wider'>Our Client</h2>
-        <hr className='mx-auto w-20 border-b-4 border-orange-500'></hr>
+    <div className="pt-16 md:pb-20">
+      <div >
+        <h2 className='text-xl md:text-2xl lg:text-4xl font-bold text-center tracking-wider'>Our Client</h2>
+        <hr className='mx-auto w-20 border-b-2 md:border-b-4 border-tera'></hr>
       </div>
-      <Slider {...settings} className="pt-20">
+      <Slider {...settings} className="pt-5 md:pt-12">
         {brands.map((brand, index) => (
           <div key={index} className="slideitems-center flex justify-center">
             <img className='mx-auto' src={brand} alt={`Brand ${index + 1}`} />

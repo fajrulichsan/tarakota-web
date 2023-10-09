@@ -9,6 +9,7 @@ export {default as bgProjectSlider} from './bg-project-slider.svg';
 //feat : video profile
 export {default as buttonPlayVideo} from './icon/button-play-video.svg';
 export {default as videoProfileImage} from './video-profile-image.svg';
+export {default as bgVideoProfile} from './bg-video-profile.svg';
 
 //feat : reason
 export {default as reasonImage} from './reason-image.svg';

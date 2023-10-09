@@ -82,7 +82,7 @@ const SliderBanner = () => {
     <div>
       <Slider {...settings} arrows={false}>
         {bannerContentList.map((data) => (
-          <div key={data.id} className="hover:cursor-pointer">
+          <div key={data.id} className="hover:cursor-grab">
             <div
               className="h-[40em] relative bg-cover bg-center bg-no-repeat"
               style={{

@@ -4,7 +4,7 @@ import bgJoinUs from "../../assets/img/bg-join.svg";
 const JoinUs = () => {
   return (
     <div
-      className="bg-cover bg-center h-[20em] md:h-[40em] my-10"
+      className="bg-cover bg-center h-[20em] md:h-[30em] lg:h-[40em] my-10"
       style={{
         backgroundImage: `url(${bgJoinUs})`,
         backgroundSize: "cover",
@@ -12,7 +12,7 @@ const JoinUs = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="bg-gradient-to-r grid grid-cols-6 md:grid-cols-12 place-items-center from-black via-transparent h-[20em] md:h-[40em] space-y-3 text-white px-5 md:px-20">
+      <div className="bg-gradient-to-r grid grid-cols-6 md:grid-cols-12 place-items-center from-black via-transparent h-full space-y-3 text-white px-5 md:px-32 lg:px-20">
         <div className="md:col-span-6 col-span-4">
           <div className=" text-xl md:text-5xl lg:text-6xl font-bold tracking-widest">
             #MENATABERSAMA

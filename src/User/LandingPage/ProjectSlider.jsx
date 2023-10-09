@@ -1,10 +1,8 @@
-
-
 import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./css/slider-project.css"
+import "./css/slider-project.css";
 
 import { bgProjectSlider, leftArrowBgTera } from "../../assets/img/index";
 
@@ -47,10 +45,12 @@ const ProjectSlider = () => {
   const settings = {
     dots: true,
     infinite: true,
-    arrow:false,
-    speed: 500,
-    slidesToShow: 3, // Display three slides at a time
+    arrow: false,
+    speed: 1000,
+    slidesToShow: 3,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
     beforeChange: (current, next) => setCurrentSlide(next),
     appendDots: (dots) => (
       <ul style={{ margin: "-20px 0" }}>
@@ -80,52 +80,93 @@ const ProjectSlider = () => {
       ></div>
     ),
     prevArrow: (
-      <div
-      className="slick-arrow custom-prev-arrow"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-      >
-        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-      </svg>
-    </div>
+      <div className="slick-arrow custom-prev-arrow">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 10 22"
+          fill="none"
+          stroke="white" // Ganti warna menjadi putih
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M9 18l-6-6 6-6" />
+        </svg>
+      </div>
     ),
     nextArrow: (
-      <div
-      className="slick-arrow custom-prev-arrow"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-      >
-        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-      </svg>
-    </div>
+      <div className="slick-arrow custom-prev-arrow">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 18 22"
+          fill="none"
+          stroke="white" // Ganti warna menjadi putih
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M9 18l6-6-6-6" />
+        </svg>
+      </div>
     ),
+    responsive: [
+      {
+        breakpoint: 680, // Adjust this breakpoint as needed for mobile devices
+        settings: {
+          slidesToShow: 1, // Number of slides to show on mobile devices
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1023, // Adjust this breakpoint as needed for larger tablets
+        settings: {
+          slidesToShow: 2, // Number of slides to show on larger tablets
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <div className="project-slider px-20">
+    <div className="project-slider px-10 md:px-20 lg:px-32">
+      <p className="text-lg md:text-xl lg:text-2xl my-5 md:my-7 lg:my-10 text-justify">
+        “Berpengalaman dalam menciptakan design yang simple dan elegan”
+      </p>
       <Slider {...settings}>
         {projects.map((project) => (
-          <div key={project.id} className="px-5">
+          <div key={project.id} className="px-2 md:px-4">
             <div
-              className="w-full h-[35em] bg-center bg-cover bg-no-repeat"
+              className="w-full relative h-[30em] bg-center bg-cover bg-no-repeat hover:cursor-pointer"
               style={{
                 backgroundImage: `url(${bgProjectSlider})`,
               }}
-            ></div>
+            >
+              <div
+                className="absolute inset-0 flex flex-col justify-end"
+                style={{
+                  background:
+                    "linear-gradient(0deg, #E85738 -22.21%, rgba(0, 0, 0, 0.00) 100%)",
+                }}
+              >
+                <div className="text-white p-5">
+                  <p className="text-xl md:text-2xl">Interior</p>
+                  <p className="text-sm md:text-lg">PT. Wook Global Teknologi</p>
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </Slider>
+      <div className="w-fit px-8 py-1 mx-auto text-sm md:text-base mt-10 md:mt-12 text-md text-center text-white bg-tera rounded-full hover:cursor-pointer">
+        All Project
+      </div>
+
     </div>
   );
 };
 
 export default ProjectSlider;
-

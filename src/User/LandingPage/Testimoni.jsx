@@ -48,7 +48,7 @@ const Testimoni = () => {
   useEffect(() => {
     // Cek lebar layar untuk menentukan mode mobile
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 640); // Atur breakpoint sesuai kebutuhan
+      setIsMobile(window.innerWidth <= 680); // Atur breakpoint sesuai kebutuhan
     };
 
     handleResize();
