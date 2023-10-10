@@ -123,7 +123,7 @@ const TrikAndTips = () => {
         <div className='px-5'>
         <Slider {...settings} className="">
         {trikList.map((item) => (
-          <div className="p-3 h-[12em] md:h-[18em] lg:h-[15em]">
+          <div className="p-3 h-[13em] md:h-[18em] lg:h-[15em]">
               <div
                   key={item.id}
                   className="flex p-5 lg:p-10 relative border-4 border-white rounded-2xl md:rounded-3xl h-full"
