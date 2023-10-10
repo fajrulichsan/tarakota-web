@@ -44,7 +44,7 @@ const JenjangKarir = () => {
           }}
         ></div>
       </div>
-      <div className="px-5 py-5 md:px-20 lg:px-32 md:py-10 lg:py-20">
+      <div className="px-5 py-5 md:px-20 lg:px-32 md:py-0 lg:py-10">
         <div className="grid grid-cols-1 md:grid-cols-9 gap-5 md:gap-10">
           <div className="col-span-1 md:col-span-6">
             <p className="text-sm md:text-lg lg:text-2xl text-justify">
@@ -63,12 +63,11 @@ const JenjangKarir = () => {
                 <div className="col-span-3 md:col-span-1">
                   <div
                   key={data.id}
-                  className="rounded-full flex justify-center relative hover:cursor-pointer"
+                  className="rounded-full flex justify-center relative hover:cursor-pointer shadow-md shadow-gold"
                   onClick={() => setCurrentJenjangKarir(data.id)}
                   style={{
                     border: "10px solid #F9F5EC",
                     background: "#F9F5EC",
-                    boxShadow: "0px 2px 20px 0px rgba(212, 183, 84, 0.50)",
                   }}
                 >
                   <p className="text-sm md:text-lg lg:text-2xl text-tera font-semibold">
@@ -85,10 +84,9 @@ const JenjangKarir = () => {
           </div>
           <div className="col-span-1 md:col-span-6">
             <div
-              className="rounded-xl md:rounded-2xl p-5 md:p-8 lg:p-10 relative"
+              className="rounded-xl md:rounded-2xl p-5 md:p-8 lg:p-10 relative shadow-md shadow-gold"
               style={{
                 background: "#404042",
-                boxShadow: "7px 11px 30px 0px #D4B754",
               }}
             >
               <p className="text-sm md:text-lg lg:text-2xl text-white">

@@ -1,4 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./css/slider-project.css";
+
+const ProjectSlider = () => {
+  const [currentSlide, setCurrentSlide] = useState(0); // Define currentSlide state
 
 const tipsList = [
   {
@@ -17,37 +24,124 @@ const tipsList = [
     body: "Program ini adalah solusi pintar dalam era digital. Kamu akan mendapatkan akses ke berbagai alat online canggih untuk mempercepat promosi dan dukungan bisnismu. Dengan e-Boost, bisnismu akan terasa lebih mudah dan efisien.",
   },
 ];
+    
 
-const TrikBisnis = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    arrow: false,
+    speed: 1000,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    beforeChange: (current, next) => setCurrentSlide(next),
+    appendDots: (dots) => (
+      <ul style={{ margin: "-20px 0" }}>
+        {dots.map((dot, index) => (
+          <li
+            key={index}
+            style={{ display: "inline-block", marginRight: "5px" }}
+          >
+            {dot}
+          </li>
+        ))}
+      </ul>
+    ),
+    customPaging: (i) => (
+      <div
+        style={{
+          width: "15px",
+          height: "15px",
+          background: currentSlide === i ? "#D4B754" : "transparent",
+          border:
+            currentSlide === i ? "2px solid #BABABA" : "2px solid #BABABA",
+          borderRadius: "50%",
+          marginTop: "-10px",
+          transition: "background-color 0.3s ease",
+        }}
+        className="custom-dot"
+      ></div>
+    ),
+    prevArrow: (
+      <div className="slick-arrow custom-prev-arrow">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 10 22"
+          fill="none"
+          stroke="white" // Ganti warna menjadi putih
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M9 18l-6-6 6-6" />
+        </svg>
+      </div>
+    ),
+    nextArrow: (
+      <div className="slick-arrow custom-prev-arrow">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 18 22"
+          fill="none"
+          stroke="white" // Ganti warna menjadi putih
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M9 18l6-6-6-6" />
+        </svg>
+      </div>
+    ),
+    responsive: [
+      {
+        breakpoint: 680, // Adjust this breakpoint as needed for mobile devices
+        settings: {
+          slidesToShow: 1, // Number of slides to show on mobile devices
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1023, // Adjust this breakpoint as needed for larger tablets
+        settings: {
+          slidesToShow: 2, // Number of slides to show on larger tablets
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <div className="px-20 pb-20">
-      <h1 className="text-tera text-4xl text-center font-bold py-16">
-        3 Trik Keren Buat Jadi Representatif BisnisTarakota yang Sukses!
-      </h1>
-      <div className="grid grid-cols-3">
+    <div className="px-5 py-5 lg:py-10 md:px-20 lg:px-32">
+       <h1 className="text-tera text-lg md:text-2xl lg:text-4xl text-center font-bold py-3 md:py-6">3 Trik Keren Buat Jadi Representatif BisnisTarakota yang Sukses!</h1>
+      <Slider {...settings} className="mx-5">
         {tipsList.map((data) => (
-          <div key={data.id} className="col-span-1 px-5">
-            <div
-              className="text-white p-10 rounded-3xl space-y-4"
+          <div key={data.id} className="px-3">
+             <div
+              className="text-white p-5 rounded-3xl space-y-3 h-[15em] lg:h-[21em]"
               style={{
                 border: "6px solid #FFF",
                 background: "#1B1B1B",
                 boxShadow: "0px 4px 25px 0px rgba(0, 0, 0, 0.08)",
-                height: "100%",
+                // height: "100%",
                 overflow: "auto",
               }}
             >
-              <h1 className="text-3xl text-center">{data.title}</h1>
+              <h1 className="text-lg md:text-xl lg:text-3xl text-center">{data.title}</h1>
               <hr className="w-32 mx-auto "></hr>
-              <p className="text-xl text-justify">
+              <p className="text-sm md:text-md lg:text-xl text-justify">
                 {data.body}
-              </p>
-            </div>
+              </p>    </div>
           </div>
         ))}
-      </div>
+      </Slider>
     </div>
   );
 };
 
-export default TrikBisnis;
+export default ProjectSlider;
+

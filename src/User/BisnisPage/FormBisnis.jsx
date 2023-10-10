@@ -80,11 +80,11 @@ const bankList = [
 ];
 const FormBisnis = () => {
   return (
-    <div className="px-5 pb-10 md:px-20 lg:px-32 md:py-10 lg:py-20">
+    <div className="px-5 pb-10 md:px-20 lg:px-32 md:pt-0 md:pb-10 lg:pt-5 lg:pb-20">
       <div
-        className="rounded-xl md:rounded-3xl p-5 px-6 md:p-10 lg:p-16 md:px-12 lg:px-24 space-y-4"
+        className="rounded-xl md:rounded-3xl p-5 px-6 md:p-10 lg:p-16 md:px-12 lg:px-24 space-y-4 shadow-md shadow-gold"
         style={{
-          boxShadow: "7px 11px 30px 0px #D4B754",
+          // boxShadow: "7px 11px 30px 0px #D4B754",
         }}
       >
         {formInput.map((data) => (

@@ -3,7 +3,7 @@ import {bangunIntroduction} from '../../assets/img/index'
 
 const ProgramBanner = () => {
   return (
-    <div className='px-5 md:px-20 lg:px-32'>
+    <div className='px-5 pt-10 pb-10 md:pt-20 md:pb-0 md:px-20 lg:pt-10 lg:px-32'>
         <div className='grid grid-cols-2 md:grid-cols-3 gap-1'>
             <div className='col-span-1 flex justify-center'>
             <div className='w-32 h-40 md:w-56 md:h-64 lg:w-72 lg:h-80 bg-cover bg-center bg-no-repeat' 

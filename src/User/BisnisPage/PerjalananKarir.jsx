@@ -1,42 +1,58 @@
-import React ,{ useState} from "react";
-import {
-  perjalananKarir,
-  leftArrowBgTera,
-  leftArrowBgWhite,
-  rightArrowBgWhite,
-} from "../../assets/img/index";
+import React, { useState, useEffect } from "react";
+import { perjalananKarir, leftArrowBgWhite } from "../../assets/img/index";
 
 const programList = [
   {
     id: 1,
     title: "BisnisTarakota Financial Relationship",
     position: "top-0 right-0",
-    description: "1 Jika kamu memilih BisnisTarakota Franchise Relationship, peranmuadalah mepenghubun antara Tarakota dan calon pemilikfranchise. Kamu akan menjelaskan konsep bisnis franchise Tarakota",
+    description:
+      "1 Jika kamu memilih BisnisTarakota Franchise Relationship, peranmuadalah mepenghubun antara Tarakota dan calon pemilikfranchise. Kamu akan menjelaskan konsep bisnis franchise Tarakota",
   },
   {
     id: 2,
     title: "BisnisTarakota Client Relationship",
     position: "top-20 left-0 ",
-    description: "2 Jika kamu memilih BisnisTarakota Franchise Relationship, peranmuadalah menjadi penghubung antara Tarakota dan calon pemilik franchise. Kamu akan menjelaskan konsep bisnis  franchise Tarakota",
+    description:
+      "2 Jika kamu memilih BisnisTarakota Franchise Relationship, peranmuadalah menjadi penghubung antara Tarakota dan calon pemilik franchise. Kamu akan menjelaskan konsep bisnis  franchise Tarakota",
   },
   {
     id: 3,
     title: "BisnisTarakota Land Property Relationship",
     position: "bottom-0 left-0",
-    description: "3 Jika kamu memilih BisnisTarakota Franchise Relationship, peranmuadalah menjadi penghubung antara Tarakota dan calon pemilikfranchise. Kamu akan menjelaskan konsep bisnis franchise Tarakota",
+    description:
+      "3 Jika kamu memilih BisnisTarakota Franchise Relationship, peranmuadalah menjadi penghubung antara Tarakota dan calon pemilikfranchise. Kamu akan menjelaskan konsep bisnis franchise Tarakota",
   },
   {
     id: 4,
     title: "BisnisTarakota Franchise Relationship",
     position: "bottom-20 right-0",
-    description: "4 Jika kamu memilih BisnisTarakota Franchise Relationship, peranmuadalah menjadi penghubung antara Tarakota dan calon pemilik franchise. Kamu akan menjelaskan konsep bisnis franchise Tarakota",
+    description:
+      "4 Jika kamu memilih BisnisTarakota Franchise Relationship, peranmuadalah menjadi penghubung antara Tarakota dan calon pemilik franchise. Kamu akan menjelaskan konsep bisnis franchise Tarakota",
   },
 ];
 
 const PerjalananKarir = () => {
-    const [currentProgram, setcurrentProgram] = useState(1)
+  const [currentProgram, setcurrentProgram] = useState(1);
 
-    return (
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Cek lebar layar untuk menentukan mode mobile
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 680); // Atur breakpoint sesuai kebutuhan
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  return (
     <div className="py-5 px-5 md:px-20 lg:px-32 md:py-20">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div className="col-span-1 relative">
@@ -48,38 +64,61 @@ const PerjalananKarir = () => {
           {programList.map((data) => (
             <div
               key={data.id}
-              className={`${data.position} ${currentProgram === data.id ? "bg-tera text-white" : "bg-[#F9F5EC] text-tera"} w-fit px-3 py-1.5 rounded-full absolute hover:cursor-pointer`}
-              onClick = {() => setcurrentProgram(data.id)}
+              className={`${data.position} ${
+                currentProgram === data.id
+                  ? "bg-tera text-white"
+                  : "bg-[#F9F5EC] text-tera"
+              } w-fit px-3 py-1.5 rounded-full absolute hover:cursor-pointer shadow-md shadow-gold`}
+              onClick={() => setcurrentProgram(data.id)}
               style={{
                 border: "2px solid transparent",
-                boxShadow: "0px 4px 30px 0px rgba(212, 183, 84, 0.50)",
               }}
             >
-              <p className="text-sm md:text-md lg:text-lg font-medium">{data.title}</p>
+              <p className="text-sm md:text-md lg:text-lg font-medium">
+                {data.title}
+              </p>
+              <img
+                className={`${
+                  currentProgram !== data.id ? "hidden" : ""
+                } ${isMobile ? "bottom-0 left-1/2 -rotate-90 translate-y-2" : "top-1/2 -translate-y-2 -right-1 rotate-180"} w-4 h-4 absolute `}
+                src={leftArrowBgWhite}
+              ></img>
             </div>
           ))}
         </div>
 
         <div className="col-span-1 flex items-center">
           <div
-            className="w-full p-5 rounded-2xl relative"
+            className="w-full p-5 rounded-2xl relative shadow-md shadow-gold"
             style={{
               background: "#E85738",
               border: "5px solid #F8F3ED",
-              boxShadow: "0px 4px 30px 0px rgba(212, 183, 84, 0.50)",
             }}
           >
             <p className="text-sm md:text-lg lg:text-xl text-justify text-white">
-            {programList.find((item) => item.id === currentProgram).description}
+              {
+                programList.find((item) => item.id === currentProgram)
+                  .description
+              }
             </p>
             <img
-              className="w-8 h-8 absolute top-1/2 -translate-y-1/2 -left-4"
+              className={`${
+                isMobile
+                  ? "w-6 h-6 absolute top-0 rotate-90 -translate-y-3 left-1/2"
+                  : "w-8 h-8 absolute top-1/2 -translate-y-1/2 -left-4"
+              }`}
               src={leftArrowBgWhite}
             ></img>
           </div>
         </div>
       </div>
-      <p className="text-sm md:text-lg lg:text-2xl mt-4 md:mt-10 lg:mt-16 text-justify">Masing-masing dari 4 Program BisnisTarakota ini memainkan peran penting dalam menjalankan penghubungan antara klien dan perusahaan, membantu menciptakan peluang bisnis yang saling menguntungkan. Ini adalah kesempatan untuk memanfaatkan keterampilan komunikasi dan kepemimpinanmu dalam mengembangkan relasi bisnis yang berhasil.</p>
+      <p className="text-sm md:text-lg lg:text-2xl mt-4 md:mt-10 lg:mt-16 text-justify">
+        Masing-masing dari 4 Program BisnisTarakota ini memainkan peran penting
+        dalam menjalankan penghubungan antara klien dan perusahaan, membantu
+        menciptakan peluang bisnis yang saling menguntungkan. Ini adalah
+        kesempatan untuk memanfaatkan keterampilan komunikasi dan kepemimpinanmu
+        dalam mengembangkan relasi bisnis yang berhasil.
+      </p>
     </div>
   );
 };

@@ -4,8 +4,7 @@ const Komisi = () => {
   return (
     <div className="px-5 py-5 md:px-20 lg:px-32">
       <div
-        className="rounded-xl md:rounded-3xl p-5 md:p-10 lg:p-16 "
-        style={{ boxShadow: "7px 11px 30px 0px #D4B754" }}
+        className="rounded-xl md:rounded-3xl p-5 md:p-10 lg:p-16 shadow-md shadow-gold "
       >
         <p className="text-sm md:text-lg lg:text-2xl text-justify">
           Dalam peran sebagai seorang Representatif BisnisTarakota, kamu akan
@@ -38,9 +37,8 @@ const Komisi = () => {
 
       <div className="grid grid-cols-12 gap-2 mt-10 lg:mt-20">
         <div className="col-span-12 md:col-span-8 lg:col-span-6 md:col-start-3 lg:col-start-4">
-            <div className="rounded-xl text-white p-5 md:p-10 lg:p-16"
-            style={{background: '#404042',
-                boxShadow: '7px 11px 30px 0px #D4B754'}}
+            <div className="rounded-xl text-white p-5 md:p-10 lg:p-16 shadow-md shadow-gold"
+            style={{background: '#404042'}}
             >
                 <p className="text-sm md:text-lg lg:text-2xl font-bold">Komisi Super Menggiurkan</p>
                 <p className="text-sm md:text-lg lg:text-2xl text-justify">

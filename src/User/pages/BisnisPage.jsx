@@ -24,7 +24,7 @@ const BisnisPage = () => {
         <Banner/>
         <Introduction/>
         <MasterPlan/>
-        {/* <TrikBisnis/> */}
+        <TrikBisnis/>
         <GayaSeruBisnis/>
         <ClassTarakota/>
         <SliderClass/>
