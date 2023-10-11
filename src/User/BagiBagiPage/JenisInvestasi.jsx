@@ -17,7 +17,7 @@ const jenisInvestasiList = [
 const JenisInvestasi = () => {
   const [currentJenisInvestasi, setcurrentJenisInvestasi] = useState(1);
   return (
-    <div className="px-5 py-10 md:px-20 lg:px-32 md:py-12 lg:py-20">
+    <div className="px-5 pt-10 pb-3 md:pt-16 md:pb-4 md:px-20 lg:px-32  lg:py-8">
       <h1 className="text-lg md:text-2xl lg:text-4xl text-tera font-bold">
         Apa ajasih jenis investasi yang bisa dicoba?
       </h1>
@@ -72,6 +72,18 @@ const JenisInvestasi = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="text-sm md:text-lg lg:text-2xl text-justify mt-5 md:mt-7 lg:mt-10">
+        <p>
+          Salah satu jenis investasi dalam surat berharga itu adalah investasi
+          dalam <span className="font-bold">saham</span>, yang pasti kamu udah pada tau.
+        </p>
+        <p>Dengan saham, kamu punya
+          potongan kecil dari perusahaan tersebut. <span className="font-bold">Keren, kan?</span></p>
+        <p>
+          Tapi, pertanyaannya, bisnis apa yang mau kamu punya? <span className="font-bold">Pastinya bisnis
+          yang punya prospek cerah dan bisa tumbuh besar lagi.</span>
+        </p>
       </div>
     </div>
   );

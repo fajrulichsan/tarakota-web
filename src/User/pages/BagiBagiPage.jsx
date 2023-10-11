@@ -4,6 +4,7 @@ import Footer from '../../Component/Footer';
 import Navbar from '../../Component/Navbar';
 import Banner from '../BagiBagiPage/Banner';
 import Form from '../BagiBagiPage/Form';
+import Introduction from '../BagiBagiPage/Introduction';
 import Invitation from '../BagiBagiPage/Invitation';
 import JenisInvestasi from '../BagiBagiPage/JenisInvestasi';
 import KelebihanInvestasi from '../BagiBagiPage/KelebihanInvestasi';
@@ -14,9 +15,10 @@ const BagiBagiPage = () => {
     <Fragment>
         <Navbar/>
         <Banner/>
+        <Introduction/>
         <JenisInvestasi/>
         <ProfitInvestasi/>
-        {/* <KelebihanInvestasi/> */}
+        <KelebihanInvestasi/>
         <Invitation/>
         <Form/>
         <Footer/>

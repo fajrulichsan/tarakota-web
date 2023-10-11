@@ -1,0 +1,51 @@
+/* Custom styles for default arrow buttons */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  background-color: #E85738; /* Background color: Orange */
+  border: 2px solid white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 24px; /* Font size for arrow icons (adjust as needed) */
+  color: white; /* Color of arrow icons */
+}
+
+.slick-prev {
+  left: -30px; /* Adjust the left position to align with the left edge of the slider */
+}
+
+.slick-next {
+  right: -30px; /* Adjust the right position to align with the right edge of the slider */
+}
+
+/* Style the arrow buttons on hover (optional) */
+.slick-prev:hover,
+.slick-next:hover {
+  background-color: #E85738; /* Change background color to a lighter orange on hover */
+  transition: background-color 0.3s ease;
+}
+
+.slick-prev::after,
+.slick-next::after {
+    content: "";
+  background-color: #FFA500; /* Change background color to a lighter orange on hover */
+  transition: background-color 0.3s ease;
+}
+
+.slick-prev::before,
+.slick-next::before {
+    content: "";
+  background-color: #FFA500; /* Change background color to a lighter orange on hover */
+  transition: background-color 0.3s ease;
+}
+
+

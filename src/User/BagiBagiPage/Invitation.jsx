@@ -3,8 +3,8 @@ import React from 'react'
 const Invitation = () => {
   return (
     <div className='px-5 md:px-20 lg:px-32'>
-        <div className='rounded-xl md:rounded-2xl p-5 md:p-10 lg:p-16'
-        style={{boxShadow: '7px 11px 30px 0px #D4B754'}}
+        <div className='rounded-xl md:rounded-2xl p-5 md:p-10 lg:p-16 shadow-md shadow-gold'
+        // style={{boxShadow: '7px 11px 30px 0px #D4B754'}}
         >
             <p className='text-sm md:text-lg lg:text-2xl text-justify'>Jadi, gak perlu tunggu sampe kaya duluan buat mulai investasi. Melalui <span className='font-bold'>Program BagiBagiTarakota</span>, kamu bisa mulai investasi dengan jumlah sesuai kemampuan dan tujuan keuangan kamu!</p>
         </div>

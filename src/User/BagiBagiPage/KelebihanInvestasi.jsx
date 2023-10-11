@@ -1,11 +1,8 @@
-import { data } from "jquery";
-import React, { useState, useEffect } from "react";
-import {
-  profileTestimoni,
-  iconTestimoni,
-  previousButton,
-  nextButton,
-} from "../../assets/img/index";
+import React, { Fragment, useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./css/slider-project.css";
 
 const carouselData = [
   {
@@ -18,139 +15,155 @@ const carouselData = [
     title: "Tambahan Penghasilan",
     body: "Investasi bisa nambahin penghasilan kamu, tanpa harus kerja keras terus-menerus",
   },
+  {
+    id: 3,
+    title: " Melawan Inflasi",
+    body: "Dengan investasi, uang kamu bisa terlindungi dari inflasi.",
+  },
+  {
+    id: 4,
+    title: "Tambahan Penghasilan",
+    body: "Investasi bisa nambahin penghasilan kamu, tanpa harus kerja keras terus-menerus",
+  },
 ];
 
 const styleCardTesti = {
   border: "5px solid #FFF",
-  boxShadow: "0px 4px 25px 0px rgba(0, 0, 0, 0.08)",
 };
 
-const KelebihanInvestasi = () => {
-  const [currentGroup, setCurrentGroup] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+const Introduction = () => {
+  const [currentSlide, setCurrentSlide] = useState(0); // Define currentSlide state
 
-  useEffect(() => {
-    // Cek lebar layar untuk menentukan mode mobile
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 640); // Atur breakpoint sesuai kebutuhan
-    };
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const nextGroup = () => {
-    setCurrentGroup(
-      (currentGroup + 1) %
-        Math.ceil(isMobile ? carouselData.length : carouselData.length / 2)
-    );
-  };
-
-  const prevGroup = () => {
-    setCurrentGroup(
-      (currentGroup -
-        1 +
-        Math.ceil(isMobile ? carouselData.length : carouselData.length / 2)) %
-        Math.ceil(isMobile ? carouselData.length : carouselData.length / 2)
-    );
+  const settings = {
+    dots: true,
+    infinite: true,
+    arrow: false,
+    speed: 1000,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    beforeChange: (current, next) => setCurrentSlide(next),
+    appendDots: (dots) => (
+      <ul style={{ margin: "-20px 0" }}>
+        {dots.map((dot, index) => (
+          <li
+            key={index}
+            style={{ display: "inline-block", marginRight: "5px" }}
+          >
+            {dot}
+          </li>
+        ))}
+      </ul>
+    ),
+    customPaging: (i) => (
+      <div
+        style={{
+          width: "15px",
+          height: "15px",
+          background: currentSlide === i ? "#D4B754" : "transparent",
+          border:
+            currentSlide === i ? "2px solid #BABABA" : "2px solid #BABABA",
+          borderRadius: "50%",
+          marginTop: "-10px",
+          transition: "background-color 0.3s ease",
+        }}
+        className="custom-dot"
+      ></div>
+    ),
+    prevArrow: (
+      <div className="slick-arrow custom-prev-arrow">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 10 22"
+          fill="none"
+          stroke="white" // Ganti warna menjadi putih
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M9 18l-6-6 6-6" />
+        </svg>
+      </div>
+    ),
+    nextArrow: (
+      <div className="slick-arrow custom-prev-arrow">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 18 22"
+          fill="none"
+          stroke="white" // Ganti warna menjadi putih
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M9 18l6-6-6-6" />
+        </svg>
+      </div>
+    ),
+    responsive: [
+      {
+        breakpoint: 680, // Adjust this breakpoint as needed for mobile devices
+        settings: {
+          slidesToShow: 1, // Number of slides to show on mobile devices
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1023, // Adjust this breakpoint as needed for larger tablets
+        settings: {
+          slidesToShow: 2, // Number of slides to show on larger tablets
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <div className="px-32 pt-20">
-      <h1 className="text-4xl font-semibold text-tera">
+    <Fragment>
+    <div className="px-5 py-2 md:py-0 lg:pt-10 lg:pb-10 md:px-20 lg:px-32">
+      <h1 className="text-lg md:text-2xl lg:text-4xl font-semibold text-tera">
         Jadi, udah paham kan kenapa investasi itu penting?
       </h1>
-      <h1 className="text-4xl font-semibold text-tera">
+      <h1 className="text-lg md:text-2xl lg:text-4xl  font-semibold text-tera">
         Kapan ya sebaiknya memulai investasi?{" "}
       </h1>
-      <p className="text-2xl">
+      <p className="text-sm md:text-lg lg:text-2xl mt-2">
         Jadi, udah paham kan kenapa investasi itu penting? Kapan ya sebaiknya
         memulai investasi?
       </p>
-      <div className={`${isMobile ? "py-10" : ""} md:pb-20 `}>
-        <div className="mx-auto relative py-5 px-5 md:py-20">
-          {isMobile ? ( // Kondisi untuk mode mobile
+    </div>
+    <div className="px-10 pb-14 md:px-20 md:pt-7 lg:pt-0 lg:px-32 lg:pb-20">
+      <Slider {...settings} className="md:px-2">
+        {carouselData.map((item) => (
+          <div className="p-3 h-[10em] md:h-[14em] lg:h-[15em]">
             <div
-              className="md:p-7 p-5 space-x-6 flex rounded-xl"
+              key={item.id}
+              className="flex p-5 lg:p-10 relative border-2 border-white rounded-xl md:rounded-2xl lg:rounded-3xl h-full"
               style={styleCardTesti}
             >
-              <div className="relative grow w-40 ">
-                <h3 className="text-xl font-semibold mb-2 md:text-center">
-                  {carouselData[currentGroup].title}
+              <div className="rounded-lg">
+                <h3 className="text-sm md:text-xl lg:text-2xl font-semibold mb-2 text-center">
+                  {item.title}
                 </h3>
-                <p className="text-xs text-justify">
-                  {carouselData[currentGroup].content}
-                </p>
+                <div className="relative text-sm md:text-lg lg:text-2xl text-justify">
+                  {item.body}
+                </div>
+              </div>
+              <div className="w-6 h-6 md:w-7 md:h-7 rounded-full absolute -top-4 right-1/2 translate-x-5  bg-tera flex justify-center items-center text-white">
+                {item.id}
               </div>
             </div>
-          ) : (
-            // Kondisi untuk mode desktop
-            <div className="flex justify-center space-x-5">
-              {carouselData
-                .slice(currentGroup * 2, currentGroup * 2 + 2)
-                .map((item) => (
-                  <div
-                    key={item.id}
-                    className="p-5 px-16 flex justify-between items-center space-x-5 relative rounded-3xl"
-                    style={styleCardTesti}
-                  >
-                    <div className="md:w-1/2 lg:w-80 rounded-lg">
-                      <h3 className="text-2xl font-semibold mb-2 text-center">
-                        {item.title}
-                      </h3>
-                      <div className="relative text-xl text-justify">
-                        {item.body}
-                      </div>
-                    </div>
-                    <div className="w-7 h-7 rounded-full absolute -top-4 left-1/2 -translate-x-8 bg-tera flex justify-center items-center text-white">
-                      {item.id}
-                    </div>
-                  </div>
-                ))}
-            </div>
-          )}
-          <div
-            className={`${
-              isMobile ? "-bottom-4" : ""
-            } dot-navigation absolute bottom-0 left-0 right-0 flex justify-center items-center space-x-2`}
-          >
-            <button onClick={prevGroup}>
-              <img
-                className={`${isMobile ? "w-6" : ""}`}
-                src={previousButton}
-                alt="Previous Button"
-              />
-            </button>
-            {Array.from({
-              length: Math.ceil(
-                isMobile ? carouselData.length : carouselData.length / 2
-              ),
-            }).map((_, index) => (
-              <span
-                key={index}
-                className={`w-3 h-3 bg-gray-500 rounded-full ${
-                  index === currentGroup ? "bg-gray-800" : ""
-                }`}
-                onClick={() => setCurrentGroup(index)}
-              ></span>
-            ))}
-            <button onClick={nextGroup}>
-              <img
-                className={`${isMobile ? "w-6" : ""}`}
-                src={nextButton}
-                alt="Next Button"
-              />
-            </button>
           </div>
-        </div>
-      </div>
+        ))}
+      </Slider>
     </div>
+              </Fragment>
   );
 };
 
-export default KelebihanInvestasi;
+export default Introduction;
