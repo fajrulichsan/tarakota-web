@@ -16,7 +16,7 @@ const LandingPage = () => {
       <Navbar/>
       <SliderBanner/>
       <ProjectSlider/>
-      <ProfileVideo/>
+      {/* <ProfileVideo/> */}
       <Service/>
       <Reason/>
       <OurClient/>
