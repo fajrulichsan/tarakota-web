@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Fragment } from "react";
 
 const syaratList = [
@@ -17,34 +17,55 @@ const syaratList = [
 ];
 
 const Syarat = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Cek lebar layar untuk menentukan mode mobile
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 680); // Atur breakpoint sesuai kebutuhan
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <Fragment>
-      <div className="px-5 md:px-20 lg:px-32 py-5 md:py-10 lg:py-20" style={{ background: "#404042" }}>
-        <h1 className="text-lg md:text-2xl lg:text-4xl text-center font-semibold text-white">
-          Persyaratan Menjadi Mitra Experience Center Tarakota
-        </h1>
-        <hr className="w-20 md:w-28 lg:w-60 my-4 mx-auto border-tera border-2 "></hr>
-        <div className="grid grid-cols-12 gap-10 mt-10">
-          {syaratList.map((data) => (
-            <div key={data.id} className="col-span-4">
-              <div
-                className="rounded-full"
-                style={{
-                  boxShadow: "0px 4px 30px 0px rgba(212, 183, 84, 0.50)",
-                  border: "10px solid #F9F5EC",
-                  background: "#F9F5EC",
-                }}
-              >
-                <p className="text-sm md:text-lg lg:text-xl font-semibold text-center text-tera">
-                  {data.title}
-                </p>
+      <div
+        className="px-5 md:px-20 lg:px-32 py-10 md:py-10 lg:py-20 grid grid-cols-5 md:grid-cols-1 gap-5 mt-6 md:-mt-10"
+        style={{ background: "#404042" }}
+      >
+        <div className="col-span-2 md:col-span-1 flex md:flex-col items-center">
+          <h1 className="text-lg md:text-2xl lg:text-4xl text-center font-semibold text-white">
+            Persyaratan Menjadi Mitra Experience Center Tarakota
+          </h1>
+          <hr className={`w-20 md:w-28 lg:w-60 my-4 mx-auto border-tera border-2  ${isMobile ? "hidden" : ""}`}></hr>
+        </div>
+        <div className="col-span-3 md:col-span-1">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {syaratList.map((data) => (
+              <div key={data.id} className="col-span-1">
+                <div
+                  className="rounded-full shadow-md shadow-gold p-1.5"
+                  style={{
+                    border: "1px solid #F9F5EC",
+                    background: "#F9F5EC",
+                  }}
+                >
+                  <p className="text-xs md:text-md lg:text-xl font-semibold text-center text-tera">
+                    {data.title}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-
-      <p className="text-4xl my-20 px-32 text-tera font-semibold tracking-wider">
+      <p className="text-md md:text-xl lg:text-4xl py-5 md:my-5 lg:my-10 px-5 md:px-20 lg:px-32 text-tera font-semibold tracking-wider text-justify">
         Kamu tertarik dengan Program Kemitraan BersamaTarakota? Yuk, tanya-tanya
         lebih lanjut! Kamu bisa kirim pertanyaan melalui email
         franchise@tarakota.com atau bisa langsung isi formulir berikut,lho!

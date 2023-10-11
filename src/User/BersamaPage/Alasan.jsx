@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   perjalananKarir,
-  leftArrowBgTera,
-  leftArrowBgWhite,
-  rightArrowBgWhite,
+  leftArrowBgWhite
 } from "../../assets/img/index";
 
 const programList = [
@@ -46,10 +44,25 @@ const programList = [
 
 const Alasan = () => {
   const [currentProgram, setcurrentProgram] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    // Cek lebar layar untuk menentukan mode mobile
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 680); // Atur breakpoint sesuai kebutuhan
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
-    <div className="px-5 py-10 md:px-20 lg:px-32 md:py-20">
-      <h1 className="text-xl md:text-2xl lg:text-4xl text-tera font-bold my-10">
+    <div className="px-5 pt-0 pb-5 md:pt-0 lg:pt-20 md:px-20 lg:px-32">
+      <h1 className="text-lg md:text-2xl lg:text-4xl text-tera font-bold my-10">
         Nah, kenapa kamu harus bergabung dengan Tarakota melalui Program
         Kemitraan BersamaTarakota?
       </h1>
@@ -67,25 +80,29 @@ const Alasan = () => {
                 currentProgram === data.id
                   ? "bg-tera text-white"
                   : "bg-[#F9F5EC] text-tera"
-              } w-fit px-3 py-1 lg:py-1.5 rounded-full absolute hover:cursor-pointer`}
+              } w-fit px-3 py-1 lg:py-1.5 rounded-full absolute hover:cursor-pointer shadow-md shadow-gold`}
               onClick={() => setcurrentProgram(data.id)}
               style={{
-                border: "6px solid transparent",
-                boxShadow: "0px 4px 30px 0px rgba(212, 183, 84, 0.50)",
+                border: "3px solid transparent",
               }}
             >
               <p className="text-sm md:text-lg font-medium">{data.title}</p>
+              <img
+                className={`${
+                  currentProgram !== data.id ? "hidden" : ""
+                } ${isMobile ? "bottom-0 right-1/2 translate-x-3 -rotate-90 translate-y-2" : "top-1/2 -translate-y-2 -right-1 rotate-180"} w-4 h-4 absolute `}
+                src={leftArrowBgWhite}
+              ></img>
             </div>
           ))}
         </div>
 
         <div className="col-span-1 flex items-center">
           <div
-            className="w-full p-5 rounded-2xl relative"
+            className="w-full p-5 rounded-2xl relative shadow-md shadow-gold"
             style={{
               background: "#E85738",
-              border: "5px solid #F8F3ED",
-              boxShadow: "0px 4px 30px 0px rgba(212, 183, 84, 0.50)",
+              border: "4px solid #F8F3ED",
             }}
           >
             <p className="text-sm md:text-lg lg:text-xl text-justify text-white">
@@ -95,7 +112,11 @@ const Alasan = () => {
               }
             </p>
             <img
-              className="w-8 h-8 absolute top-1/2 -translate-y-1/2 -left-4"
+              className={`${
+                isMobile
+                  ? "w-6 h-6 absolute top-0 rotate-90 -translate-y-3 left-1/2"
+                  : "w-8 h-8 absolute top-1/2 -translate-y-1/2 -left-4"
+              }`}
               src={leftArrowBgWhite}
             ></img>
           </div>

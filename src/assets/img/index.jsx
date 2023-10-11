@@ -65,3 +65,6 @@ export {default as leftArrowBgWhite} from './icon/left-arrow-bg-white.svg';
 export {default as rightArrowBgWhite} from './icon/right-arrow-bg-white.svg';
 export {default as leftArrowBgTera} from './icon/left-arrow-bg-tera.svg';
 
+// bersama page
+export {default as pengantarBersama} from './pengantar-bersama.svg';
+
