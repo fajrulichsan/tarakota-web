@@ -11,7 +11,8 @@ const ProfileVideo = () => {
         <div
           className="w-full h-52 md:h-[18em] lg:h-[25em] md:w-[40em]  rounded-2xl flex justify-center items-center hover:cursor-pointer"
         >
-          <iframe className="rounded-xl md:rounded-2xl" width="100%" height="100%" src="https://www.youtube.com/embed/wQT7FXKvd28?si=GrXU7Q8w3hKDXH9X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe className="rounded-xl md:rounded-2xl" width="100%" height="100%" src="https://www.youtube.com/embed/BxGmsjd94Wo?si=5yKCeXxm6lsMcR4v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          {/* <iframe className="rounded-xl md:rounded-2xl" width="100%" height="100%" src="https://www.youtube.com/embed/wQT7FXKvd28?si=GrXU7Q8w3hKDXH9X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
         </div>
       </div>
 

@@ -56,7 +56,7 @@ const Banner = () => {
       <Slider {...settings}>
         <div className="hover:cursor-pointer">
           <div
-            className="h-[40em] relative"
+            className="h-[30em] md:h-[35em] lg:h-[40em] relative bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: `url(${bgBannerSlider})`,
             }}
@@ -69,13 +69,13 @@ const Banner = () => {
               }}
             >
               <div
-                className="h-full px-40 flex flex-col items-center justify-center"
+                className="h-full px-5 md:px-40 flex flex-col items-center justify-center"
                 style={{ zIndex: 1 }}
               >
-                <h1 className="text-6xl font-bold text-center text-white tracking-widest" style={{textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}>
+                <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold text-center text-white tracking-widest" style={{textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}>
                 PT. Wook Global Technology
                 </h1>
-                <p className="text-4xl text-white tracking-widest" style={{textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}>Architecture Commercia</p>
+                <p className="text-sm md:text-2xl lg:text-4xl text-white tracking-widest" style={{textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}>Architecture Commercia</p>
               </div>
             </div>
           </div>
