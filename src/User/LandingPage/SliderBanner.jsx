@@ -8,7 +8,10 @@ import {
   twitter,
   youtube,
   instagram,
-  bgBannerSlider,
+  landingBanner1,
+  landingBanner2,
+  landingBanner3,
+  landingBanner4,
   linekdin,
   whatsapp,
 } from "../../assets/img/index";
@@ -16,18 +19,23 @@ import {
 const bannerContentList = [
   {
     id: 1,
-    title: "Pelayanan Konsultasi Desain Modern dan Klasik Terbaik.",
-    bgImage: bgBannerSlider,
+    title: "Bersama Tarakota, Wujudkan Impian Arsitekturmu!",
+    bgImage: landingBanner1,
   },
   {
     id: 2,
-    title: "Hadir dengan Berbagai Program Bisnis yang Menjanjikan!",
-    bgImage: bgBannerSlider,
+    title: "Kreasi Desain Arsitektur Tanpa Batas, Bersama Tarakota.",
+    bgImage: landingBanner2,
   },
   {
     id: 3,
-    title: "Terpecaya Melayani Custumer dengan Sangat Baik.!",
-    bgImage: bgBannerSlider,
+    title: "Meretas Batasan dalam Arsitektur, Interior, Lanskap, dan Furniture.",
+    bgImage: landingBanner3,
+  },
+  {
+    id: 4,
+    title: "Inovasi & Keindahan, Kualitas Desain Terbaik di Ujung Jarimu.",
+    bgImage: landingBanner4,
   },
 ];
 

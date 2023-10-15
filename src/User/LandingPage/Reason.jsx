@@ -1,119 +1,5 @@
-// import React, { useState } from "react";
-// import {
-//   reasonImage,
-//   previousButton,
-//   nextButton,
-// } from "../../assets/img/index";
-
-// const carouselData = [
-//   {
-//     id: 1,
-//     title: "Desain Kekinian",
-//     content:
-//       "Armada menggunakan interior dan fasilitas premium yang dapat membuat perjalanan Anda lebih nyaman.",
-//   },
-//   {
-//     id: 2,
-//     title: "Arsitek Ahli",
-//     content:
-//       "Armada menggunakan interior dan fasilitas premium yang dapat membuat perjalanan Anda lebih nyaman.",
-//   },
-//   {
-//     id: 3,
-//     title: "Furnitur Modern",
-//     content:
-//       "Armada menggunakan interior dan fasilitas premium yang dapat membuat perjalanan Anda lebih nyaman.",
-//    },
-//   {
-//     id: 4,
-//     title: "Kualitas Terbaik",
-//     content:
-//     "Armada menggunakan interior dan fasilitas premium yang dapat membuat perjalanan Anda lebih nyaman.",
-//   },
-// ];
-
-// const styleCardTesti = {
-//   border: "4px solid #E85738",
-//   background: "#F9F5EC",
-//   boxShadow: "0px 4px 25px 0px rgba(0, 0, 0, 0.08)",
-// };
-
-// const Reason = () => {
-//   const [currentGroup, setCurrentGroup] = useState(0);
-
-//   const nextGroup = () => {
-//     setCurrentGroup((currentGroup + 1) % Math.ceil(carouselData.length / 2));
-//   };
-
-//   const prevGroup = () => {
-//     setCurrentGroup(
-//       (currentGroup - 1 + Math.ceil(carouselData.length / 2)) %
-//         Math.ceil(carouselData.length / 2)
-//     );
-//   };
-
-//   return (
-//     <div className="mx-auto">
-//       <div className="mx-auto grid grid-cols-12 lg:grid-cols-4 relative px-20 py-10 ">
-//         <div
-//           className="w-60 h-60 bg-cover col-span-3 lg:col-span-1 shadow-xl shadow-gold "
-//           style={{
-//             backgroundImage: `url(${reasonImage})`,
-//           }}
-//         ></div>
-//         <div className="col-span-9 lg:col-span-3 space-y-9">
-//           <div>
-//             <h2 className="text-lg md:text-2xl lg:text-4xl font-bold text-center tracking-wider">
-//               Kenapa Harus Memilih "Tarakota" ?
-//             </h2>
-//             <hr className="text-3xl w-40 mx-auto font-bold text-center border-b-4 border-tera"></hr>
-//           </div>
-//           <div className="flex justify-center space-x-5 items-center">
-//             {carouselData
-//               .slice(currentGroup * 2, currentGroup * 2 + 2)
-//               .map((item) => (
-//                 <div
-//                   key={item.id}
-//                   className="p-7 h-fit w-[35em] rounded-3xl  flex justify-between items-center space-x-5"
-//                   style={styleCardTesti}
-//                 >
-//                   <div className="grow w-60 rounded-lg">
-//                     <h3 className="text-xl lg:text-2xl font-semibold mb-2">{item.title}</h3>
-//                     <hr className="border-2 border-tera w-32 -mt-1"></hr>
-//                     <div className="relative text-sm lg:text-lg w-auto text-justify">{item.content}</div>
-//                   </div>
-//                 </div>
-//               ))}
-//           </div>
-//           <div className="center-navigator flex justify-center items-center space-x-3">
-//             <button onClick={prevGroup}>
-//               <img src={previousButton} alt="Previous" />
-//             </button>
-//             {Array.from({ length: Math.ceil(carouselData.length / 2) }).map(
-//               (_, index) => (
-//                 <span
-//                   key={index}
-//                   className={`w-4 h-4 border-2 border-gray-300 rounded-full ${
-//                     index === currentGroup ? "bg-gold" : ""
-//                   }`}
-//                   onClick={() => setCurrentGroup(index)}
-//                 ></span>
-//               )
-//             )}
-//             <button onClick={nextGroup}>
-//               <img src={nextButton} alt="Next" />
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Reason;
-
 import React, { useState } from "react";
-import { reasonImage, bgProjectSlider } from "../../assets/img/index";
+import { reasonImage } from "../../assets/img/index";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -122,28 +8,16 @@ import "./css/slider-project.css";
 const reasonList = [
   {
     id: 1,
-    title: "Desain Kekinian",
+    title: "Berpengalaman",
     content:
-      "Armada menggunakan interior dan fasilitas premium yang dapat membuat perjalanan Anda lebih nyaman.",
+      "Memiliki pengalaman lebih dari 5 tahun dalam pengembangan bisnis, dan kami terus berupaya mencapai keunggulan dalam segala hal yang kami lakukan.",
   },
   {
     id: 2,
-    title: "Arsitek Ahli",
+    title: "Tim Arsitek dan Insinyur Terpecaya",
     content:
-      "Armada menggunakan interior dan fasilitas premium yang dapat membuat perjalanan Anda lebih nyaman.",
-  },
-  {
-    id: 3,
-    title: "Furnitur Modern",
-    content:
-      "Armada menggunakan interior dan fasilitas premium yang dapat membuat perjalanan Anda lebih nyaman.",
-  },
-  {
-    id: 4,
-    title: "Kualitas Terbaik",
-    content:
-      "Armada menggunakan interior dan fasilitas premium yang dapat membuat perjalanan Anda lebih nyaman.",
-  },
+      "Bekerja tanpa kenal lelah untuk memastikan bahwa setiap proyek yang kami lakukan dilaksanakan dengan sangat presisi dan perhatian terhadap detail.",
+  }
 ];
 
 const styleCardTesti = {
@@ -259,17 +133,17 @@ const Reason = () => {
             backgroundImage: `url(${reasonImage})`,
           }}
         ></div>
-        <div className="col-span-12 md:col-span-8 lg:col-span-3 px-5 md:px-16 lg:px-20 lg:p-10">
+        <div className="col-span-12 md:col-span-8 lg:col-span-3 px-5 md:px-16 lg:px-8 lg:p-10">
           <Slider {...settings} className="">
             {reasonList.map((item) => (
               <div className="p-5 mt-5 md:mt-0">
-                <div className="rounded-xl md:rounded-2xl p-5" 
+                <div className="rounded-xl md:rounded-2xl p-5 h-[12em]" 
                 style={styleCardTesti}>
                   <h3 className="text-md lg:text-xl font-semibold mb-2">
                     {item.title}
                   </h3>
                   <hr className="border md:border-2 border-tera w-20 md:w-32 -mt-1"></hr>
-                  <div className="relative text-sm lg:text-md w-auto text-justify">
+                  <div className="relative text-md lg:text-md w-auto text-justify mt-1">
                     {item.content}
                   </div>
                 </div>

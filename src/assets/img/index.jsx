@@ -2,8 +2,18 @@
 
 // feat : slider banner
 export {default as bgBannerSlider} from './bg-banner-slider.svg';
+export {default as landingBanner1} from './landing-banner1.webp';
+export {default as landingBanner2} from './landing-banner2.webp';
+export {default as landingBanner3} from './landing-banner3.webp';
+export {default as landingBanner4} from './landing-banner4.webp';
 
 // feat : slider project
+export {default as landingProject1} from './landing-project1.webp';
+export {default as landingProject2} from './landing-project2.webp';
+export {default as landingProject3} from './landing-project3.webp';
+export {default as landingProject4} from './landing-project4.webp';
+export {default as landingProject5} from './landing-project5.webp';
+export {default as landingProject6} from './landing-project6.webp';
 export {default as bgProjectSlider} from './bg-project-slider.svg';
 
 //feat : video profile

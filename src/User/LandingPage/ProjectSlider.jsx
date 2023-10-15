@@ -4,7 +4,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./css/slider-project.css";
 
-import { bgProjectSlider, leftArrowBgTera } from "../../assets/img/index";
+import {
+  landingProject1,
+  landingProject2,
+  landingProject3,
+  landingProject4,
+  landingProject5,
+  landingProject6,
+} from "../../assets/img/index";
 
 const ProjectSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0); // Define currentSlide state
@@ -12,33 +19,39 @@ const ProjectSlider = () => {
   const projects = [
     {
       id: 1,
-      title: "Project 1",
-      description: "Description for Project 1",
-      image: bgProjectSlider,
+      title: "Interior",
+      description: "PT. Kalbe Farma",
+      image: landingProject1,
     },
     {
       id: 2,
-      title: "Project 2",
-      description: "Description for Project 2",
-      image: bgProjectSlider,
+      title: "Interior",
+      description: "Mr. HR",
+      image: landingProject2,
     },
     {
       id: 3,
-      title: "Project 3",
-      description: "Description for Project 3",
-      image: bgProjectSlider,
+      title: "Arsitektur",
+      description: "Mr. BA",
+      image: landingProject3,
     },
     {
       id: 4,
-      title: "Project 4",
-      description: "Description for Project 4",
-      image: bgProjectSlider,
+      title: "Interior",
+      description: "Mr. VR",
+      image: landingProject4,
     },
     {
       id: 5,
-      title: "Project 5",
-      description: "Description for Project 5",
-      image: bgProjectSlider,
+      title: "Arsitektur",
+      description: "Mr. RA",
+      image: landingProject5,
+    },
+    {
+      id: 5,
+      title: "Interior",
+      description: "Mr. PA",
+      image: landingProject6,
     },
   ];
 
@@ -142,7 +155,7 @@ const ProjectSlider = () => {
             <div
               className="w-full relative h-[30em] bg-center bg-cover bg-no-repeat hover:cursor-pointer"
               style={{
-                backgroundImage: `url(${bgProjectSlider})`,
+                backgroundImage: `url(${project.image})`,
               }}
             >
               <div
@@ -154,7 +167,9 @@ const ProjectSlider = () => {
               >
                 <div className="text-white p-5">
                   <p className="text-xl md:text-2xl">Interior</p>
-                  <p className="text-sm md:text-lg">PT. Wook Global Teknologi</p>
+                  <p className="text-sm md:text-lg">
+                    PT. Wook Global Teknologi
+                  </p>
                 </div>
               </div>
             </div>
@@ -164,7 +179,6 @@ const ProjectSlider = () => {
       <div className="w-fit px-8 py-1 mx-auto text-sm md:text-base mt-10 md:mt-12 text-md text-center text-white bg-tera rounded-full hover:cursor-pointer">
         All Project
       </div>
-
     </div>
   );
 };
