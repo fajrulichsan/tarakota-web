@@ -63,6 +63,17 @@ export {default as wook} from './client/wook.svg';
 
 // about us page
 export {default as bgVisiMisiAboutUs} from './bg-visi-misi-about-us.svg';
+export {default as aboutBanner} from './about-banner.webp';
+export {default as aboutCEO} from './about-CEO.webp';
+export {default as aboutCFO} from './about-CFO.webp';
+export {default as aboutCTO} from './about-CTO.webp';
+export {default as aboutDesc} from './about-desc.webp';
+export {default as bottomArrow} from '../img/icon/bottom-arrow.svg';
+export {default as topArrow} from '../img/icon/top-arrow.svg';
+
+
+
+
 
 
 // bangun page
