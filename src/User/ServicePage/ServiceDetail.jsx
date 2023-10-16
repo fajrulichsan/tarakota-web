@@ -103,7 +103,7 @@
 
 // export default ServiceDetail;
 
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { bgVisiMisiAboutUs } from "../../assets/img/index";
 
 const ourServis = [
@@ -112,35 +112,56 @@ const ourServis = [
     title: "Arsitektur",
     flex: "flex-row",
     img: bgVisiMisiAboutUs,
-    body: "Tarakota menawarkan margin keuntungan yang kompetitif yang akan menjadi sumber pendapatan utama bagi Mitra Experience Center Tarakota. Persentase margin akan berbeda-beda tergantung pada paket Experience Center yang kamu pilih.",
+    body: [
+      "Desain arsitektur inovatif yang disesuaikan dengan preferensi Anda",
+      "Perencanaan dan penjadwalan yang komprehensi untuk pelaksanaan yang lancar",
+      "Konsultasi ahli untuk memandu Anda melalui seluruh proses",
+      "Manajemen proyek yang efisien untuk penyelesaian tepat waktu dan sukses",
+    ],
   },
   {
     id: 2,
-    title: "Furnitur",
-    flex: "flex-row-reverse",
-    img: bgVisiMisiAboutUs,
-    body: "Tarakota menawarkan margin keuntungan yang kompetitif yang akan menjadi sumber pendapatan utama bagi Mitra Experience Center Tarakota. Persentase margin akan berbeda-beda tergantung pada paket Experience Center yang kamu pilih.",
-  },
-  {
-    id: 3,
     title: "Interior",
     flex: "flex-row",
     img: bgVisiMisiAboutUs,
-    body: "Tarakota menawarkan margin keuntungan yang kompetitif yang akan menjadi sumber pendapatan utama bagi Mitra Experience Center Tarakota. Persentase margin akan berbeda-beda tergantung pada paket Experience Center yang kamu pilih.",
+    body: [
+      "Desain interior khusus yang mencerminkan kepribadian dan gaya Anda",
+      "Perencanaan ruang yang bijaksana untuk memaksimalkan fungsionalitas dan kenyamanan",
+      "Pemilihan bahan, warna, dan finishing untuk tampilan yang kohesif",
+      "Kolaborasi dengan kontraktor dan supplier terpercaya untuk menjamin kualitas",
+    ],
+  },
+  {
+    id: 3,
+    title: "Lanskap",
+    flex: "flex-row",
+    img: bgVisiMisiAboutUs,
+    body: [
+      "Desain lanskap unik yang selaras dengan lingkungan sekitar",
+      "Integrasi elemen seperti fitur air, tanaman, dan pencahayaan",
+      "Saran ahli tentang praktik berkelanjutan dan solusi ramah lingkungan",
+      "Rencana pemeliharaan untuk menjaga ruang luar Anda tetap berkembang sepanjang tahun",
+    ],
   },
   {
     id: 4,
-    title: "Lanskap",
-    flex: "flex-row-reverse",
+    title: "Furnitur",
+    flex: "flex-row",
     img: bgVisiMisiAboutUs,
-    body: "Tarakota menawarkan margin keuntungan yang kompetitif yang akan menjadi sumber pendapatan utama bagi Mitra Experience Center Tarakota. Persentase margin akan berbeda-beda tergantung pada paket Experience Center yang kamu pilih.",
+    body: ['Desain furnitur khusus dibuat dengan presisi dan perhatian terhadap detail',
+      'Pemilihan bahan dan finishing berkualitas tinggi untuk daya tahan dan daya tarik estetika',
+      'Desain fungsional dan ergonomis yang mengoptimalkan ruang tamu atau ruang kerja Anda',
+      'Kolaborasi dengan pengrajin terampil untuk mewujudkan visi Anda']
   },
   {
     id: 5,
-    title: "Supervisor",
+    title: "Jasa Pengawas",
     flex: "flex-row",
     img: bgVisiMisiAboutUs,
-    body: "Tarakota menawarkan margin keuntungan yang kompetitif yang akan menjadi sumber pendapatan utama bagi Mitra Experience Center Tarakota. Persentase margin akan berbeda-beda tergantung pada paket Experience Center yang kamu pilih.",
+    body: ['Pengawasan lokasi untuk memantau kemajuan konstruksi dan jaminan kualitas',
+      'Inspeksi tepat waktu untuk mengatasi masalah apa pun dengan segera',
+      'Koordinasi dengan kontraktor dan pemasok untuk menjaga jadwal proyek',
+      'Perhatian terhadap detail untuk memastikan kepatuhan terhadap spesifikasi proyek']
   },
 ];
 
@@ -155,25 +176,35 @@ const ServiceDetail = () => {
 
     handleResize();
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return (
     <div className="lg:px-20 py-8 md:py-16 lg:py-20 ">
       {ourServis.map((data) => (
-        <div className="grid grid-cols-3 md:grid-cols-12 lg:grid-cols-12 mt-5 px-5 gap-5 lg:gap-20">
-          <div className={`col-span-1 md:col-span-4 lg:col-span-4 flex items-center justify-center  ${data.id % 2 === 1 ? "md:col-start-2 lg:col-start-2" : "order-1 lg:order-9"}`}>
+        <div className="grid grid-cols-3 md:grid-cols-12 lg:grid-cols-12 mt-5 px-5 gap-2 lg:gap-20">
+          <div
+            className={`col-span-1 md:col-span-4 lg:col-span-4 flex items-center justify-center lg:mb-10  ${
+              data.id % 2 === 1
+                ? "md:col-start-2 lg:col-start-2"
+                : "order-1 lg:order-9"
+            }`}
+          >
             <div
               className="w-[10em] h-[10em] md:w-[15em] md:h-[15em] lg:h-[20em] lg:w-[20em] bg-cover bg-center bg-no-repeat rounded-lg lg:rounded-2xl"
               style={{ backgroundImage: `url(${data.img})` }}
             ></div>
           </div>
 
-          <div className={`col-span-2 md:col-span-6 lg:col-span-6 ${data.id % 2 === 0 ? " md:col-start-2 lg:col-start-2" : ""}`}>
+          <div
+            className={`col-span-2 md:col-span-6 lg:col-span-6 ${
+              data.id % 2 === 0 ? " md:col-start-2 lg:col-start-2" : ""
+            }`}
+          >
             <div className="">
               <h1
                 className={`text-xl md:text-2xl lg:text-4xl font-extrabold tracking-wider ${
@@ -183,14 +214,18 @@ const ServiceDetail = () => {
               >
                 {data.title}
               </h1>
-              <div
-                className="rounded-xl shadow-md shadow-gold p-4 md:p-6 md:mt-2 lg:p-8 lg:mt-5"
-              >
-                <p className="text-xs md:text-lg lg:text-2xl text-justify">{data.body}</p>
+              <div className="rounded-xl shadow-md shadow-gold p-4 md:p-6 md:mt-2 lg:p-8 lg:mt-5 text-xs md:text-lg lg:text-xl text-justify">
+                <ul className="list-disc px-3 md:px-5 text-justify">
+                  {Array.isArray(data.body)
+                    ? data.body.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))
+                    : null}
+                </ul>
               </div>
             </div>
           </div>
-        </div>        
+        </div>
       ))}
     </div>
   );

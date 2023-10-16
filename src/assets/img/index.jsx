@@ -71,9 +71,8 @@ export {default as aboutDesc} from './about-desc.webp';
 export {default as bottomArrow} from '../img/icon/bottom-arrow.svg';
 export {default as topArrow} from '../img/icon/top-arrow.svg';
 
-
-
-
+// service page
+export {default as serviceBanner } from './service-banner.webp';
 
 
 // bangun page
