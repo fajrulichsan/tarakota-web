@@ -5,12 +5,12 @@ const jenisInvestasiList = [
   {
     id: 1,
     title: "Barang Fisik",
-    body: "1 Investasi dalam surat berharga, yang nggak lain adalah bukti kepemilikan aset dengan nilai tertentu. Surat-surat berharga ini bisa juga diperdagangkan di pasar keuangan, atau yang kita kenal dengan istilah efek.",
+    body: "Investasi barang fisik tuh kayak beli tanah atau bangunan buat disewain atau dijual lagi, atau beli emas buat jaga-jaga nilai uang kamu, atau mungkin barang antik yang harganya bisa naik di masa depan. Yang penting, kamu bisa pegang dan kendalikan barang-barang itu secara langsung.",
   },
   {
     id: 2,
     title: "Surat Berharga",
-    body: "2 Investasi dalam surat berharga, yang nggak lain adalah bukti kepemilikan aset dengan nilai tertentu. Surat-surat berharga ini bisa juga diperdagangkan di pasar keuangan, atau yang kita kenal dengan istilah efek.",
+    body: "Investasi dalam surat berharga, yang nggak lain adalah bukti kepemilikan aset dengan nilai tertentu. Surat-surat berharga ini bisa juga diperdagangkan di pasar keuangan, atau yang kita kenal dengan istilah efek.",
   },
 ];
 

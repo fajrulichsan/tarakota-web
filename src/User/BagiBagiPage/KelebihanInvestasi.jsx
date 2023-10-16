@@ -7,7 +7,7 @@ import "./css/slider-project.css";
 const carouselData = [
   {
     id: 1,
-    title: " Melawan Inflasi",
+    title: "Melawan Inflasi",
     body: "Dengan investasi, uang kamu bisa terlindungi dari inflasi.",
   },
   {
@@ -17,13 +17,23 @@ const carouselData = [
   },
   {
     id: 3,
-    title: " Melawan Inflasi",
-    body: "Dengan investasi, uang kamu bisa terlindungi dari inflasi.",
+    title: "Mencapai Tujuan Keuangan",
+    body: "Investasi bisa bantu kamu cepet nyampein tujuan finansial, seperti beli rumah atau mobil",
   },
   {
     id: 4,
-    title: "Tambahan Penghasilan",
-    body: "Investasi bisa nambahin penghasilan kamu, tanpa harus kerja keras terus-menerus",
+    title: "Kesehatan Mental yang Terjaga",
+    body: "Kondisi finansial yang lebih baik bisa bikin pikiran kamu lebih tenang dan bahagia.",
+  },
+  {
+    id: 5,
+    title: "Modal yang Bisa Disesuaikan",
+    body: " Banyak jenis investasi yang bisa sesuaiin dengan budget kamu.",
+  },
+  {
+    id: 6,
+    title: "Kebebasan Finansial",
+    body: "Salah satu tujuan akhirnya adalah bisa hidup tanpa harus kerja keras lagi, gara-gara uangnya udah cukup untuk nge-cover semua kebutuhan hidup.",
   },
 ];
 
@@ -140,7 +150,7 @@ const Introduction = () => {
     <div className="px-10 pb-14 md:px-20 md:pt-7 lg:pt-0 lg:px-32 lg:pb-20">
       <Slider {...settings} className="md:px-2">
         {carouselData.map((item) => (
-          <div className="p-3 h-[10em] md:h-[14em] lg:h-[15em]">
+          <div className="p-3 h-[11em] md:h-[14em] lg:h-[15em]">
             <div
               key={item.id}
               className="flex p-5 lg:p-10 relative border-2 border-white rounded-xl md:rounded-2xl lg:rounded-3xl h-full"
