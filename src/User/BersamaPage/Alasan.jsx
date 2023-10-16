@@ -10,35 +10,44 @@ const programList = [
     title: "Mudah dan Jelas",
     position: "top-0 left-10",
     description:
-      "1 Jika kamu memilih BisnisTarakota Franchise Relationship, peranmuadalah mepenghubun antara Tarakota dan calon pemilikfranchise. Kamu akan menjelaskan konsep bisnis franchise Tarakota",
+      ['Tanpa biaya deposit awal untuk memulai kerjasama.',
+       'Mendapatkan margin keuntungan dan insentif yang jelas dan transparan.',
+        'Dukungan pelatihan dan pengetahuan bisnis yang komprehensif.']
   },
   {
     id: 2,
     title: "Fleksibel dan Terencana",
     position: "top-16 right-0",
     description:
-      "1 Jika kamu memilih BisnisTarakota Franchise Relationship, peranmuadalah mepenghubun antara Tarakota dan calon pemilikfranchise. Kamu akan menjelaskan konsep bisnis franchise Tarakota",
+      ['Rencana bisnis yang disesuaikan dengan perkembangan pasar yang berkembang.',
+        'Analisis lokasi dan investasi yang diberikan berdasarkan perhitungan bersama dengan Tarakota.',
+        'Dukungan sebagian peralatan Experience Center dari Tarakota.']
   },
   {
     id: 3,
     title: "Promosi Lokal dan Nasional",
     position: "top-40 left-0 ",
     description:
-      "2 Jika kamu memilih BisnisTarakota Franchise Relationship, peranmuadalah menjadi penghubung antara Tarakota dan calon pemilik franchise. Kamu akan menjelaskan konsep bisnis  franchise Tarakota",
+      ['Mitra akan aktif dalam semua kegiatan promosi Experience Center Tarakota baik di tingkat nasional maupun lokal.',
+        'Terhubung dengan jutaan pelanggan Program Kemitraan BersamaTarakota di seluruh Indonesia.',
+        'Fleksibilitas untuk melakukan promosi lokal di Experience Center mitra bersama bisnis lainnya.']
   },
   {
     id: 4,
     title: "Pelatihan Bersama Tim Tarakota",
     position: "bottom-0 left-0",
     description:
-      "3 Jika kamu memilih BisnisTarakota Franchise Relationship, peranmuadalah menjadi penghubung antara Tarakota dan calon pemilikfranchise. Kamu akan menjelaskan konsep bisnis franchise Tarakota",
+      ['Rencana dan persiapan pembangunan Experience Center yang didukung oleh tim Tarakota.',
+        'Program pelatihan terencana dari Tim Pembelajaran Tarakota.',
+        'Implementasi standar operasional Experience Center Tarakota yang telah teruji.']
   },
   {
     id: 5,
     title: "Peluang Bisnis Tambahan",
     position: "bottom-20 right-0",
     description:
-      "4 Jika kamu memilih BisnisTarakota Franchise Relationship, peranmuadalah menjadi penghubung antara Tarakota dan calon pemilik franchise. Kamu akan menjelaskan konsep bisnis franchise Tarakota",
+      ['Mitra berhak membangun fasilitas tambahan sebagai sumber pendapatan tambahan tanpa biaya tambahan yang dikenakan oleh Tarakota.',
+        'Contohnya, kamu bisa membuka Coffee Shop di dalam Experience Center kamu untuk mendapatkan pendapatan tambahan.']
   },
 ];
 
@@ -105,12 +114,15 @@ const Alasan = () => {
               border: "4px solid #F8F3ED",
             }}
           >
-            <p className="text-sm md:text-lg lg:text-xl text-justify text-white">
-              {
-                programList.find((item) => item.id === currentProgram)
-                  .description
-              }
-            </p>
+              <ul className="list-decimal px-3 md:px-5 text-justify text-sm md:text-lg lg:text-xl text-white">
+                  {Array.isArray(programList.find((item) => item.id === currentProgram)
+                  .description)
+                    ? programList.find((item) => item.id === currentProgram)
+                    .description.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))
+                    : null}
+                </ul>
             <img
               className={`${
                 isMobile

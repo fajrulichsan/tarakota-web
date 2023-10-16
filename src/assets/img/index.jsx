@@ -74,6 +74,9 @@ export {default as topArrow} from '../img/icon/top-arrow.svg';
 // service page
 export {default as serviceBanner } from './service-banner.webp';
 
+// estimasi page
+export {default as estimasiBanner } from './estimation-banner.webp';
+
 
 // bangun page
 export {default as bangunBanner} from './bangun-banner.svg';

@@ -4,7 +4,7 @@ const sumberList = [
   {
     id: 1,
     title: "Turnover Area Sharing",
-    body: "Turnover Area Sharing Tarakota menawarkan margin keuntungan yang kompetitif yang akan menjadi sumber pendapatan utama bagi Mitra Experience Center Tarakota. Persentase margin akan berbeda-beda tergantung pada paket Experience Center yang kamu pilih.",
+    body: "Tarakota menawarkan margin keuntungan yang kompetitif yang akan menjadi sumber pendapatan utama bagi Mitra Experience Center Tarakota. Persentase margin akan berbeda-beda tergantung pada paket Experience Center yang kamu pilih.",
     position: "-bottom-3 -right-3 -translate-x-2",
     colspan: "col-span-6",
     margin: "ml-auto",
@@ -12,7 +12,7 @@ const sumberList = [
   {
     id: 2,
     title: "Penjualan Furniture Mass Product",
-    body: "Penjualan Furniture Mass Product Tarakota menawarkan margin keuntungan yang kompetitif yang akan menjadi sumber pendapatan utama bagi Mitra Experience Center Tarakota. Persentase margin akan berbeda-beda tergantung pada paket Experience Center yang kamu pilih.",
+    body: "Sebagai Mitra Experience Center Tarakota, kamu akan mendapatkan akses ke penjualan furniture berkualitas dari Tarakota yang diproduksi langsung oleh Tarakota Workspace di masing-masing wilayah.",
     position: "-bottom-3 left-0 -translate-x-2",
     colspan: "col-span-6",
     margin: "mr-auto",
@@ -20,7 +20,7 @@ const sumberList = [
   {
     id: 3,
     title: "Bisnis Non-Arsitektur (NAR)",
-    body: "Bisnis Non-Arsitektur (NAR) Tarakota menawarkan margin keuntungan yang kompetitif yang akan menjadi sumber pendapatan utama bagi Mitra Experience Center Tarakota. Persentase margin akan berbeda-beda tergantung pada paket Experience Center yang kamu pilih.",
+    body: "Di bawah merek Tarakota, Mitra Experience Center Tarakota berkesempatan mendapatkan sumber pendapatan tambahan di luar pendapatan dari konsultan dan furniture. Misalnya, membuka Coffee Shop di dalam Experience Center yang dapat menjadi sumber pendapatan tambahan.",
     position: "-top-3 left-1/2 -translate-x-3",
     colspan: "col-span-12",
     margin: "mx-auto",

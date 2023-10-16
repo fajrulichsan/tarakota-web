@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css"
 
-import { facebook, twitter, youtube, instagram, bgBannerSlider, whatsapp, linekdin } from "../../assets/img/index";
+import { facebook, twitter, youtube, instagram, bgBannerSlider, whatsapp, linekdin, estimasiBanner} from "../../assets/img/index";
 
 const Banner = () => {
   const socialMediaIcon = [
@@ -61,7 +61,7 @@ const Banner = () => {
           <div
             className="h-[40em] relative bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url(${bgBannerSlider})`,
+              backgroundImage: `url(${estimasiBanner})`,
             }}
           >
             <div
