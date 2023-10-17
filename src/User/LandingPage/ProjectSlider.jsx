@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -14,7 +14,26 @@ import {
 } from "../../assets/img/index";
 
 const ProjectSlider = () => {
-  const [currentSlide, setCurrentSlide] = useState(0); // Define currentSlide state
+  const [currentSlide, setCurrentSlide] = useState(0); 
+  const [isMobile, setIsMobile] = useState(false);
+
+
+  useEffect(() => {
+    // Cek lebar layar untuk menentukan mode mobile
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 680); // Atur breakpoint sesuai kebutuhan
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const widthDot = isMobile ? "10px" : "15px";
 
   const projects = [
     {
@@ -70,7 +89,7 @@ const ProjectSlider = () => {
         {dots.map((dot, index) => (
           <li
             key={index}
-            style={{ display: "inline-block", marginRight: "5px" }}
+            style={{ display: "inline-block", marginRight: isMobile ? "-5px" : "5px" }}
           >
             {dot}
           </li>
@@ -80,8 +99,8 @@ const ProjectSlider = () => {
     customPaging: (i) => (
       <div
         style={{
-          width: "15px",
-          height: "15px",
+          width: widthDot,
+          height: widthDot,
           background: currentSlide === i ? "#D4B754" : "transparent",
           border:
             currentSlide === i ? "2px solid #BABABA" : "2px solid #BABABA",
@@ -166,9 +185,9 @@ const ProjectSlider = () => {
                 }}
               >
                 <div className="text-white p-5">
-                  <p className="text-xl md:text-2xl">Interior</p>
+                  <p className="text-xl md:text-2xl">{project.title}</p>
                   <p className="text-sm md:text-lg">
-                    PT. Wook Global Teknologi
+                    {project.description}
                   </p>
                 </div>
               </div>

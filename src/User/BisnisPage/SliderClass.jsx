@@ -24,18 +24,46 @@ const carouselData = [
   },
   {
     id: 3,
-    title: "Pelatihan Awal yang Gak Bikin Bosen",
+    title: "Serunya Simulasi dan Peran Bermain",
     content: [
-      "Kita akan bantu kamu bangun pondasi kuat dengan mengenalin kamu sama seluk-beluk dunia arsitektur.",
-      "Dan tentu saja, nggak lupa kita bahas juga etika yang penting banget buat sukses di industri ini",
+      "Pelatihan di sini nggak pernah bikin ngantuk! Kita bakal kenalin kamu ke dunia arsitektur lewat simulasi dan peran bermain yang seru banget.",
+"Kamu bakal bisa praktek langsung tanpa harus khawatir kehilangan klien atau proyek."
     ],
   },
   {
     id: 4,
-    title: "Terus Maju Bersama",
+    title: " Ikutan Program Representatif BisnisTarakota yang Bikin Inspirasi",
     content: [
-      "Kamu akan terus belajar bareng kita. Kita akan ajari kamu cara berkomunikasi yang oke, negosiasi yang jitu, dan gimana caranya membangun hubungan yang asyik sama klien.",
-      "Kamu juga bakal jago dalam manajemen proyek arsitektur dan ngerti betul aturan-aturannya.",
+      "Jadi bagian dari Program Representatif BisnisTarakota kita yang keren abis. Program ini dirancang khusus buat bantu kamu kembangkan bisnis arsitektur kamu dengan lebih efektif.",
+      "Kamu juga bakal bisa belajar dari para ahli di industri ini."
+    ],
+  },
+  {
+    id: 5,
+    title: "Materi Pelatihan Selalu Kece",
+    content: [
+      "Kita selalu update materi pelatihan kita sesuai perkembangan industri arsitektur. Biar kamu selalu stay up-to-date."
+    ],
+  },
+  {
+    id: 6,
+    title:"Fleksibel Belajar Online",
+    content: [
+      "Kamu bakal punya akses ke platform pelatihan online. Jadi, bisa belajar kapan aja dan di mana aja sesuai kebutuhanmu."
+    ],
+  },
+  {
+    id: 7,
+    title: "Keren, Dapat Penghargaan untuk Prestasi Luar Biasa",
+    content: [
+      "Kita selalu apresiasi prestasi luar biasa yang kamu raih. Jadi, kamu bakal dapet penghargaan dan insentif yang pantas buat kerja kerasmu."
+    ],
+  },
+  {
+    id: 8,
+    title: "Komitmen Kuat pada Etika Bisnis",
+    content: [
+      "Tentu aja, etika bisnis yang bener itu penting. Kamu bakal diajarin etika bisnis dan praktik bisnis yang bener biar kamu selalu berinteraksi dengan jujur dan integritas."
     ],
   },
 ];

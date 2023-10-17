@@ -36,6 +36,8 @@ export {default as facebookWhite} from './icon/facebook-white.svg';
 export {default as twitterWhite} from './icon/twiter-white.svg';
 export {default as instagramWhite} from './icon/instagram-white.svg';
 export {default as youtubeWhite} from './icon/youtube-white.svg';
+export {default as whatsappWhite} from './icon/whatsapp-white.svg';
+export {default as linkedinWhite} from './icon/linkedin-white.svg';
 
 // sosial media
 export {default as facebook} from './icon/facebook.svg';
@@ -44,6 +46,7 @@ export {default as twitter} from './icon/twiter.svg';
 export {default as youtube} from './icon/youtube.svg';
 export {default as whatsapp} from './icon/whatsapp.svg';
 export {default as linekdin} from './icon/linkedin.svg';
+
 
 // client logo
 export {default as airMancur} from './client/air-mancur.svg';
@@ -87,6 +90,10 @@ export {default as perjalananKarir} from './perjalanan-karir.svg';
 export {default as leftArrowBgWhite} from './icon/left-arrow-bg-white.svg';
 export {default as rightArrowBgWhite} from './icon/right-arrow-bg-white.svg';
 export {default as leftArrowBgTera} from './icon/left-arrow-bg-tera.svg';
+export {default as bisnisAlur} from './bisnis-alur.webp';
+export {default as bisnisIntro1} from './bisnis-intro1.webp';
+
+
 
 // bersama page
 export {default as pengantarBersama} from './pengantar-bersama.svg';

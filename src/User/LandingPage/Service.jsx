@@ -1,51 +1,4 @@
-// import React from 'react';
-// import {bgBannerSlider} from '../../assets/img/index';
-
-// const serviseList = [
-//     {
-//         id: 1,
-//         title : "INTERIOR"
-//     },
-//     {
-//         id: 2,
-//         title : "ARSITEKTUR"
-//     },
-//     {
-//         id: 3,
-//         title : "LANSEKAP"
-//     }
-// ]
-
-// const Service = () => {
-//   return (
-//     <div className='px-20 py-10'>
-//         <h1 className='text-3xl font-bold text-center'>Layanan Kami</h1>
-//         <hr className='w-24 mx-auto border-2 border-tera mt-2'></hr>
-//         <div className='grid grid-cols-3 gap-10 px-20 mt-16'>
-//             {serviseList.map((data) => (
-//                 <div className='col-span-1'>
-//                 <div className='h-[30em] w-full bg-center bg-cover relative'
-//                 style={{backgroundImage : `url(${bgBannerSlider})`}}
-//                 >
-//                     <div className='inset-0 absolute flex justify-center items-center'
-//                     style={{background: 'linear-gradient(0deg, #E85738 -22.21%, rgba(0, 0, 0, 0.00) 100%)'}}
-//                     >
-//                         <p className='text-4xl text-white font-bold tracking-widest'>{data.title}</p>
-//                     </div>
-//                 </div>
-//             </div>
-//             ))}
-//             <div className='col-span-3 flex justify-center'>
-//                 <button className='w-fit px-12 py-1 rounded-full bg-tera text-white text-xl' >More</button>
-//             </div>
-//         </div>
-//     </div>
-//   )
-// }
-
-// export default Service;
-
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -55,6 +8,25 @@ import { bgProjectSlider } from "../../assets/img/index";
 
 const ProjectSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0); // Define currentSlide state
+  const [isMobile, setIsMobile] = useState(false);
+
+
+  useEffect(() => {
+    // Cek lebar layar untuk menentukan mode mobile
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 680); // Atur breakpoint sesuai kebutuhan
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const widthDot = isMobile ? "10px" : "15px";
 
   const projects = [
     {
@@ -86,7 +58,7 @@ const ProjectSlider = () => {
         {dots.map((dot, index) => (
           <li
             key={index}
-            style={{ display: "inline-block", marginRight: "5px" }}
+            style={{ display: "inline-block", marginRight: isMobile ? "-5px" : "5px" }}
           >
             {dot}
           </li>
@@ -96,8 +68,8 @@ const ProjectSlider = () => {
     customPaging: (i) => (
       <div
         style={{
-          width: "15px",
-          height: "15px",
+          width: widthDot,
+          height: widthDot,
           background: currentSlide === i ? "#D4B754" : "transparent",
           border:
             currentSlide === i ? "2px solid #BABABA" : "2px solid #BABABA",

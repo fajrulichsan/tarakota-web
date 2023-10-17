@@ -1,10 +1,13 @@
 import React from "react";
 import {
   facebookWhite,
-  twitterWhite,
   youtubeWhite,
   instagramWhite,
   logo,
+  linekdin,
+  whatsapp,
+  whatsappWhite,
+  linkedinWhite,
 } from "../assets/img/index";
 
 const productList = [
@@ -52,7 +55,15 @@ const aboutList = [
 
 const sosialMediaIcon = [
   {
+    icon : whatsappWhite,
+    href : "#"
+  },
+  {
     icon : instagramWhite,
+    href : "#"
+  },
+  {
+    icon : youtubeWhite,
     href : "#"
   },
   {
@@ -60,13 +71,10 @@ const sosialMediaIcon = [
     href : "#"
   },
   {
-    icon : twitterWhite,
+    icon : linkedinWhite,
     href : "#"
   },
-  {
-    icon : youtubeWhite,
-    href : "#"
-  }
+  
 ]
 
 const kerjasamaList = [

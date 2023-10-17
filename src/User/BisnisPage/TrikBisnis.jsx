@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./css/slider-project.css";
 
-const ProjectSlider = () => {
+const TrikBisnis = () => {
   const [currentSlide, setCurrentSlide] = useState(0); // Define currentSlide state
 
 const tipsList = [
@@ -131,9 +131,9 @@ const tipsList = [
                 overflow: "auto",
               }}
             >
-              <h1 className="text-lg md:text-xl lg:text-3xl text-center">{data.title}</h1>
+              <h1 className="text-lg md:text-xl lg:text-2xl text-center">{data.title}</h1>
               <hr className="w-32 mx-auto "></hr>
-              <p className="text-sm md:text-md lg:text-xl text-justify">
+              <p className="text-sm md:text-md lg:text-lg text-justify">
                 {data.body}
               </p>    </div>
           </div>
@@ -143,5 +143,5 @@ const tipsList = [
   );
 };
 
-export default ProjectSlider;
+export default TrikBisnis;
 

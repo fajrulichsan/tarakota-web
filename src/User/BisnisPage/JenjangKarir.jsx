@@ -6,25 +6,25 @@ const JenjangKarirList = [
     id: 1,
     title: "Start-Up Scout (SUS)",
     description:
-      "Start-Up Scout (SUS) Di level ini, seseorang memulai karirnya di industri arsitektur. Mereka adalah Start-Up Scout yang belajar tentang produk arsitektur, teknik penjualan, dan membangun basis klien awal",
+      "Di level ini, seseorang memulai karirnya di industri arsitektur. Mereka adalah Start-Up Scout yang belajar tentang produk arsitektur, teknik penjualan, dan membangun basis klien awal.",
   },
   {
     id: 2,
     title: "Advisory Ace (AA)",
     description:
-      "Advisory Ace (AA) Di level ini, seseorang memulai karirnya di industri arsitektur. Mereka adalah Start-Up Scout yang belajar tentang produk arsitektur, teknik penjualan, dan membangun basis klien awal",
+      "Setelah mengumpulkan pengalaman, seseorang dapat menjadi Advisory Ace. Mereka memiliki pemahaman yang mendalam tentang produk arsitektur dan mempunyai basis klien yang lebih besar.",
   },
   {
     id: 3,
     title: "Team Captain (TC)",
     description:
-      "Team Captain (TC) Di level ini, seseorang memulai karirnya di industri arsitektur. Mereka adalah Start-Up Scout yang belajar tentang produk arsitektur, teknik penjualan, dan membangun basis klien awal",
+      "Di level ini, seseorang menjadi Team Captain. Mereka bertanggung jawab untuk memimpin dan mengkoordinasi tim penjualan, memberikan bimbingan kepada anggota tim, serta merancang strategi penjualan yang efektif.",
   },
   {
     id: 4,
     title: "Growth Director (GD)",
     description:
-      "Growth Director (GD) Di level ini, seseorang memulai karirnya di industri arsitektur. Mereka adalah Start-Up Scout yang belajar tentang produk arsitektur, teknik penjualan, dan membangun basis klien awal",
+      "Growth Director adalah level tertinggi dalam karir di industri arsitektur. Mereka bertanggung jawab atas pengembangan strategi penjualan dan mengelola berbagai tim penjualan, serta terlibat dalam pengambilan keputusan strategis perusahaan.",
   },
 ];
 

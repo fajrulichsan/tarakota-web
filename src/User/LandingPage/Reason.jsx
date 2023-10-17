@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { reasonImage } from "../../assets/img/index";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -8,15 +8,51 @@ import "./css/slider-project.css";
 const reasonList = [
   {
     id: 1,
-    title: "Berpengalaman",
+    title: "Komitmen Penuh pada Inovasi",
     content:
-      "Memiliki pengalaman lebih dari 5 tahun dalam pengembangan bisnis, dan kami terus berupaya mencapai keunggulan dalam segala hal yang kami lakukan.",
+      "Merancang Masa Depan dengan Profesional.",
   },
   {
     id: 2,
-    title: "Tim Arsitek dan Insinyur Terpecaya",
+    title: "Ruang Hidup untuk Generasi Anda",
     content:
-      "Bekerja tanpa kenal lelah untuk memastikan bahwa setiap proyek yang kami lakukan dilaksanakan dengan sangat presisi dan perhatian terhadap detail.",
+      " Desain yang Menyatu dengan Gaya Hidup Milenial.",
+  },
+  {
+    id: 3,
+    title: "Pengalaman Lengkap dalam Satu Atap",
+    content:
+      "Dari Interior hingga Lanskap, Kami melengkapi Semua.",
+  },
+  {
+    id: 4,
+    title: "Mengawasi Setiap Detail",
+    content:
+      "Kami Berkomitmen pada Kualitas Terbaik.",
+  },
+  {
+    id: 5,
+    title: "Jembatan antara Inovasi dan Kecantikan",
+    content:
+      "Tarakota Memadukan Kedua Dunia.",
+  },
+  {
+    id: 6,
+    title: "Perancangan Berkelanjutan",
+    content:
+      "Kami Memikirkan Masa Depan Bumi Bersama Anda.",
+  },
+  {
+    id: 7,
+    title: "Kebebasan untuk Mengekspresikan Diri",
+    content:
+      "Berkerjasama dengan client menghasilkan desain yang memenuhi kebutuhan, prefensi, dan anggaran.",
+  },
+  {
+    id: 8,
+    title: "Handal dan Berpengalaman ",
+    content:
+      "Arsitek yang kompeten dan berpengalaman serta spesialis dalam arsitektur, interior, furniture dan landscape.",
   }
 ];
 
@@ -28,6 +64,26 @@ const styleCardTesti = {
 
 const Reason = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const [isMobile, setIsMobile] = useState(false);
+
+
+  useEffect(() => {
+    // Cek lebar layar untuk menentukan mode mobile
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 680); // Atur breakpoint sesuai kebutuhan
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const widthDot = isMobile ? "10px" : "15px";
 
   const settings = {
     dots: true,
@@ -44,7 +100,7 @@ const Reason = () => {
         {dots.map((dot, index) => (
           <li
             key={index}
-            style={{ display: "inline-block", marginRight: "5px" }}
+            style={{ display: "inline-block", marginRight: isMobile ? "-8px" : "5px" }}
           >
             {dot}
           </li>
@@ -54,8 +110,8 @@ const Reason = () => {
     customPaging: (i) => (
       <div
         style={{
-          width: "15px",
-          height: "15px",
+          width: widthDot,
+          height: widthDot,
           background: currentSlide === i ? "#D4B754" : "transparent",
           border:
             currentSlide === i ? "2px solid #BABABA" : "2px solid #BABABA",
@@ -133,16 +189,16 @@ const Reason = () => {
             backgroundImage: `url(${reasonImage})`,
           }}
         ></div>
-        <div className="col-span-12 md:col-span-8 lg:col-span-3 px-5 md:px-16 lg:px-8 lg:p-10">
-          <Slider {...settings} className="">
+        <div className="col-span-12 md:col-span-8 lg:col-span-3 md:px-16 lg:px-8 lg:p-10 px-5">
+          <Slider {...settings} className="mt-3">
             {reasonList.map((item) => (
-              <div className="p-5 mt-5 md:mt-0">
-                <div className="rounded-xl md:rounded-2xl p-5 h-[12em]" 
+              <div className="p-5 items-center">
+                <div className="rounded-xl md:rounded-2xl p-5 h-[11em] lg:h-[10em]" 
                 style={styleCardTesti}>
-                  <h3 className="text-md lg:text-xl font-semibold mb-2">
+                  <h3 className="text-md lg:text-md font-semibold mb-2">
                     {item.title}
                   </h3>
-                  <hr className="border md:border-2 border-tera w-20 md:w-32 -mt-1"></hr>
+                  <hr className="border md:border border-tera w-20 md:w-32 -mt-1"></hr>
                   <div className="relative text-md lg:text-md w-auto text-justify mt-1">
                     {item.content}
                   </div>
@@ -151,6 +207,7 @@ const Reason = () => {
             ))}
           </Slider>
         </div>
+        
       </div>
     </div>
   );

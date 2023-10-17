@@ -7,28 +7,28 @@ const programList = [
     title: "BisnisTarakota Financial Relationship",
     position: "top-0 right-0",
     description:
-      "1 Jika kamu memilih BisnisTarakota Franchise Relationship, peranmuadalah mepenghubun antara Tarakota dan calon pemilikfranchise. Kamu akan menjelaskan konsep bisnis franchise Tarakota",
+      "Sebagai Representatif BisnisTarakota Financial Relationship, peranmu adalah menjadi penghubung antara Tarakota dan mitra finansial atau investor. Tugas utamamu adalah untuk menjalin kerjasama dalam bidang investasi ekuitas atau pembagian saham Tarakota dengan mitra finansial. Kamu akan membangun relasi yang kuat dengan investor, memahami tujuan investasi mereka, dan mengkoordinasikan dengan Tarakota untuk mengatur kesepakatan investasi yang menguntungkan kedua belah pihak.",
   },
   {
     id: 2,
     title: "BisnisTarakota Client Relationship",
     position: "top-20 left-0 ",
     description:
-      "2 Jika kamu memilih BisnisTarakota Franchise Relationship, peranmuadalah menjadi penghubung antara Tarakota dan calon pemilik franchise. Kamu akan menjelaskan konsep bisnis  franchise Tarakota",
+      "Dalam peran Representatif BisnisTarakota Client Relationship, peranmu adalah menjadi penghubung antara Tarakota dan klien potensial. Kamu akan mencari peluang bisnis baru dan mengidentifikasi calon klien yang sesuai dengan kebutuhan Tarakota. Tugasmu adalah membangun hubungan bisnis yang kuat dengan klien, memahami kebutuhan mereka, dan mengkoordinasikan dengan Tarakota untuk menyediakan solusi yang tepat.",
   },
   {
     id: 3,
     title: "BisnisTarakota Land Property Relationship",
     position: "bottom-0 left-0",
     description:
-      "3 Jika kamu memilih BisnisTarakota Franchise Relationship, peranmuadalah menjadi penghubung antara Tarakota dan calon pemilikfranchise. Kamu akan menjelaskan konsep bisnis franchise Tarakota",
+      "Dalam peran Representatif BisnisTarakota Client Relationship, peranmu adalah menjadi penghubung antara Tarakota dan klien potensial. Kamu akan mencari peluang bisnis baru dan mengidentifikasi calon klien yang sesuai dengan kebutuhan Tarakota. Tugasmu adalah membangun hubungan bisnis yang kuat dengan klien, memahami kebutuhan mereka, dan mengkoordinasikan dengan Tarakota untuk menyediakan solusi yang tepat.",
   },
   {
     id: 4,
     title: "BisnisTarakota Franchise Relationship",
     position: "bottom-20 right-0",
     description:
-      "4 Jika kamu memilih BisnisTarakota Franchise Relationship, peranmuadalah menjadi penghubung antara Tarakota dan calon pemilik franchise. Kamu akan menjelaskan konsep bisnis franchise Tarakota",
+      "Jika kamu memilih BisnisTarakota Franchise Relationship, peranmu adalah menjadi penghubung antara Tarakota dan calon pemilik franchise. Kamu akan menjelaskan konsep bisnis franchise Tarakota kepada calon pemilik, membantu mereka memahami persyaratan dan prosesnya, serta mengkoordinasikan dengan Tarakota untuk memudahkan proses pembukaan unit bisnis franchise.",
   },
 ];
 

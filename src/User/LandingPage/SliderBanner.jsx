@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
@@ -43,12 +43,29 @@ const SliderBanner = () => {
   const socialMediaIcon = [
     whatsapp,
     instagram,
-    twitter,
     youtube,
     facebook,
     linekdin,
   ];
   const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Cek lebar layar untuk menentukan mode mobile
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 680); // Atur breakpoint sesuai kebutuhan
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const widthDot = isMobile ? "10px" : "15px";
 
   const settings = {
     dots: true,
@@ -62,7 +79,7 @@ const SliderBanner = () => {
         {dots.map((dot, index) => (
           <li
             key={index}
-            style={{ display: "inline-block", marginRight: "5px" }}
+            style={{ display: "inline-block", marginRight: isMobile ? "-5px" : "5px" }}
           >
             {dot}
           </li>
@@ -72,8 +89,8 @@ const SliderBanner = () => {
     customPaging: (i) => (
       <div
         style={{
-          width: "15px",
-          height: "15px",
+          width: widthDot,
+          height: widthDot,
           background: currentSlide === i ? "#D4B754" : "transparent",
           border:
             currentSlide === i ? "2px solid #BABABA" : "2px solid #BABABA",

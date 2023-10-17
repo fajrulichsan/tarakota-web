@@ -12,19 +12,56 @@ const trikList = [
     },
     {
         id : 2,
-        title : "Kuasai Produk Arsitektur dengan Brilian",
-        body : "Menjadi penguasa dalam memahami produk arsitektur yang kamu tawarkan. Kenali produk hingga ke dalamnya, sehingga kamu bisa menjelaskan manfaatnya dengan gemilang."
+        title : "Bina Hubungan Pribadi yang Dahsyat",
+        body : "Bangun hubungan yang tak terlupakan dengan calon klien. Kehebatanmu terletak pada kemampuanmu menjalin hubungan personal yang kuat."
     },
     {
         id : 3,
-        title : "Kuasai Produk Arsitektur dengan Brilian",
-        body : "Menjadi penguasa dalam memahami produk arsitektur yang kamu tawarkan. Kenali produk hingga ke dalamnya, sehingga kamu bisa menjelaskan manfaatnya dengan gemilang."
+        title : "Tunjukkan Kemampuan Komunikasi Luar Biasa",
+        body : "Berbicaralah dengan semangat dan dengarkan dengan hati. Komunikasimu yang luar biasa akan membantu calon klien merasa dipahami."
     },
     {
         id : 4,
-        title : "Kuasai Produk Arsitektur dengan Brilian",
-        body : "Menjadi penguasa dalam memahami produk arsitektur yang kamu tawarkan. Kenali produk hingga ke dalamnya, sehingga kamu bisa menjelaskan manfaatnya dengan gemilang."
-    }
+        title : "Jadilah Maestro Arsitektur",
+        body : "Berusahalah selalu agar jadi ahli dalam arsitektur. Pengetahuanmu yang dalam akan memberikan keunggulan dalam memberikan saran kepada klien."
+    },
+    {
+      id : 5,
+      title : "Rencanakan Penjualan yang Hebat",
+      body : "Buat rencana penjualan yang luar biasa dan tetapkan target yang mendalam. Rencanamu adalah peta jalan menuju kesuksesan."
+  },
+  {
+      id : 6,
+      title : "Manfaatkan Teknologi Secara Cerdas",
+      body : "Teknologi adalah sahabatmu. Gunakan media sosial dan alat-alat modern lainnya untuk mempermudah pekerjaan dan membangun brand pribadimu."
+  },
+  {
+      id : 7,
+      title : "Konsisten Beraksi",
+      body : "Keberhasilan datang dari tindakan yang konsisten. Kerja keras dan pantang menyerah adalah kunci."
+  },
+  {
+      id : 8,
+      title : "Hadapi Penolakan dengan Kepala Dingin",
+      body : "Penolakan bukanlah akhir segalanya, melainkan awal perjalananmu. Manfaatkan setiap penolakan sebagai peluang untuk tumbuh."
+  },
+  {
+    id : 9,
+    title : "Bangun Jaringan yang Mempesona",
+    body : "Bersahabatlah dengan sesama profesional dalam dunia arsitektur. Hubungan baik adalah kunci untuk membuka pintu kesempatan."
+},
+{
+  id : 10,
+  title : "Berikan Pelayanan Terbaik",
+  body : "Memberikan pelayanan yang luar biasa adalah tanda identitasmu. Pelanggan yang puas akan mengukir jejak kesuksesanmu."
+},
+,
+{
+  id : 11,
+  title : "Selalu Belajar dan Terus Berkembang",
+  body : "Sains arsitektur terus berubah. Jadilah penikmat pembelajaran sepanjang hayat dan selalu ikuti perkembangan terbaru."
+}
+
 ]
 const TrikAndTips = () => {
     const [currentSlide, setCurrentSlide] = useState(0); 
@@ -120,7 +157,7 @@ const TrikAndTips = () => {
     <div className='px-5 py-5 md:py-10 md:px-20 lg:px-32'>
         <h1 className='text-lg md:text-2xl lg:text-4xl text-tera text-center font-bold'>Tips Menjadi Representatif BisnisTarakota Sukses</h1>
         <p className='text-sm md:text-lg lg:text-2xl text-center'>Tips Menjadi Representatif BisnisTarakota Sukses</p>
-        <div className='px-5'>
+        <div className='px-5 my-10'>
         <Slider {...settings} className="">
         {trikList.map((item) => (
           <div className="p-3 h-[13em] md:h-[18em] lg:h-[15em]">

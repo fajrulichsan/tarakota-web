@@ -109,16 +109,16 @@ const Navbar = () => {
           </div>
 
           {/* Hamburger Button (hanya muncul di perangkat mobile) */}
-          <div className="lg:hidden">
+          <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-white hover:text-blue-300 focus:outline-none"
+              className={`${isGoldNavbar ? "text-tera" : "text-white"} hover:text-blue-300 focus:outline-none`}
             >
               {isMenuOpen ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
-                  fill="none"
+                  fill="#E85738"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
@@ -133,7 +133,7 @@ const Navbar = () => {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
-                  fill="none"
+                  fill="#E85738"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
@@ -152,11 +152,11 @@ const Navbar = () => {
           <ul
             className={`${
               isMenuOpen ? "hidden" : "hidden"
-            } lg:flex lg:space-x-10 mt-4 lg:mt-0`}
+            } md:flex md:space-x-5 items-center lg:space-x-10 `}
           >
             {menuNavbar.map((data, index) => (
               <li key={index}>
-                <a href={data.href} className="hover:text-blue-300 text-xl">
+                <a href={data.href} className="hover:text-blue-300 md:text-md lg:text-xl">
                   {data.title}
                 </a>
               </li>
@@ -166,8 +166,9 @@ const Navbar = () => {
       </div>
       {isMenuOpen & isMobile ? (
         <>
-          <div className="absolute translate-y-0 bg-white w-full transform transition-transform ease-in-out">
-            <div className="p-3 space-y-3 px-5">
+          <div className="absolute translate-y-0 flex justify-end w-full transform transition-transform ease-in-out">
+            <div className="p-3 space-y-3 px-7 bg-white rounded-l-xl"
+            style={{background : 'rgba(249, 245, 236, 0.80)'}}>
               {menuNavbar.map((data, index) => (
                 <p>
                   <a href={data.href} className="hover:text-blue-300 text-lg">
