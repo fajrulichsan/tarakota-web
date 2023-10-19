@@ -3,7 +3,7 @@ import React from "react";
 const ProjectDescription = () => {
   return (
     <div className="px-5 grid grid-cols-1 md:grid-cols-2 md:px-20 items-center gap-5 my-5 md:my-20">
-      <div className="col-span-1 lg:p-10">
+      <div className="col-span-1 lg:p-10 ">
         <p className="text-sm md:text-lg lg:text-2xl text-justify">
           Lorem ipsum dolor sit amet. Rem error earum est dolorem provident et
           quae officia cum quis mollitia. Aut quidem fugit 33 natus magni et
@@ -15,7 +15,7 @@ const ProjectDescription = () => {
       </div>
       <div className="col-span-1 space-y-7">
         <div
-          className="rounded-lg md:rounded-xl text-white p-4 md:p-6 shadow-md shadow-gold"
+          className="rounded-lg md:rounded-xl text-white p-4 md:p-6"
           style={{
             background: "#E85738",
           }}

@@ -60,7 +60,7 @@ const JenjangKarir = () => {
           <div className="col-span-1 md:col-span-3 row-span-2">
             <div className="grid grid-cols-6 md:grid-cols-1 gap-5">
               {JenjangKarirList.map((data) => (
-                <div className="col-span-3 md:col-span-1">
+                <div key={data.id} className="col-span-3 md:col-span-1">
                   <div
                   key={data.id}
                   className="rounded-full flex justify-center relative hover:cursor-pointer shadow-md shadow-gold"

@@ -6,24 +6,28 @@ const formInput = [
     title: "Nama Lengkap",
     name: "namaLengkap",
     placeholder: "Nama Lengkap",
+    tipe:"text"
   },
   {
     id: 2,
     title: "No Hp",
     name: "nohp",
     placeholder: "No Hp",
+    tipe:"number"
   },
   {
     id: 3,
     title: "Alamat Email",
     name: "alamatEmail",
     placeholder: "Alamat Email",
+    tipe:"email"
   },
   {
     id: 4,
     title: "Alamat Proyek",
     name: "alamatProyek",
     placeholder: "Alamat Proyek",
+    tipe:"text"
   },
 ];
 
@@ -59,11 +63,15 @@ const FormEstimasi = () => {
   // State untuk data Provinsi, Kota/Kabupaten, dan Kecamatan
   const [provinces, setProvinces] = useState([]);
   const [selectedProvince, setSelectedProvince] = useState("");
+  const [selectedProvinceName, setSelectedProvinceName] = useState("");
   const [cities, setCities] = useState([]);
   const [selectedCity, setSelectedCity] = useState("");
+  const [selectedCityName, setSelectedCityName] = useState("");
   const [districts, setDistricts] = useState([]);
   const [selectedDistrict, setSelectedDistrict] = useState("");
+  const [selectedDistrictName, setSelectedDistrictName] = useState("");
   const [wards, setWards] = useState([]);
+  const [selectedWardName, setSelectedWardName] = useState("");
   const [selectedWard, setSelectedWard] = useState("");
 
   // State untuk melacak form-input yang ditambahkan
@@ -152,7 +160,6 @@ const FormEstimasi = () => {
     }
   };
 
-
   const fetchWards = async (selectedDistrict) => {
     try {
       const response = await fetch(
@@ -170,29 +177,61 @@ const FormEstimasi = () => {
     fetchProvinces();
   }, []);
 
-  // Event handler untuk saat Provinsi dipilih
   const handleProvinceChange = (e) => {
-    const selectedProvince = e.target.value;
-    setSelectedProvince(selectedProvince);
-    // Mengambil data Kota/Kabupaten berdasarkan Provinsi yang dipilih
-    fetchCities(selectedProvince);
+    const selectedProvinceId = e.target.value;
+    const selectedProvinceName = e.target.options[e.target.selectedIndex].getAttribute("data-nama");
+  
+    if (selectedProvinceName) {
+      setSelectedProvinceName(selectedProvinceName);
+    } else {
+      setSelectedProvinceName(""); // Reset the name if the selection is invalid
+    }
+  
+    setSelectedProvince(selectedProvinceId);
+    fetchCities(selectedProvinceId);
   };
-
-  // Event handler untuk saat Kota/Kabupaten dipilih
+  
   const handleCityChange = (e) => {
     const selectedCity = e.target.value;
+    const selectedCityName = e.target.options[e.target.selectedIndex].getAttribute("data-nama");
+  
+    if (selectedCityName) {
+      setSelectedCityName(selectedCityName);
+    } else {
+      setSelectedCityName(""); // Reset the name if the selection is invalid
+    }
+  
     setSelectedCity(selectedCity);
-    // Mengambil data Kecamatan berdasarkan Kota/Kabupaten yang dipilih
     fetchDistricts(selectedCity);
   };
 
   const handleDistrictChange = (e) => {
     const selectedDistrict = e.target.value;
+    const selectedDistrictName = e.target.options[e.target.selectedIndex].getAttribute("data-nama");
+  
+    if (selectedDistrictName) {
+      setSelectedDistrictName(selectedDistrictName);
+    } else {
+      setSelectedDistrictName(""); // Reset the name if the selection is invalid
+    }
+  
     setSelectedDistrict(selectedDistrict);
-    // Mengambil data Kelurahan berdasarkan Kecamatan yang dipilih
     fetchWards(selectedDistrict);
   };
 
+  const handleWardChange = (e) => {
+    const selectedWard = e.target.value;
+    const selectedWardName = e.target.options[e.target.selectedIndex].getAttribute("data-nama");
+  
+    if (selectedWardName) {
+      setSelectedWardName(selectedWardName);
+    } else {
+      setSelectedWardName(""); // Reset the name if the selection is invalid
+    }
+  
+    setSelectedWard(selectedWard);
+  };
+  
   // Event handler untuk menambahkan form-input baru
   const handleAddProjectForm = () => {
     const newId = projectForms.length + 1;
@@ -217,6 +256,29 @@ const FormEstimasi = () => {
 
     setProjectForms(updatedForms);
     setProjectFormsCountArea(updatedFormsCountArea);
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target)
+    console.log(formData.get("provinsiName"));
+    console.log(formData.get("cityName"));
+    console.log(formData.get("districtName"));
+    console.log(formData.get("wardName"));
+
+
+    // emailjs.sendForm("service_emizq9q", "template_s5dehgg", e.target, "RHjp-oAmRy8VkGhmc").then(
+    //   (result) => {
+    //     console.log("Email sent successfully", result);
+
+    //     // You can display a success message to the user or perform other actions here.
+    //   },
+    //   (error) => {
+    //     console.error("Email sending failed", error);
+
+    //     // You can display an error message to the user or handle the error in another way.
+    //   }
+    // );
   };
 
   return (
@@ -251,227 +313,241 @@ const FormEstimasi = () => {
           </p>
         </div>
         <div className="space-y-3 md:space-y-5 py-4 md:py-5 lg:py-10">
-          {formInput.map((data) => (
-            <div key={data.id}>
-              <p className="text-sm md:text-lg lg:text-xl">
-                {data.title} <span className="text-red-600">*</span>
-              </p>
-              <input
-                name={data.name}
-                className="w-full text-sm md:text-lg lg:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-5 bg-transparent"
-                placeholder={data.placeholder}
-              ></input>
-            </div>
-          ))}
+          <form onSubmit={sendEmail}>
+            {formInput.map((data) => (
+              <div key={data.id}>
+                <p className="text-sm md:text-lg lg:text-xl">
+                  {data.title} <span className="text-red-600">*</span>
+                </p>
+                <input
+                  name={data.name}
+                  className="w-full text-sm md:text-lg lg:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-5 bg-transparent"
+                  placeholder={data.placeholder}
+                  // required
+                ></input>
+              </div>
+            ))}
 
-          {/* dropdown alamat */}
-          <div className="grid grid-cols-2 gap-x-2 gap-y-3 md:gap-x-10 md:gap-y-5">
-            <div className="col-span-1">
-              <p className="text-sm md:text-lg lg:text-xl">
-                Provinsi <span className="text-red-600">*</span>
-              </p>
-              <select
-                className="w-full text-xs md:text-xl rounded-full h-8 md:h-10 border-2 px-2 md:px-5 border-gray-600 bg-transparent"
-                value={selectedProvince}
-                onChange={handleProvinceChange}
-              >
-                <option value="" disabled>
-                  Pilih Provinsi
-                </option>
-                {provinces.map((province) => (
-                  <option key={province.id} value={province.id}>
-                    {province.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="col-span-1">
-              <p className="text-sm md:text-lg lg:text-xl">
-                Kota/Kabupaten <span className="text-red-600">*</span>
-              </p>
-              <select
-                className="w-full text-xs md:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
-                value={selectedCity}
-                onChange={handleCityChange}
-              >
-                <option value="" disabled>
-                  Pilih Kota/Kabupaten
-                </option>
-                {cities.map((city) => (
-                  <option key={city.id} value={city.id}>
-                    {city.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="col-span-1">
-              <p className="text-sm md:text-lg lg:text-xl">
-                Kecamatan <span className="text-red-600">*</span>
-              </p>
-              <select
-                className="w-full text-xs md:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
-                value={selectedDistrict}
-                // onChange={(e) => setSelectedDistrict(e.target.value)}
-                onChange={handleDistrictChange}
-              >
-                <option value="" disabled>
-                  Pilih Kecamatan
-                </option>
-                {districts.map((district) => (
-                  <option key={district.id} value={district.id}>
-                    {district.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="col-span-1">
-              <p className="text-sm md:text-lg lg:text-xl">
-                Kelurahan <span className="text-red-600">*</span>
-              </p>
-              <select
-                className="w-full text-xs md:text-xl rounded-full h-8 md:h-10 border-2 px-2 md:px-5 border-gray-600 bg-transparent"
-                value={selectedWard}
-                onChange={(e) => setSelectedWard(e.target.value)}
-              >
-                <option value="" disabled>
-                  Pilih Kelurahan
-                </option>
-                {wards.map((ward) => (
-                  <option key={ward.id} value={ward.id}>
-                    {ward.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-          {/* form kebutuhan project */}
-          <div>
-            <p className="text-sm md:text-lg lg:text-xl">List Proyek</p>
-            {projectForms.map((form, index) => (
-              <div
-                key={form.id}
-                className="form-input relative rounded-lg md:rounded-2xl p-2 md:p-5 space-y-3 drop-shadow-lg my-2 md:my-5"
-                style={{
-                  background: "#F9F5EC",
-                }}
-              >
-                {/* <div className="text-right"> */}
-                <button
-                  className="text-tera absolute top-0 md:top-3 right-3 md:right-5 text-4xl md:text-5xl hover:text-red-700"
-                  onClick={() => handleRemoveProjectForm(index)}
+            {/* dropdown alamat */}
+            <div className="grid grid-cols-2 gap-x-2 gap-y-3 md:gap-x-10 md:gap-y-5">
+              <div className="col-span-1">
+                <p className="text-sm md:text-lg lg:text-xl">
+                  Provinsi <span className="text-red-600">*</span>
+                </p>
+                <select
+                  className="w-full text-xs md:text-xl rounded-full h-8 md:h-10 border-2 px-2 md:px-5 border-gray-600 bg-transparent"
+                  name="provinsi"
+                  value={selectedProvince}
+                  onChange={handleProvinceChange}
+                  required
                 >
-                  &times;
-                </button>
-                {/* </div> */}
-                <div className="form-input rounded-2xl p-4 space-y-2 md:space-y-3">
-                  <p className="text-sm md:text-lg lg:text-xl">
-                    {index + 1}. Jenis Kebutuhan{" "}
-                    <span className="text-red-600">*</span>
-                  </p>
-                  {/* ... (checkboxes) */}
-                  <div className="grid grid-cols-3">
-                    <div className="col-span-3 md:col-span-3 lg:col-span-2 grid grid-cols-3 md:grid-cols-5">
-                      {/* <div className="flex space-x-2 md:space-x-16"> */}
-                      {typeProject.map((data) => (
-                        <div
-                          key={data.id}
-                          className="col-span-1 flex items-center hover:cursor-pointer gap-1 md:gap-3"
-                        >
-                          <input id={data.htmlFor} type="checkbox"></input>
-                          <label
-                            className="hover:cursor-pointer text-sm md:text-lg lg:text-xl"
-                            htmlFor={data.htmlFor}
-                          >
-                            {data.title}
-                          </label>
-                        </div>
-                      ))}
-                      {/* </div> */}
-                    </div>
-                  </div>
+                  <option value="" disabled>
+                    Pilih Provinsi
+                  </option>
+                  {provinces.map((province) => (
+                    <option key={province.id} value={province.id} data-nama={province.name}>
+                      {province.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="col-span-1">
+                <p className="text-sm md:text-lg lg:text-xl">
+                  Kota/Kabupaten <span className="text-red-600">*</span>
+                </p>
+                <select
+                  className="w-full text-xs md:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
+                  name="kota"
+                  value={selectedCity}
+                  onChange={handleCityChange}
+                  required
+                >
+                  <option value="" disabled>
+                    Pilih Kota/Kabupaten
+                  </option>
+                  {cities.map((city) => (
+                    <option key={city.id} value={city.id} data-nama={city.name}>
+                      {city.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="col-span-1">
+                <p className="text-sm md:text-lg lg:text-xl">
+                  Kecamatan <span className="text-red-600">*</span>
+                </p>
+                <select
+                  className="w-full text-xs md:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
+                  name="kecamatan"
+                  value={selectedDistrict}
+                  onChange={handleDistrictChange}
+                  required
+                >
+                  <option value="" disabled>
+                    Pilih Kecamatan
+                  </option>
+                  {districts.map((district) => (
+                    <option key={district.id} value={district.id} data-nama={district.name}>
+                      {district.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="col-span-1">
+                <p className="text-sm md:text-lg lg:text-xl">
+                  Kelurahan <span className="text-red-600">*</span>
+                </p>
+                <select
+  className="w-full text-xs md:text-xl rounded-full h-8 md:h-10 border-2 px-2 md:px-5 border-gray-600 bg-transparent"
+  name="kelurahan"
+  value={selectedWard}
+  onChange={(e) => handleWardChange(e)}
+  required
+>
+  <option value="" disabled>
+    Pilih Kelurahan
+  </option>
+  {wards.map((ward) => (
+    <option key={ward.id} value={ward.id} data-nama={ward.name}>
+      {ward.name}
+    </option>
+  ))}
+</select>
+              </div>
+            </div>
 
-                  <p className="text-sm md:text-lg lg:text-xl">
-                    Ruangan Kebutuhan <span className="text-red-600">*</span>
-                  </p>
-                  <input
-                    className="w-full text-sm md:text-lg lg:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
-                    placeholder="Contoh : Ruang Tamu"
-                  ></input>
-                  <p className="text-sm md:text-lg lg:text-xl">
-                    Ukuran Proyek <span className="text-red-600">*</span>
-                  </p>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-3">
-                    {/* ... (input panjang, lebar, dan luas) */}
-                    <div className="col-span-1 mx-auto">
-                      <p className="text-sm md:text-lg lg:text-xl mb-1">
-                        Panjang <span className="text-red-600">*</span>
-                      </p>
-                      <input
-                        type="number"
-                        className="w-28 md:w-32 text-sm md:text-lg rounded-full h-8 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
-                        placeholder="Contoh : 4"
-                        value={form.length}
-                        onChange={(e) => handleLengthChange(e, index)}
-                      ></input>
-                      {/* <span className="ml-2 text-sm md:text-lg">Meter</span> */}
+            {/* form kebutuhan project */}
+            <div>
+              <p className="text-sm md:text-lg lg:text-xl mt-10">List Proyek</p>
+              {projectForms.map((form, index) => (
+                <div
+                  key={form.id}
+                  className="form-input relative rounded-lg md:rounded-2xl p-2 md:p-5 space-y-3 drop-shadow-lg my-2 md:my-5"
+                  style={{
+                    background: "#F9F5EC",
+                  }}
+                >
+                  {/* <div className="text-right"> */}
+                  <button
+                    className="text-tera absolute top-0 md:top-3 right-3 md:right-5 text-4xl md:text-5xl hover:text-red-700"
+                    onClick={() => handleRemoveProjectForm(index)}
+                  >
+                    &times;
+                  </button>
+                  {/* </div> */}
+                  <div className="form-input rounded-2xl p-4 space-y-2 md:space-y-3">
+                    <p className="text-sm md:text-lg lg:text-xl">
+                      {index + 1}. Jenis Kebutuhan{" "}
+                      <span className="text-red-600">*</span>
+                    </p>
+                    {/* ... (checkboxes) */}
+                    <div className="grid grid-cols-3">
+                      <div className="col-span-3 md:col-span-3 lg:col-span-2 grid grid-cols-3 md:grid-cols-5">
+                        {/* <div className="flex space-x-2 md:space-x-16"> */}
+                        {typeProject.map((data) => (
+                          <div
+                            key={data.id}
+                            className="col-span-1 flex items-center hover:cursor-pointer gap-1 md:gap-3"
+                          >
+                            <input id={data.htmlFor} type="checkbox"></input>
+                            <label
+                              className="hover:cursor-pointer text-sm md:text-lg lg:text-xl"
+                              htmlFor={data.htmlFor}
+                            >
+                              {data.title}
+                            </label>
+                          </div>
+                        ))}
+                        {/* </div> */}
+                      </div>
                     </div>
-                    <div className="col-span-1 mx-auto">
-                      <p className="text-sm md:text-lg lg:text-xl mb-1">
-                        Lebar <span className="text-red-600">*</span>
-                      </p>
-                      <input
-                        type="number"
-                        className="w-28 md:w-32 text-sm md:text-lg rounded-full h-8 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
-                        placeholder="Contoh : 4"
-                        value={form.width}
-                        onChange={(e) => handleWidthChange(e, index)}
-                      ></input>
-                      {/* <span className="ml-2 text-sm md:text-lg">Meter</span> */}
-                    </div>
-                    <div className="col-span-2 md:col-span-1 mx-auto">
-                      <p className="text-sm md:text-lg lg:text-xl">
-                        Luas <span className="text-red-600">*</span>
-                      </p>
-                      <div className="w-32 md:w-40 text-sm md:text-lg text-white bg-tera rounded-full py-1 text-center">
-                        {projectFormsCountArea[index].length *
-                          projectFormsCountArea[index].width}{" "}
-                        meter persegi
+
+                    <p className="text-sm md:text-lg lg:text-xl">
+                      Ruangan Kebutuhan <span className="text-red-600">*</span>
+                    </p>
+                    <input
+                      className="w-full text-sm md:text-lg lg:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
+                      placeholder="Contoh : Ruang Tamu"
+                    ></input>
+                    <p className="text-sm md:text-lg lg:text-xl">
+                      Ukuran Proyek <span className="text-red-600">*</span>
+                    </p>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-3">
+                      {/* ... (input panjang, lebar, dan luas) */}
+                      <div className="col-span-1 mx-auto">
+                        <p className="text-sm md:text-lg lg:text-xl mb-1">
+                          Panjang <span className="text-red-600">*</span>
+                        </p>
+                        <input
+                          type="number"
+                          className="w-28 md:w-32 text-sm md:text-lg rounded-full h-8 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
+                          placeholder="Contoh : 4"
+                          value={form.length}
+                          onChange={(e) => handleLengthChange(e, index)}
+                        ></input>
+                        {/* <span className="ml-2 text-sm md:text-lg">Meter</span> */}
+                      </div>
+                      <div className="col-span-1 mx-auto">
+                        <p className="text-sm md:text-lg lg:text-xl mb-1">
+                          Lebar <span className="text-red-600">*</span>
+                        </p>
+                        <input
+                          type="number"
+                          className="w-28 md:w-32 text-sm md:text-lg rounded-full h-8 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
+                          placeholder="Contoh : 4"
+                          value={form.width}
+                          onChange={(e) => handleWidthChange(e, index)}
+                        ></input>
+                        {/* <span className="ml-2 text-sm md:text-lg">Meter</span> */}
+                      </div>
+                      <div className="col-span-2 md:col-span-1 mx-auto">
+                        <p className="text-sm md:text-lg lg:text-xl">
+                          Luas <span className="text-red-600">*</span>
+                        </p>
+                        <div className="w-32 md:w-40 text-sm md:text-lg text-white bg-tera rounded-full py-1 text-center">
+                          {projectFormsCountArea[index].length *
+                            projectFormsCountArea[index].width}{" "}
+                          meter persegi
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
 
-            {/* add new project  */}
-            <div className="flex flex-col">
-              <div className="flex justify-end">
-                <button
-                  onClick={handleAddProjectForm}
-                  className="text-center text-sm md:text-lg bg-tera py-1 px-5 rounded-full text-white mt-5 md:mt-6 lg:mt-10"
-                >
-                  Tambahkan Proyek
-                </button>
-              </div>
+              {/* add new project  */}
+              <div className="flex flex-col">
+                <div className="flex justify-end">
+                  <button
+                    onClick={handleAddProjectForm}
+                    className="text-center text-sm md:text-lg bg-tera py-1 px-5 rounded-full text-white mt-5 md:mt-6 lg:mt-10"
+                  >
+                    Tambahkan Proyek
+                  </button>
+                </div>
 
-              <div>
-                <p className="text-sm md:text-lg lg:text-xl">Info Tambahan</p>
-                <input
-                  className="w-full text-sm md:text-lg lg:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-5 bg-transparent"
-                  placeholder="Alamat Proyek"
-                ></input>
-              </div>
-              <div className="flex justify-end mt-5">
-                <button
-                  className="w-40 md:w-52 text-sm md:text-lg py-1.5 right-0 place-items-end text-white rounded-full"
-                  style={{ background: "#E85738" }}
-                >
-                  Kirimkan Hitung Perkiraan
-                </button>
+                <div>
+                  <p className="text-sm md:text-lg lg:text-xl">Info Tambahan</p>
+                  <input
+                    className="w-full text-sm md:text-lg lg:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-5 bg-transparent"
+                    placeholder="Alamat Proyek"
+                  ></input>
+                </div>
+                <input name="provinsiName" value={selectedProvinceName} hidden></input>
+                <input name="cityName" value={selectedCityName} hidden></input>
+                <input name="districtName" value={selectedDistrictName} hidden></input>
+                <input name="wardName" value={selectedWardName} hidden></input>
+                <div className="flex justify-end mt-5">
+                  <button
+                    className="w-40 md:w-52 text-sm md:text-lg py-1.5 right-0 place-items-end text-white rounded-full"
+                    style={{ background: "#E85738" }}
+                  >
+                    Kirimkan Hitung Perkiraan
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

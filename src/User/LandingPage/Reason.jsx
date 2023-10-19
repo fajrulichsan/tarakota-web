@@ -178,10 +178,10 @@ const Reason = () => {
     <div className="mx-auto">
       <div className="mx-auto grid grid-cols-12 lg:grid-cols-4 relative px-5 md:px-20 lg:px-32 py-1 md:py-6 lg:py-10 ">
         <div className="col-span-12 mb-4 md:mb-10 lg:mb-20">
-          <h2 className="text-lg md:text-2xl lg:text-3xl font-bold text-center tracking-wider">
+          <h2 className="text-lg md:text-2xl lg:text-4xl font-bold text-center tracking-wider">
             Kenapa Harus Memilih "Tarakota" ?
           </h2>
-          <hr className="text-3xl w-40 mx-auto font-bold text-center border-b-2 md:border-b-4 border-tera"></hr>
+          <hr className="text-3xl w-40 mx-auto font-bold text-center border-b-2 md:border-b-2 border-tera"></hr>
         </div>
         <div
           className="col-span-12 md:col-span-4 lg:col-span-1 h-[12em] md:h-full bg-cover bg-center bg-no-repeat shadow-md md:shadow-lg shadow-gold md:shadow-gold "
@@ -195,10 +195,10 @@ const Reason = () => {
               <div className="p-5 items-center">
                 <div className="rounded-xl md:rounded-2xl p-5 h-[11em] lg:h-[10em]" 
                 style={styleCardTesti}>
-                  <h3 className="text-md lg:text-md font-semibold mb-2">
+                  <h3 className="text-md lg:text-xl font-semibold mb-2">
                     {item.title}
                   </h3>
-                  <hr className="border md:border border-tera w-20 md:w-32 -mt-1"></hr>
+                  <hr className="border md:border border-tera w-20 md:w-20 -mt-1"></hr>
                   <div className="relative text-md lg:text-md w-auto text-justify mt-1">
                     {item.content}
                   </div>

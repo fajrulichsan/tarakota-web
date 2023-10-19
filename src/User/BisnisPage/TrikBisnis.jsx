@@ -117,7 +117,7 @@ const tipsList = [
 
   return (
     <div className="px-5 py-5 lg:py-10 md:px-20 lg:px-32">
-       <h1 className="text-tera text-lg md:text-2xl lg:text-4xl text-center font-bold py-3 md:py-6">3 Trik Keren Buat Jadi Representatif BisnisTarakota yang Sukses!</h1>
+       <h1 className="text-tera text-lg md:text-2xl lg:text-4xl text-center font-bold py-3 md:py-12">3 Trik Keren Buat Jadi Representatif BisnisTarakota yang Sukses!</h1>
       <Slider {...settings} className="mx-5">
         {tipsList.map((data) => (
           <div key={data.id} className="px-3">

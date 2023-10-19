@@ -33,7 +33,7 @@ const ProjectSlider = () => {
     };
   }, []);
 
-  const widthDot = isMobile ? "10px" : "15px";
+  const widthDot = isMobile ? "10px" : "10px";
 
   const projects = [
     {
@@ -89,7 +89,7 @@ const ProjectSlider = () => {
         {dots.map((dot, index) => (
           <li
             key={index}
-            style={{ display: "inline-block", marginRight: isMobile ? "-5px" : "5px" }}
+            style={{ display: "inline-block", marginRight: isMobile ? "-5px" : "-5px" }}
           >
             {dot}
           </li>
@@ -165,9 +165,10 @@ const ProjectSlider = () => {
 
   return (
     <div className="project-slider px-10 md:px-20 lg:px-32">
-      <p className="text-lg md:text-xl lg:text-2xl my-5 md:my-7 lg:my-10 text-justify">
+      <p className="text-lg md:text-xl lg:text-4xl my-5 md:my-7 lg:my-20 text-justify">
         “Berpengalaman dalam menciptakan design yang simple dan elegan”
       </p>
+      <hr></hr>
       <Slider {...settings}>
         {projects.map((project) => (
           <div key={project.id} className="px-2 md:px-4">

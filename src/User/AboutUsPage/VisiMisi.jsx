@@ -59,7 +59,7 @@ const VisiMisi = () => {
         </div>
         <div className="col-span-1 md:col-span-8 lg:col-span-6 lg:col-start-6 flex justify-center items-center">
           <p className="text-sm md:text-lg lg:text-2xl text-justify">
-          menyediakan solusi satu atap dalam layanan arsitektur, sekaligus memecahkan masalah dalam ekosistem kontruksi dengan menghubungkan UKM dalam industri kontruksi dan mengedukasi masyarakat tentang cara kerja kontruksi.
+          Menyediakan solusi satu atap dalam layanan arsitektur, sekaligus memecahkan masalah dalam ekosistem kontruksi dengan menghubungkan UKM dalam industri kontruksi dan mengedukasi masyarakat tentang cara kerja kontruksi.
           </p>
         </div>
       </div>

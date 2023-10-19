@@ -73,7 +73,7 @@ const styleCardTesti = {
   // boxShadow: "0px 4px 25px 0px rgba(0, 0, 0, 0.08)",
 };
 
-const ProjectSlider = () => {
+const SliderClass = () => {
   const [currentSlide, setCurrentSlide] = useState(0); // Define currentSlide state
 
   
@@ -170,7 +170,7 @@ const ProjectSlider = () => {
     <div className="px-10 py-5 lg:py-16 md:px-20 lg:px-32">
       <Slider {...settings} className="">
         {carouselData.map((item) => (
-          <div className="p-3 h-[18em] md:h-[23em] lg:h-[18em]">
+          <div key={item.id} className="p-3 h-[18em] md:h-[23em] lg:h-[18em]">
               <div
                   key={item.id}
                   className="flex p-5 lg:p-10 relative border-2 border-white rounded-2xl md:rounded-3xl h-full"
@@ -182,8 +182,8 @@ const ProjectSlider = () => {
                     </h3>
                     <div className="relative text-xl text-justify">
                       <ul className="list-disc px-3">
-                        {item.content.map((data) => (
-                          <li className="text-sm md:text-lg lg:text-xl">{data}</li>
+                        {item.content.map((data, index) => (
+                          <li key={index} className="text-sm md:text-lg lg:text-xl">{data}</li>
                         ))}
                       </ul>
                     </div>
@@ -200,6 +200,6 @@ const ProjectSlider = () => {
   );
 };
 
-export default ProjectSlider;
+export default SliderClass;
 
 

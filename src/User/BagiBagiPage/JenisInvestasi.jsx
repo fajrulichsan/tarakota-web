@@ -62,7 +62,7 @@ const JenisInvestasi = () => {
                 ).body
               }
             </p>
-            <div className="p-1 md:p-2 flex justify-center absolute -top-4 left-1/2 -translate-x-2  rounded-full bg-tera">
+            <div className="p-1 md:p-2 flex justify-center absolute -top-4 left-10 -translate-x-2  rounded-full bg-tera">
               <FontAwesomeIcon
                 icon={faChevronUp}
                 rotation={180}

@@ -187,7 +187,7 @@ const Komisi = () => {
 
       <Slider {...settings}>
         {tipsList.map((item) => (
-          <div className="p-3  ">
+          <div key={item.id} className="p-3  ">
             <div className="grid grid-cols-12 gap-2 mt-10">
               <div className="col-span-12 md:col-span-8 lg:col-span-6 md:col-start-3 lg:col-start-4">
                 <div

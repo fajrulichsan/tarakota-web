@@ -257,7 +257,7 @@ const Introduction = () => {
         ))}
       </Slider>
 
-      <p className="text-sm md:text-lg lg:text-2xl text-justify md:text-center mt-10 mb-5 md:mt-12 lg:mt-16 md:mb-8 lg:mb-10">“<span className="font-bold">Penting banget</span> buat paham betul tentang investasi sebelum nekat terjun ke dalamnya.”</p>
+      <p className="text-sm md:text-lg lg:text-3xl text-justify md:text-center mt-10 mb-5 md:mt-12 lg:mt-16 md:mb-8 lg:mb-10">“<span className="font-bold">Penting banget</span> buat paham betul tentang investasi sebelum nekat terjun ke dalamnya.”</p>
 
       <Slider {...settings2} className="px-2">
         {introList2.map((item) => (

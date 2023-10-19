@@ -147,7 +147,7 @@ const Introduction = () => {
         memulai investasi?
       </p>
     </div>
-    <div className="px-10 pb-14 md:px-20 md:pt-7 lg:pt-0 lg:px-32 lg:pb-20">
+    <div className="px-10 pb-14 md:px-20 md:pt-7 lg:pt-10 lg:px-32 lg:pb-20">
       <Slider {...settings} className="md:px-2">
         {carouselData.map((item) => (
           <div className="p-3 h-[11em] md:h-[14em] lg:h-[15em]">
@@ -160,7 +160,7 @@ const Introduction = () => {
                 <h3 className="text-sm md:text-xl lg:text-2xl font-semibold mb-2 text-center">
                   {item.title}
                 </h3>
-                <div className="relative text-sm md:text-lg lg:text-2xl text-justify">
+                <div className="relative text-sm md:text-lg lg:text-xl text-justify">
                   {item.body}
                 </div>
               </div>
