@@ -6,28 +6,28 @@ const formInput = [
     title: "Nama Lengkap",
     name: "namaLengkap",
     placeholder: "Nama Lengkap",
-    tipe:"text"
+    tipe: "text",
   },
   {
     id: 2,
     title: "No Hp",
     name: "nohp",
     placeholder: "No Hp",
-    tipe:"number"
+    tipe: "number",
   },
   {
     id: 3,
     title: "Alamat Email",
     name: "alamatEmail",
     placeholder: "Alamat Email",
-    tipe:"email"
+    tipe: "email",
   },
   {
     id: 4,
     title: "Alamat Proyek",
     name: "alamatProyek",
     placeholder: "Alamat Proyek",
-    tipe:"text"
+    tipe: "text",
   },
 ];
 
@@ -85,14 +85,66 @@ const FormEstimasi = () => {
     },
   ]);
 
-  const calculateArea = (form) => {
-    const { length, width } = form;
-    if (length && width) {
-      return (length * width).toFixed(2) + " meter persegi";
-    } else {
-      return "Masukkan panjang dan lebar";
-    }
+  const [projectData, setProjectData] = useState([
+    {
+      jenisKebutuhan: [], // Store selected types of projects
+      ruanganKebutuhan: "",
+      panjang: 0,
+      lebar: 0,
+    },
+    {
+      jenisKebutuhan: [], // Store selected types of projects
+      ruanganKebutuhan: "",
+      panjang: 0,
+      lebar: 0,
+    },
+  ]);
+
+  const handleTypeProjectChange = (e, projectIndex, typeId) => {
+    const checked = e.target.checked;
+    setProjectData((prevData) => {
+      const newData = [...prevData];
+      const project = newData[projectIndex];
+      if (checked) {
+        console.log(project);
+        project.jenisKebutuhan.push(typeId);
+      } else {
+        const index = project.jenisKebutuhan.indexOf(typeId);
+        if (index !== -1) {
+          project.jenisKebutuhan.splice(index, 1);
+        }
+      }
+      return newData;
+    });
   };
+
+  const handleRuanganKebutuhanChange = (e, projectIndex) => {
+    const value = e.target.value;
+    console.log(value);
+    setProjectData((prevData) => {
+      const newData = [...prevData];
+      newData[projectIndex].ruanganKebutuhan = value;
+      return newData;
+    });
+  };
+  
+  const handlePanjangLebarChange = (e, projectIndex, fieldName) => {
+    const value = e.target.value;
+    setProjectData((prevData) => {
+      const newData = [...prevData];
+      newData[projectIndex][fieldName] = parseFloat(value);
+      return newData;
+    });
+  };
+
+  // const calculateArea = (form) => {
+  //   const { length, width } = form;
+  //   if (length && width) {
+  //     return (length * width).toFixed(2) + " meter persegi";
+  //   } else {
+  //     return "Masukkan panjang dan lebar";
+  //   }
+  // };
 
   const handleLengthChange = (e, formIndex) => {
     const newLength = e.target.value;
@@ -179,59 +231,63 @@ const FormEstimasi = () => {
 
   const handleProvinceChange = (e) => {
     const selectedProvinceId = e.target.value;
-    const selectedProvinceName = e.target.options[e.target.selectedIndex].getAttribute("data-nama");
-  
+    const selectedProvinceName =
+      e.target.options[e.target.selectedIndex].getAttribute("data-nama");
+
     if (selectedProvinceName) {
       setSelectedProvinceName(selectedProvinceName);
     } else {
       setSelectedProvinceName(""); // Reset the name if the selection is invalid
     }
-  
+
     setSelectedProvince(selectedProvinceId);
     fetchCities(selectedProvinceId);
   };
-  
+
   const handleCityChange = (e) => {
     const selectedCity = e.target.value;
-    const selectedCityName = e.target.options[e.target.selectedIndex].getAttribute("data-nama");
-  
+    const selectedCityName =
+      e.target.options[e.target.selectedIndex].getAttribute("data-nama");
+
     if (selectedCityName) {
       setSelectedCityName(selectedCityName);
     } else {
       setSelectedCityName(""); // Reset the name if the selection is invalid
     }
-  
+
     setSelectedCity(selectedCity);
     fetchDistricts(selectedCity);
   };
 
   const handleDistrictChange = (e) => {
     const selectedDistrict = e.target.value;
-    const selectedDistrictName = e.target.options[e.target.selectedIndex].getAttribute("data-nama");
-  
+    const selectedDistrictName =
+      e.target.options[e.target.selectedIndex].getAttribute("data-nama");
+
     if (selectedDistrictName) {
       setSelectedDistrictName(selectedDistrictName);
     } else {
       setSelectedDistrictName(""); // Reset the name if the selection is invalid
     }
-  
+
     setSelectedDistrict(selectedDistrict);
     fetchWards(selectedDistrict);
   };
 
   const handleWardChange = (e) => {
     const selectedWard = e.target.value;
-    const selectedWardName = e.target.options[e.target.selectedIndex].getAttribute("data-nama");
-  
+    const selectedWardName =
+      e.target.options[e.target.selectedIndex].getAttribute("data-nama");
+
     if (selectedWardName) {
       setSelectedWardName(selectedWardName);
     } else {
       setSelectedWardName(""); // Reset the name if the selection is invalid
     }
-  
+
     setSelectedWard(selectedWard);
   };
-  
+
   // Event handler untuk menambahkan form-input baru
   const handleAddProjectForm = () => {
     const newId = projectForms.length + 1;
@@ -260,12 +316,19 @@ const FormEstimasi = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target)
-    console.log(formData.get("provinsiName"));
-    console.log(formData.get("cityName"));
-    console.log(formData.get("districtName"));
-    console.log(formData.get("wardName"));
-
+    const formData = new FormData(e.target);
+    // console.log(formData.get("provinsiName"));
+    // console.log(formData.get("cityName"));
+    // console.log(formData.get("districtName"));
+    // console.log(formData.get("wardName"));
+    // console.log(formData.get("kebutuhan"));
+    // for (let i = 1; i <= 2; i++) {
+    //   for (let j = 1; j <= 4; j++) {
+    //     console.log(formData.get("type-" + i + "-" + j));
+        
+    //   }      
+    // }
+   console.log(projectData);
 
     // emailjs.sendForm("service_emizq9q", "template_s5dehgg", e.target, "RHjp-oAmRy8VkGhmc").then(
     //   (result) => {
@@ -339,13 +402,17 @@ const FormEstimasi = () => {
                   name="provinsi"
                   value={selectedProvince}
                   onChange={handleProvinceChange}
-                  required
+                  // required
                 >
                   <option value="" disabled>
                     Pilih Provinsi
                   </option>
                   {provinces.map((province) => (
-                    <option key={province.id} value={province.id} data-nama={province.name}>
+                    <option
+                      key={province.id}
+                      value={province.id}
+                      data-nama={province.name}
+                    >
                       {province.name}
                     </option>
                   ))}
@@ -360,7 +427,7 @@ const FormEstimasi = () => {
                   name="kota"
                   value={selectedCity}
                   onChange={handleCityChange}
-                  required
+                  // required
                 >
                   <option value="" disabled>
                     Pilih Kota/Kabupaten
@@ -381,13 +448,17 @@ const FormEstimasi = () => {
                   name="kecamatan"
                   value={selectedDistrict}
                   onChange={handleDistrictChange}
-                  required
+                  // required
                 >
                   <option value="" disabled>
                     Pilih Kecamatan
                   </option>
                   {districts.map((district) => (
-                    <option key={district.id} value={district.id} data-nama={district.name}>
+                    <option
+                      key={district.id}
+                      value={district.id}
+                      data-nama={district.name}
+                    >
                       {district.name}
                     </option>
                   ))}
@@ -398,25 +469,24 @@ const FormEstimasi = () => {
                   Kelurahan <span className="text-red-600">*</span>
                 </p>
                 <select
-  className="w-full text-xs md:text-xl rounded-full h-8 md:h-10 border-2 px-2 md:px-5 border-gray-600 bg-transparent"
-  name="kelurahan"
-  value={selectedWard}
-  onChange={(e) => handleWardChange(e)}
-  required
->
-  <option value="" disabled>
-    Pilih Kelurahan
-  </option>
-  {wards.map((ward) => (
-    <option key={ward.id} value={ward.id} data-nama={ward.name}>
-      {ward.name}
-    </option>
-  ))}
-</select>
+                  className="w-full text-xs md:text-xl rounded-full h-8 md:h-10 border-2 px-2 md:px-5 border-gray-600 bg-transparent"
+                  name="kelurahan"
+                  value={selectedWard}
+                  onChange={(e) => handleWardChange(e)}
+                  // required
+                >
+                  <option value="" disabled>
+                    Pilih Kelurahan
+                  </option>
+                  {wards.map((ward) => (
+                    <option key={ward.id} value={ward.id} data-nama={ward.name}>
+                      {ward.name}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
 
-            {/* form kebutuhan project */}
             <div>
               <p className="text-sm md:text-lg lg:text-xl mt-10">List Proyek</p>
               {projectForms.map((form, index) => (
@@ -427,29 +497,30 @@ const FormEstimasi = () => {
                     background: "#F9F5EC",
                   }}
                 >
-                  {/* <div className="text-right"> */}
                   <button
                     className="text-tera absolute top-0 md:top-3 right-3 md:right-5 text-4xl md:text-5xl hover:text-red-700"
                     onClick={() => handleRemoveProjectForm(index)}
                   >
                     &times;
                   </button>
-                  {/* </div> */}
                   <div className="form-input rounded-2xl p-4 space-y-2 md:space-y-3">
                     <p className="text-sm md:text-lg lg:text-xl">
                       {index + 1}. Jenis Kebutuhan{" "}
                       <span className="text-red-600">*</span>
                     </p>
-                    {/* ... (checkboxes) */}
                     <div className="grid grid-cols-3">
                       <div className="col-span-3 md:col-span-3 lg:col-span-2 grid grid-cols-3 md:grid-cols-5">
-                        {/* <div className="flex space-x-2 md:space-x-16"> */}
                         {typeProject.map((data) => (
                           <div
                             key={data.id}
                             className="col-span-1 flex items-center hover:cursor-pointer gap-1 md:gap-3"
                           >
-                            <input id={data.htmlFor} type="checkbox"></input>
+                            <input 
+                            id={data.htmlFor} 
+                            type="checkbox" 
+                            // value={data.title}
+                             onChange={(e) => handleTypeProjectChange(e, index, data.title)}
+                             ></input>
                             <label
                               className="hover:cursor-pointer text-sm md:text-lg lg:text-xl"
                               htmlFor={data.htmlFor}
@@ -458,7 +529,6 @@ const FormEstimasi = () => {
                             </label>
                           </div>
                         ))}
-                        {/* </div> */}
                       </div>
                     </div>
 
@@ -468,12 +538,12 @@ const FormEstimasi = () => {
                     <input
                       className="w-full text-sm md:text-lg lg:text-xl rounded-full h-8 md:h-10 border-2 border-gray-600 px-2 md:px-5 bg-transparent"
                       placeholder="Contoh : Ruang Tamu"
+                      onChange={(e) =>  handleRuanganKebutuhanChange(e, index)}
                     ></input>
                     <p className="text-sm md:text-lg lg:text-xl">
                       Ukuran Proyek <span className="text-red-600">*</span>
                     </p>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-3">
-                      {/* ... (input panjang, lebar, dan luas) */}
                       <div className="col-span-1 mx-auto">
                         <p className="text-sm md:text-lg lg:text-xl mb-1">
                           Panjang <span className="text-red-600">*</span>
@@ -485,7 +555,6 @@ const FormEstimasi = () => {
                           value={form.length}
                           onChange={(e) => handleLengthChange(e, index)}
                         ></input>
-                        {/* <span className="ml-2 text-sm md:text-lg">Meter</span> */}
                       </div>
                       <div className="col-span-1 mx-auto">
                         <p className="text-sm md:text-lg lg:text-xl mb-1">
@@ -498,7 +567,6 @@ const FormEstimasi = () => {
                           value={form.width}
                           onChange={(e) => handleWidthChange(e, index)}
                         ></input>
-                        {/* <span className="ml-2 text-sm md:text-lg">Meter</span> */}
                       </div>
                       <div className="col-span-2 md:col-span-1 mx-auto">
                         <p className="text-sm md:text-lg lg:text-xl">
@@ -518,12 +586,12 @@ const FormEstimasi = () => {
               {/* add new project  */}
               <div className="flex flex-col">
                 <div className="flex justify-end">
-                  <button
+                  <div
                     onClick={handleAddProjectForm}
-                    className="text-center text-sm md:text-lg bg-tera py-1 px-5 rounded-full text-white mt-5 md:mt-6 lg:mt-10"
+                    className="hover:cursor-pointer text-center text-sm md:text-lg bg-tera py-1 px-5 rounded-full text-white mt-5 md:mt-6 lg:mt-10"
                   >
                     Tambahkan Proyek
-                  </button>
+                  </div>
                 </div>
 
                 <div>
@@ -533,9 +601,17 @@ const FormEstimasi = () => {
                     placeholder="Alamat Proyek"
                   ></input>
                 </div>
-                <input name="provinsiName" value={selectedProvinceName} hidden></input>
+                <input
+                  name="provinsiName"
+                  value={selectedProvinceName}
+                  hidden
+                ></input>
                 <input name="cityName" value={selectedCityName} hidden></input>
-                <input name="districtName" value={selectedDistrictName} hidden></input>
+                <input
+                  name="districtName"
+                  value={selectedDistrictName}
+                  hidden
+                ></input>
                 <input name="wardName" value={selectedWardName} hidden></input>
                 <div className="flex justify-end mt-5">
                   <button

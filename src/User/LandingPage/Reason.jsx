@@ -83,7 +83,7 @@ const Reason = () => {
     };
   }, []);
 
-  const widthDot = isMobile ? "10px" : "15px";
+  const widthDot = isMobile ? "10px" : "10px";
 
   const settings = {
     dots: true,
@@ -96,11 +96,11 @@ const Reason = () => {
     autoplaySpeed: 5000,
     beforeChange: (current, next) => setCurrentSlide(next),
     appendDots: (dots) => (
-      <ul style={{ margin: "-20px 0" }}>
+      <ul style={{ margin: `${isMobile ? "-15px" : "-20px"} 0` }}>
         {dots.map((dot, index) => (
           <li
             key={index}
-            style={{ display: "inline-block", marginRight: isMobile ? "-8px" : "5px" }}
+            style={{ display: "inline-block", marginRight: isMobile ? "-8px" : "-5px" }}
           >
             {dot}
           </li>
@@ -189,7 +189,7 @@ const Reason = () => {
             backgroundImage: `url(${reasonImage})`,
           }}
         ></div>
-        <div className="col-span-12 md:col-span-8 lg:col-span-3 md:px-16 lg:px-8 lg:p-10 px-5">
+        <div className="col-span-12 md:col-span-8 lg:col-span-3 md:px-16 lg:px-14 lg:p-10 px-5">
           <Slider {...settings} className="mt-3">
             {reasonList.map((item) => (
               <div className="p-5 items-center">

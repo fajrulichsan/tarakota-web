@@ -13,6 +13,7 @@ const OurClient = () => {
     autoplaySpeed: 1500,
     arrows: false,
     dots: false,
+    // focusOnSelect: true,
     pauseOnHover: false,
     responsive: [
       {
@@ -36,11 +37,11 @@ const OurClient = () => {
     <div className="pt-16 md:pb-20">
       <div >
         <h2 className='text-xl md:text-2xl lg:text-4xl font-bold text-center tracking-wider'>Our Client</h2>
-        <hr className='mx-auto w-20 border-b-2 md:border-b-4 border-tera'></hr>
+        <hr className='mx-auto w-20 border-b-2 md:border-b-2 border-tera'></hr>
       </div>
       <Slider {...settings} className="pt-5 md:pt-12">
         {brands.map((brand, index) => (
-          <div key={index} className="slideitems-center flex justify-center">
+          <div key={index} className="slideitems-center flex justify-center ">
             <img className='mx-auto' src={brand} alt={`Brand ${index + 1}`} />
           </div>
         ))}

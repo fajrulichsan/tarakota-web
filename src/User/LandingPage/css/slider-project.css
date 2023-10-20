@@ -27,6 +27,10 @@
   right: -30px; /* Adjust the right position to align with the right edge of the slider */
 }
 
+.slick-next-banner{
+  right: 30px !important;
+}
+
 /* Style the arrow buttons on hover (optional) */
 .slick-prev:hover,
 .slick-next:hover {

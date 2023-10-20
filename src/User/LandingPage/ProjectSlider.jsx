@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -14,9 +15,9 @@ import {
 } from "../../assets/img/index";
 
 const ProjectSlider = () => {
-  const [currentSlide, setCurrentSlide] = useState(0); 
+  const baseUrl = window.location.origin;
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-
 
   useEffect(() => {
     // Cek lebar layar untuk menentukan mode mobile
@@ -85,11 +86,14 @@ const ProjectSlider = () => {
     autoplaySpeed: 5000,
     beforeChange: (current, next) => setCurrentSlide(next),
     appendDots: (dots) => (
-      <ul style={{ margin: "-20px 0" }}>
+      <ul style={{ margin: `${isMobile ? "-20px" : "-30px"} 0` }}>
         {dots.map((dot, index) => (
           <li
             key={index}
-            style={{ display: "inline-block", marginRight: isMobile ? "-5px" : "-5px" }}
+            style={{
+              display: "inline-block",
+              marginRight: isMobile ? "-5px" : "-5px",
+            }}
           >
             {dot}
           </li>
@@ -165,10 +169,12 @@ const ProjectSlider = () => {
 
   return (
     <div className="project-slider px-10 md:px-20 lg:px-32">
-      <p className="text-lg md:text-xl lg:text-4xl my-5 md:my-7 lg:my-20 text-justify">
-        “Berpengalaman dalam menciptakan design yang simple dan elegan”
-      </p>
-      <hr></hr>
+      <div className="my-5 md:my-7 lg:my-14">
+        <p className="text-lg md:text-xl lg:text-3xl text-justify">
+          “Berpengalaman dalam menciptakan design yang simple dan elegan”
+        </p>
+        <hr className="border-2 border-tera w-40"></hr>
+      </div>
       <Slider {...settings}>
         {projects.map((project) => (
           <div key={project.id} className="px-2 md:px-4">
@@ -187,18 +193,21 @@ const ProjectSlider = () => {
               >
                 <div className="text-white p-5">
                   <p className="text-xl md:text-2xl">{project.title}</p>
-                  <p className="text-sm md:text-lg">
-                    {project.description}
-                  </p>
+                  <p className="text-sm md:text-lg">{project.description}</p>
                 </div>
               </div>
             </div>
           </div>
         ))}
       </Slider>
-      <div className="w-fit px-8 py-1 mx-auto text-sm md:text-base mt-10 md:mt-12 text-md text-center text-white bg-tera rounded-full hover:cursor-pointer">
-        All Project
-      </div>
+      <a href={`${baseUrl}/project`}>
+        <div
+          className="w-fit px-8 py-1 mx-auto text-sm md:text-base mt-10 md:mt-12 text-md text-center text-white bg-tera rounded-full hover:cursor-pointer"
+          onClick={() => navigate("/project")}
+        >
+          All Project
+        </div>
+      </a>
     </div>
   );
 };

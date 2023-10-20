@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from "react";
+import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -7,6 +8,7 @@ import "./css/slider-project.css";
 import { bgProjectSlider } from "../../assets/img/index";
 
 const ProjectSlider = () => {
+  const baseUrl = window.location.origin;
   const [currentSlide, setCurrentSlide] = useState(0); // Define currentSlide state
   const [isMobile, setIsMobile] = useState(false);
 
@@ -26,7 +28,7 @@ const ProjectSlider = () => {
     };
   }, []);
 
-  const widthDot = isMobile ? "10px" : "15px";
+  const widthDot = isMobile ? "10px" : "10px";
 
   const projects = [
     {
@@ -54,11 +56,11 @@ const ProjectSlider = () => {
     autoplaySpeed: 5000,
     beforeChange: (current, next) => setCurrentSlide(next),
     appendDots: (dots) => (
-      <ul style={{ margin: "-20px 0" }}>
+      <ul style={{ margin: `${isMobile ? "-20px" : "-20px"} 0` }}>
         {dots.map((dot, index) => (
           <li
             key={index}
-            style={{ display: "inline-block", marginRight: isMobile ? "-5px" : "5px" }}
+            style={{ display: "inline-block", marginRight: isMobile ? "-5px" : "-5px" }}
           >
             {dot}
           </li>
@@ -160,9 +162,15 @@ const ProjectSlider = () => {
           </div>
         ))}
       </Slider>
-      <div className="w-fit px-10 hover:cursor-pointer py-1 mx-auto text-sm md:text-base mt-8 md:mt-10 lg:mt-8 text-md text-center text-white bg-tera rounded-full">
+
+      <a href={`${baseUrl}/service`}>
+      <div 
+      className="w-fit px-10 hover:cursor-pointer py-1 mx-auto text-sm md:text-base mt-8 md:mt-10 lg:mt-8 text-md text-center text-white bg-tera rounded-full"
+      >
         More
       </div>
+      </a>
+      
     </div>
   );
 };

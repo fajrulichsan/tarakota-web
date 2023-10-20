@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "./css/slider-project.css";
+
 import {
   facebook,
   twitter,
@@ -29,7 +30,8 @@ const bannerContentList = [
   },
   {
     id: 3,
-    title: "Meretas Batasan dalam Arsitektur, Interior, Lanskap, dan Furniture.",
+    title:
+      "Meretas Batasan dalam Arsitektur, Interior, Lanskap, dan Furniture.",
     bgImage: landingBanner3,
   },
   {
@@ -39,14 +41,36 @@ const bannerContentList = [
   },
 ];
 
+const sosialMedia = [
+  {
+    id : 1,
+    icon : whatsapp,
+    link : "https://api.whatsapp.com/send?phone=6285280061520",
+  },
+  {
+    id : 2,
+    icon : instagram,
+    link : "https://instagram.com/tarakota.id",
+  },
+  {
+    id : 3,
+    icon : youtube,
+    link : "https://www.youtube.com/@tataruangkota",
+  },
+  {
+    id : 4,
+    icon : facebook,
+    link : "https://www.facebook.com/tarakota.id?mibextid=LQQJ4d",
+  },
+  {
+    id : 5,
+    icon : linekdin,
+    link : "https://www.linkedin.com/company/tarakota/",
+  }
+]
+
 const SliderBanner = () => {
-  const socialMediaIcon = [
-    whatsapp,
-    instagram,
-    youtube,
-    facebook,
-    linekdin,
-  ];
+  const socialMediaIcon = [whatsapp, instagram, youtube, facebook, linekdin];
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -65,7 +89,7 @@ const SliderBanner = () => {
     };
   }, []);
 
-  const widthDot = isMobile ? "10px" : "15px";
+  const widthDot = isMobile ? "10px" : "10px";
 
   const settings = {
     dots: true,
@@ -73,13 +97,17 @@ const SliderBanner = () => {
     speed: 1000,
     autoplay: true,
     autoplaySpeed: 10000,
+    paddingLeft: 10,
     beforeChange: (current, next) => setCurrentSlide(next),
     appendDots: (dots) => (
       <ul style={{ margin: "0" }}>
         {dots.map((dot, index) => (
           <li
             key={index}
-            style={{ display: "inline-block", marginRight: isMobile ? "-5px" : "5px" }}
+            style={{
+              display: "inline-block",
+              marginRight: isMobile ? "-5px" : "-5px",
+            }}
           >
             {dot}
           </li>
@@ -101,6 +129,40 @@ const SliderBanner = () => {
         className="custom-dot"
       ></div>
     ),
+    // prevArrow: (
+    //   <div className="slick-arrow custom-prev-arrow ">
+    //     <svg
+    //       xmlns="http://www.w3.org/2000/svg"
+    //       width="24"
+    //       height="24"
+    //       viewBox="0 0 10 22"
+    //       fill="none"
+    //       stroke="white" // Ganti warna menjadi putih
+    //       strokeWidth="2"
+    //       strokeLinecap="round"
+    //       strokeLinejoin="round"
+    //     >
+    //       <path d="M9 18l-6-6 6-6" />
+    //     </svg>
+    //   </div>
+    // ),
+    // nextArrow: (
+    //   <div className="slick-arrow custom-prev-arrow" >
+    //     <svg
+    //       xmlns="http://www.w3.org/2000/svg"
+    //       width="24"
+    //       height="24"
+    //       viewBox="0 0 18 22"
+    //       fill="none"
+    //       stroke="white" // Ganti warna menjadi putih
+    //       strokeWidth="2"
+    //       strokeLinecap="round"
+    //       strokeLinejoin="round"
+    //     >
+    //       <path d="M9 18l6-6-6-6" />
+    //     </svg>
+    //   </div>
+    // ),
   };
 
   return (
@@ -135,17 +197,19 @@ const SliderBanner = () => {
                   </div>
 
                   <h1 className="text-4xl md:text-5xl font-bold lg:text-6xl text-white tracking-wide">
-                   {data.title}
+                    {data.title}
                   </h1>
                 </div>
                 <div className="absolute flex space-x-2 md:space-x-3 p-2 md:p-3 lg:p-4 md:px-6 lg:px-10 rounded-l-full bottom-16 md:bottom-20 right-0 bg-gray-50">
-                  {socialMediaIcon.map((icon, index) => (
-                    <img
-                      key={index}
-                      src={icon}
-                      alt={`Social Media Icon ${index}`}
-                      className="w-5 md:w-6"
-                    />
+                  {sosialMedia.map((data) => (
+                    <a href={data.link} target="_blank">
+                      <img
+                        key={data.id}
+                        src={data.icon}
+                        alt={`Social Media Icon ${data.id}`}
+                        className="w-5 md:w-6"
+                      />
+                    </a>
                   ))}
                 </div>
               </div>

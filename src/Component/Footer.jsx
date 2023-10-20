@@ -55,26 +55,30 @@ const aboutList = [
 
 const sosialMediaIcon = [
   {
+    id : 1,
     icon : whatsappWhite,
-    href : "#"
+    link : "https://api.whatsapp.com/send?phone=6285280061520",
   },
   {
+    id : 2,
     icon : instagramWhite,
-    href : "#"
+    link : "https://instagram.com/tarakota.id",
   },
   {
+    id : 3,
     icon : youtubeWhite,
-    href : "#"
+    link : "https://www.youtube.com/@tataruangkota",
   },
   {
+    id : 4,
     icon : facebookWhite,
-    href : "#"
+    link : "https://www.facebook.com/tarakota.id?mibextid=LQQJ4d",
   },
   {
+    id : 5,
     icon : linkedinWhite,
-    href : "#"
-  },
-  
+    link : "https://www.linkedin.com/company/tarakota/",
+  }
 ]
 
 const kerjasamaList = [
@@ -170,11 +174,13 @@ const Footer = () => {
           </div>
           <div className="col-span-2 md:col-span-2 mx-auto">
             <h3 className="text-md md:text-2xl font-bold md:mb-4">Follow Us</h3>
-            <div className="flex space-x-4">
+            <div className="grid grid-cols-3 gap-3">
                {sosialMediaIcon.map((data, index) => (
-                <a
+                <div className="col-span-1 flex items-center">
+<a
                   key={index}
-                  href={data.href}
+                  href={data.link}
+                  target="_blank"
                   className="text-gray-400 hover:text-white transition duration-300"
                 >
                   <img
@@ -183,6 +189,8 @@ const Footer = () => {
                     className="w-6"
                   />
                 </a>
+                  </div>
+                
               ))}
             </div>
           </div>
