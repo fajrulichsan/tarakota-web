@@ -3,7 +3,7 @@ import {pengantarBersama} from '../../assets/img/index'
 
 const Pengantar = () => {
   return (
-    <div className='pt-24 md:px-20 px-5 lg:px-32'>
+    <div className='pt-20 md:px-20 px-5 lg:px-32'>
         <div className='grid grid-cols-1 lg:grid-cols-12 lg:h-[10em] rounded-xl md:rounded-2xl shadow-md shadow-gold p-5 md:p-7 lg:p-5' 
         style={{backgroundColor : '#E85738'}}
         >

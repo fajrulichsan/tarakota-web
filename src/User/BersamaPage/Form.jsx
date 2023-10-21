@@ -50,7 +50,7 @@ const Form= () => {
       <div
         className="rounded-xl md:rounded-3xl p-6 px-8 md:p-10 md:px-16 lg:p-16 lg:px-24 space-y-4 shadow-md shadow-gold"
       >
-         <form onSubmit={sendEmail}>
+         <form onSubmit={sendEmail} className="space-y-4">
         {formInput.map((data) => (
           <div key={data.id}>
             <p className="text-sm md:text-lg lg:text-xl">

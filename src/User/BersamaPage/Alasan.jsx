@@ -99,7 +99,7 @@ const Alasan = () => {
               <img
                 className={`${
                   currentProgram !== data.id ? "hidden" : ""
-                } ${isMobile ? "bottom-0 right-1/2 translate-x-3 -rotate-90 translate-y-2" : "top-1/2 -translate-y-2 -right-1 rotate-180"} w-4 h-4 absolute `}
+                } ${isMobile ? "bottom-0 right-1/2 translate-x-3 -rotate-90 translate-y-3" : "top-1/2 -translate-y-2 -right-2 rotate-180"} w-4 h-4 absolute `}
                 src={leftArrowBgWhite}
               ></img>
             </div>

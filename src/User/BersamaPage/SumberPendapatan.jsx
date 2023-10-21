@@ -21,7 +21,7 @@ const sumberList = [
     id: 3,
     title: "Bisnis Non-Arsitektur (NAR)",
     body: "Di bawah merek Tarakota, Mitra Experience Center Tarakota berkesempatan mendapatkan sumber pendapatan tambahan di luar pendapatan dari konsultan dan furniture. Misalnya, membuka Coffee Shop di dalam Experience Center yang dapat menjadi sumber pendapatan tambahan.",
-    position: "-top-3 left-1/2 -translate-x-3",
+    position: "-top-3 md:-top-4 left-1/2 -translate-x-3 md:-translate-x-4",
     colspan: "col-span-12",
     margin: "mx-auto",
   },
