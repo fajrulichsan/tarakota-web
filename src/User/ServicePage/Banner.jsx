@@ -5,6 +5,34 @@ import "slick-carousel/slick/slick-theme.css"
 
 import {serviceBanner} from '../../assets/img/index'
 
+const sosialMedia = [
+  {
+    id : 1,
+    icon : whatsapp,
+    link : "https://api.whatsapp.com/send?phone=6285280061520",
+  },
+  {
+    id : 2,
+    icon : instagram,
+    link : "https://instagram.com/tarakota.id",
+  },
+  {
+    id : 3,
+    icon : youtube,
+    link : "https://www.youtube.com/@tataruangkota",
+  },
+  {
+    id : 4,
+    icon : facebook,
+    link : "https://www.facebook.com/tarakota.id?mibextid=LQQJ4d",
+  },
+  {
+    id : 5,
+    icon : linekdin,
+    link : "https://www.linkedin.com/company/tarakota/",
+  }
+]
+
 import {
   facebook,
   twitter,
@@ -84,13 +112,15 @@ const Banner = () => {
                 Kami Siap Melayani!
                 </h1>
                 <div className="absolute flex space-x-2 md:space-x-3 p-2 md:p-3 lg:p-4 md:px-6 lg:px-10 rounded-l-full bottom-16 md:bottom-20 right-0 bg-gray-50">
-                  {socialMediaIcon.map((icon, index) => (
-                    <img
-                      key={index}
-                      src={icon}
-                      alt={`Social Media Icon ${index}`}
-                      className="w-5 md:w-6"
-                    />
+                  {sosialMedia.map((data) => (
+                   <a href={data.link} target="_blank">
+                   <img
+                     key={data.id}
+                     src={data.icon}
+                     alt={`Social Media Icon ${data.id}`}
+                     className="w-5 md:w-6"
+                   />
+                 </a>
                   ))}
                 </div>
             </div>

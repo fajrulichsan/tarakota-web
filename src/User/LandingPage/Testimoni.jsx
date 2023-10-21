@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./css/slider-project.css";
 
-import { bgProjectSlider, profileTestimoni, iconTestimoni } from "../../assets/img/index";
+import { profileTestimoni, iconTestimoni } from "../../assets/img/index";
 
 const testimoniList = [
     {
@@ -54,9 +54,9 @@ const Testimoni = () => {
 
 
   useEffect(() => {
-    // Cek lebar layar untuk menentukan mode mobile
+
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 680); // Atur breakpoint sesuai kebutuhan
+      setIsMobile(window.innerWidth <= 680);
     };
 
     handleResize();
@@ -115,7 +115,7 @@ const Testimoni = () => {
           height="24"
           viewBox="0 0 10 22"
           fill="none"
-          stroke="white" // Ganti warna menjadi putih
+          stroke="white" 
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -132,7 +132,7 @@ const Testimoni = () => {
           height="24"
           viewBox="0 0 18 22"
           fill="none"
-          stroke="white" // Ganti warna menjadi putih
+          stroke="white" 
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -143,16 +143,16 @@ const Testimoni = () => {
     ),
     responsive: [
       {
-        breakpoint: 680, // Adjust this breakpoint as needed for mobile devices
+        breakpoint: 680, 
         settings: {
-          slidesToShow: 1, // Number of slides to show on mobile devices
+          slidesToShow: 1, 
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 1023, // Adjust this breakpoint as needed for larger tablets
+        breakpoint: 1023, 
         settings: {
-          slidesToShow: 2, // Number of slides to show on larger tablets
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },

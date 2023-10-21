@@ -36,7 +36,7 @@ const OurClient = () => {
     <div className="py-8">
       <div >
         <h2 className='text-xl md:text-2xl lg:text-4xl font-bold text-center tracking-wider'>Our Client</h2>
-        <hr className='mx-auto w-20 border-b-2 md:border-b-4 border-tera'></hr>
+        <hr className='mx-auto w-28 border-b-2 md:border-b-2 border-tera'></hr>
       </div>
       <Slider {...settings} className="pt-5 md:pt-12">
         {brands.map((brand, index) => (
