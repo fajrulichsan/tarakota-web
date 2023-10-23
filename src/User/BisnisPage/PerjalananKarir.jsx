@@ -80,7 +80,7 @@ const PerjalananKarir = () => {
               <img
                 className={`${
                   currentProgram !== data.id ? "hidden" : ""
-                } ${isMobile ? "bottom-0 left-1/2 -rotate-90 translate-y-2" : "top-1/2 -translate-y-2 -right-1 rotate-180"} w-4 h-4 absolute `}
+                } ${isMobile ? "bottom-0 left-1/2 -rotate-90 translate-y-2" : "top-1/2 -translate-y-2 -right-2 rotate-180"} w-4 h-4 absolute `}
                 src={leftArrowBgWhite}
               ></img>
             </div>
@@ -95,7 +95,7 @@ const PerjalananKarir = () => {
               border: "5px solid #F8F3ED",
             }}
           >
-            <p className="text-sm md:text-lg lg:text-xl text-justify text-white">
+            <p className="text-sm md:text-md lg:text-xl text-justify text-white">
               {
                 programList.find((item) => item.id === currentProgram)
                   .description

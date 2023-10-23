@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,6 +6,25 @@ import "./css/slider-project.css";
 
 const TrikBisnis = () => {
   const [currentSlide, setCurrentSlide] = useState(0); // Define currentSlide state
+
+  const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      // Cek lebar layar untuk menentukan mode mobile
+      const handleResize = () => {
+        setIsMobile(window.innerWidth <= 680); // Atur breakpoint sesuai kebutuhan
+      };
+  
+      handleResize();
+  
+      window.addEventListener('resize', handleResize);
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+
+  const widthDot = isMobile ? "10px" : "10px";
 
 const tipsList = [
   {
@@ -37,11 +56,11 @@ const tipsList = [
     autoplaySpeed: 5000,
     beforeChange: (current, next) => setCurrentSlide(next),
     appendDots: (dots) => (
-      <ul style={{ margin: "-20px 0" }}>
+      <ul  style={{ margin: `${isMobile ? "-20px" : "-20px"} 0` }}>
         {dots.map((dot, index) => (
           <li
             key={index}
-            style={{ display: "inline-block", marginRight: "5px" }}
+            style={{ display: "inline-block", marginRight:  isMobile ? "-5px" : "-5px" }}
           >
             {dot}
           </li>
@@ -51,8 +70,8 @@ const tipsList = [
     customPaging: (i) => (
       <div
         style={{
-          width: "15px",
-          height: "15px",
+          width: widthDot,
+          height: widthDot,
           background: currentSlide === i ? "#D4B754" : "transparent",
           border:
             currentSlide === i ? "2px solid #BABABA" : "2px solid #BABABA",

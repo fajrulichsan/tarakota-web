@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import { bisnisAlur } from "../../assets/img/index";
 
 import Slider from "react-slick";
@@ -21,7 +21,8 @@ const tipsList = [
     id: 3,
     title: "Kendaraan Eksklusif",
     body: "Jangan terkejut jika kamu mendapati dirimu naik mobil mewah sebagai hadiah. Prestasi memang dihargai dengan gaya.",
-  },{
+  },
+  {
     id: 4,
     title: "Gadget Keren",
     body: "Dari smartphone terbaru hingga laptop canggih, kami menyediakan perangkat terbaik untuk mendukung kesuksesanmu.",
@@ -45,6 +46,26 @@ const tipsList = [
 
 const Komisi = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Cek lebar layar untuk menentukan mode mobile
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 680); // Atur breakpoint sesuai kebutuhan
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const widthDot = isMobile ? "10px" : "10px";
+
   const settings = {
     dots: true,
     infinite: true,
@@ -56,11 +77,14 @@ const Komisi = () => {
     autoplaySpeed: 5000,
     beforeChange: (current, next) => setCurrentSlide(next),
     appendDots: (dots) => (
-      <ul style={{ margin: "-20px 0" }}>
+      <ul style={{ margin: `${isMobile ? "-20px" : "-20px"} 0` }}>
         {dots.map((dot, index) => (
           <li
             key={index}
-            style={{ display: "inline-block", marginRight: "5px" }}
+            style={{
+              display: "inline-block",
+              marginRight: isMobile ? "-5px" : "-5px",
+            }}
           >
             {dot}
           </li>
@@ -70,8 +94,8 @@ const Komisi = () => {
     customPaging: (i) => (
       <div
         style={{
-          width: "15px",
-          height: "15px",
+          width: widthDot,
+          height: widthDot,
           background: currentSlide === i ? "#D4B754" : "transparent",
           border:
             currentSlide === i ? "2px solid #BABABA" : "2px solid #BABABA",
@@ -127,7 +151,7 @@ const Komisi = () => {
       {
         breakpoint: 1023, // Adjust this breakpoint as needed for larger tablets
         settings: {
-          slidesToShow: 2, // Number of slides to show on larger tablets
+          slidesToShow: 1, // Number of slides to show on larger tablets
           slidesToScroll: 1,
         },
       },
@@ -155,14 +179,14 @@ const Komisi = () => {
               </p>
             </div>
           </div>
-          <div className="col-span-1 md:col-span-6 lg:col-span-4 md:col-start-1 lg:col-start-3">
+          <div className="col-span-1 md:col-span-6 lg:col-span-4 md:col-start-4  lg:col-start-5">
             <div className="w-full py-2 md:py-3 bg-tera text-white text-center rounded-xl">
               <p className="text-sm md:text-lg lg:text-2xl">
                 Tier 2: Komisi 1,5% total pendapatan
               </p>
             </div>
           </div>
-          <div className="col-span-1 md:col-span-6 lg:col-span-4">
+          <div className="col-span-1 md:col-span-6 lg:col-span-4 md:col-start-4  lg:col-start-5">
             <div className="w-full py-2 md:py-3 bg-tera text-white text-center rounded-xl">
               <p className="text-sm md:text-lg lg:text-2xl">
                 Tier 3: Komisi 1,0% total pendapatan
@@ -173,11 +197,11 @@ const Komisi = () => {
       </div>
 
       <div
-        className="my-20 h-[60em] bg-cover bg-center bg-no-repeat"
+        className=" my-5 md:my-20 h-[20em] md:h-[35em] lg:h-[60em] bg-contain bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${bisnisAlur})` }}
       ></div>
 
-      <p className="text-sm md:text-lg lg:text-2xl">
+      <p className="text-sm md:text-lg lg:text-2xl text-justify">
         Jangan pernah lupa, selain penjelasan diatas, disini juga ada begitu
         banyak penghargaan luar biasa yang menanti kamu yang terus berprestasi
         dengan gemilang! Jadilah bagian dari Representatif BisnisTarakota yang
@@ -185,38 +209,39 @@ const Komisi = () => {
         lebih banyak penghargaan dan prestasi yang mengesankan, antara lain:
       </p>
 
-      <Slider {...settings}>
-        {tipsList.map((item) => (
-          <div key={item.id} className="p-3  ">
-            <div className="grid grid-cols-12 gap-2 mt-10">
-              <div className="col-span-12 md:col-span-8 lg:col-span-6 md:col-start-3 lg:col-start-4">
-                <div
-                  className="rounded-xl text-white p-5 md:p-10 lg:p-10 shadow-md shadow-gold"
-                  style={{ background: "#404042" }}
-                >
-                  <p className="text-sm md:text-lg lg:text-xl font-semibold">
-                    {item.title}
-                  </p>
-                  <p className="text-sm md:text-lg lg:text-xl text-justify">
-                    {item.body}
-                  </p>
+      <div className="px-5">
+        <Slider {...settings}>
+          {tipsList.map((item) => (
+            <div key={item.id} className="p-3  ">
+              <div className="grid grid-cols-12 gap-2 mt-10">
+                <div className="col-span-12 md:col-span-8 lg:col-span-6 md:col-start-3 lg:col-start-4">
+                  <div
+                    className="rounded-xl text-white p-5 md:p-10 lg:p-10 shadow-md shadow-gold"
+                    style={{ background: "#404042" }}
+                  >
+                    <p className="text-sm md:text-lg lg:text-xl font-semibold">
+                      {item.title}
+                    </p>
+                    <p className="text-sm md:text-lg lg:text-xl text-justify">
+                      {item.body}
+                    </p>
+                  </div>
                 </div>
               </div>
-             
             </div>
-          </div>
-        ))}
-      </Slider>
+          ))}
+        </Slider>
+      </div>
       <div className="col-span-12 md:col-span-10 md:col-start-2 text-2xl py-5 mt-10">
-                <p className="text-sm md:text-lg lg:text-2xl text-justify md:text-center">
-                  Semua ini adalah hadiah-hadiah yang menunjukkan penghargaan
-                  atas dedikasi dan kerja kerasmu.{" "}
-                </p>
-                <p className="text-sm md:text-lg lg:text-2xl text-justify font-bold md:text-center">
-                  Jadilah Representatif BisnisTarakota arsitektur berprestasi
-                  dan nikmati manfaat luar biasa ini!
-                </p>
-              </div>
+        <p className="text-sm md:text-lg lg:text-2xl text-justify md:text-center">
+          Semua ini adalah hadiah-hadiah yang menunjukkan penghargaan atas
+          dedikasi dan kerja kerasmu.{" "}
+        </p>
+        <p className="text-sm md:text-lg lg:text-2xl text-justify font-bold md:text-center">
+          Jadilah Representatif BisnisTarakota arsitektur berprestasi dan
+          nikmati manfaat luar biasa ini!
+        </p>
+      </div>
     </div>
   );
 };

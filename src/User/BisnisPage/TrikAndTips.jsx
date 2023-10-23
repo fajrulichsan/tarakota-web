@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -65,6 +65,26 @@ const trikList = [
 ]
 const TrikAndTips = () => {
     const [currentSlide, setCurrentSlide] = useState(0); 
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      // Cek lebar layar untuk menentukan mode mobile
+      const handleResize = () => {
+        setIsMobile(window.innerWidth <= 680); // Atur breakpoint sesuai kebutuhan
+      };
+  
+      handleResize();
+  
+      window.addEventListener("resize", handleResize);
+  
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }, []);
+  
+    const widthDot = isMobile ? "10px" : "10px";
+
     const settings = {
       dots: true,
       infinite: true,
@@ -76,11 +96,11 @@ const TrikAndTips = () => {
       autoplaySpeed: 5000,
       beforeChange: (current, next) => setCurrentSlide(next),
       appendDots: (dots) => (
-        <ul style={{ margin: "-20px 0" }}>
+        <ul style={{ margin: `${isMobile ? "-20px" : "-20px"} 0` }}>
           {dots.map((dot, index) => (
             <li
               key={index}
-              style={{ display: "inline-block", marginRight: "5px" }}
+              style={{ display: "inline-block", marginRight: isMobile ? "-5px" : "-5px" }}
             >
               {dot}
             </li>
@@ -90,8 +110,8 @@ const TrikAndTips = () => {
       customPaging: (i) => (
         <div
           style={{
-            width: "15px",
-            height: "15px",
+            width: widthDot,
+            height: widthDot,
             background: currentSlide === i ? "#D4B754" : "transparent",
             border:
               currentSlide === i ? "2px solid #BABABA" : "2px solid #BABABA",
@@ -157,7 +177,7 @@ const TrikAndTips = () => {
     <div className='px-5 py-5 md:py-10 md:px-20 lg:px-32'>
         <h1 className='text-lg md:text-2xl lg:text-4xl text-tera text-center font-bold'>Tips Menjadi Representatif BisnisTarakota Sukses</h1>
         <p className='text-sm md:text-lg lg:text-2xl text-center'>Tips Menjadi Representatif BisnisTarakota Sukses</p>
-        <div className='px-5 my-10'>
+        <div className='px-5 my-2 md:my-10'>
         <Slider {...settings} className="">
         {trikList.map((item) => (
           <div key={item.id} className="p-3 h-[13em] md:h-[18em] lg:h-[15em]">

@@ -33,7 +33,7 @@ const JenjangKarir = () => {
   return (
     <Fragment>
       <div
-        className="w-full h-[10em] md:h-[20em] relative bg-center bg-cover bg-no-repeat"
+        className="w-full h-[10em] md:h-[20em] relative bg-center bg-cover bg-no-repeat md:mb-6"
         style={{ backgroundImage: `url(${bgBannerSlider})` }}
       >
         <div
@@ -57,7 +57,7 @@ const JenjangKarir = () => {
                 menuju sukses!
               </p>
           </div>
-          <div className="col-span-1 md:col-span-3 row-span-2">
+          <div className="col-span-1 md:col-span-3 row-span-2 md:mt-10 lg:mt-10">
             <div className="grid grid-cols-6 md:grid-cols-1 gap-5">
               {JenjangKarirList.map((data) => (
                 <div key={data.id} className="col-span-3 md:col-span-1">
@@ -89,7 +89,7 @@ const JenjangKarir = () => {
                 background: "#404042",
               }}
             >
-              <p className="text-sm md:text-lg lg:text-2xl text-white">
+              <p className="text-sm md:text-lg lg:text-2xl text-white text-justify">
                 {
                   JenjangKarirList.find(
                     (item) => item.id === currentJenjangKarir

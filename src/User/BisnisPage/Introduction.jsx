@@ -26,7 +26,7 @@ const Introduction = () => {
       };
     }, []);
 
-  const width = isMobile ? "10px" : "15px";
+  const width = isMobile ? "10px" : "10px";
 
   const tipsList = [
     {
@@ -55,11 +55,11 @@ const Introduction = () => {
     autoplaySpeed: 5000,
     beforeChange: (current, next) => setCurrentSlide(next),
     appendDots: (dots) => (
-      <ul style={{ margin: "-20px 0" }}>
+      <ul style={{ margin: `${isMobile ? "-20px" : "-20px"} 0` }}>
         {dots.map((dot, index) => (
           <li
             key={index}
-            style={{ display: "inline-block", marginRight: isMobile ? "-8px" : "5px" }}
+            style={{ display: "inline-block", marginRight: isMobile ? "-5px" : "-5px" }}
           >
             {dot}
           </li>
@@ -126,7 +126,7 @@ const Introduction = () => {
       {
         breakpoint: 1023, // Adjust this breakpoint as needed for larger tablets
         settings: {
-          slidesToShow: 2, // Number of slides to show on larger tablets
+          slidesToShow: 1, // Number of slides to show on larger tablets
           slidesToScroll: 1,
         },
       },
