@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -42,7 +42,26 @@ const styleCardTesti = {
 };
 
 const Introduction = () => {
-  const [currentSlide, setCurrentSlide] = useState(0); // Define currentSlide state
+  const [currentSlide, setCurrentSlide] = useState(0); 
+  const [isMobile, setIsMobile] = useState(false);
+
+
+  useEffect(() => {
+    // Cek lebar layar untuk menentukan mode mobile
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 680); // Atur breakpoint sesuai kebutuhan
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const widthDot = isMobile ? "10px" : "10px";
 
   const settings = {
     dots: true,
@@ -55,11 +74,11 @@ const Introduction = () => {
     autoplaySpeed: 5000,
     beforeChange: (current, next) => setCurrentSlide(next),
     appendDots: (dots) => (
-      <ul style={{ margin: "-20px 0" }}>
+      <ul style={{ margin: `${isMobile ? "-20px" : "-20px"} ${isMobile ? "-10px" : "-20px"}` }}>
         {dots.map((dot, index) => (
           <li
             key={index}
-            style={{ display: "inline-block", marginRight: "5px" }}
+            style={{ display: "inline-block", marginRight: isMobile ? "-5px" : "-5px"  }}
           >
             {dot}
           </li>
@@ -69,8 +88,8 @@ const Introduction = () => {
     customPaging: (i) => (
       <div
         style={{
-          width: "15px",
-          height: "15px",
+          width: widthDot,
+          height: widthDot,
           background: currentSlide === i ? "#D4B754" : "transparent",
           border:
             currentSlide === i ? "2px solid #BABABA" : "2px solid #BABABA",
@@ -147,7 +166,7 @@ const Introduction = () => {
         memulai investasi?
       </p>
     </div>
-    <div className="px-10 pb-14 md:px-20 md:pt-7 lg:pt-10 lg:px-32 lg:pb-20">
+    <div className="px-10 pb-10 md:px-20 md:pt-7 lg:pt-10 lg:px-32 lg:pb-20">
       <Slider {...settings} className="md:px-2">
         {carouselData.map((item) => (
           <div className="p-3 h-[11em] md:h-[14em] lg:h-[15em]">

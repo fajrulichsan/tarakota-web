@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -51,12 +51,31 @@ const introList2 = [
 
 const styleCardTesti = {
   border: "5px solid #FFF",
-  // boxShadow: "0px 4px 25px 0px rgba(0, 0, 0, 0.08)",
 };
 
 const Introduction = () => {
   const [currentSlide, setCurrentSlide] = useState(0); 
   const [currentSlide2, setCurrentSlide2] = useState(0);
+
+  const [isMobile, setIsMobile] = useState(false);
+
+
+  useEffect(() => {
+    // Cek lebar layar untuk menentukan mode mobile
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 680); // Atur breakpoint sesuai kebutuhan
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const widthDot = isMobile ? "10px" : "10px";
 
   const settings1 = {
     dots: true,
@@ -69,11 +88,11 @@ const Introduction = () => {
     autoplaySpeed: 5000,
     beforeChange: (current, next) => setCurrentSlide(next),
     appendDots: (dots) => (
-      <ul style={{ margin: "-20px 0" }}>
+      <ul style={{ margin: `${isMobile ? "-20px" : "-20px"} -20px` }}>
         {dots.map((dot, index) => (
           <li
             key={index}
-            style={{ display: "inline-block", marginRight: "5px" }}
+            style={{ display: "inline-block", marginRight: isMobile ? "-5px" : "-5px"  }}
           >
             {dot}
           </li>
@@ -83,8 +102,8 @@ const Introduction = () => {
     customPaging: (i) => (
       <div
         style={{
-          width: "15px",
-          height: "15px",
+          width: widthDot,
+          height: widthDot,
           background: currentSlide === i ? "#D4B754" : "transparent",
           border:
             currentSlide === i ? "2px solid #BABABA" : "2px solid #BABABA",
@@ -158,11 +177,11 @@ const Introduction = () => {
     autoplaySpeed: 5000,
     beforeChange: (current, next) => setCurrentSlide2(next),
     appendDots: (dots) => (
-      <ul style={{ margin: "-20px 0" }}>
+      <ul style={{ margin: `${isMobile ? "-20px" : "-20px"} -20px` }}>
         {dots.map((dot, index) => (
           <li
             key={index}
-            style={{ display: "inline-block", marginRight: "5px" }}
+            style={{ display: "inline-block", marginRight: isMobile ? "-5px" : "-5px"  }}
           >
             {dot}
           </li>
@@ -172,8 +191,8 @@ const Introduction = () => {
     customPaging: (i) => (
       <div
         style={{
-          width: "15px",
-          height: "15px",
+          width: widthDot,
+          height: widthDot,
           background: currentSlide2 === i ? "#D4B754" : "transparent",
           border:
             currentSlide2 === i ? "2px solid #BABABA" : "2px solid #BABABA",

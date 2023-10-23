@@ -101,8 +101,8 @@ const Form = () => {
 
   return (
     <div className="mx-5 md:mx-20 lg:mx-32 rounded-2xl mb-10 md:mb-20 shadow-md md:shadow-lg md:shadow-gold shadow-gold" style={{ background: "#F9F5EC" }}>
-      <div className="space-y-3 md:space-y-5 p-8 md:p-16 lg:px-20 ">
-        <form onSubmit={sendEmail}>
+      <div className="p-8 md:p-16 lg:px-20 ">
+        <form onSubmit={sendEmail} className="space-y-3 md:space-y-5 ">
           {formInput.map((data) => (
             <div key={data.id}>
               <p className="text-sm md:text-lg">
