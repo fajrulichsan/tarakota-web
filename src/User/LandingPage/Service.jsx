@@ -1,9 +1,10 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./css/slider-project.css";
+import Fade from "react-reveal/Fade";
 
 import { bgProjectSlider } from "../../assets/img/index";
 
@@ -11,7 +12,6 @@ const ProjectSlider = () => {
   const baseUrl = window.location.origin;
   const [currentSlide, setCurrentSlide] = useState(0); // Define currentSlide state
   const [isMobile, setIsMobile] = useState(false);
-
 
   useEffect(() => {
     // Cek lebar layar untuk menentukan mode mobile
@@ -60,7 +60,10 @@ const ProjectSlider = () => {
         {dots.map((dot, index) => (
           <li
             key={index}
-            style={{ display: "inline-block", marginRight: isMobile ? "-5px" : "-5px" }}
+            style={{
+              display: "inline-block",
+              marginRight: isMobile ? "-5px" : "-5px",
+            }}
           >
             {dot}
           </li>
@@ -136,41 +139,49 @@ const ProjectSlider = () => {
 
   return (
     <div className="px-10 py-10 lg:py-16 md:px-20 lg:px-32">
-      <h1 className="text-lg md:text-3xl lg:text-4xl font-bold text-center tracking-wider">Layanan Kami</h1>
-      <hr className="w-24 mx-auto border md:border-2 border-tera md:mt-2"></hr>
-      <Slider {...settings} className="mt-10">
-        {projects.map((project) => (
-          <div key={project.id} className="px-2 md:px-4">
-            <div
-              className="w-full relative h-[30em] bg-center bg-cover bg-no-repeat"
-              style={{
-                backgroundImage: `url(${bgProjectSlider})`,
-              }}
-            >
+      <Fade top>
+        <h1 className="text-lg md:text-3xl lg:text-4xl font-bold text-center tracking-wider">
+          Layanan Kami
+        </h1>
+        <hr className="w-24 mx-auto border md:border-2 border-tera md:mt-2"></hr>
+      </Fade>
+
+      <Fade bottom>
+        <Slider {...settings} className="mt-10">
+          {projects.map((project) => (
+            <div key={project.id} className="px-2 md:px-4">
               <div
-                className="absolute inset-0 flex flex-col justify-center items-center"
+                className="w-full relative h-[30em] bg-center bg-cover bg-no-repeat"
                 style={{
-                  background:
-                    "linear-gradient(0deg, #E85738 -22.21%, rgba(0, 0, 0, 0.00) 100%)",
+                  backgroundImage: `url(${bgProjectSlider})`,
                 }}
               >
-                <div className="text-white p-5">
-                  <p className="text-xl font-bold tracking-widest md:text-4xl">{project.title}</p>
+                <div
+                  className="absolute inset-0 flex flex-col justify-center items-center"
+                  style={{
+                    background:
+                      "linear-gradient(0deg, #E85738 -22.21%, rgba(0, 0, 0, 0.00) 100%)",
+                  }}
+                >
+                  <div className="text-white p-5">
+                    <p className="text-xl font-bold tracking-widest md:text-4xl">
+                      {project.title}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
-      </Slider>
+          ))}
+        </Slider>
+      </Fade>
 
-      <a href={`${baseUrl}/service`}>
-      <div 
-      className="w-fit px-10 hover:cursor-pointer py-1 mx-auto text-sm md:text-base mt-8 md:mt-10 lg:mt-8 text-md text-center text-white bg-tera rounded-full"
-      >
-        More
-      </div>
-      </a>
-      
+      <Fade bottom>
+        <a href={`${baseUrl}/service`}>
+          <div className="w-fit px-10 hover:cursor-pointer py-1 mx-auto text-sm md:text-base mt-8 md:mt-10 lg:mt-8 text-md text-center text-white bg-tera rounded-full">
+            More
+          </div>
+        </a>
+      </Fade>
     </div>
   );
 };

@@ -9,6 +9,7 @@ import {
   whatsappWhite,
   linkedinWhite,
 } from "../assets/img/index";
+import { Fade } from "react-reveal";
 
 const productList = [
   {
@@ -110,6 +111,8 @@ const Footer = () => {
             "#1B1B1B",
         }}
       >
+        <Fade bottom>
+
         <img className="mx-auto md:mx-0 md:pt-10 pt-10 w-40 md:w-60" src={logo}></img>
         <div className="grid grid-cols-6 md:grid-cols-10 gap-5 mt-5 md:mt-10">
           <div className="col-span-2 md:col-span-2 mx-auto">
@@ -195,6 +198,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        </Fade>
       </div>
   );
 };

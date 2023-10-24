@@ -5,6 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./css/slider-project.css";
 
+import Fade from 'react-reveal/Fade';
+
 import {
   landingProject1,
   landingProject2,
@@ -170,11 +172,16 @@ const ProjectSlider = () => {
   return (
     <div className="project-slider px-10 md:px-20 lg:px-32">
       <div className="my-5 md:my-7 lg:my-14">
+
+        <Fade bottom>
         <p className="text-lg md:text-xl lg:text-3xl text-justify">
           “Berpengalaman dalam menciptakan design yang simple dan elegan”
         </p>
         <hr className="border-2 border-tera w-40"></hr>
+        </Fade>
+        
       </div>
+      <Fade bottom>
       <Slider {...settings}>
         {projects.map((project) => (
           <div key={project.id} className="px-2 md:px-4">
@@ -200,6 +207,8 @@ const ProjectSlider = () => {
           </div>
         ))}
       </Slider>
+      </Fade>
+      <Fade bottom>
       <a href={`${baseUrl}/project`}>
         <div
           className="w-fit px-8 py-1 mx-auto text-sm md:text-base mt-10 md:mt-12 text-md text-center text-white bg-tera rounded-full hover:cursor-pointer"
@@ -208,6 +217,8 @@ const ProjectSlider = () => {
           All Project
         </div>
       </a>
+      </Fade>
+      
     </div>
   );
 };

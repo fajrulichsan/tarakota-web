@@ -1,9 +1,23 @@
-import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import {
+  airMancur,
+  ba,
+  cnearc,
+  dankos,
+  enseval,
+  fima,
+  forsta,
+  kalbe,
+  komet,
+  kasual,
+  oneject,
+  wook,
+} from "../../assets/img/index";
 
-import { airMancur, ba, cnearc, dankos, enseval, fima, forsta, kalbe, komet, kasual, oneject, wook } from '../../assets/img/index';
+import Fade from "react-reveal/Fade";
 
 const OurClient = () => {
   const settings = {
@@ -31,24 +45,42 @@ const OurClient = () => {
     ],
   };
 
-  const brands = [airMancur, ba, cnearc, dankos, enseval, fima, forsta, kalbe, komet, kasual, oneject, wook];
+  const brands = [
+    airMancur,
+    ba,
+    cnearc,
+    dankos,
+    enseval,
+    fima,
+    forsta,
+    kalbe,
+    komet,
+    kasual,
+    oneject,
+    wook,
+  ];
 
   return (
     <div className="pt-16 md:pb-20">
-      <div >
-        <h2 className='text-xl md:text-2xl lg:text-4xl font-bold text-center tracking-wider'>Our Client</h2>
-        <hr className='mx-auto w-20 border-b-2 md:border-b-2 border-tera'></hr>
+      <div>
+        <Fade bottom>
+          <h2 className="text-xl md:text-2xl lg:text-4xl font-bold text-center tracking-wider">
+            Our Client
+          </h2>
+          <hr className="mx-auto w-20 border-b-2 md:border-b-2 border-tera"></hr>
+        </Fade>
       </div>
-      <Slider {...settings} className="pt-5 md:pt-12">
-        {brands.map((brand, index) => (
-          <div key={index} className="slideitems-center flex justify-center ">
-            <img className='mx-auto' src={brand} alt={`Brand ${index + 1}`} />
-          </div>
-        ))}
-      </Slider>
+      <Fade bottom>
+        <Slider {...settings} className="pt-5 md:pt-12">
+          {brands.map((brand, index) => (
+            <div key={index} className="slideitems-center flex justify-center ">
+              <img className="mx-auto" src={brand} alt={`Brand ${index + 1}`} />
+            </div>
+          ))}
+        </Slider>
+      </Fade>
     </div>
   );
 };
 
 export default OurClient;
-
