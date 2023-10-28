@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./css/slider-project.css";
+import { Fade } from "react-reveal";
 
 const carouselData = [
   {
@@ -42,9 +43,8 @@ const styleCardTesti = {
 };
 
 const Introduction = () => {
-  const [currentSlide, setCurrentSlide] = useState(0); 
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-
 
   useEffect(() => {
     // Cek lebar layar untuk menentukan mode mobile
@@ -74,11 +74,20 @@ const Introduction = () => {
     autoplaySpeed: 5000,
     beforeChange: (current, next) => setCurrentSlide(next),
     appendDots: (dots) => (
-      <ul style={{ margin: `${isMobile ? "-20px" : "-20px"} ${isMobile ? "-10px" : "-20px"}` }}>
+      <ul
+        style={{
+          margin: `${isMobile ? "-20px" : "-20px"} ${
+            isMobile ? "-10px" : "-20px"
+          }`,
+        }}
+      >
         {dots.map((dot, index) => (
           <li
             key={index}
-            style={{ display: "inline-block", marginRight: isMobile ? "-5px" : "-5px"  }}
+            style={{
+              display: "inline-block",
+              marginRight: isMobile ? "-5px" : "-5px",
+            }}
           >
             {dot}
           </li>
@@ -154,44 +163,49 @@ const Introduction = () => {
 
   return (
     <Fragment>
-    <div className="px-5 py-2 md:py-0 lg:pt-10 lg:pb-10 md:px-20 lg:px-32">
-      <h1 className="text-lg md:text-2xl lg:text-4xl font-semibold text-tera">
-        Jadi, udah paham kan kenapa investasi itu penting?
-      </h1>
-      <h1 className="text-lg md:text-2xl lg:text-4xl  font-semibold text-tera">
-        Kapan ya sebaiknya memulai investasi?{" "}
-      </h1>
-      <p className="text-sm md:text-lg lg:text-2xl mt-2">
-        Jadi, udah paham kan kenapa investasi itu penting? Kapan ya sebaiknya
-        memulai investasi?
-      </p>
-    </div>
-    <div className="px-10 pb-10 md:px-20 md:pt-7 lg:pt-10 lg:px-32 lg:pb-20">
-      <Slider {...settings} className="md:px-2">
-        {carouselData.map((item) => (
-          <div className="p-3 h-[11em] md:h-[14em] lg:h-[15em]">
-            <div
-              key={item.id}
-              className="flex p-5 lg:p-10 relative border-2 border-white rounded-xl md:rounded-2xl lg:rounded-3xl h-full"
-              style={styleCardTesti}
-            >
-              <div className="rounded-lg">
-                <h3 className="text-sm md:text-xl lg:text-2xl font-semibold mb-2 text-center">
-                  {item.title}
-                </h3>
-                <div className="relative text-sm md:text-lg lg:text-xl text-justify">
-                  {item.body}
+      <Fade bottom cascade>
+        <div className="px-5 py-2 md:py-0 lg:pt-10 lg:pb-10 md:px-20 lg:px-32">
+          <h1 className="text-lg md:text-2xl lg:text-4xl font-semibold text-tera">
+            Jadi, udah paham kan kenapa investasi itu penting?
+          </h1>
+          <h1 className="text-lg md:text-2xl lg:text-4xl  font-semibold text-tera">
+            Kapan ya sebaiknya memulai investasi?{" "}
+          </h1>
+          <p className="text-sm md:text-lg lg:text-2xl mt-2">
+            Jadi, udah paham kan kenapa investasi itu penting? Kapan ya
+            sebaiknya memulai investasi?
+          </p>
+        </div>
+      </Fade>
+
+      <div className="px-10 pb-10 md:px-20 md:pt-7 lg:pt-10 lg:px-32 lg:pb-20">
+        <Fade bottom>
+          <Slider {...settings} className="md:px-2">
+            {carouselData.map((item) => (
+              <div className="p-3 h-[11em] md:h-[14em] lg:h-[15em]">
+                <div
+                  key={item.id}
+                  className="flex p-5 lg:p-10 relative border-2 border-white rounded-xl md:rounded-2xl lg:rounded-3xl h-full"
+                  style={styleCardTesti}
+                >
+                  <div className="rounded-lg">
+                    <h3 className="text-sm md:text-xl lg:text-2xl font-semibold mb-2 text-center">
+                      {item.title}
+                    </h3>
+                    <div className="relative text-sm md:text-lg lg:text-xl text-justify">
+                      {item.body}
+                    </div>
+                  </div>
+                  <div className="w-6 h-6 md:w-7 md:h-7 rounded-full absolute -top-4 right-1/2 translate-x-5  bg-tera flex justify-center items-center text-white">
+                    {item.id}
+                  </div>
                 </div>
               </div>
-              <div className="w-6 h-6 md:w-7 md:h-7 rounded-full absolute -top-4 right-1/2 translate-x-5  bg-tera flex justify-center items-center text-white">
-                {item.id}
-              </div>
-            </div>
-          </div>
-        ))}
-      </Slider>
-    </div>
-              </Fragment>
+            ))}
+          </Slider>
+        </Fade>
+      </div>
+    </Fragment>
   );
 };
 

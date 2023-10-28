@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Fade } from "react-reveal";
 import { perjalananKarir, leftArrowBgWhite } from "../../assets/img/index";
 
 const programList = [
@@ -55,70 +56,78 @@ const PerjalananKarir = () => {
   return (
     <div className="py-5 px-5 md:px-20 lg:px-32 md:py-20">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div className="col-span-1 relative">
-          <div
-            className="w-full h-60 md:h-80 lg:h-96 bg-cover bg-no-repeat bg-center"
-            style={{ backgroundImage: `url(${perjalananKarir})` }}
-          ></div>
-
-          {programList.map((data) => (
+        <Fade left>
+          <div className="col-span-1 relative">
             <div
-              key={data.id}
-              className={`${data.position} ${
-                currentProgram === data.id
-                  ? "bg-tera text-white"
-                  : "bg-[#F9F5EC] text-tera"
-              } w-fit px-3 py-1.5 rounded-full absolute hover:cursor-pointer shadow-md shadow-gold`}
-              onClick={() => setcurrentProgram(data.id)}
+              className="w-full h-60 md:h-80 lg:h-96 bg-cover bg-no-repeat bg-center"
+              style={{ backgroundImage: `url(${perjalananKarir})` }}
+            ></div>
+
+            {programList.map((data) => (
+              <div
+                key={data.id}
+                className={`${data.position} ${
+                  currentProgram === data.id
+                    ? "bg-tera text-white"
+                    : "bg-[#F9F5EC] text-tera"
+                } w-fit px-3 py-1.5 rounded-full absolute hover:cursor-pointer shadow-md shadow-gold`}
+                onClick={() => setcurrentProgram(data.id)}
+                style={{
+                  border: "2px solid transparent",
+                }}
+              >
+                <p className="text-sm md:text-md lg:text-lg font-medium">
+                  {data.title}
+                </p>
+                <img
+                  className={`${currentProgram !== data.id ? "hidden" : ""} ${
+                    isMobile
+                      ? "bottom-0 left-1/2 -rotate-90 translate-y-2"
+                      : "top-1/2 -translate-y-2 -right-2 rotate-180"
+                  } w-4 h-4 absolute `}
+                  src={leftArrowBgWhite}
+                ></img>
+              </div>
+            ))}
+          </div>
+        </Fade>
+
+        <Fade rigth>
+          <div className="col-span-1 flex items-center">
+            <div
+              className="w-full p-5 rounded-2xl relative shadow-md shadow-gold"
               style={{
-                border: "2px solid transparent",
+                background: "#E85738",
+                border: "5px solid #F8F3ED",
               }}
             >
-              <p className="text-sm md:text-md lg:text-lg font-medium">
-                {data.title}
+              <p className="text-sm md:text-md lg:text-xl text-justify text-white">
+                {
+                  programList.find((item) => item.id === currentProgram)
+                    .description
+                }
               </p>
               <img
                 className={`${
-                  currentProgram !== data.id ? "hidden" : ""
-                } ${isMobile ? "bottom-0 left-1/2 -rotate-90 translate-y-2" : "top-1/2 -translate-y-2 -right-2 rotate-180"} w-4 h-4 absolute `}
+                  isMobile
+                    ? "w-6 h-6 absolute top-0 rotate-90 -translate-y-3 left-1/2"
+                    : "w-8 h-8 absolute top-1/2 -translate-y-1/2 -left-4"
+                }`}
                 src={leftArrowBgWhite}
               ></img>
             </div>
-          ))}
-        </div>
-
-        <div className="col-span-1 flex items-center">
-          <div
-            className="w-full p-5 rounded-2xl relative shadow-md shadow-gold"
-            style={{
-              background: "#E85738",
-              border: "5px solid #F8F3ED",
-            }}
-          >
-            <p className="text-sm md:text-md lg:text-xl text-justify text-white">
-              {
-                programList.find((item) => item.id === currentProgram)
-                  .description
-              }
-            </p>
-            <img
-              className={`${
-                isMobile
-                  ? "w-6 h-6 absolute top-0 rotate-90 -translate-y-3 left-1/2"
-                  : "w-8 h-8 absolute top-1/2 -translate-y-1/2 -left-4"
-              }`}
-              src={leftArrowBgWhite}
-            ></img>
           </div>
-        </div>
+        </Fade>
       </div>
-      <p className="text-sm md:text-lg lg:text-2xl mt-4 md:mt-10 lg:mt-16 text-justify">
-        Masing-masing dari 4 Program BisnisTarakota ini memainkan peran penting
-        dalam menjalankan penghubungan antara klien dan perusahaan, membantu
-        menciptakan peluang bisnis yang saling menguntungkan. Ini adalah
-        kesempatan untuk memanfaatkan keterampilan komunikasi dan kepemimpinanmu
-        dalam mengembangkan relasi bisnis yang berhasil.
-      </p>
+      <Fade bottom>
+        <p className="text-sm md:text-lg lg:text-2xl mt-4 md:mt-10 lg:mt-16 text-justify">
+          Masing-masing dari 4 Program BisnisTarakota ini memainkan peran
+          penting dalam menjalankan penghubungan antara klien dan perusahaan,
+          membantu menciptakan peluang bisnis yang saling menguntungkan. Ini
+          adalah kesempatan untuk memanfaatkan keterampilan komunikasi dan
+          kepemimpinanmu dalam mengembangkan relasi bisnis yang berhasil.
+        </p>
+      </Fade>
     </div>
   );
 };

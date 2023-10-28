@@ -1,4 +1,5 @@
 import React from 'react'
+import { Fade } from 'react-reveal'
 import {bgVisiMisiAboutUs} from '../../assets/img'
 
 const areaList = [
@@ -27,8 +28,13 @@ const areaList = [
 const Area = () => {
   return (
     <div className='py-3 md:py-20'>
+        <Fade bottom>
+
         <h1 className='px-5 text-lg md:text-2xl lg:text-4xl text-tera text-center font-bold'>Area Utama untuk Pengembangan Bisnis Experience Center Tarakota</h1>
+        </Fade>
         <div className='grid grid-cols-5 mt-5 md:mt-8 lg:mt-10'>
+            <Fade bottom >
+
             {areaList.map((data) =>(
                 <div key={data.id} className='col-span-1'>
                 <div
@@ -44,6 +50,7 @@ const Area = () => {
                 </div>
             </div>
             ))}
+            </Fade>
         </div>
     </div>
   )

@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import { Fade } from "react-reveal";
 import { bgBannerSlider } from "../../assets/img/index";
 
 const JenjangKarirList = [
@@ -46,60 +47,64 @@ const JenjangKarir = () => {
       </div>
       <div className="px-5 py-5 md:px-20 lg:px-32 md:py-0 lg:py-10">
         <div className="grid grid-cols-1 md:grid-cols-9 gap-5 md:gap-10">
-          <div className="col-span-1 md:col-span-6">
-            <p className="text-sm md:text-lg lg:text-2xl text-justify">
+          <Fade left>
+            <div className="col-span-1 md:col-span-6">
+              <p className="text-sm md:text-lg lg:text-2xl text-justify">
                 Jika kamu ngerasa punya semangat buat menjelajahi karir di dunia
                 arsitektur yang penuh peluang, ayo kita eksplor lebih dalam
-                tentang jenjang karir yang penuh potensi ini. Dari peran 'Start-Up
-                Scout' hingga 'Growth Director,' di dunia arsitektur ini, kita
-                pake bahasa kekinian buat nggambarkan perjalanan karir seru ini.
-                Yuk, kita diskusiin gimana tiap tahapannya bisa bantuin kamu
-                menuju sukses!
+                tentang jenjang karir yang penuh potensi ini. Dari peran
+                'Start-Up Scout' hingga 'Growth Director,' di dunia arsitektur
+                ini, kita pake bahasa kekinian buat nggambarkan perjalanan karir
+                seru ini. Yuk, kita diskusiin gimana tiap tahapannya bisa
+                bantuin kamu menuju sukses!
               </p>
-          </div>
+            </div>
+          </Fade>
           <div className="col-span-1 md:col-span-3 row-span-2 md:mt-10 lg:mt-10">
             <div className="grid grid-cols-6 md:grid-cols-1 gap-5">
-              {JenjangKarirList.map((data) => (
-                <div key={data.id} className="col-span-3 md:col-span-1">
-                  <div
-                  key={data.id}
-                  className="rounded-full flex justify-center relative hover:cursor-pointer shadow-md shadow-gold"
-                  onClick={() => setCurrentJenjangKarir(data.id)}
-                  style={{
-                    border: "10px solid #F9F5EC",
-                    background: "#F9F5EC",
-                  }}
-                >
-                  <p className="text-sm md:text-lg lg:text-2xl text-tera font-semibold">
-                    {data.title}
-                  </p>
-                  {data.id === currentJenjangKarir && (
-                    <div className="w-4 h-4 md:w-5 md:h-5 bg-tera rounded-full absolute top-1/2 -translate-y-2 left-0 -translate-x-4"></div>
-                  )}
-                </div>
-                </div>
-                
-              ))}
+              <Fade rigth>
+                {JenjangKarirList.map((data) => (
+                  <div key={data.id} className="col-span-3 md:col-span-1">
+                    <div
+                      key={data.id}
+                      className="rounded-full flex justify-center relative hover:cursor-pointer shadow-md shadow-gold"
+                      onClick={() => setCurrentJenjangKarir(data.id)}
+                      style={{
+                        border: "10px solid #F9F5EC",
+                        background: "#F9F5EC",
+                      }}
+                    >
+                      <p className="text-sm md:text-lg lg:text-2xl text-tera font-semibold">
+                        {data.title}
+                      </p>
+                      {data.id === currentJenjangKarir && (
+                        <div className="w-4 h-4 md:w-5 md:h-5 bg-tera rounded-full absolute top-1/2 -translate-y-2 left-0 -translate-x-4"></div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </Fade>
             </div>
           </div>
-          <div className="col-span-1 md:col-span-6">
-            <div
-              className="rounded-xl md:rounded-2xl p-5 md:p-8 lg:p-10 relative shadow-md shadow-gold"
-              style={{
-                background: "#404042",
-              }}
-            >
-              <p className="text-sm md:text-lg lg:text-2xl text-white text-justify">
-                {
-                  JenjangKarirList.find(
-                    (item) => item.id === currentJenjangKarir
-                  ).description
-                }
-              </p>
-              <div className="w-4 h-4 md:w-6 md:h-6 bg-tera rounded-full absolute top-0 right-1/2 md:top-1/2 -translate-y-2 md:right-0 translate-x-2 md:translate-x-3"></div>
+          <Fade left>
+            <div className="col-span-1 md:col-span-6">
+              <div
+                className="rounded-xl md:rounded-2xl p-5 md:p-8 lg:p-10 relative shadow-md shadow-gold"
+                style={{
+                  background: "#404042",
+                }}
+              >
+                <p className="text-sm md:text-lg lg:text-2xl text-white text-justify">
+                  {
+                    JenjangKarirList.find(
+                      (item) => item.id === currentJenjangKarir
+                    ).description
+                  }
+                </p>
+                <div className="w-4 h-4 md:w-6 md:h-6 bg-tera rounded-full absolute top-0 right-1/2 md:top-1/2 -translate-y-2 md:right-0 translate-x-2 md:translate-x-3"></div>
+              </div>
             </div>
-          </div>
-          
+          </Fade>
         </div>
       </div>
     </Fragment>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Fade } from "react-reveal";
 
 const formInput = [
   {
@@ -345,6 +346,8 @@ const FormEstimasi = () => {
   };
 
   return (
+    <Fade bottom>
+      
     <div className="h-auto -mt-2 px-5 md:px-20 my-8 md:my-10 lg:my-20">
       <div
         className=" p-3 md:p-6 my-5 md:my-10 rounded-md md:rounded-2xl lg:rounded-3xl drop-shadow-lg"
@@ -627,6 +630,7 @@ const FormEstimasi = () => {
         </div>
       </div>
     </div>
+    </Fade>
   );
 };
 

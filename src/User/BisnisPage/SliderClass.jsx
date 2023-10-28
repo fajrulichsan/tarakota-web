@@ -1,9 +1,9 @@
-
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./css/slider-project.css";
+import { Fade } from "react-reveal";
 
 const carouselData = [
   {
@@ -27,7 +27,7 @@ const carouselData = [
     title: "Serunya Simulasi dan Peran Bermain",
     content: [
       "Pelatihan di sini nggak pernah bikin ngantuk! Kita bakal kenalin kamu ke dunia arsitektur lewat simulasi dan peran bermain yang seru banget.",
-"Kamu bakal bisa praktek langsung tanpa harus khawatir kehilangan klien atau proyek."
+      "Kamu bakal bisa praktek langsung tanpa harus khawatir kehilangan klien atau proyek.",
     ],
   },
   {
@@ -35,35 +35,35 @@ const carouselData = [
     title: " Ikutan Program Representatif BisnisTarakota yang Bikin Inspirasi",
     content: [
       "Jadi bagian dari Program Representatif BisnisTarakota kita yang keren abis. Program ini dirancang khusus buat bantu kamu kembangkan bisnis arsitektur kamu dengan lebih efektif.",
-      "Kamu juga bakal bisa belajar dari para ahli di industri ini."
+      "Kamu juga bakal bisa belajar dari para ahli di industri ini.",
     ],
   },
   {
     id: 5,
     title: "Materi Pelatihan Selalu Kece",
     content: [
-      "Kita selalu update materi pelatihan kita sesuai perkembangan industri arsitektur. Biar kamu selalu stay up-to-date."
+      "Kita selalu update materi pelatihan kita sesuai perkembangan industri arsitektur. Biar kamu selalu stay up-to-date.",
     ],
   },
   {
     id: 6,
-    title:"Fleksibel Belajar Online",
+    title: "Fleksibel Belajar Online",
     content: [
-      "Kamu bakal punya akses ke platform pelatihan online. Jadi, bisa belajar kapan aja dan di mana aja sesuai kebutuhanmu."
+      "Kamu bakal punya akses ke platform pelatihan online. Jadi, bisa belajar kapan aja dan di mana aja sesuai kebutuhanmu.",
     ],
   },
   {
     id: 7,
     title: "Keren, Dapat Penghargaan untuk Prestasi Luar Biasa",
     content: [
-      "Kita selalu apresiasi prestasi luar biasa yang kamu raih. Jadi, kamu bakal dapet penghargaan dan insentif yang pantas buat kerja kerasmu."
+      "Kita selalu apresiasi prestasi luar biasa yang kamu raih. Jadi, kamu bakal dapet penghargaan dan insentif yang pantas buat kerja kerasmu.",
     ],
   },
   {
     id: 8,
     title: "Komitmen Kuat pada Etika Bisnis",
     content: [
-      "Tentu aja, etika bisnis yang bener itu penting. Kamu bakal diajarin etika bisnis dan praktik bisnis yang bener biar kamu selalu berinteraksi dengan jujur dan integritas."
+      "Tentu aja, etika bisnis yang bener itu penting. Kamu bakal diajarin etika bisnis dan praktik bisnis yang bener biar kamu selalu berinteraksi dengan jujur dan integritas.",
     ],
   },
 ];
@@ -85,15 +85,15 @@ const SliderClass = () => {
 
     handleResize();
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-const widthDot = isMobile ? "10px" : "10px";
-  
+  const widthDot = isMobile ? "10px" : "10px";
+
   const settings = {
     dots: true,
     infinite: true,
@@ -109,7 +109,10 @@ const widthDot = isMobile ? "10px" : "10px";
         {dots.map((dot, index) => (
           <li
             key={index}
-            style={{ display: "inline-block", marginRight: isMobile ? "-5px" : "-5px" }}
+            style={{
+              display: "inline-block",
+              marginRight: isMobile ? "-5px" : "-5px",
+            }}
           >
             {dot}
           </li>
@@ -185,38 +188,42 @@ const widthDot = isMobile ? "10px" : "10px";
 
   return (
     <div className="px-10 py-5 lg:py-16 md:px-20 lg:px-32">
-      <Slider {...settings} className="">
-        {carouselData.map((item) => (
-          <div key={item.id} className="p-3 h-[18em] md:h-[23em] lg:h-[18em]">
+      <Fade bottom>
+        <Slider {...settings} className="">
+          {carouselData.map((item) => (
+            <div key={item.id} className="p-3 h-[18em] md:h-[23em] lg:h-[18em]">
               <div
-                  key={item.id}
-                  className="flex p-5 lg:p-10 relative border-2 border-white rounded-2xl md:rounded-3xl h-full"
-                  style={styleCardTesti}
-                >
-                  <div className="rounded-lg">
-                    <h3 className="test-md md:text-xl lg:text-2xl font-semibold mb-2 text-center">
-                      {item.title}
-                    </h3>
-                    <div className="relative text-xl text-justify">
-                      <ul className="list-disc px-3">
-                        {item.content.map((data, index) => (
-                          <li key={index} className="text-sm md:text-lg lg:text-xl">{data}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="w-7 h-7 rounded-full absolute -top-4 right-1/2 translate-x-5  bg-tera flex justify-center items-center text-white">
-                    {item.id}
+                key={item.id}
+                className="flex p-5 lg:p-10 relative border-2 border-white rounded-2xl md:rounded-3xl h-full"
+                style={styleCardTesti}
+              >
+                <div className="rounded-lg">
+                  <h3 className="test-md md:text-xl lg:text-2xl font-semibold mb-2 text-center">
+                    {item.title}
+                  </h3>
+                  <div className="relative text-xl text-justify">
+                    <ul className="list-disc px-3">
+                      {item.content.map((data, index) => (
+                        <li
+                          key={index}
+                          className="text-sm md:text-lg lg:text-xl"
+                        >
+                          {data}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
-          </div>
-              
-              ))}
-      </Slider>
+                <div className="w-7 h-7 rounded-full absolute -top-4 right-1/2 translate-x-5  bg-tera flex justify-center items-center text-white">
+                  {item.id}
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </Fade>
     </div>
   );
 };
 
 export default SliderClass;
-
-

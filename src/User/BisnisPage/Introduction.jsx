@@ -1,8 +1,8 @@
-
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Fade } from "react-reveal";
 import "./css/slider-project.css";
 import { bisnisIntro1 } from "../../assets/img";
 
@@ -11,32 +11,32 @@ const Introduction = () => {
 
   const [isMobile, setIsMobile] = useState(false);
 
-    useEffect(() => {
-      // Cek lebar layar untuk menentukan mode mobile
-      const handleResize = () => {
-        setIsMobile(window.innerWidth <= 680); // Atur breakpoint sesuai kebutuhan
-      };
-  
-      handleResize();
-  
-      window.addEventListener('resize', handleResize);
-  
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }, []);
+  useEffect(() => {
+    // Cek lebar layar untuk menentukan mode mobile
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 680); // Atur breakpoint sesuai kebutuhan
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const width = isMobile ? "10px" : "10px";
 
   const tipsList = [
     {
       id: 1,
-      body : `<p>Kamu pengen banget ngejar pendapatan besar biar semua impianmu bisa tercapai dalam bisnis arsitektur, dan bebas dari masalah ekonomi, bahkan ketika risiko datang dan duit nggak lagi jadi masalah? </p>
-      <p style="color: #E85738">Nah, saatnya kamu kenalan dengan tips sukses mengikuti <span style="font-weight:600">program Representatif BisnisTarakota!</span></p>`
+      body: `<p>Kamu pengen banget ngejar pendapatan besar biar semua impianmu bisa tercapai dalam bisnis arsitektur, dan bebas dari masalah ekonomi, bahkan ketika risiko datang dan duit nggak lagi jadi masalah? </p>
+      <p style="color: #E85738">Nah, saatnya kamu kenalan dengan tips sukses mengikuti <span style="font-weight:600">program Representatif BisnisTarakota!</span></p>`,
     },
     {
       id: 2,
-      body: `<p>Mungkin juga, kamu mau dapetin fasilitas arsitektur keren seperti beli tanah, bangun rumah, dan desain interior, semuanya dibayarin pake komisi <span style="font-weight:600"> program Representatif BisnisTarakota.</span></p>`
+      body: `<p>Mungkin juga, kamu mau dapetin fasilitas arsitektur keren seperti beli tanah, bangun rumah, dan desain interior, semuanya dibayarin pake komisi <span style="font-weight:600"> program Representatif BisnisTarakota.</span></p>`,
     },
     {
       id: 3,
@@ -59,7 +59,10 @@ const Introduction = () => {
         {dots.map((dot, index) => (
           <li
             key={index}
-            style={{ display: "inline-block", marginRight: isMobile ? "-5px" : "-5px" }}
+            style={{
+              display: "inline-block",
+              marginRight: isMobile ? "-5px" : "-5px",
+            }}
           >
             {dot}
           </li>
@@ -135,22 +138,26 @@ const Introduction = () => {
 
   return (
     <div className="px-5 py-5 lg:py-10 md:px-20 lg:px-32">
-      <Slider {...settings} className="mx-5">
-        {tipsList.map((data) => (
-          <div key={data.id} className="px-3">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2 md:gap-5 md:my-7 md:gap-x-10">
-              <div className="col-span-1 md:col-span-1 lg:col-span-1 ">
+      <Fade bottom>
+        <Slider {...settings} className="mx-5">
+          {tipsList.map((data) => (
+            <div key={data.id} className="px-3">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2 md:gap-5 md:my-7 md:gap-x-10">
+                <div className="col-span-1 md:col-span-1 lg:col-span-1 ">
+                  <div
+                    className="w-full h-60 lg:h-80  rounded-2xl bg-cover bg-center bg-no-repeat"
+                    style={{ backgroundImage: `url(${bisnisIntro1})` }}
+                  ></div>
+                </div>
                 <div
-                  className="w-full h-60 lg:h-80  rounded-2xl bg-cover bg-center bg-no-repeat"
-                  style={{ backgroundImage: `url(${bisnisIntro1})` }}
+                  className="col-span-1 md:col-span-2 lg:col-span-2 flex flex-col items-center justify-center text-sm md:text-lg lg:text-2xl text-justify"
+                  dangerouslySetInnerHTML={{ __html: data.body }}
                 ></div>
               </div>
-              <div className="col-span-1 md:col-span-2 lg:col-span-2 flex flex-col items-center justify-center text-sm md:text-lg lg:text-2xl text-justify" dangerouslySetInnerHTML={{ __html: data.body }}>
-              </div>
             </div>
-          </div>
-        ))}
-      </Slider>
+          ))}
+        </Slider>
+      </Fade>
     </div>
   );
 };

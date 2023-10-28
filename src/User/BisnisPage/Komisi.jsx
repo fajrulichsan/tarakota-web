@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { bisnisAlur } from "../../assets/img/index";
-
+import { Fade } from "react-reveal";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./css/slider-project.css";
+import { bisnisAlur } from "../../assets/img/index";
 
 const tipsList = [
   {
@@ -160,88 +160,98 @@ const Komisi = () => {
 
   return (
     <div className="px-5 py-5 md:px-20 lg:px-32">
-      <div className="rounded-xl md:rounded-3xl p-5 md:p-10 lg:p-16 shadow-md shadow-gold ">
-        <p className="text-sm md:text-lg lg:text-2xl text-justify">
-          Dalam peran sebagai seorang Representatif BisnisTarakota, kamu akan
-          mendapatkan komisi yang besar, yang semakin meningkat seiring dengan
-          kenaikan tingkat posismu. Dengan posisi yang lebih tinggi, kamu juga
-          memiliki kemampuan untuk mendelegrasikan sebagian pekerjaan kepada tim
-          lainnya, sehingga kamu bisa mengoptimalkan pendapatanmu sambil
-          memberdayakan timmu untuk meraih kesuksesan bersama. Bergabunglah
-          dengan kami sekarang dan raih komisi fantastis yang menanti dengan
-          contoh dibawah ini:
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 mt-4 md:mt-8">
-          <div className="col-span-1 md:col-span-6 lg:col-span-4 md:col-start-4 lg:col-start-5">
-            <div className="w-full py-2 md:py-3 bg-tera text-white text-center rounded-xl">
-              <p className="text-sm md:text-lg lg:text-2xl">
-                Tier 1: Komisi 2,5% total pendapatan
-              </p>
+      <Fade bottom>
+        <div className="rounded-xl md:rounded-3xl p-5 md:p-10 lg:p-16 shadow-md shadow-gold ">
+          <p className="text-sm md:text-lg lg:text-2xl text-justify">
+            Dalam peran sebagai seorang Representatif BisnisTarakota, kamu akan
+            mendapatkan komisi yang besar, yang semakin meningkat seiring dengan
+            kenaikan tingkat posismu. Dengan posisi yang lebih tinggi, kamu juga
+            memiliki kemampuan untuk mendelegrasikan sebagian pekerjaan kepada
+            tim lainnya, sehingga kamu bisa mengoptimalkan pendapatanmu sambil
+            memberdayakan timmu untuk meraih kesuksesan bersama. Bergabunglah
+            dengan kami sekarang dan raih komisi fantastis yang menanti dengan
+            contoh dibawah ini:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-3 mt-4 md:mt-8">
+            <div className="col-span-1 md:col-span-6 lg:col-span-4 md:col-start-4 lg:col-start-5">
+              <div className="w-full py-2 md:py-3 bg-tera text-white text-center rounded-xl">
+                <p className="text-sm md:text-lg lg:text-2xl">
+                  Tier 1: Komisi 2,5% total pendapatan
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="col-span-1 md:col-span-6 lg:col-span-4 md:col-start-4  lg:col-start-5">
-            <div className="w-full py-2 md:py-3 bg-tera text-white text-center rounded-xl">
-              <p className="text-sm md:text-lg lg:text-2xl">
-                Tier 2: Komisi 1,5% total pendapatan
-              </p>
+            <div className="col-span-1 md:col-span-6 lg:col-span-4 md:col-start-4  lg:col-start-5">
+              <div className="w-full py-2 md:py-3 bg-tera text-white text-center rounded-xl">
+                <p className="text-sm md:text-lg lg:text-2xl">
+                  Tier 2: Komisi 1,5% total pendapatan
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="col-span-1 md:col-span-6 lg:col-span-4 md:col-start-4  lg:col-start-5">
-            <div className="w-full py-2 md:py-3 bg-tera text-white text-center rounded-xl">
-              <p className="text-sm md:text-lg lg:text-2xl">
-                Tier 3: Komisi 1,0% total pendapatan
-              </p>
+            <div className="col-span-1 md:col-span-6 lg:col-span-4 md:col-start-4  lg:col-start-5">
+              <div className="w-full py-2 md:py-3 bg-tera text-white text-center rounded-xl">
+                <p className="text-sm md:text-lg lg:text-2xl">
+                  Tier 3: Komisi 1,0% total pendapatan
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </Fade>
 
-      <div
-        className=" my-5 md:my-20 h-[20em] md:h-[35em] lg:h-[60em] bg-contain bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${bisnisAlur})` }}
-      ></div>
+      <Fade bottom>
+        <div
+          className=" my-5 md:my-20 h-[20em] md:h-[35em] lg:h-[60em] bg-contain bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${bisnisAlur})` }}
+        ></div>
+      </Fade>
 
-      <p className="text-sm md:text-lg lg:text-2xl text-justify">
-        Jangan pernah lupa, selain penjelasan diatas, disini juga ada begitu
-        banyak penghargaan luar biasa yang menanti kamu yang terus berprestasi
-        dengan gemilang! Jadilah bagian dari Representatif BisnisTarakota yang
-        memahami nilai pencapaianmu dan berikan dirimu kesempatan untuk meraih
-        lebih banyak penghargaan dan prestasi yang mengesankan, antara lain:
-      </p>
+      <Fade bottom>
+        <p className="text-sm md:text-lg lg:text-2xl text-justify">
+          Jangan pernah lupa, selain penjelasan diatas, disini juga ada begitu
+          banyak penghargaan luar biasa yang menanti kamu yang terus berprestasi
+          dengan gemilang! Jadilah bagian dari Representatif BisnisTarakota yang
+          memahami nilai pencapaianmu dan berikan dirimu kesempatan untuk meraih
+          lebih banyak penghargaan dan prestasi yang mengesankan, antara lain:
+        </p>
+      </Fade>
 
-      <div className="px-5">
-        <Slider {...settings}>
-          {tipsList.map((item) => (
-            <div key={item.id} className="p-3  ">
-              <div className="grid grid-cols-12 gap-2 mt-10">
-                <div className="col-span-12 md:col-span-8 lg:col-span-6 md:col-start-3 lg:col-start-4">
-                  <div
-                    className="rounded-xl text-white p-5 md:p-10 lg:p-10 shadow-md shadow-gold"
-                    style={{ background: "#404042" }}
-                  >
-                    <p className="text-sm md:text-lg lg:text-xl font-semibold">
-                      {item.title}
-                    </p>
-                    <p className="text-sm md:text-lg lg:text-xl text-justify">
-                      {item.body}
-                    </p>
+      <Fade bottom>
+        <div className="px-5">
+          <Slider {...settings}>
+            {tipsList.map((item) => (
+              <div key={item.id} className="p-3  ">
+                <div className="grid grid-cols-12 gap-2 mt-10">
+                  <div className="col-span-12 md:col-span-8 lg:col-span-6 md:col-start-3 lg:col-start-4">
+                    <div
+                      className="rounded-xl text-white p-5 md:p-10 lg:p-10 shadow-md shadow-gold"
+                      style={{ background: "#404042" }}
+                    >
+                      <p className="text-sm md:text-lg lg:text-xl font-semibold">
+                        {item.title}
+                      </p>
+                      <p className="text-sm md:text-lg lg:text-xl text-justify">
+                        {item.body}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </Slider>
-      </div>
-      <div className="col-span-12 md:col-span-10 md:col-start-2 text-2xl py-5 mt-10">
-        <p className="text-sm md:text-lg lg:text-2xl text-justify md:text-center">
-          Semua ini adalah hadiah-hadiah yang menunjukkan penghargaan atas
-          dedikasi dan kerja kerasmu.{" "}
-        </p>
-        <p className="text-sm md:text-lg lg:text-2xl text-justify font-bold md:text-center">
-          Jadilah Representatif BisnisTarakota arsitektur berprestasi dan
-          nikmati manfaat luar biasa ini!
-        </p>
-      </div>
+            ))}
+          </Slider>
+        </div>
+      </Fade>
+      <Fade bottom>
+        <div className="col-span-12 md:col-span-10 md:col-start-2 text-2xl py-5 mt-10">
+          <p className="text-sm md:text-lg lg:text-2xl text-justify md:text-center">
+            Semua ini adalah hadiah-hadiah yang menunjukkan penghargaan atas
+            dedikasi dan kerja kerasmu.{" "}
+          </p>
+          <p className="text-sm md:text-lg lg:text-2xl text-justify font-bold md:text-center">
+            Jadilah Representatif BisnisTarakota arsitektur berprestasi dan
+            nikmati manfaat luar biasa ini!
+          </p>
+        </div>
+      </Fade>
     </div>
   );
 };

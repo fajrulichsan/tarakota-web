@@ -1,4 +1,5 @@
 import React from "react";
+import { Fade } from "react-reveal";
 
 const classList = [
   {
@@ -26,6 +27,7 @@ const classList = [
 const ClassTarakota = () => {
   return (
     <div className="px-5 md:px-20 lg:px-32">
+      <Fade bottom>
       <div>
         <h1 className="text-lg md:text-2xl lg:text-4xl text-tera font-bold">
           Ngobrolin Program BisnisTarakota, Bukan yang Biasa-biasa Aja
@@ -36,7 +38,9 @@ const ClassTarakota = () => {
           yang bakal kamu ikuti:
         </p>
       </div>
+      </Fade>
       <div className="grid grid-cols-1 md:grid-cols-12 gap-3 lg:gap-6 my-4 md:my-6 lg:my-10">
+        <Fade bottom>
         {classList.map((data) => (
           <div key={data.id} className={`col-span-1 md:col-span-6 lg:col-span-5 ${data.id % 2 == 1 ? "lg:col-start-2" : ""}`}>
             <div
@@ -58,10 +62,14 @@ const ClassTarakota = () => {
             </div>
           </div>
         ))}
+        </Fade>
       </div>
+      <Fade bottom>
+
       <p className="text-sm md:text-lg lg:text-2xl text-justify">
       Jadi begini, kalau kamu memutuskan untuk gabung bareng kita di Program Representatif BisnisTarakota ini, dunia arsitektur bakal jadi petualangan seru yang siap banget kita eksplor bareng! Di sini, kita nggak cuma tawarin pekerjaan biasa, tapi juga pengalaman belajar yang seru banget sebagai seorang representatif bisnis di industri arsitektur. Nah, inilah yang bakal kamu dapatkan:
       </p>
+      </Fade>
     </div>
   );
 };

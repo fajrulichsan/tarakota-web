@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./css/slider-project.css";
+import { Fade } from "react-reveal";
 
 import { bgProjectSlider, leftArrowBgTera } from "../../assets/img/index";
 
@@ -121,6 +122,8 @@ const SliderDetailProject = () => {
 
   return (
     <div className="project-slider px-10 md:px-20 lg:px-32 my-10">
+      <Fade bottom>
+
       <Slider {...settings}>
         {projects.map((project) => (
           <div key={project.id} className="px-2 md:px-4 rounded-lg">
@@ -134,6 +137,7 @@ const SliderDetailProject = () => {
           </div>
         ))}
       </Slider>
+      </Fade>
 
     </div>
   );

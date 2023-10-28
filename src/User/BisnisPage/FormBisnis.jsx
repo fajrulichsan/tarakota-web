@@ -1,5 +1,6 @@
 import React from "react";
 import emailjs from "emailjs-com";
+import {Fade} from 'react-reveal'
 
 const formInput = [
   {
@@ -107,6 +108,8 @@ const sendEmail = (e) => {
 const FormBisnis = () => {
   return (
     <div className="px-5 pb-10 md:px-20 lg:px-32 md:pt-0 md:pb-10 lg:pt-5 lg:pb-20">
+      <Fade bottom>
+
       <div
         className="rounded-xl md:rounded-3xl p-5 px-6 md:p-10 lg:p-16 md:px-12 lg:px-24 shadow-md shadow-gold"
       >
@@ -224,6 +227,7 @@ const FormBisnis = () => {
           </div>
           </form>
       </div>
+      </Fade>
     </div>
   );
 };

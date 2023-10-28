@@ -1,6 +1,7 @@
 import { isPlainObject } from "jquery";
 import React, {useState, useEffect} from "react";
 import { aboutDesc, bottomArrow, topArrow } from "../../assets/img/index";
+import {Fade} from "react-reveal"
 
 const VisiMisi = () => {
   const [showVisi, setShowVisi] = useState(false)
@@ -22,11 +23,14 @@ const VisiMisi = () => {
 
   return (
     <div className="px-5 md:px-20 lg:px-32">
+      <Fade bottom cascade>
       <h1 className="text-xl md:text-2xl lg:text-4xl font-bold tracking-wider text-center py-7 md:py-10 lg:py-20">
       “Solving Construction Industry Problems, One Project at a Time”
       </h1>
+      </Fade>
 
       <div className="grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-x-10">
+        <Fade bottom>
         <div className="col-span-1 md:col-span-5 col-start-1 ">
           <div
             className="w-full h-[15em] md:h-[17em] lg:h-[25em] bg-cover rounded-xl md:rounded-2xl relative"
@@ -73,9 +77,7 @@ const VisiMisi = () => {
           </div>
         </div>
         </> : <></>}
-       
-       {/* revise */}
-
+       </Fade>
       </div>
 
       <div
@@ -84,7 +86,10 @@ const VisiMisi = () => {
           background: "#E85738",
         }}
       >
+        <Fade bottom>
         <div className="col-span-1 md:col-span-4 flex justify-center items-center">
+          
+
           <p className="text-xl font-bold md:text-4xl lg:text-6xl">"Misi Kami"</p>
         </div>
         <div className="col-span-1 md:col-span-8 lg:col-span-6 lg:col-start-6 flex justify-center items-center">
@@ -92,7 +97,10 @@ const VisiMisi = () => {
           Menyediakan solusi satu atap dalam layanan arsitektur, sekaligus memecahkan masalah dalam ekosistem kontruksi dengan menghubungkan UKM dalam industri kontruksi dan mengedukasi masyarakat tentang cara kerja kontruksi.
           </p>
         </div>
+        </Fade>
+        
       </div>
+      
     </div>
   );
 };

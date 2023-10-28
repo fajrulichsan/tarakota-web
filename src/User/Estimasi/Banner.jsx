@@ -2,9 +2,19 @@ import React from "react";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css"
+import "slick-carousel/slick/slick-theme.css";
 
-import { facebook, twitter, youtube, instagram, bgBannerSlider, whatsapp, linekdin, estimasiBanner} from "../../assets/img/index";
+import {
+  facebook,
+  twitter,
+  youtube,
+  instagram,
+  bgBannerSlider,
+  whatsapp,
+  linekdin,
+  estimasiBanner,
+} from "../../assets/img/index";
+import { Fade } from "react-reveal";
 
 const Banner = () => {
   const socialMediaIcon = [
@@ -75,24 +85,30 @@ const Banner = () => {
                 className="h-full px-5 md:px-20 lg:px-32 flex flex-col items-center justify-center"
                 style={{ zIndex: 1 }}
               >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-left text-white tracking-widest" style={{textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}>
-                Bingung memperkirakan anggaran keuanganmu?
-                </h1>
+                <Fade bottom>
+                  <h1
+                    className="text-4xl md:text-5xl lg:text-6xl font-bold text-left text-white tracking-widest"
+                    style={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
+                  >
+                    Bingung memperkirakan anggaran keuanganmu?
+                  </h1>
+                </Fade>
               </div>
               <div className="absolute flex space-x-2 md:space-x-3 p-2 md:p-4 md:px-10 rounded-l-full bottom-12 md:bottom-20 right-0 bg-gray-50">
-                {socialMediaIcon.map((icon, index) => (
-                  <img
-                    key={index}
-                    src={icon}
-                    alt={`Social Media Icon ${index}`}
-                    className="w-5 md:w-6"
-                  />
-                ))}
+                <Fade right>
+                  {socialMediaIcon.map((icon, index) => (
+                    <img
+                      key={index}
+                      src={icon}
+                      alt={`Social Media Icon ${index}`}
+                      className="w-5 md:w-6"
+                    />
+                  ))}
+                </Fade>
               </div>
             </div>
           </div>
         </div>
-
       </Slider>
     </div>
   );

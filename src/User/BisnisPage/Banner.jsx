@@ -1,8 +1,8 @@
 import React from "react";
 import Slider from "react-slick";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Fade } from "react-reveal";
 
 import {
   facebook,
@@ -35,12 +35,14 @@ const Banner = () => {
                 className="h-full grid grid-cols-3 px-10 md:px-20 lg:px-40 "
                 style={{ zIndex: 1 }}
               >
-                <h1
-                  className="text-3xl md:text-4xl lg:text-5xl col-span-3 lg:col-span-2 flex items-end py-10 md:items-center font-bold text-white tracking-widest"
-                  style={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
-                >
-                  Cashflow Mengalir dari Program Representatif BisnisTarakota
-                </h1>
+                <Fade bottom>
+                  <h1
+                    className="text-3xl md:text-4xl lg:text-5xl col-span-3 lg:col-span-2 flex items-end py-10 md:items-center font-bold text-white tracking-widest"
+                    style={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
+                  >
+                    Cashflow Mengalir dari Program Representatif BisnisTarakota
+                  </h1>
+                </Fade>
               </div>
             </div>
           </div>
