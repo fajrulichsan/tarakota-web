@@ -4,24 +4,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Fade } from "react-reveal";
 
-import {
-  airMancur,
-  ba,
-  cnearc,
-  dankos,
-  enseval,
-  fima,
-  forsta,
-  kalbe,
-  komet,
-  kasual,
-  oneject,
-  wook,
-} from "../../assets/img/index";
+import { brandsList } from "../../data/Index";
 
 const OurClient = () => {
   const settings = {
-    slidesToShow: 5, // Jumlah slide yang ditampilkan secara default
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 1500,
@@ -30,34 +17,19 @@ const OurClient = () => {
     pauseOnHover: false,
     responsive: [
       {
-        breakpoint: 1023, // Breakpoint untuk tablet dan perangkat dengan lebar layar yang lebih kecil
+        breakpoint: 1023,
         settings: {
-          slidesToShow: 3, // Mengubah jumlah slide untuk tablet
+          slidesToShow: 3,
         },
       },
       {
-        breakpoint: 680, // Breakpoint untuk perangkat mobile
+        breakpoint: 680, 
         settings: {
-          slidesToShow: 1, // Mengubah jumlah slide untuk perangkat mobile
+          slidesToShow: 1,
         },
       },
     ],
   };
-
-  const brands = [
-    airMancur,
-    ba,
-    cnearc,
-    dankos,
-    enseval,
-    fima,
-    forsta,
-    kalbe,
-    komet,
-    kasual,
-    oneject,
-    wook,
-  ];
 
   return (
     <div className="py-8">
@@ -72,7 +44,7 @@ const OurClient = () => {
       
       <Fade bottom>
         <Slider {...settings} className="pt-5 md:pt-12">
-          {brands.map((brand, index) => (
+          {brandsList.map((brand, index) => (
             <div key={index} className="slideitems-center flex justify-center">
               <img className="mx-auto" src={brand} alt={`Brand ${index + 1}`} />
             </div>

@@ -1,26 +1,7 @@
 import React from "react";
-import { aboutCEO, aboutCTO, aboutCFO } from "../../assets/img/index";
 import {Fade} from 'react-reveal'
-const ourTeamList = [
-  {
-    id: 1,
-    name: "Nuryawan Mirsa Adiwicaksono, S.T.",
-    position: "CEO",
-    image: aboutCEO,
-  },
-  {
-    id: 2,
-    name: "Indriyani Oktavia, S.I.Kom.",
-    position: "CFO",
-    image: aboutCFO,
-  },
-  {
-    id: 3,
-    name: "Muhammad Rafif Fajri",
-    position: "CTO",
-    image: aboutCTO,
-  },
-];
+import {ourTeamList} from '../../data/Index'
+
 
 const OurTeam = () => {
   return (

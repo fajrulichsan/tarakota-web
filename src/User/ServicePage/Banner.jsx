@@ -2,58 +2,15 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-import { serviceBanner } from "../../assets/img/index";
-
-const sosialMedia = [
-  {
-    id: 1,
-    icon: whatsapp,
-    link: "https://api.whatsapp.com/send?phone=6285280061520",
-  },
-  {
-    id: 2,
-    icon: instagram,
-    link: "https://instagram.com/tarakota.id",
-  },
-  {
-    id: 3,
-    icon: youtube,
-    link: "https://www.youtube.com/@tataruangkota",
-  },
-  {
-    id: 4,
-    icon: facebook,
-    link: "https://www.facebook.com/tarakota.id?mibextid=LQQJ4d",
-  },
-  {
-    id: 5,
-    icon: linekdin,
-    link: "https://www.linkedin.com/company/tarakota/",
-  },
-];
-
-import {
-  facebook,
-  twitter,
-  youtube,
-  instagram,
-  bgBannerSlider,
-  linekdin,
-  whatsapp,
-} from "../../assets/img/index";
 import { Fade } from "react-reveal";
 
+import { serviceBanner } from "../../assets/img/index";
+import { sosialMedia } from "../../data/Index";
+import { useState } from "react";
+
+
 const Banner = () => {
-  const socialMediaIcon = [
-    whatsapp,
-    instagram,
-    twitter,
-    youtube,
-    facebook,
-    linekdin,
-  ];
-  const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const settings = {
     dots: true,
@@ -106,7 +63,6 @@ const Banner = () => {
               style={{
                 background:
                   "linear-gradient(40.4deg, #E85738 -4.92%, rgba(0, 0, 0, 0) 60.56%)",
-                // background: 'linear-gradient(287deg, #E85738 0%, rgba(0, 0, 0, 0.30) 99.55%)'
               }}
             >
               <Fade bottom>

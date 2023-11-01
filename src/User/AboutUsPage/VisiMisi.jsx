@@ -1,4 +1,3 @@
-import { isPlainObject } from "jquery";
 import React, {useState, useEffect} from "react";
 import { aboutDesc, bottomArrow, topArrow } from "../../assets/img/index";
 import {Fade} from "react-reveal"
@@ -9,7 +8,7 @@ const VisiMisi = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsIpad(window.innerWidth <= 1024); // Sesuaikan batas lebar layar sesuai dengan mode "iPad"
+      setIsIpad(window.innerWidth <= 1024)
     };
 
     handleResize();
