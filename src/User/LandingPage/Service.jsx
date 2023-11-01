@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./css/slider-project.css";
 import Fade from "react-reveal/Fade";
 
+import {serviceList} from '../../data/Index'
 import { bgProjectSlider } from "../../assets/img/index";
 
 const ProjectSlider = () => {
@@ -29,21 +29,6 @@ const ProjectSlider = () => {
   }, []);
 
   const widthDot = isMobile ? "10px" : "10px";
-
-  const projects = [
-    {
-      id: 1,
-      title: "INTERIOR",
-    },
-    {
-      id: 2,
-      title: "ARSITEKTUR",
-    },
-    {
-      id: 3,
-      title: "LANSEKAP",
-    },
-  ];
 
   const settings = {
     dots: true,
@@ -148,7 +133,7 @@ const ProjectSlider = () => {
 
       <Fade bottom>
         <Slider {...settings} className="mt-10">
-          {projects.map((project) => (
+          {serviceList.map((project) => (
             <div key={project.id} className="px-2 md:px-4">
               <div
                 className="w-full relative h-[30em] bg-center bg-cover bg-no-repeat"

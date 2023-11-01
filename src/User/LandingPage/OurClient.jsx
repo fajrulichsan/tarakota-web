@@ -2,22 +2,9 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {
-  airMancur,
-  ba,
-  cnearc,
-  dankos,
-  enseval,
-  fima,
-  forsta,
-  kalbe,
-  komet,
-  kasual,
-  oneject,
-  wook,
-} from "../../assets/img/index";
 
 import Fade from "react-reveal/Fade";
+import { dataLandingPage } from "../../data/Index";
 
 const OurClient = () => {
   const settings = {
@@ -45,21 +32,6 @@ const OurClient = () => {
     ],
   };
 
-  const brands = [
-    airMancur,
-    ba,
-    cnearc,
-    dankos,
-    enseval,
-    fima,
-    forsta,
-    kalbe,
-    komet,
-    kasual,
-    oneject,
-    wook,
-  ];
-
   return (
     <div className="pt-16 md:pb-20">
       <div>
@@ -72,7 +44,7 @@ const OurClient = () => {
       </div>
       <Fade bottom>
         <Slider {...settings} className="pt-5 md:pt-12">
-          {brands.map((brand, index) => (
+          {dataLandingPage.OurClient.map((brand, index) => (
             <div key={index} className="slideitems-center flex justify-center ">
               <img className="mx-auto" src={brand} alt={`Brand ${index + 1}`} />
             </div>

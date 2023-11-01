@@ -20,7 +20,7 @@ const LandingPage = () => {
       <Service/>
       <Reason/>
       <OurClient/>
-      <Testimoni/>
+      {/* <Testimoni/> */}
       <JoinUs/>
       <Footer/>
       </div>

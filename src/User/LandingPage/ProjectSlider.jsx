@@ -1,20 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./css/slider-project.css";
-
 import Fade from 'react-reveal/Fade';
 
-import {
-  landingProject1,
-  landingProject2,
-  landingProject3,
-  landingProject4,
-  landingProject5,
-  landingProject6,
-} from "../../assets/img/index";
+import {dataLandingPage} from '../../data/Index'
+
+
 
 const ProjectSlider = () => {
   const baseUrl = window.location.origin;
@@ -37,45 +30,6 @@ const ProjectSlider = () => {
   }, []);
 
   const widthDot = isMobile ? "10px" : "10px";
-
-  const projects = [
-    {
-      id: 1,
-      title: "Interior",
-      description: "PT. Kalbe Farma",
-      image: landingProject1,
-    },
-    {
-      id: 2,
-      title: "Interior",
-      description: "Mr. HR",
-      image: landingProject2,
-    },
-    {
-      id: 3,
-      title: "Arsitektur",
-      description: "Mr. BA",
-      image: landingProject3,
-    },
-    {
-      id: 4,
-      title: "Interior",
-      description: "Mr. VR",
-      image: landingProject4,
-    },
-    {
-      id: 5,
-      title: "Arsitektur",
-      description: "Mr. RA",
-      image: landingProject5,
-    },
-    {
-      id: 5,
-      title: "Interior",
-      description: "Mr. PA",
-      image: landingProject6,
-    },
-  ];
 
   const settings = {
     dots: true,
@@ -183,7 +137,7 @@ const ProjectSlider = () => {
       </div>
       <Fade bottom>
       <Slider {...settings}>
-        {projects.map((project) => (
+        {dataLandingPage.projectsSliderList.map((project) => (
           <div key={project.id} className="px-2 md:px-4">
             <div
               className="w-full relative h-[30em] bg-center bg-cover bg-no-repeat hover:cursor-pointer"

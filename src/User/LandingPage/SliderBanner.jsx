@@ -3,84 +3,19 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./css/slider-project.css";
-
 import Fade from 'react-reveal/Fade';
-import Slide from 'react-reveal/Slide';
 
-import {
-  facebook,
-  twitter,
-  youtube,
-  instagram,
-  landingBanner1,
-  landingBanner2,
-  landingBanner3,
-  landingBanner4,
-  linekdin,
-  whatsapp,
-} from "../../assets/img/index";
+import {dataLandingPage} from '../../data/Index'
 
-const bannerContentList = [
-  {
-    id: 1,
-    title: "Bersama Tarakota, Wujudkan Impian Arsitekturmu!",
-    bgImage: landingBanner1,
-  },
-  {
-    id: 2,
-    title: "Kreasi Desain Arsitektur Tanpa Batas, Bersama Tarakota.",
-    bgImage: landingBanner2,
-  },
-  {
-    id: 3,
-    title:
-      "Meretas Batasan dalam Arsitektur, Interior, Lanskap, dan Furniture.",
-    bgImage: landingBanner3,
-  },
-  {
-    id: 4,
-    title: "Inovasi & Keindahan, Kualitas Desain Terbaik di Ujung Jarimu.",
-    bgImage: landingBanner4,
-  },
-];
 
-const sosialMedia = [
-  {
-    id : 1,
-    icon : whatsapp,
-    link : "https://api.whatsapp.com/send?phone=6285280061520",
-  },
-  {
-    id : 2,
-    icon : instagram,
-    link : "https://instagram.com/tarakota.id",
-  },
-  {
-    id : 3,
-    icon : youtube,
-    link : "https://www.youtube.com/@tataruangkota",
-  },
-  {
-    id : 4,
-    icon : facebook,
-    link : "https://www.facebook.com/tarakota.id?mibextid=LQQJ4d",
-  },
-  {
-    id : 5,
-    icon : linekdin,
-    link : "https://www.linkedin.com/company/tarakota/",
-  }
-]
 
 const SliderBanner = () => {
-  const socialMediaIcon = [whatsapp, instagram, youtube, facebook, linekdin];
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Cek lebar layar untuk menentukan mode mobile
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 680); // Atur breakpoint sesuai kebutuhan
+      setIsMobile(window.innerWidth <= 680);
     };
 
     handleResize();
@@ -171,7 +106,7 @@ const SliderBanner = () => {
   return (
     <div>
       <Slider {...settings} arrows={false}>
-        {bannerContentList.map((data) => (
+        {dataLandingPage.bannerContentList.map((data) => (
           <div key={data.id} className="hover:cursor-grab">
             <div
               className="h-[40em] relative bg-cover bg-center bg-no-repeat"
@@ -208,8 +143,8 @@ const SliderBanner = () => {
 
                 <Fade right cascade>
                 <div className="absolute flex space-x-2 md:space-x-3 p-2 md:p-3 lg:p-4 md:px-6 lg:px-10 rounded-l-full bottom-16 md:bottom-20 right-0 bg-gray-50">
-                  {sosialMedia.map((data) => (
-                    <a href={data.link} target="_blank">
+                  {dataLandingPage.sosialMedia.map((data) => (
+                    <a key={data.id} href={data.link} target="_blank">
                       <img
                         key={data.id}
                         src={data.icon}

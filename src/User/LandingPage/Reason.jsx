@@ -1,56 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { reasonImage } from "../../assets/img/index";
+import Fade from "react-reveal/Fade";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./css/slider-project.css";
 
-import Fade from "react-reveal/Fade";
-
-const reasonList = [
-  {
-    id: 1,
-    title: "Komitmen Penuh pada Inovasi",
-    content: "Merancang Masa Depan dengan Profesional.",
-  },
-  {
-    id: 2,
-    title: "Ruang Hidup untuk Generasi Anda",
-    content: " Desain yang Menyatu dengan Gaya Hidup Milenial.",
-  },
-  {
-    id: 3,
-    title: "Pengalaman Lengkap dalam Satu Atap",
-    content: "Dari Interior hingga Lanskap, Kami melengkapi Semua.",
-  },
-  {
-    id: 4,
-    title: "Mengawasi Setiap Detail",
-    content: "Kami Berkomitmen pada Kualitas Terbaik.",
-  },
-  {
-    id: 5,
-    title: "Jembatan antara Inovasi dan Kecantikan",
-    content: "Tarakota Memadukan Kedua Dunia.",
-  },
-  {
-    id: 6,
-    title: "Perancangan Berkelanjutan",
-    content: "Kami Memikirkan Masa Depan Bumi Bersama Anda.",
-  },
-  {
-    id: 7,
-    title: "Kebebasan untuk Mengekspresikan Diri",
-    content:
-      "Berkerjasama dengan client menghasilkan desain yang memenuhi kebutuhan, prefensi, dan anggaran.",
-  },
-  {
-    id: 8,
-    title: "Handal dan Berpengalaman ",
-    content:
-      "Arsitek yang kompeten dan berpengalaman serta spesialis dalam arsitektur, interior, furniture dan landscape.",
-  },
-];
+import { reasonImage } from "../../assets/img/index";
+import {dataLandingPage} from '../../data/Index'
 
 const styleCardTesti = {
   border: "4px solid #E85738",
@@ -195,8 +151,8 @@ const Reason = () => {
         <Fade rigth>
           <div className="col-span-12 md:col-span-8 lg:col-span-3 md:px-16 lg:px-14 lg:p-10 px-5">
             <Slider {...settings} className="mt-3">
-              {reasonList.map((item) => (
-                <div className="p-5 items-center">
+              {dataLandingPage.reasonList.map((item) => (
+                <div key={item.id} className="p-5 items-center">
                   <div
                     className="rounded-xl md:rounded-2xl p-5 h-[11em] lg:h-[10em]"
                     style={styleCardTesti}
