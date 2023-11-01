@@ -2,18 +2,8 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { Fade } from "react-reveal";
-const jenisInvestasiList = [
-  {
-    id: 1,
-    title: "Barang Fisik",
-    body: "Investasi barang fisik tuh kayak beli tanah atau bangunan buat disewain atau dijual lagi, atau beli emas buat jaga-jaga nilai uang kamu, atau mungkin barang antik yang harganya bisa naik di masa depan. Yang penting, kamu bisa pegang dan kendalikan barang-barang itu secara langsung.",
-  },
-  {
-    id: 2,
-    title: "Surat Berharga",
-    body: "Investasi dalam surat berharga, yang nggak lain adalah bukti kepemilikan aset dengan nilai tertentu. Surat-surat berharga ini bisa juga diperdagangkan di pasar keuangan, atau yang kita kenal dengan istilah efek.",
-  },
-];
+
+import { dataBagiBagiPage } from "../../data";
 
 const JenisInvestasi = () => {
   const [currentJenisInvestasi, setcurrentJenisInvestasi] = useState(1);
@@ -29,7 +19,7 @@ const JenisInvestasi = () => {
       </Fade>
       <Fade bottom>
         <div className="grid grid-cols-12 gap-1 mt-4 md:mt-10">
-          {jenisInvestasiList.map((data) => (
+          {dataBagiBagiPage.jenisInvestasi.map((data) => (
             <div className="col-span-6 relative flex flex-col space-y-2 justify-center items-center px-12">
               <div
                 className="w-40 md:w-52 flex justify-center rounded-full  md:px-12 py-2 md:py-2 border-2 md:border-4 hover:cursor-pointer border-tera"
@@ -61,7 +51,7 @@ const JenisInvestasi = () => {
             >
               <p className="text-sm md:text-lg lg:text-xl text-justify">
                 {
-                  jenisInvestasiList.find(
+                  dataBagiBagiPage.jenisInvestasi.find(
                     (item) => item.id === currentJenisInvestasi
                   ).body
                 }

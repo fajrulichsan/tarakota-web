@@ -1,38 +1,7 @@
 import React from "react";
 import emailjs from "emailjs-com";
 import { Fade } from "react-reveal";
-
-const formInput = [
-  {
-    id: 1,
-    title: "Nama Lengkap",
-    tipe : "text",
-    name: "namaLengkap",
-    placeholder: "Nama Lengkap",
-  },
-  {
-    id: 2,
-    title: "No HP",
-    tipe : "number",
-    name: "noHp",
-    placeholder: "No Hp",
-  },
-  {
-    id: 3,
-    title: "Email",
-    tipe : "email",
-    name: "email",
-    placeholder: "Email",
-  },
-  {
-    id: 4,
-    title: "Nominal Investasi yang Direncanakan",
-    tipe : "number",
-    name: "nominal",
-    placeholder: "Nominal",
-  }
-];
-
+import { dataBagiBagiPage } from "../../data";
 
 const Form= () => {
   const sendEmail = (e) => {
@@ -60,7 +29,7 @@ const Form= () => {
         className="rounded-xl md:rounded-xl lg:rounded-3xl p-8 md:p-12 lg:p-16 md:px-16 lg:px-24 shadow-md shadow-gold"
       >
         <form onSubmit={sendEmail} className="space-y-4">
-        {formInput.map((data) => (
+        {dataBagiBagiPage.bagiBagiForm.map((data) => (
           <div key={data.id}>
             <p className="text-sm md:text-md lg:text-xl">
               {data.title} <span className="text-red-600">*</span>

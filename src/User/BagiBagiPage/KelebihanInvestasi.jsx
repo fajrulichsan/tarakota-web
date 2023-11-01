@@ -5,39 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import "./css/slider-project.css";
 import { Fade } from "react-reveal";
 
-const carouselData = [
-  {
-    id: 1,
-    title: "Melawan Inflasi",
-    body: "Dengan investasi, uang kamu bisa terlindungi dari inflasi.",
-  },
-  {
-    id: 2,
-    title: "Tambahan Penghasilan",
-    body: "Investasi bisa nambahin penghasilan kamu, tanpa harus kerja keras terus-menerus",
-  },
-  {
-    id: 3,
-    title: "Mencapai Tujuan Keuangan",
-    body: "Investasi bisa bantu kamu cepet nyampein tujuan finansial, seperti beli rumah atau mobil",
-  },
-  {
-    id: 4,
-    title: "Kesehatan Mental yang Terjaga",
-    body: "Kondisi finansial yang lebih baik bisa bikin pikiran kamu lebih tenang dan bahagia.",
-  },
-  {
-    id: 5,
-    title: "Modal yang Bisa Disesuaikan",
-    body: " Banyak jenis investasi yang bisa sesuaiin dengan budget kamu.",
-  },
-  {
-    id: 6,
-    title: "Kebebasan Finansial",
-    body: "Salah satu tujuan akhirnya adalah bisa hidup tanpa harus kerja keras lagi, gara-gara uangnya udah cukup untuk nge-cover semua kebutuhan hidup.",
-  },
-];
-
+import { dataBagiBagiPage } from "../../data";
+import { data } from "jquery";
 const styleCardTesti = {
   border: "5px solid #FFF",
 };
@@ -181,7 +150,7 @@ const Introduction = () => {
       <div className="px-10 pb-10 md:px-20 md:pt-7 lg:pt-10 lg:px-32 lg:pb-20">
         <Fade bottom>
           <Slider {...settings} className="md:px-2">
-            {carouselData.map((item) => (
+            {dataBagiBagiPage.kelebihanInvestasi.map((item) => (
               <div className="p-3 h-[11em] md:h-[14em] lg:h-[15em]">
                 <div
                   key={item.id}
