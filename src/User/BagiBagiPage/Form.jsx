@@ -29,7 +29,7 @@ const Form= () => {
         className="rounded-xl md:rounded-xl lg:rounded-3xl p-8 md:p-12 lg:p-16 md:px-16 lg:px-24 shadow-md shadow-gold"
       >
         <form onSubmit={sendEmail} className="space-y-4">
-        {bagiBagiForm.map((data) => (
+        {dataBagiBagiPage.bagiBagiForm.map((data) => (
           <div key={data.id}>
             <p className="text-sm md:text-md lg:text-xl">
               {data.title} <span className="text-red-600">*</span>
