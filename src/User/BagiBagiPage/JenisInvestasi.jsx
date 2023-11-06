@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { Fade } from "react-reveal";
 
-import { dataBagiBagiPage } from "../../data";
+import { dataBagiBagiPage } from "../../data/Index";
 
 const JenisInvestasi = () => {
   const [currentJenisInvestasi, setcurrentJenisInvestasi] = useState(1);

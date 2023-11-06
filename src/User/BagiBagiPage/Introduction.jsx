@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./css/slider-project.css";
 import { Fade } from "react-reveal";
 
-import { dataBagiBagiPage } from "../../data";
+import { dataBagiBagiPage } from "../../data/Index";
 import { bangunIntroduction } from "../../assets/img/index";
 
 

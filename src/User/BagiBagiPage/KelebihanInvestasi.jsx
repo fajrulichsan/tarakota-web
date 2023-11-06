@@ -5,8 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./css/slider-project.css";
 import { Fade } from "react-reveal";
 
-import { dataBagiBagiPage } from "../../data";
-import { data } from "jquery";
+import { dataBagiBagiPage } from "../../data/Index";
 const styleCardTesti = {
   border: "5px solid #FFF",
 };

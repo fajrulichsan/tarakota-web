@@ -1,4 +1,3 @@
-import { data } from "jquery";
 import React from "react";
 import {Fade} from 'react-reveal'
 import {dataAboutUsPage} from '../../data/Index'
