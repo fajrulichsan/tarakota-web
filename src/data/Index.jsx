@@ -33,17 +33,8 @@ import {
 } from "../assets/img/index";
 
 
-export const dataBagiBagiPage = {
-  bagiBagiForm, introList, introList2, jenisInvestasi, kelebihanInvestasi
-}
-
-export const dataLandingPage = {
-  bannerContentList, sosialMedia, projectsSliderList, serviceList, reasonList, brandsList
-}
-
-
-
-export const bannerContentList = [
+// landing page
+const bannerContentList = [
   {
     id: 1,
     title: "Bersama Tarakota, Wujudkan Impian Arsitekturmu!",
@@ -67,7 +58,7 @@ export const bannerContentList = [
   },
 ];
 
-export const sosialMedia = [
+const sosialMedia = [
   {
     id: 1,
     icon: whatsapp,
@@ -95,7 +86,7 @@ export const sosialMedia = [
   },
 ];
 
-export const projectsSliderList = [
+const projectsSliderList = [
   {
     id: 1,
     title: "Interior",
@@ -134,7 +125,7 @@ export const projectsSliderList = [
   },
 ];
 
-export const serviceList = [
+const serviceList = [
   {
     id: 1,
     title: "INTERIOR",
@@ -149,7 +140,7 @@ export const serviceList = [
   },
 ];
 
-export const reasonList = [
+const reasonList = [
   {
     id: 1,
     title: "Komitmen Penuh pada Inovasi",
@@ -194,7 +185,7 @@ export const reasonList = [
   },
 ];
 
-export const brandsList = [
+const brandsList = [
   airMancur,
   ba,
   cnearc,
@@ -211,7 +202,7 @@ export const brandsList = [
 
 
 //about us data
-export const ourTeamList = [
+const ourTeamList = [
   {
     id: 1,
     name: "Nuryawan Mirsa Adiwicaksono, S.T.",
@@ -234,7 +225,7 @@ export const ourTeamList = [
 
 
 //service page
-export const ourServisList = [
+const ourServisList = [
   {
     id: 1,
     title: "Arsitektur",
@@ -299,7 +290,7 @@ export const ourServisList = [
 
 
 //bagi bagi page
-export const bagiBagiForm = [
+const bagiBagiForm = [
   {
     id: 1,
     title: "Nama Lengkap",
@@ -330,7 +321,7 @@ export const bagiBagiForm = [
   }
 ];
 
-export const introList = [
+const introList = [
   {
     id: 1,
     body: `<p>
@@ -351,7 +342,7 @@ export const introList = [
   },
 ];
 
-export const introList2 = [
+const introList2 = [
   {
     id: 1,
     body: `<p>
@@ -418,5 +409,19 @@ const kelebihanInvestasi = [
     body: "Salah satu tujuan akhirnya adalah bisa hidup tanpa harus kerja keras lagi, gara-gara uangnya udah cukup untuk nge-cover semua kebutuhan hidup.",
   },
 ];
+
+
+export const dataBagiBagiPage = {
+  bagiBagiForm,introList, introList2, jenisInvestasi, kelebihanInvestasi
+ }
+
+ export const dataLandingPage = {
+  bannerContentList, sosialMedia, projectsSliderList, serviceList, reasonList, brandsList
+}
+
+export const dataAboutUsPage = {brandsList, ourTeamList}
+
+export const dataServicePage = {sosialMedia, ourServisList}
+
 
 

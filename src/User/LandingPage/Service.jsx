@@ -5,8 +5,9 @@ import "slick-carousel/slick/slick-theme.css";
 import "./css/slider-project.css";
 import Fade from "react-reveal/Fade";
 
-import {serviceList} from '../../data/Index'
+import {dataLandingPage} from '../../data/Index'
 import { bgProjectSlider } from "../../assets/img/index";
+import { data } from "jquery";
 
 const ProjectSlider = () => {
   const baseUrl = window.location.origin;
@@ -133,7 +134,7 @@ const ProjectSlider = () => {
 
       <Fade bottom>
         <Slider {...settings} className="mt-10">
-          {serviceList.map((project) => (
+          {dataLandingPage.serviceList.map((project) => (
             <div key={project.id} className="px-2 md:px-4">
               <div
                 className="w-full relative h-[30em] bg-center bg-cover bg-no-repeat"

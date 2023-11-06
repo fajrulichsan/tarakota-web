@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Fade } from "react-reveal";
 
-import { brandsList } from "../../data/Index";
+import { dataAboutUsPage } from "../../data/Index";
 
 const OurClient = () => {
   const settings = {
@@ -44,7 +44,7 @@ const OurClient = () => {
       
       <Fade bottom>
         <Slider {...settings} className="pt-5 md:pt-12">
-          {brandsList.map((brand, index) => (
+          {dataAboutUsPage.brandsList.map((brand, index) => (
             <div key={index} className="slideitems-center flex justify-center">
               <img className="mx-auto" src={brand} alt={`Brand ${index + 1}`} />
             </div>

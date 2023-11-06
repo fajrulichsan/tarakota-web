@@ -1,6 +1,7 @@
+import { data } from "jquery";
 import React from "react";
 import {Fade} from 'react-reveal'
-import {ourTeamList} from '../../data/Index'
+import {dataAboutUsPage} from '../../data/Index'
 
 
 const OurTeam = () => {
@@ -17,7 +18,7 @@ const OurTeam = () => {
       shadow-lg shadow-gold mx-5 rounded-2xl p-10 md:p-2 md:mx-0 "
       >
         <Fade right cascade>
-        {ourTeamList.map((data) => (
+        {dataAboutUsPage.ourTeamList.map((data) => (
           <div
             className={`col-span-4 lg:col-span-3 md:py-5 lg:py-10 flex justify-center ${
               data.id === 1 ? "lg:col-start-2" : ""

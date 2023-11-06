@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Fade } from "react-reveal";
 import { bgVisiMisiAboutUs } from "../../assets/img/index";
-import {ourServisList} from '../../data/Index'
+import {dataServicePage} from '../../data/Index'
 
 const ServiceDetail = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -24,7 +24,7 @@ const ServiceDetail = () => {
   return (
     <div className="lg:px-20 py-8 md:py-16 lg:py-20 ">
       <Fade bottom>
-        {ourServisList.map((data) => (
+        {dataServicePage.ourServisList.map((data) => (
           <div className="grid grid-cols-3 md:grid-cols-12 lg:grid-cols-12 mt-5 px-5 gap-2 lg:gap-20">
             <div
               className={`col-span-1 md:col-span-4 lg:col-span-4 flex items-center justify-center lg:mb-10  ${

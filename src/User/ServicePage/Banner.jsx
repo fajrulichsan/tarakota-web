@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Fade } from "react-reveal";
 
 import { serviceBanner } from "../../assets/img/index";
-import { sosialMedia } from "../../data/Index";
+import { dataServicePage } from "../../data/Index";
 import { useState } from "react";
 
 
@@ -75,7 +75,7 @@ const Banner = () => {
               </Fade>
               <div className="absolute flex space-x-2 md:space-x-3 p-2 md:p-3 lg:p-4 md:px-6 lg:px-10 rounded-l-full bottom-16 md:bottom-20 right-0 bg-gray-50">
                 <Fade right>
-                  {sosialMedia.map((data) => (
+                  {dataServicePage.sosialMedia.map((data) => (
                     <a href={data.link} target="_blank">
                       <img
                         key={data.id}

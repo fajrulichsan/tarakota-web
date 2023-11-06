@@ -44,7 +44,7 @@ const OurClient = () => {
       </div>
       <Fade bottom>
         <Slider {...settings} className="pt-5 md:pt-12">
-          {dataLandingPage.OurClient.map((brand, index) => (
+          {dataLandingPage.brandsList.map((brand, index) => (
             <div key={index} className="slideitems-center flex justify-center ">
               <img className="mx-auto" src={brand} alt={`Brand ${index + 1}`} />
             </div>
