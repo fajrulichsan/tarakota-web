@@ -1,7 +1,7 @@
 import React from "react";
 import emailjs from "emailjs-com";
 import { Fade } from "react-reveal";
-import { dataBagiBagiPage } from "../../data";
+import { dataBagiBagiPage } from "../../data/Index";
 
 const Form= () => {
   const sendEmail = (e) => {
