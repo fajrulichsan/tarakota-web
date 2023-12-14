@@ -95,7 +95,7 @@ const Navbar = () => {
       className={`fixed top-0 left-0 bg-red-200 w-full bg-transparent z-20 ${navbarClasses}`}
     >
       <div
-        className="max-w-[1440px] mx-auto p-3 md:p-4 px-5 md:px-20"
+        className="mx-auto p-3 md:p-4 px-5 md:px-20"
         style={navbarStyle}
       >
         <div className="container mx-auto flex items-center justify-between">
