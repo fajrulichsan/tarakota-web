@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { logo } from "../assets/img/index";
+import { useStateContext } from "../Contexts/ContextProvider";
+import PopupForm from "./PopupForm";
 
 const menuNavbar = [
   {
@@ -22,6 +24,7 @@ const menuNavbar = [
 ];
 
 const Navbar = () => {
+  const {popupForm, setPopupForm} = useStateContext();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isGoldNavbar, setIsGoldNavbar] = useState(false);
   const location = useLocation();
@@ -30,6 +33,15 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const navigateNavbar = (data) =>{
+    console.log(data);
+    if(data !== "/kontak-kami"){
+      navigate(`${data}`)
+    }else{
+      setPopupForm(!popupForm);
+    }
+  }
 
   const [isMobile, setIsMobile] = useState(false);
 
@@ -80,11 +92,7 @@ const Navbar = () => {
   const navbarStyle = {
     backgroundColor: isGoldNavbar ? "#F9F5EC" : "transparent",
     color: isGoldNavbar ? "#373131" : "white",
-    boxShadow: isGoldNavbar
-      ? ""
-      : // ? "7px 11px 30px 0px rgba(212, 183, 84, 0.50)"
-        "none",
-    // maxWidth: "1440px",
+    boxShadow: isGoldNavbar? "" : "none",
     transition: "background-color 0.3s ease-in-out", // Tambahkan efek transisi
   };
 
@@ -156,7 +164,10 @@ const Navbar = () => {
           >
             {menuNavbar.map((data, index) => (
               <li key={index}>
-                <a href={data.href} className="hover:text-blue-300 md:text-md lg:text-xl">
+                <a 
+                className="md:text-md lg:text-xl transition-colors duration-300 hover:text-tera hover:cursor-pointer hover:underline"
+                onClick={() => navigateNavbar(data.href)}
+                >
                   {data.title}
                 </a>
               </li>
@@ -171,7 +182,11 @@ const Navbar = () => {
             style={{background : 'rgba(249, 245, 236, 0.80)'}}>
               {menuNavbar.map((data, index) => (
                 <p>
-                  <a href={data.href} className="hover:text-blue-300 text-lg">
+                  <a 
+                  // href={data.href} 
+                  className="transition-colors duration-300 hover:text-tera hover:underline text-lg"
+                  onClick={() => navigateNavbar(data.href)}
+                  >
                     {data.title}
                   </a>
                 </p>
@@ -182,6 +197,7 @@ const Navbar = () => {
       ) : (
         <></>
       )}
+      {popupForm && <PopupForm></PopupForm>}
     </nav>
   );
 };

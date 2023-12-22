@@ -1,0 +1,110 @@
+/* CSS di dalam file Anda */
+.custom-swal-container {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); /* Drop shadow */
+  }
+  
+  .custom-swal-popup {
+    border-radius: 25px;
+    background: #FFF;
+    max-width: 30%;
+    padding: 30px 60px;
+    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);
+  }
+  
+  .custom-swal-header {
+    background-color: #ffcc00; /* Warna latar belakang header */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .custom-swal-title {
+    color: #000;
+    text-align: center;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
+  .custom-swal-content {
+    color: #666; /* Warna teks konten */
+  }
+  
+  .custom-swal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .custom-swal-confirm,
+  .custom-swal-cancel {
+    margin: 0 10px;
+    padding: 8px 40px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .custom-swal-confirm{
+    border-radius: 32px !important;
+    background-color: #E85738 !important;
+    border: none !important;
+    background-image: none !important;
+    box-shadow: none !important;
+  }
+  
+  .custom-swal-cancel {
+    background-color: transparent !important;
+    color: #E85738 !important;
+    font-size: 18px !important;
+  }
+
+  .custom-swal-cancel:hover{
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
+
+/* loader */
+
+/* CSS di dalam file sweetalert.css atau file gaya Anda */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang hitam semi-transparan */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Pastikan loader berada di atas kontennya */
+  }
+  
+  .loader {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .loader:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: loader 1.2s linear infinite;
+  }
+  
+  @keyframes loader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

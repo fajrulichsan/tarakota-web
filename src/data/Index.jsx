@@ -29,7 +29,10 @@ import {
   aboutCEO,
   aboutCTO,
   aboutCFO,
-  bgVisiMisiAboutUs
+  bgVisiMisiAboutUs,
+  img13,
+  img133,
+  img92,
 } from "../assets/img/index";
 
 
@@ -129,14 +132,17 @@ const serviceList = [
   {
     id: 1,
     title: "INTERIOR",
+    img : img13
   },
   {
     id: 2,
     title: "ARSITEKTUR",
+    img :img92
   },
   {
     id: 3,
     title: "LANSEKAP",
+    img : img133
   },
 ];
 
@@ -422,6 +428,73 @@ export const dataBagiBagiPage = {
 export const dataAboutUsPage = {brandsList, ourTeamList}
 
 export const dataServicePage = {sosialMedia, ourServisList}
+
+export const dataListProject = [
+  {
+    id: 1,
+    name: "Project 1",
+    description: "Deskripsi Project 1",
+    category: "Residensial",
+    room: "Kamar Tidur",
+    image : [8,68,128]
+  },
+  {
+    id: 2,
+    name: "Project 2",
+    description: "Deskripsi Project 2",
+    category: "Residensial",
+    room: "Kamar Tidur",
+    image : [3,63,123]
+  },
+  {
+    id: 3,
+    name: "Project 3",
+    description: "Deskripsi Project 3",
+    category: "Residensial",
+    room: "Ruang Makan",
+    image : [2,62,122]
+  },
+  {
+    id: 4,
+    name: "Project 4",
+    description: "Deskripsi Project 4",
+    category: "Residensial",
+    room: "Ruang Makan",
+    image : [5,65,125]
+  },
+  {
+    id: 5,
+    name: "Project 5",
+    description: "Deskripsi Project 5",
+    category: "Residensial",
+    room: "Ruang Makan",
+    image : [7,67,127]
+  },
+  {
+    id: 6,
+    name: "Project 6",
+    description: "Deskripsi Project 6",
+    category: "Residensial",
+    room: "Ruang Makan",
+    image : [11,71,131]
+  },
+  {
+    id: 7,
+    name: "Project 7",
+    description: "Deskripsi Project 7",
+    category: "Residensial",
+    room: "Ruang Makan",
+    image : [12,72,132]
+  },
+  {
+    id: 8,
+    name: "Project 8",
+    description: "Deskripsi Project 8",
+    category: "Residensial",
+    room: "Ruang Keluarga",
+    image : [1,7,121]
+  }
+]
 
 
 

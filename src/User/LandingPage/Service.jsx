@@ -139,7 +139,7 @@ const ProjectSlider = () => {
               <div
                 className="w-full relative h-[30em] bg-center bg-cover bg-no-repeat"
                 style={{
-                  backgroundImage: `url(${bgProjectSlider})`,
+                  backgroundImage: `url(${project.img})`,
                 }}
               >
                 <div

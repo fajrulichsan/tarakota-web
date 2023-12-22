@@ -1,9 +1,56 @@
 import React, { useState } from "react";
 import {
-  bgBannerSlider,
+  img101,
+  img102,
+  img103,
+  img11,
+  img111,
+  img112,
+  img113,
+  img12,
+  img121,
+  img122,
+  img123,
+  img13,
+  img131,
+  img132,
+  img133,
+  img141,
+  img142,
+  img143,
+  img151,
+  img152,
+  img153,
+  img21,
+  img22,
+  img23,
+  img31,
+  img32,
+  img33,
+  img34,
+  img41,
+  img42,
+  img43,
+  img51,
+  img52,
+  img53,
+  img61,
+  img62,
+  img63,
+  img71,
+  img72,
+  img73,
+  img81,
+  img82,
+  img83,
+  img91,
+  img92,
+  img93,
   nextButton,
   previousButton,
 } from "../../assets/img/index";
+
+import { Link } from "react-router-dom";
 import "./css/projectList.css";
 
 const ruanganList = [
@@ -22,6 +69,7 @@ const ProjectList = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedRoom, setSelectedRoom] = useState("");
   const [filterOpen, setFilterOpen] = useState(false);
+
   const [projects, setProjects] = useState([
     {
       id: 1,
@@ -29,98 +77,121 @@ const ProjectList = () => {
       description: "Deskripsi Project 1",
       category: "Residensial",
       room: "Kamar Tidur",
-      image: bgBannerSlider,
+      image : [img11,img12,img13]
     },
     {
       id: 2,
       name: "Project 2",
       description: "Deskripsi Project 2",
       category: "Residensial",
-      room: "Fasad",
-      image: bgBannerSlider,
+      room: "Ruang Makan",
+      image : [img21,img22,img23]
     },
     {
       id: 3,
       name: "Project 3",
-      description: "Deskripsi Project 1",
-      category: "Komersial",
-      room: "Ruang Keluarga",
-      image: bgBannerSlider,
+      description: "Deskripsi Project 3",
+      category: "Residensial",
+      room: "Kamar Tidur",
+      image : [img31,img32,img33,img34]
     },
     {
       id: 4,
       name: "Project 4",
-      description: "Deskripsi Project 2",
+      description: "Deskripsi Project 4",
       category: "Residensial",
-      room: "Kamar Tidur",
-      image: bgBannerSlider,
+      room: "Kamar Mandi",
+      image : [img41,img42,img43]
     },
     {
       id: 5,
       name: "Project 5",
-      description: "Deskripsi Project 1",
-      category: "Komersial",
-      room: "Dapur",
-      image: bgBannerSlider,
+      description: "Deskripsi Project 5",
+      category: "Residensial",
+      room: "Ruang Makan",
+      image : [img51,img52,img53]
     },
     {
       id: 6,
       name: "Project 6",
-      description: "Deskripsi Project 2",
+      description: "Deskripsi Project 6",
       category: "Residensial",
-      room: "ruang_makan",
-      image: bgBannerSlider,
+      room: "Ruang Keluarga",
+      image : [img61,img62,img63]
     },
     {
       id: 7,
-      name: "Project 1",
-      description: "Deskripsi Project 1",
+      name: "Project 7",
+      description: "Deskripsi Project 7",
       category: "Residensial",
-      room: "Kamar Tidur",
-      image: bgBannerSlider,
+      room: "Dapur",
+      image : [img71,img72,img73]
     },
     {
       id: 8,
-      name: "Project 2",
-      description: "Deskripsi Project 2",
+      name: "Project 8",
+      description: "Deskripsi Project 8",
       category: "Residensial",
-      room: "Fasad",
-      image: bgBannerSlider,
+      room: "Kamar Tidur",
+      image : [img81,img82,img83]
     },
     {
       id: 9,
-      name: "Project 3",
-      description: "Deskripsi Project 1",
-      category: "Komersial",
-      room: "Ruang Keluarga",
-      image: bgBannerSlider,
+      name: "Project 9",
+      description: "Deskripsi Project 9",
+      category: "Residensial",
+      room: "Dapur",
+      image : [img91,img92,img93]
     },
     {
       id: 10,
-      name: "Project 4",
-      description: "Deskripsi Project 2",
+      name: "Project 10",
+      description: "Deskripsi Project 10",
       category: "Residensial",
-      room: "Kamar Tidur",
-      image: bgBannerSlider,
+      room: "Kantor",
+      image : [img101,img102,img103]
     },
     {
       id: 11,
-      name: "Project 5",
-      description: "Deskripsi Project 1",
-      category: "Komersial",
-      room: "Dapur",
-      image: bgBannerSlider,
+      name: "Project 11",
+      description: "Deskripsi Project 11",
+      category: "Residensial",
+      room: "Kantor",
+      image : [img111,img112,img113]
     },
     {
       id: 12,
-      name: "Project 6",
-      description: "Deskripsi Project 2",
+      name: "Project 12",
+      description: "Deskripsi Project 12",
       category: "Residensial",
-      room: "ruang_makan",
-      image: bgBannerSlider,
+      room: "Kantor",
+      image : [img121,img122,img123]
     },
-    // Add more projects as needed
-  ]);
+    {
+      id: 13,
+      name: "Project 13",
+      description: "Deskripsi Project 13",
+      category: "Residensial",
+      room: "Fasade",
+      image : [img131,img132,img133]
+    },
+    {
+      id: 14,
+      name: "Project 14",
+      description: "Deskripsi Project 14",
+      category: "Residensial",
+      room: "Fasade",
+      image : [img141,img142,img143]
+    },
+    {
+      id: 15,
+      name: "Project 15",
+      description: "Deskripsi Project 15",
+      category: "Residensial",
+      room: "Fasade",
+      image : [img151,img152,img153]
+    }
+  ])
 
   // Function to set the selected category
   const handleCategorySelect = (category) => {
@@ -263,17 +334,33 @@ const ProjectList = () => {
           )}
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-5">
-          {visibleProjects.map((project) => (
-            <div key={project.id} className="relative rounded-2xl">
+          {/* {visibleProjects.map((project) => (
+            <div 
+              key={project.id} 
+              className="relative rounded-2xl">
               <div
                 className="w-full rounded-xl h-[12em] md:h-[22em] bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: `url(${project.image})` }}
+                style={{ backgroundImage: `url(${project.image[0]})`}}
+                onClick={console.log("okee")}
+                // onClick={alert("okee")}
               ></div>
-              <div className="absolute inset-0 flex rounded-xl items-center justify-center opacity-0 hover:opacity-100 hover:cursor-pointer transition-opacity duration-300 bg-gray-900 bg-opacity-75 text-white text-center">
+               <div className="absolute inset-0 flex rounded-xl items-center justify-center opacity-0 hover:opacity-100 hover:cursor-pointer transition-opacity duration-300 bg-gray-900 bg-opacity-75 text-white text-center">
                 <p className="text-lg font-semibold">{project.name}</p>
-              </div>
+              </div> 
             </div>
-          ))}
+          ))} */}
+          {visibleProjects.map((project) => (
+              <Link
+                key={project.id}
+                to={`/project/${project.id}`}
+                className="relative rounded-2xl"
+              >
+                <div
+                  className="w-full rounded-xl h-[12em] md:h-[22em] bg-cover bg-center bg-no-repeat"
+                  style={{ backgroundImage: `url(${project.image[0]})` }}
+                ></div>
+              </Link>
+            ))}
         </div>
         {totalPages > 0 && (
           <div className="mt-4 flex items-center justify-end">

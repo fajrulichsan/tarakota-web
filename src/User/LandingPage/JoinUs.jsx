@@ -26,7 +26,9 @@ const JoinUs = () => {
             Kami bertujuan untuk menjadi Firma Arsitektur dan Manufaktur
             Furnitur terbesar di Indonesia.
           </div>
-          <button className="md:w-40 w-32 py-1  md:py-2 text-xs md:text-base bg-tera text-white rounded-full font-normal hover:bg-orange-800 transition duration-300 tracking-wider mt-5 md:mt-10">
+          <button 
+          onClick={() => window.location.href = "/estimasi"}
+          className="md:w-40 w-32 py-1  md:py-2 text-xs md:text-base bg-tera text-white rounded-full font-normal hover:bg-orange-800 transition duration-300 tracking-wider mt-5 md:mt-10">
             PESAN SEKARANG
           </button>
           </Fade>

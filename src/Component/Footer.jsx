@@ -13,28 +13,31 @@ import { Fade } from "react-reveal";
 
 const productList = [
   {
-    title: "Proyek",
-    href: "#",
+    title: "Project",
+    href: "/project",
   },
   {
     title: "Estimasi",
-    href: "#",
+    href: "/estimasi",
   },
   {
-    title: "Kerjasama",
-    href: "#",
+    title: "Service",
+    href: "/service",
   },
   {
-    title: "Testimoni",
-    href: "#",
+    title: "Tentang Kami",
+    href: "/tentang-kami",
   },
 ];
 
 const customerServiceList = [
   {
-    title : "+62 852 8006 1520"
-  },{
-    title : "web@tarakota.com"
+    key : "nohp",
+    content : "+62 8528 006 1520"
+  },
+  {
+    key : "email",
+    content : "sales@tarakota.co.id"
   }
 ]
 
@@ -105,7 +108,7 @@ const Footer = () => {
 
   return (
       <div
-        className="h-[25em] md:h-[30em] text-white md:p-20"
+        className="h-[22em] md:h-[30em] text-white md:p-20"
         style={{
           background:
             "#1B1B1B",
@@ -114,8 +117,8 @@ const Footer = () => {
         <Fade bottom>
 
         <img className="mx-auto md:mx-0 md:pt-10 pt-10 w-40 md:w-60" src={logo}></img>
-        <div className="grid grid-cols-6 md:grid-cols-10 gap-5 mt-5 md:mt-10">
-          <div className="col-span-2 md:col-span-2 mx-auto">
+        <div className="grid grid-cols-3 md:grid-cols-12 gap-5 mt-5 md:mt-10">
+          <div className="col-span-1 md:col-span-3 mx-auto">
             <h3 className="text-md md:text-2xl font-bold md:mb-4">Produk</h3>
             <ul>
               {productList.map((data, index) => (
@@ -130,22 +133,21 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="col-span-2 md:col-span-2 mx-auto">
+          <div className="col-span-1 md:col-span-3 mx-auto">
             <h3 className="text-md md:text-2xl font-bold md:mb-4">Customer Service</h3>
             <ul>
             {customerServiceList.map((data, index) => (
                 <li key={index} className="md:mb-2">
                   <a
-                    href={data.href}
                     className="text-sm md:text-lg text-gray-400 hover:text-white"
                   >
-                    {data.title}
+                    {data.content}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="col-span-2 md:col-span-2 mx-auto">
+          {/* <div className="col-span-2 md:col-span-2 mx-auto">
             <h3 className="text-md md:text-2xl font-bold md:mb-4">Tentang</h3>
             <ul>
             {aboutList.map((data, index) => (
@@ -159,8 +161,8 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="col-span-2 col-start-2 md:col-span-2 mx-auto">
+          </div> */}
+          <div className="col-span-1 md:col-span-3 mx-auto">
             <h3 className="text-md md:text-2xl font-bold md:mb-4">Kerjasama</h3>
             <ul>
             {kerjasamaList.map((data, index) => (
@@ -175,9 +177,9 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="col-span-2 md:col-span-2 mx-auto">
-            <h3 className="text-md md:text-2xl font-bold md:mb-4">Follow Us</h3>
-            <div className="grid grid-cols-3 gap-3">
+          <div className="col-span-3 md:col-span-3 mx-auto">
+            <h3 className="text-md text-center md:text-2xl font-bold md:mb-4">Follow Us</h3>
+            <div className="grid grid-cols-3 md:grid-cols-5 gap-3">
                {sosialMediaIcon.map((data, index) => (
                 <div className="col-span-1 flex items-center">
 <a

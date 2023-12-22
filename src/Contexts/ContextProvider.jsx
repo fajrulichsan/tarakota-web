@@ -1,9 +1,9 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
 const StateContext = createContext();
 
 export const ContextProvider = ({children}) => {
-
+    const [popupForm, setPopupForm] = useState(false)
     const setCookieWithExpired = (user, hours) => {
         const expirationMS = hours * 60 * 60 * 1000; 
         const expired = Date.now() + expirationMS;
@@ -37,7 +37,9 @@ export const ContextProvider = ({children}) => {
         <StateContext.Provider
             value={{
                 setCookieWithExpired,
-                getCookieWithExpired
+                getCookieWithExpired,
+                popupForm,
+                setPopupForm
             }}
         >
             {children}

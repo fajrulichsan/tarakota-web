@@ -34,7 +34,7 @@ const SliderBanner = () => {
     infinite: true,
     speed: 1000,
     autoplay: true,
-    autoplaySpeed: 10000,
+    autoplaySpeed: 3000,
     paddingLeft: 10,
     beforeChange: (current, next) => setCurrentSlide(next),
     appendDots: (dots) => (

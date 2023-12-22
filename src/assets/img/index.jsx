@@ -1,4 +1,5 @@
 // landing page
+export {default as closeIcon} from "./icon/close.svg"
 
 // feat : slider banner
 export {default as bgBannerSlider} from './bg-banner-slider.svg';
@@ -97,4 +98,61 @@ export {default as bisnisIntro1} from './bisnis-intro1.webp';
 
 // bersama page
 export {default as pengantarBersama} from './pengantar-bersama.svg';
+
+//image project
+export {default as img11} from './project/1.1.webp';
+export {default as img12} from './project/1.2.webp';
+export {default as img13} from './project/1.3.webp';
+export {default as img21} from './project/2.1.webp';
+export {default as img22} from './project/2.2.webp';
+export {default as img23} from './project/2.3.webp';
+export {default as img31} from './project/3.1.webp';
+export {default as img32} from './project/3.2.webp';
+export {default as img33} from './project/3.3.webp';
+export {default as img34} from './project/3.4.webp';
+export {default as img41} from './project/4.1.webp';
+export {default as img42} from './project/4.2.webp';
+export {default as img43} from './project/4.3.webp';
+export {default as img51} from './project/5.1.webp';
+export {default as img52} from './project/5.2.webp';
+export {default as img53} from './project/5.3.webp';
+export {default as img61} from './project/6.1.webp';
+export {default as img62} from './project/6.2.webp';
+export {default as img63} from './project/6.3.webp';
+export {default as img71} from './project/7.1.webp';
+export {default as img72} from './project/7.2.webp';
+export {default as img73} from './project/7.3.webp';
+export {default as img81} from './project/8.1.webp';
+export {default as img82} from './project/8.2.webp';
+export {default as img83} from './project/8.3.webp';
+export {default as img91} from './project/9.1.webp';
+export {default as img92} from './project/9.2.webp';
+export {default as img93} from './project/9.3.webp';
+export {default as img101} from './project/10.1.webp';
+export {default as img102} from './project/10.2.webp';
+export {default as img103} from './project/10.3.webp';
+export {default as img111} from './project/11.1.webp';
+export {default as img112} from './project/11.2.webp';
+export {default as img113} from './project/11.3.webp';
+export {default as img121} from './project/12.1.webp';
+export {default as img122} from './project/12.2.webp';
+export {default as img123} from './project/12.3.webp';
+export {default as img131} from './project/13.1.webp';
+export {default as img132} from './project/13.2.webp';
+export {default as img133} from './project/13.3.webp';
+export {default as img141} from './project/14.1.webp';
+export {default as img142} from './project/14.2.webp';
+export {default as img143} from './project/14.3.webp';
+export {default as img151} from './project/15.1.webp';
+export {default as img152} from './project/15.2.webp';
+export {default as img153} from './project/15.3.webp';
+
+
+
+
+
+
+
+
+
 
