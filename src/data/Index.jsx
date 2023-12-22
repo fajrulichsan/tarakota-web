@@ -33,6 +33,49 @@ import {
   img13,
   img133,
   img92,
+  img11,
+  img12,
+  img21,
+  img22,
+  img23,
+  img31,
+  img32,
+  img33,
+  img34,
+  img41,
+  img42,
+  img43,
+  img51,
+  img52,
+  img53,
+  img61,
+  img62,
+  img63,
+  img71,
+  img72,
+  img73,
+  img81,
+  img82,
+  img83,
+  img91,
+  img93,
+  img101,
+  img102,
+  img103,
+  img111,
+  img112,
+  img113,
+  img121,
+  img122,
+  img123,
+  img131,
+  img132,
+  img141,
+  img142,
+  img143,
+  img151,
+  img152,
+  img153,
 } from "../assets/img/index";
 
 
@@ -429,38 +472,38 @@ export const dataAboutUsPage = {brandsList, ourTeamList}
 
 export const dataServicePage = {sosialMedia, ourServisList}
 
-export const dataListProject = [
+export const projects = [
   {
     id: 1,
     name: "Project 1",
     description: "Deskripsi Project 1",
     category: "Residensial",
     room: "Kamar Tidur",
-    image : [8,68,128]
+    image : [img11,img12,img13]
   },
   {
     id: 2,
     name: "Project 2",
     description: "Deskripsi Project 2",
     category: "Residensial",
-    room: "Kamar Tidur",
-    image : [3,63,123]
+    room: "Ruang Makan",
+    image : [img21,img22,img23]
   },
   {
     id: 3,
     name: "Project 3",
     description: "Deskripsi Project 3",
     category: "Residensial",
-    room: "Ruang Makan",
-    image : [2,62,122]
+    room: "Kamar Tidur",
+    image : [img31,img32,img33,img34]
   },
   {
     id: 4,
     name: "Project 4",
     description: "Deskripsi Project 4",
     category: "Residensial",
-    room: "Ruang Makan",
-    image : [5,65,125]
+    room: "Kamar Mandi",
+    image : [img41,img42,img43]
   },
   {
     id: 5,
@@ -468,33 +511,91 @@ export const dataListProject = [
     description: "Deskripsi Project 5",
     category: "Residensial",
     room: "Ruang Makan",
-    image : [7,67,127]
+    image : [img51,img52,img53]
   },
   {
     id: 6,
     name: "Project 6",
     description: "Deskripsi Project 6",
     category: "Residensial",
-    room: "Ruang Makan",
-    image : [11,71,131]
+    room: "Ruang Keluarga",
+    image : [img61,img62,img63]
   },
   {
     id: 7,
     name: "Project 7",
     description: "Deskripsi Project 7",
     category: "Residensial",
-    room: "Ruang Makan",
-    image : [12,72,132]
+    room: "Dapur",
+    image : [img71,img72,img73]
   },
   {
     id: 8,
     name: "Project 8",
     description: "Deskripsi Project 8",
     category: "Residensial",
-    room: "Ruang Keluarga",
-    image : [1,7,121]
+    room: "Kamar Tidur",
+    image : [img81,img82,img83]
+  },
+  {
+    id: 9,
+    name: "Project 9",
+    description: "Deskripsi Project 9",
+    category: "Komersial",
+    room: "Dapur",
+    image : [img91,img92,img93]
+  },
+  {
+    id: 10,
+    name: "Project 10",
+    description: "Deskripsi Project 10",
+    category: "Komersial",
+    room: "Kantor",
+    image : [img101,img102,img103]
+  },
+  {
+    id: 11,
+    name: "Project 11",
+    description: "Deskripsi Project 11",
+    category: "Komersial",
+    room: "Kantor",
+    image : [img111,img112,img113]
+  },
+  {
+    id: 12,
+    name: "Project 12",
+    description: "Deskripsi Project 12",
+    category: "Komersial",
+    room: "Kantor",
+    image : [img121,img122,img123]
+  },
+  {
+    id: 13,
+    name: "Project 13",
+    description: "Deskripsi Project 13",
+    category: "Komersial",
+    room: "Fasade",
+    image : [img131,img132,img133]
+  },
+  {
+    id: 14,
+    name: "Project 14",
+    description: "Deskripsi Project 14",
+    category: "Komersial",
+    room: "Fasade",
+    image : [img141,img142,img143]
+  },
+  {
+    id: 15,
+    name: "Project 15",
+    description: "Deskripsi Project 15",
+    category: "Komersial",
+    room: "Fasade",
+    image : [img151,img152,img153]
   }
 ]
+
+
 
 
 
