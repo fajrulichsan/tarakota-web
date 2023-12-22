@@ -5,7 +5,7 @@ import {
 } from "../../assets/img/index";
 
 import { Link, useNavigate } from "react-router-dom";
-import { projects } from "../../data";
+import { projects } from "../../data/Index";
 import "./css/projectList.css";
 
 const ruanganList = [
