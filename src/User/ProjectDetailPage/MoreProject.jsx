@@ -23,13 +23,14 @@ const MoreProject = () => {
       </h1>
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 md:gap-3 gap-3 p-5 md:p-8 lg:p-10 rounded-xl md:rounded-2xl my-2 md:my-5 shadow-md shadow-gold">
         {otherProjects.map((project) => (
-          <div
+          <a
             key={project.id}
-            className="col-span-1 h-52 md:h-60 lg:h-80 rounded-2xl bg-cover bg-center bg-no-repeat"
+            href={`/project/${project.id}`}
+            className="col-span-1 h-52 md:h-60 lg:h-80 rounded-2xl bg-cover bg-center bg-no-repeat hover:cursor-pointer"
             style={{
               backgroundImage: `url(${project.image[0] || bgBannerSlider})`,
             }}
-          ></div>
+          ></a>
         ))}
         <div className="flex justify-center items-center col-span-2 md:col-span-4 lg:col-span-1">
           <a
