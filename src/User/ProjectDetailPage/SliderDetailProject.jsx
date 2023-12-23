@@ -1,35 +1,39 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+import { Fade } from "react-reveal";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./css/slider-project.css";
-import { Fade } from "react-reveal";
 
+import { projects } from "../../data/Index";
 import { bgProjectSlider, leftArrowBgTera } from "../../assets/img/index";
 
 const SliderDetailProject = () => {
+  const {id} = useParams();
   const [currentSlide, setCurrentSlide] = useState(0); // Define currentSlide state
 
-  const projects = [
-    {
-      id: 1,
-      title: "Project 1",
-      description: "Description for Project 1",
-      image: bgProjectSlider,
-    },
-    {
-      id: 2,
-      title: "Project 2",
-      description: "Description for Project 2",
-      image: bgProjectSlider,
-    },
-    {
-      id: 3,
-      title: "Project 3",
-      description: "Description for Project 3",
-      image: bgProjectSlider,
-    }
-  ];
+  const imageProject = projects.find((item) => item.id == parseInt(id)).image
+  // const projects = [
+  //   {
+  //     id: 1,
+  //     title: "Project 1",
+  //     description: "Description for Project 1",
+  //     image: bgProjectSlider,
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Project 2",
+  //     description: "Description for Project 2",
+  //     image: bgProjectSlider,
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Project 3",
+  //     description: "Description for Project 3",
+  //     image: bgProjectSlider,
+  //   }
+  // ];
 
   const settings = {
     dots: true,
@@ -125,12 +129,12 @@ const SliderDetailProject = () => {
       <Fade bottom>
 
       <Slider {...settings}>
-        {projects.map((project) => (
-          <div key={project.id} className="px-2 md:px-4 rounded-lg">
+        {imageProject.map((project, index) => (
+          <div key={index} className="px-2 md:px-4 rounded-lg">
             <div
               className="w-full rounded-lg relative h-[30em] bg-center bg-cover bg-no-repeat hover:cursor-pointer"
               style={{
-                backgroundImage: `url(${bgProjectSlider})`,
+                backgroundImage: `url(${project})`,
               }}
             >
             </div>

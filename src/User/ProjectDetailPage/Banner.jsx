@@ -1,20 +1,27 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Slider from "react-slick";
+import { Fade } from "react-reveal";
+import { useParams } from "react-router-dom";
+import { facebook, twitter, youtube, instagram, bgBannerSlider } from "../../assets/img/index";
+import { projects } from "../../data/Index";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css"
 
-import { facebook, twitter, youtube, instagram, bgBannerSlider } from "../../assets/img/index";
-import { Fade } from "react-reveal";
+
 
 const Banner = () => {
-  const socialMediaIcon = [
-    facebook,
-    twitter,
-    youtube,
-    instagram,
-  ];
+  const {id} = useParams()
+  
+  // const socialMediaIcon = [
+  //   facebook,
+  //   twitter,
+  //   youtube,
+  //   instagram,
+  // ];
   const [currentSlide, setCurrentSlide] = React.useState(0);
+
+  const imgBanner = projects.find((item) => item.id == parseInt(id)).image[0];
 
   const settings = {
     dots: true,
@@ -50,16 +57,17 @@ const Banner = () => {
         className="custom-dot"
       ></div>
     ),
-  };
+  };  
 
   return (
     <div>
       <Slider {...settings}>
+        {console.log(imgBanner)}
         <div className="hover:cursor-pointer">
           <div
             className="h-[30em] md:h-[35em] lg:h-[40em] relative bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url(${bgBannerSlider})`,
+              backgroundImage: `url(${imgBanner})`,
             }}
           >
             <div
@@ -73,13 +81,13 @@ const Banner = () => {
                 className="h-full px-5 md:px-40 flex flex-col items-center justify-center"
                 style={{ zIndex: 1 }}
               >
-                <Fade bottom>
+                {/* <Fade bottom>
 
                 <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold text-center text-white tracking-widest" style={{textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}>
                 PT. Wook Global Technology
                 </h1>
                 <p className="text-sm md:text-2xl lg:text-4xl text-white tracking-widest" style={{textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}>Architecture Commercia</p>
-                </Fade>
+                </Fade> */}
               </div>
             </div>
           </div>
