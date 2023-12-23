@@ -33,13 +33,53 @@ export const ContextProvider = ({children}) => {
         }
     }
 
+    const showAlertSuccess = () => {
+        Swal.fire({
+          text: "Data berhasil dikirim, silahkan tunggu informasi lebih lanjut dari tim kami",
+          icon: "success",
+          showCancelButton: false,
+          confirmButtonText: "OK",
+          customClass: {
+            container: "custom-swal-container",
+            popup: "custom-swal-popup",
+            header: "custom-swal-header",
+            title: "custom-swal-title",
+            content: "custom-swal-content",
+            actions: "custom-swal-buttons",
+            confirmButton: "custom-swal-confirm",
+          },
+        })
+      };
+    
+      const showAlertError = () => {
+        Swal.fire({
+          text: "Terjadi kesalahan saat mengirim email. Silahkan coba lagi.",
+          icon: "error",
+          showCancelButton: false,
+          confirmButtonText: "OK",
+          customClass: {
+            container: "custom-swal-container",
+            popup: "custom-swal-popup",
+            header: "custom-swal-header",
+            title: "custom-swal-title",
+            content: "custom-swal-content",
+            actions: "custom-swal-buttons",
+            confirmButton: "custom-swal-confirm",
+          },
+        });
+      };
+
+
+
     return (
         <StateContext.Provider
             value={{
                 setCookieWithExpired,
                 getCookieWithExpired,
                 popupForm,
-                setPopupForm
+                setPopupForm,
+                showAlertSuccess,
+                showAlertError
             }}
         >
             {children}

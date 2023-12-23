@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Fade } from "react-reveal";
 import "./css/slider-project.css";
-import { bisnisIntro1 } from "../../assets/img";
+import { bisnisIntro1, img101, img11, img61, img71, img81 } from "../../assets/img";
 
 const Introduction = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -33,14 +33,17 @@ const Introduction = () => {
       id: 1,
       body: `<p>Kamu pengen banget ngejar pendapatan besar biar semua impianmu bisa tercapai dalam bisnis arsitektur, dan bebas dari masalah ekonomi, bahkan ketika risiko datang dan duit nggak lagi jadi masalah? </p>
       <p style="color: #E85738">Nah, saatnya kamu kenalan dengan tips sukses mengikuti <span style="font-weight:600">program Representatif BisnisTarakota!</span></p>`,
+      image : img61
     },
     {
       id: 2,
       body: `<p>Mungkin juga, kamu mau dapetin fasilitas arsitektur keren seperti beli tanah, bangun rumah, dan desain interior, semuanya dibayarin pake komisi <span style="font-weight:600"> program Representatif BisnisTarakota.</span></p>`,
+      image : img71
     },
     {
       id: 3,
       body: "Ingat, jangan salah pilih ya, karena cuma di tempat kita, kamu bakal dapetin fasilitas dan keuntungan paling canggih dari program Representatif BisnisTarakota.",
+      image : img81
     },
   ];
 
@@ -146,7 +149,7 @@ const Introduction = () => {
                 <div className="col-span-1 md:col-span-1 lg:col-span-1 ">
                   <div
                     className="w-full h-60 lg:h-80  rounded-2xl bg-cover bg-center bg-no-repeat"
-                    style={{ backgroundImage: `url(${bisnisIntro1})` }}
+                    style={{ backgroundImage: `url(${data.image})` }}
                   ></div>
                 </div>
                 <div

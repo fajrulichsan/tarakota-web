@@ -1,6 +1,8 @@
-import React from "react";
+import React, {Fragment, useState} from "react";
 import emailjs from "emailjs-com";
 import {Fade} from 'react-reveal'
+import { useStateContext } from "../../Contexts/ContextProvider";
+import Loading from "../../Component/Loading";
 
 const formInput = [
   {
@@ -89,31 +91,67 @@ const bankList = [
   },
 ];
 
-const sendEmail = (e) => {
-  e.preventDefault();
 
-  emailjs.sendForm("service_emizq9q", "template_s5dehgg", e.target, "RHjp-oAmRy8VkGhmc").then(
-    (result) => {
-      console.log("Email sent successfully", result);
-
-      // You can display a success message to the user or perform other actions here.
-    },
-    (error) => {
-      console.error("Email sending failed", error);
-
-      // You can display an error message to the user or handle the error in another way.
-    }
-  );
-};
 const FormBisnis = () => {
+  const [loading, setLoading] = useState(false)
+  const {showAlertSuccess, showAlertError} = useStateContext()
+
+  const sendEmailBisnis = async (e) => {
+    e.preventDefault();
+    Swal.fire({
+      title: "Kirim Data",
+      text: "Pastikan data yang diinputkan benar",
+      showCancelButton: true,
+      confirmButtonText: "OK",
+      cancelButtonText: "Kembali",
+      customClass: {
+        container: "custom-swal-container",
+        popup: "custom-swal-popup",
+        header: "custom-swal-header",
+        title: "custom-swal-title",
+        content: "custom-swal-content",
+        actions: "custom-swal-buttons",
+        confirmButton: "custom-swal-confirm",
+        cancelButton: "custom-swal-cancel",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setLoading(true);
+        emailjs
+          .sendForm(
+            "service_emizq9q",
+            "template_s5dehgg",
+            e.target,
+            "RHjp-oAmRy8VkGhmc"
+          )
+          .then(
+            (result) => {
+              console.log("Email sent successfully", result);
+              setLoading(false);
+              showAlertSuccess();
+            },
+            (error) => {
+              console.error("Email sending failed", error);
+              setLoading(false);
+              showAlertError();
+            }
+          );
+      }
+    });
+  };
+
   return (
+    <Fragment>
+
+    {loading && <Loading />}
+
     <div className="px-5 pb-10 md:px-20 lg:px-32 md:pt-0 md:pb-10 lg:pt-5 lg:pb-20">
       <Fade bottom>
 
       <div
         className="rounded-xl md:rounded-3xl p-5 px-6 md:p-10 lg:p-16 md:px-12 lg:px-24 shadow-md shadow-gold"
       >
-        <form onSubmit={sendEmail} className="space-y-4">
+        <form onSubmit={sendEmailBisnis} className="space-y-4">
           {formInput.map((data) => (
             <div key={data.id}>
               <p className="text-sm md:text-lg lg:text-xl">
@@ -182,7 +220,7 @@ const FormBisnis = () => {
           </div>
           <div>
             <p className="text-sm md:text-lg lg:text-xl">
-              Nama Pemilik Rekening <span className="text-red-600">*</span>
+              Nama Pemilik Rekening   <span className="text-red-600">*</span>
             </p>
             <input
               name="namaPemilikRekening"
@@ -218,17 +256,22 @@ const FormBisnis = () => {
           </div>
 
           <input name="programTarakota" value="Bisnis Tarakota" hidden></input>
-          <input name="bangunDisplay" value="none" hidden></input>
           <input name="bisnisDisplay" value="block" hidden></input>
+          <input name="bangunDisplay" value="none" hidden></input>
+          <input name="estimasiDisplay" value="none" hidden></input>
+          <input name="hubungiKamiDisplay" value="none" hidden></input>
+          <input name="bagibagiDisplay" value="none" hidden></input>
+
           <div className="flex justify-end">
             <button className="px-8 w-fit py-1.5 rounded-full bg-tera text-white text-sm md:text-lg lg:text-xl mt-6">
-              Submit
+              Submit oke siap
             </button>
           </div>
           </form>
       </div>
       </Fade>
     </div>
+    </Fragment>
   );
 };
 

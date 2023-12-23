@@ -3,6 +3,8 @@ import emailjs from "emailjs-com";
 import { Fade } from "react-reveal";
 import "./css/sweetalert.css";
 import { Fragment } from "react";
+import Loading from "./Loading";
+import { useStateContext } from "../Contexts/ContextProvider";
 
 const formInput = [
   {
@@ -30,6 +32,7 @@ const formInput = [
 
 const Form = () => {
   const [loading, setLoading] = useState(false);
+  const {showAlertError, showAlertSuccess} = useStateContext()
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -55,7 +58,7 @@ const Form = () => {
         emailjs
           .sendForm(
             "service_emizq9q",
-            "template_s5dehg",
+            "template_s5dehgg",
             e.target,
             "RHjp-oAmRy8VkGhmc"
           )
@@ -73,84 +76,11 @@ const Form = () => {
           );
       }
     });
-
-    // emailjs.sendForm("service_emizq9q", "template_s5dehgg", e.target, "RHjp-oAmRy8VkGhmc").then(
-    //   (result) => {
-    //     console.log("Email sent successfully", result);
-
-    //     // You can display a success message to the user or perform other actions here.
-    //   },
-    //   (error) => {
-    //     console.error("Email sending failed", error);
-
-    //     // You can display an error message to the user or handle the error in another way.
-    //   }
-    // );
-  };
-
-  // const aletSuccess = () =>{
-  //   Swal.fire({
-  //     text: 'Data berhasil dikirim, silahkan tunggu informasi lebih lanjut dari tim kami',
-  //     icon : "success",
-  //     showCancelButton: false,
-  //     confirmButtonText: 'OK',
-  //     customClass: {
-  //       container: 'custom-swal-container',
-  //       popup: 'custom-swal-popup',
-  //       header: 'custom-swal-header',
-  //       title: 'custom-swal-title',
-  //       content: 'custom-swal-content',
-  //       actions: 'custom-swal-buttons',
-  //       confirmButton: 'custom-swal-confirm',
-  //     }
-  //   }
-  //   )
-  // }
-
-  const showAlertSuccess = () => {
-    Swal.fire({
-      text: "Data berhasil dikirim, silahkan tunggu informasi lebih lanjut dari tim kami",
-      icon: "success",
-      showCancelButton: false,
-      confirmButtonText: "OK",
-      customClass: {
-        container: "custom-swal-container",
-        popup: "custom-swal-popup",
-        header: "custom-swal-header",
-        title: "custom-swal-title",
-        content: "custom-swal-content",
-        actions: "custom-swal-buttons",
-        confirmButton: "custom-swal-confirm",
-      },
-    });
-  };
-
-  const showAlertError = () => {
-    Swal.fire({
-      text: "Terjadi kesalahan saat mengirim email. Silahkan coba lagi.",
-      icon: "error",
-      showCancelButton: false,
-      confirmButtonText: "OK",
-      customClass: {
-        container: "custom-swal-container",
-        popup: "custom-swal-popup",
-        header: "custom-swal-header",
-        title: "custom-swal-title",
-        content: "custom-swal-content",
-        actions: "custom-swal-buttons",
-        confirmButton: "custom-swal-confirm",
-      },
-    });
   };
 
   return (
     <Fragment>
-       {loading && (
-      <div className="loader-container">
-        <div className="loader"></div>
-      </div>
-    )}
-      
+      {loading && <Loading />}
       <Fade bottom>
         <div
           className="mx-5 md:mx-20 lg:mx-32 rounded-2xl mb-10 md:mb-20 shadow-md md:shadow-lg md:shadow-gold shadow-gold"
@@ -172,13 +102,11 @@ const Form = () => {
                   ></input>
                 </div>
               ))}
-              <input
-                name="programTarakota"
-                value="Bangun Tarakota"
-                hidden
-              ></input>
+              <input name="programTarakota" value="Bangun Tarakot" hidden></input>
               <input name="bangunDisplay" value="block" hidden></input>
               <input name="bisnisDisplay" value="none" hidden></input>
+              <input name="estimasiDisplay" value="none" hidden></input>
+              <input name="hubungiKamiDisplay" value="none" hidden></input>
               <input name="bagibagiDisplay" value="none" hidden></input>
               <div className="flex justify-end">
                 <button

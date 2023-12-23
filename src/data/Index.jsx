@@ -266,7 +266,7 @@ const ourTeamList = [
   },
   {
     id: 3,
-    name: "Muhammad Rafif Fajri",
+    name: "Muhammad Rafif Fajri S.Si M.Si",
     position: "CTO",
     image: aboutCTO,
   },
@@ -279,7 +279,7 @@ const ourServisList = [
     id: 1,
     title: "Arsitektur",
     flex: "flex-row",
-    img: bgVisiMisiAboutUs,
+    img: img11,
     body: [
       "Desain arsitektur inovatif yang disesuaikan dengan preferensi Anda",
       "Perencanaan dan penjadwalan yang komprehensi untuk pelaksanaan yang lancar",
@@ -291,7 +291,7 @@ const ourServisList = [
     id: 2,
     title: "Interior",
     flex: "flex-row",
-    img: bgVisiMisiAboutUs,
+    img: img21,
     body: [
       "Desain interior khusus yang mencerminkan kepribadian dan gaya Anda",
       "Perencanaan ruang yang bijaksana untuk memaksimalkan fungsionalitas dan kenyamanan",
@@ -303,7 +303,7 @@ const ourServisList = [
     id: 3,
     title: "Lanskap",
     flex: "flex-row",
-    img: bgVisiMisiAboutUs,
+    img: img31,
     body: [
       "Desain lanskap unik yang selaras dengan lingkungan sekitar",
       "Integrasi elemen seperti fitur air, tanaman, dan pencahayaan",
@@ -315,7 +315,7 @@ const ourServisList = [
     id: 4,
     title: "Furnitur",
     flex: "flex-row",
-    img: bgVisiMisiAboutUs,
+    img: img41,
     body: [
       "Desain furnitur khusus dibuat dengan presisi dan perhatian terhadap detail",
       "Pemilihan bahan dan finishing berkualitas tinggi untuk daya tahan dan daya tarik estetika",
@@ -327,7 +327,7 @@ const ourServisList = [
     id: 5,
     title: "Jasa Pengawas",
     flex: "flex-row",
-    img: bgVisiMisiAboutUs,
+    img: img51,
     body: [
       "Pengawasan lokasi untuk memantau kemajuan konstruksi dan jaminan kualitas",
       "Inspeksi tepat waktu untuk mengatasi masalah apa pun dengan segera",
@@ -480,7 +480,7 @@ export const projects = [
     category: "Residensial",
     location : "Jakarta",
     year : "2022",
-    room: "Ruang Tamu",
+    room: "Ruang Keluarga",
     image : [img11,img12,img13]
   },
   {
