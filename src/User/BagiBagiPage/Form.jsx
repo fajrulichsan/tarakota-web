@@ -1,61 +1,104 @@
-import React from "react";
+import React, { Fragment, useState } from "react";
 import emailjs from "emailjs-com";
 import { Fade } from "react-reveal";
+import Loading from "../../Component/Loading";
+import { useStateContext } from "../../Contexts/ContextProvider";
 import { dataBagiBagiPage } from "../../data/Index";
 
-const Form= () => {
-  const sendEmail = (e) => {
+const Form = () => {
+  const [loading, setLoading] = useState(false);
+  const { showAlertSuccess, showAlertError } = useStateContext();
+
+  const sendEmail = async (e) => {
     e.preventDefault();
-
-    emailjs.sendForm("service_emizq9q", "template_s5dehgg", e.target, "RHjp-oAmRy8VkGhmc").then(
-      (result) => {
-        console.log("Email sent successfully", result);
-
-        // You can display a success message to the user or perform other actions here.
+    Swal.fire({
+      title: "Kirim Data",
+      text: "Pastikan data yang diinputkan benar",
+      showCancelButton: true,
+      confirmButtonText: "OK",
+      cancelButtonText: "Kembali",
+      customClass: {
+        container: "custom-swal-container",
+        popup: "custom-swal-popup",
+        header: "custom-swal-header",
+        title: "custom-swal-title",
+        content: "custom-swal-content",
+        actions: "custom-swal-buttons",
+        confirmButton: "custom-swal-confirm",
+        cancelButton: "custom-swal-cancel",
       },
-      (error) => {
-        console.error("Email sending failed", error);
-
-        // You can display an error message to the user or handle the error in another way.
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setLoading(true);
+        emailjs
+          .sendForm(
+            "service_emizq9q",
+            "template_s5dehgg",
+            e.target,
+            "RHjp-oAmRy8VkGhmc"
+          )
+          .then(
+            (result) => {
+              console.log("Email sent successfully", result);
+              setLoading(false);
+              showAlertSuccess();
+            },
+            (error) => {
+              console.error("Email sending failed", error);
+              setLoading(false);
+              showAlertError();
+            }
+          );
       }
-    );
+    });
   };
 
   return (
-    <div className="px-5 py-5 md:px-20 lg:px-32 md:py-12 lg:py-20">
-      <Fade bottom>
+    <Fragment>
+      {loading && <Loading />}
+      <div className="px-5 py-5 md:px-20 lg:px-32 md:py-12 lg:py-20">
+        <Fade bottom>
+          <div className="rounded-xl md:rounded-xl lg:rounded-3xl p-8 md:p-12 lg:p-16 md:px-16 lg:px-24 shadow-md shadow-gold">
+            <form onSubmit={sendEmail} className="space-y-4">
+              {dataBagiBagiPage.bagiBagiForm.map((data) => (
+                <div key={data.id}>
+                  <p className="text-sm md:text-md lg:text-xl">
+                    {data.title} <span className="text-red-600">*</span>
+                  </p>
+                  <input
+                    name={data.name}
+                    type={data.tipe}
+                    className="w-full text-sm md:text-md lg:text-xl rounded-full h-9 md:h-12 border-2 border-gray-600 px-5 bg-transparent"
+                    placeholder={data.placeholder}
+                    required
+                  ></input>
+                </div>
+              ))}
 
-      <div
-        className="rounded-xl md:rounded-xl lg:rounded-3xl p-8 md:p-12 lg:p-16 md:px-16 lg:px-24 shadow-md shadow-gold"
-      >
-        <form onSubmit={sendEmail} className="space-y-4">
-        {dataBagiBagiPage.bagiBagiForm.map((data) => (
-          <div key={data.id}>
-            <p className="text-sm md:text-md lg:text-xl">
-              {data.title} <span className="text-red-600">*</span>
-            </p>
-            <input
-              name={data.name}
-              type={data.tipe}
-              className="w-full text-sm md:text-md lg:text-xl rounded-full h-9 md:h-12 border-2 border-gray-600 px-5 bg-transparent"
-              placeholder={data.placeholder}
-              required
-            ></input>
+              <input
+                name="programTarakota"
+                value="Bagibagi Tarakota"
+                hidden
+              ></input>
+              <input name="bagibagiDisplay" value="block" hidden></input>
+              <input name="bangunDisplay" value="none" hidden></input>
+              <input name="bisnisDisplay" value="none" hidden></input>
+              <input name="estimasiDisplay" value="none" hidden></input>
+              <input name="hubungiKamiDisplay" value="none" hidden></input>
+
+              <div className="flex justify-end">
+                <button
+                  type="submit"
+                  className="px-8 w-fit py-1.5 rounded-full bg-tera text-white text-sm md:text-md lg:text-xl mt-2 md:mt-3 lg:mt-6"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
           </div>
-        ))}
-
-          <input name="programTarakota" value="Bagibagi Tarakota" hidden></input>
-          <input name="bangunDisplay" value="none" hidden></input>
-          <input name="bisnisDisplay" value="none" hidden></input>
-          <input name="bagibagiDisplay" value="block" hidden></input>
-
-        <div className="flex justify-end">
-            <button type="submit" className="px-8 w-fit py-1.5 rounded-full bg-tera text-white text-sm md:text-md lg:text-xl mt-2 md:mt-3 lg:mt-6"> Submit </button>
-        </div>
-        </form>
+        </Fade>
       </div>
-      </Fade>
-    </div>
+    </Fragment>
   );
 };
 

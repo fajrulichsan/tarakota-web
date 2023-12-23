@@ -476,7 +476,7 @@ export const projects = [
   {
     id: 1,
     name: "Pak M.I",
-    description: "Deskripsi Belum Ada",
+    description: "Elegant and timeless, studio Fashion Design ini merupakan perpaduan harmonis antara tradisi dan inovasi. Dengan sentuhan Modern Contemporary Classic, kami menciptakan ruang yang menginspirasi, menggabungkan keindahan dan fungsionalitas dalam setiap detailnya. Dalam ruang ini, 'kesan pertama adalah segalanya,' dengan sentuhan klasik yang berpadu sempurna dengan elemen kontemporer yang memberikan nuansa yang segar dan mengagumkan. Setiap sudut adalah cerminan gaya yang memukau dan cermin dari dedikasi kami dalam menciptakan desain yang tak terlupakan. Welcome to a world where fashion meets art, where every fabric and texture tells a story, and where your creativity finds its perfect canvas",
     category: "Residensial",
     location : "Jakarta",
     year : "2022",
@@ -496,7 +496,7 @@ export const projects = [
   {
     id: 3,
     name: "Pak M.I",
-    description: "Deskripsi Belum Ada",
+    description: "Elegant and timeless, studio Fashion Design ini merupakan perpaduan harmonis antara tradisi dan inovasi. Dengan sentuhan Modern Contemporary Classic, kami menciptakan ruang yang menginspirasi, menggabungkan keindahan dan fungsionalitas dalam setiap detailnya. Dalam ruang ini, 'kesan pertama adalah segalanya,' dengan sentuhan klasik yang berpadu sempurna dengan elemen kontemporer yang memberikan nuansa yang segar dan mengagumkan. Setiap sudut adalah cerminan gaya yang memukau dan cermin dari dedikasi kami dalam menciptakan desain yang tak terlupakan. Welcome to a world where fashion meets art, where every fabric and texture tells a story, and where your creativity finds its perfect canvas",
     category: "Residensial",
     location : "Jakarta",
     year: "2022",
@@ -546,7 +546,7 @@ export const projects = [
   {
     id: 8,
     name: "Buk N.E",
-    description: "Deskripsi Belum Ada",
+    description: "Elegant and timeless, studio Fashion Design ini merupakan perpaduan harmonis antara tradisi dan inovasi. Dengan sentuhan Modern Contemporary Classic, kami menciptakan ruang yang menginspirasi, menggabungkan keindahan dan fungsionalitas dalam setiap detailnya. Dalam ruang ini, 'kesan pertama adalah segalanya,' dengan sentuhan klasik yang berpadu sempurna dengan elemen kontemporer yang memberikan nuansa yang segar dan mengagumkan. Setiap sudut adalah cerminan gaya yang memukau dan cermin dari dedikasi kami dalam menciptakan desain yang tak terlupakan. Welcome to a world where fashion meets art, where every fabric and texture tells a story, and where your creativity finds its perfect canvas",
     category: "Residensial",
     location : "Jakarta",
     year : "2023",
