@@ -264,7 +264,7 @@ const FormBisnis = () => {
 
           <div className="flex justify-end">
             <button className="px-8 w-fit py-1.5 rounded-full bg-tera text-white text-sm md:text-lg lg:text-xl mt-6">
-              Submit oke siap
+              Submit
             </button>
           </div>
           </form>

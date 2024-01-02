@@ -378,8 +378,8 @@ const FormEstimasi = () => {
             <span className="text-red-600">wajib diisi</span>
           </p>
         </div>
-        <div className="space-y-3 md:space-y-5 py-4 md:py-5 lg:py-10">
-          <form onSubmit={sendEmail}>
+        <div className="py-4 md:py-5 lg:py-10">
+          <form onSubmit={sendEmail} className="space-y-3 md:space-y-5">
             {formInput.map((data) => (
               <div key={data.id}>
                 <p className="text-sm md:text-lg lg:text-xl">

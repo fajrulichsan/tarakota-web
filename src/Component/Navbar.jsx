@@ -10,6 +10,10 @@ const menuNavbar = [
     href: "/project",
   },
   {
+    title: "Service",
+    href: "/service",
+  },
+  {
     title: "Estimasi",
     href: "/estimasi",
   },

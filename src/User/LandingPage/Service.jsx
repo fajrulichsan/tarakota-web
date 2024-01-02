@@ -135,15 +135,17 @@ const ProjectSlider = () => {
       <Fade bottom>
         <Slider {...settings} className="mt-10">
           {dataLandingPage.serviceList.map((project) => (
-            <div key={project.id} className="px-2 md:px-4">
+            <div 
+            key={project.id} className="px-2 md:px-4">
               <div
-                className="w-full relative h-[30em] bg-center bg-cover bg-no-repeat"
+                className="w-full relative h-[30em] bg-center bg-cover bg-no-repeat rounded-xl"
                 style={{
                   backgroundImage: `url(${project.img})`,
                 }}
               >
-                <div
-                  className="absolute inset-0 flex flex-col justify-center items-center"
+                <a
+                  href="/service"
+                  className="absolute inset-0 flex flex-col justify-center items-center rounded-xl"
                   style={{
                     background:
                       "linear-gradient(0deg, #E85738 -22.21%, rgba(0, 0, 0, 0.00) 100%)",
@@ -154,7 +156,7 @@ const ProjectSlider = () => {
                       {project.title}
                     </p>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           ))}

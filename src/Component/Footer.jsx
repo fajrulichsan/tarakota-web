@@ -17,17 +17,21 @@ const productList = [
     href: "/project",
   },
   {
-    title: "Estimasi",
-    href: "/estimasi",
-  },
-  {
     title: "Service",
     href: "/service",
+  },
+  {
+    title: "Estimasi",
+    href: "/estimasi",
   },
   {
     title: "Tentang Kami",
     href: "/tentang-kami",
   },
+  {
+    title: "Kontak Kami",
+    href: "",
+  }
 ];
 
 const customerServiceList = [
@@ -119,7 +123,7 @@ const Footer = () => {
         <img className="mx-auto md:mx-0 md:pt-10 pt-10 w-40 md:w-60" src={logo}></img>
         <div className="grid grid-cols-3 md:grid-cols-12 gap-5 mt-5 md:mt-10">
           <div className="col-span-1 md:col-span-3 mx-auto">
-            <h3 className="text-md md:text-2xl font-bold md:mb-4">Produk</h3>
+            <h3 className="text-md md:text-2xl font-bold md:mb-4">Main Menu</h3>
             <ul>
               {productList.map((data, index) => (
                 <li key={index} className="md:mb-2">

@@ -137,37 +137,37 @@ const projectsSliderList = [
     id: 1,
     title: "Interior",
     description: "PT. Kalbe Farma",
-    image: landingProject1,
+    image: img11,
   },
   {
     id: 2,
     title: "Interior",
     description: "Mr. HR",
-    image: landingProject2,
+    image: img21,
   },
   {
     id: 3,
     title: "Arsitektur",
     description: "Mr. BA",
-    image: landingProject3,
+    image: img31,
   },
   {
     id: 4,
     title: "Interior",
     description: "Mr. VR",
-    image: landingProject4,
-  },
-  {
-    id: 5,
-    title: "Arsitektur",
-    description: "Mr. RA",
-    image: landingProject5,
+    image: img41,
   },
   {
     id: 5,
     title: "Interior",
+    description: "Mr. RA",
+    image: img51,
+  },
+  {
+    id: 6,
+    title: "Interior",
     description: "Mr. PA",
-    image: landingProject6,
+    image: img61,
   },
 ];
 
@@ -595,25 +595,31 @@ export const projects = [
   },
   {
     id: 13,
-    name: "Project 13",
-    description: "Deskripsi Project 13",
+    name: "Pak M.R.H",
+    description: "Transformasikan tampilan bangunan Anda dengan keindahan fasade yang memukau! Dengan memberikan sentuhan eksklusif pada setiap detail arsitektur. Keunggulan desain dan bahan berkualitas tinggi untuk menciptakan konstruksi yang tak hanya hebat fungsionalitasnya, tetapi juga memukau mata. Temukan keajaiban fasade bersama Tarakota.",
     category: "Komersial",
+    location : "Depok",
+    year : "2023",
     room: "Fasade",
     image : [img131,img132,img133]
   },
   {
     id: 14,
-    name: "Project 14",
-    description: "Deskripsi Project 14",
+    name: " Pak R.D",
+    description: "Transformasikan tampilan bangunan Anda dengan keindahan fasade yang memukau! Dengan memberikan sentuhan eksklusif pada setiap detail arsitektur. Keunggulan desain dan bahan berkualitas tinggi untuk menciptakan konstruksi yang tak hanya hebat fungsionalitasnya, tetapi juga memukau mata. Temukan keajaiban fasade bersama Tarakota.",
     category: "Komersial",
+    location : "Jakarta",
+    year : "2023",
     room: "Fasade",
     image : [img141,img142,img143]
   },
   {
     id: 15,
-    name: "Project 15",
-    description: "Deskripsi Project 15",
+    name: " Pak F.M",
+    description: "Transformasikan tampilan bangunan Anda dengan keindahan fasade yang memukau! Dengan memberikan sentuhan eksklusif pada setiap detail arsitektur. Keunggulan desain dan bahan berkualitas tinggi untuk menciptakan konstruksi yang tak hanya hebat fungsionalitasnya, tetapi juga memukau mata. Temukan keajaiban fasade bersama Tarakota.",
     category: "Komersial",
+    location : "Jakarta",
+    year : "2023",
     room: "Fasade",
     image : [img151,img152,img153]
   }

@@ -6,13 +6,13 @@ import Fade from 'react-reveal/Fade';
 const ProfileVideo = () => {
   return (
     <div
-      className="grid grid-cols-1 md:grid-cols-12 relative mt-10 lg:mt-16 py-6 md:py-20 lg:py-32 bg-cover bg-center bg-no-repeat"
+      className="grid grid-cols-1 md:grid-cols-12 relative mt-10 lg:mt-16 py-6 md:py-20 lg:py-24 bg-cover bg-center bg-no-repeat"
       style={{backgroundImage : `url(${bgVideoProfile})` }}
     >
-      <div className="md:col-span-7 lg:col-span-6 flex items-center md:col-start-2 lg:col-start-2 px-5">
+      <div className="md:col-span-7 lg:col-span-7 flex items-center md:col-start-2 lg:col-start-2 px-5">
         <Fade left>
         <div
-          className="w-full h-52 md:h-[18em] lg:h-[25em] md:w-[40em]  rounded-2xl flex justify-center items-center hover:cursor-pointer"
+          className="w-full h-52 md:h-[18em] lg:h-[28em] md:w-[48em]  rounded-2xl flex justify-center items-center hover:cursor-pointer"
         >
           <iframe className="rounded-xl md:rounded-2xl" width="100%" height="100%" src="https://www.youtube.com/embed/BxGmsjd94Wo?si=5yKCeXxm6lsMcR4v" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
         </div>

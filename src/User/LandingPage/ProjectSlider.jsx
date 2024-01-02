@@ -138,15 +138,17 @@ const ProjectSlider = () => {
       <Fade bottom>
       <Slider {...settings}>
         {dataLandingPage.projectsSliderList.map((project) => (
-          <div key={project.id} className="px-2 md:px-4">
+          <a 
+          key={project.id} className="px-2 md:px-4"
+          href={`/project/${project.id}`}>
             <div
-              className="w-full relative h-[30em] bg-center bg-cover bg-no-repeat hover:cursor-pointer"
+              className="w-full relative h-[30em] bg-center bg-cover bg-no-repeat hover:cursor-pointer rounded-xl"
               style={{
                 backgroundImage: `url(${project.image})`,
               }}
             >
               <div
-                className="absolute inset-0 flex flex-col justify-end"
+                className="absolute inset-0 flex flex-col justify-end rounded-xl"
                 style={{
                   background:
                     "linear-gradient(0deg, #E85738 -22.21%, rgba(0, 0, 0, 0.00) 100%)",
@@ -158,7 +160,7 @@ const ProjectSlider = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </Slider>
       </Fade>

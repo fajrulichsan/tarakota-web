@@ -9,6 +9,7 @@ import Reason from "../LandingPage/Reason"
 import Service from "../LandingPage/Service"
 import SliderBanner from "../LandingPage/SliderBanner"
 import Testimoni from "../LandingPage/Testimoni"
+import Lokasi from '../AboutUsPage/Lokasi'
 const LandingPage = () => {
   return (
     <Fragment>
@@ -22,6 +23,7 @@ const LandingPage = () => {
       <OurClient/>
       {/* <Testimoni/> */}
       <JoinUs/>
+      <Lokasi/>
       <Footer/>
       </div>
     </Fragment>
