@@ -9,8 +9,16 @@ const MoreProject = () => {
 
   // Menentukan kriteria berdasarkan id proyek
   const getOtherProjects = (currentId) => {
-    const startIndex = currentId === projects.length ? 0 : currentId; // Jika id sama dengan max projects, ambil dari awal lagi
-    const endIndex = startIndex + 4; // Ambil 4 proyek setelahnya
+    const maxProjects = projects.length;
+    let startIndex = currentId === maxProjects ? 0 : currentId; // Jika id sama dengan max projects, ambil dari awal lagi
+    let endIndex = startIndex + 4; // Ambil 4 proyek setelahnya
+
+    // Handle kasus ketika endIndex melebihi maxProjects
+    if (endIndex > maxProjects) {
+      endIndex = maxProjects;
+      startIndex = Math.max(endIndex - 4, 0); // Ambil 4 proyek sebelum endIndex jika kurang dari 4
+    }
+
     return projects.slice(startIndex, endIndex);
   };
 
@@ -47,3 +55,4 @@ const MoreProject = () => {
 };
 
 export default MoreProject;
+
