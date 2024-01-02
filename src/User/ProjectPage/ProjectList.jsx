@@ -19,7 +19,7 @@ const ruanganList = [
 ];
 
 
-// const categoryList = ["Residensial", "Komersial"];
+const categoryList = ["Residensial", "Komersial"];
 
 const ProjectList = () => {
   const navigate = useNavigate();
