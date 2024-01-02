@@ -25,41 +25,52 @@ const ProjectList = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedRoom, setSelectedRoom] = useState("");
-  const [filterOpen, setFilterOpen] = useState(false);
-  const [availableRooms, setAvailableRooms] = useState([]);
+  // const [filterOpen, setFilterOpen] = useState(true);
+  const [availableRooms, setAvailableRooms] = useState(["Ruang Makan", "Ruang Keluarga", "Kamar Tidur", "Dapur", "Taman", "Fasade" ,"Kantor"]);
 
   // Function to set the selected category
-  const handleCategorySelect = (category) => {
-    setSelectedCategory(category);
-    setSelectedRoom(""); // Clear the selected room when changing the category.
+  // const handleCategorySelect = (category) => {
+  //   setSelectedCategory(category);
+  //   setSelectedRoom(""); // Clear the selected room when changing the category.
 
-     // Update available rooms based on the selected category
-     if (category === "Residensial") {
-      setAvailableRooms(["Ruang Makan", "Ruang Keluarga", "Kamar Tidur", "Dapur"]);
-    } else if (category === "Komersial") {
-      setAvailableRooms(["Taman", "Fasade" ,"Kantor"]);
-    } else {
-      // Reset to default list if no category is selected
-      setAvailableRooms(ruanganList);
-    }
-  };
+  //    // Update available rooms based on the selected category
+  //    if (category === "Residensial") {
+  //     setAvailableRooms(["Ruang Makan", "Ruang Keluarga", "Kamar Tidur", "Dapur"]);
+  //   } else if (category === "Komersial") {
+  //     setAvailableRooms(["Taman", "Fasade" ,"Kantor"]);
+  //   } else {
+  //     // Reset to default list if no category is selected
+  //     setAvailableRooms(ruanganList);
+  //   }
+  // };
 
   // Function to set the selected room
+  // const handleRoomSelect = (room) => {
+  //   setSelectedRoom(room);
+  // };
+
   const handleRoomSelect = (room) => {
     setSelectedRoom(room);
+
+    // Reset current page when changing the room
+    setCurrentPage(1);
   };
+
 
   // Number of projects to display per page
   const itemsPerPage = 6;
 
   // Filter projects based on selected category and room
-  const filteredProjects = selectedCategory
-    ? projects.filter(
-        (project) =>
-          project.category === selectedCategory &&
-          (selectedRoom === "" || project.room === selectedRoom)
-      )
-    : projects;
+  // const filteredProjects = selectedCategory
+  //   ? projects.filter(
+  //       (project) =>
+  //         project.category === selectedCategory &&
+  //         (selectedRoom === "" || project.room === selectedRoom)
+  //     )
+  //   : projects;
+  const filteredProjects = selectedRoom
+  ? projects.filter((project) => project.room === selectedRoom)
+  : projects;
 
   // Calculate total number of pages based on filtered projects
   const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
@@ -78,10 +89,11 @@ const ProjectList = () => {
 
   // Get the projects to display on the current page
   const visibleProjects = filteredProjects.slice(startIndex, endIndex);
+  
 
-  const toggleFilter = () => {
-    setFilterOpen(!filterOpen);
-  };
+  // const toggleFilter = () => {
+  //   setFilterOpen(!filterOpen);
+  // };
 
   return (
     <div className="py-20 px-5 md:px-10 md:gap-10 grid grid-cols-1 md:grid-cols-4">
@@ -95,8 +107,8 @@ const ProjectList = () => {
             <div className="h-4 w-4 rounded-full bg-tera"></div>
             <span className="text-xl font-medium">Filter</span>
           </div>
-          <h2 className="text-xl font-semibold my-2">Kategori</h2>
-          <ul className="space-y-2">
+          <h2 className="text-xl font-semibold my-2 hidden">Kategori</h2>
+          <ul className="space-y-2 hidden">
             {categoryList.map((data, index) => (
               <li
                 key={index}
@@ -115,7 +127,7 @@ const ProjectList = () => {
             ))}
           </ul>
 
-          <h2 className="text-xl font-semibold my-3 mt-10">Ruangan</h2>
+          <h2 className="text-xl font-semibold my-3">Ruangan</h2>
           <ul className="flex flex-wrap gap-1 gap-y-2 mt-2">
             {availableRooms.map((data, index) => (
               <li
