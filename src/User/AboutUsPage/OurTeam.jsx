@@ -28,7 +28,7 @@ const OurTeam = () => {
                 className="w-20 h-20 md:w-32 md:h-32 lg:w-40 lg:h-40 relative bg-[#E85738] rounded-full bg-center bg-cover bg-no-repeat"
                 style={{
                   backgroundImage: `url(${data.image})`,
-                  backgroundPositionY: "15px",
+                  backgroundPositionY: `${data.id === 2 ? '12px' : '1px'}`,
                 }}
               ></div>
               <div className="flex flex-col justify-center items-center">

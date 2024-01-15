@@ -25,7 +25,7 @@ const ProfileVideo = () => {
           <h1 className="text-xl md:text-3xl lg:text-4xl font-bold tracking-wider md:mb-4">TARAKOTA</h1>
           <hr className="border-2 w-10 mx-auto border-orange-500 md:hidden"></hr>
           <div className="h-6 md:border-l-4 border-tera flex items-center">
-            <p className="font-medium text-sm md:text-2xl lg:text-2xl flex-grow px-2">Profile Video</p>
+            <p className="font-medium text-sm md:text-2xl lg:text-2xl flex-grow px-2">Video Profil</p>
           </div>
         </div>
       </div>

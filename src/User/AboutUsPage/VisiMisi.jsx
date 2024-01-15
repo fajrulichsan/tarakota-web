@@ -24,7 +24,7 @@ const VisiMisi = () => {
     <div className="px-5 md:px-20 lg:px-32">
       <Fade bottom cascade>
       <h1 className="text-xl md:text-2xl lg:text-4xl font-bold tracking-wider text-center py-7 md:py-10 lg:py-20">
-      “Solving Construction Industry Problems, One Project at a Time”
+      “Solving Construction Industry Problems One Project at a Time”
       </h1>
       </Fade>
 

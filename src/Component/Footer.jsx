@@ -183,10 +183,10 @@ const Footer = () => {
           </div>
           <div className="col-span-3 md:col-span-3 mx-auto">
             <h3 className="text-md text-center md:text-2xl font-bold md:mb-4">Follow Us</h3>
-            <div className="grid grid-cols-3 md:grid-cols-5 gap-3">
+            <div className="grid grid-cols-5 md:grid-cols-5 gap-3">
                {sosialMediaIcon.map((data, index) => (
                 <div className="col-span-1 flex items-center">
-<a
+                <a
                   key={index}
                   href={data.link}
                   target="_blank"
