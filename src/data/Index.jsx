@@ -136,7 +136,7 @@ const projectsSliderList = [
   {
     id: 1,
     title: "Interior",
-    description: "PT. Kalbe Farma",
+    description: "Mr. MI",
     image: img11,
   },
   {
@@ -146,10 +146,10 @@ const projectsSliderList = [
     image: img21,
   },
   {
-    id: 3,
+    id: 15,
     title: "Arsitektur",
-    description: "Mr. BA",
-    image: img31,
+    description: "Mr. FM",
+    image: img152,
   },
   {
     id: 4,
@@ -175,12 +175,12 @@ const serviceList = [
   {
     id: 1,
     title: "INTERIOR",
-    img : img13
+    img : img12
   },
   {
     id: 2,
     title: "ARSITEKTUR",
-    img :img92
+    img :img151
   },
   {
     id: 3,
