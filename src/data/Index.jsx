@@ -76,6 +76,9 @@ import {
   img151,
   img152,
   img153,
+  img161,
+  img162,
+  img163
 } from "../assets/img/index";
 
 
@@ -621,8 +624,18 @@ export const projects = [
     location : "Jakarta",
     year : "2023",
     room: "Fasade",
-    image : [img151,img152,img153]
-  }
+    image : [img153,img151,img153]
+  },
+  {
+    id: 16,
+    name: " Pak R.D",
+    description: "Transformasikan tampilan bangunan Anda dengan keindahan fasade yang memukau! Dengan memberikan sentuhan eksklusif pada setiap detail arsitektur. Keunggulan desain dan bahan berkualitas tinggi untuk menciptakan konstruksi yang tak hanya hebat fungsionalitasnya, tetapi juga memukau mata. Temukan keajaiban fasade bersama Tarakota.",
+    category: "Komersial",
+    location : "Jakarta",
+    year : "2023",
+    room: "Fasade",
+    image : [img163,img161,img163]
+  },
 ]
 
 

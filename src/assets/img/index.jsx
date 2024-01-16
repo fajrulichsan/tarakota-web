@@ -146,7 +146,9 @@ export {default as img143} from './project/14.3.webp';
 export {default as img151} from './project/15.1.webp';
 export {default as img152} from './project/15.2.webp';
 export {default as img153} from './project/15.3.webp';
-
+export {default as img161} from './project/16.1.webp';
+export {default as img162} from './project/16.2.webp';
+export {default as img163} from './project/16.3.webp';
 
 
 
