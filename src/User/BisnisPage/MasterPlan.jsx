@@ -1,6 +1,6 @@
 import React from "react";
 import { Fade } from "react-reveal";
-import { bangunIntroduction } from "../../assets/img/index";
+import { bangunIntroduction, bisnisMasterplan } from "../../assets/img/index";
 
 const MasterPlan = () => {
   return (
@@ -27,7 +27,7 @@ const MasterPlan = () => {
           <Fade>
             <div
               className="w-32 h-40 md:w-56 md:h-60 lg:w-72 lg:h-80 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${bangunIntroduction})` }}
+              style={{ backgroundImage: `url(${bisnisMasterplan})` }}
             ></div>
           </Fade>
         </div>

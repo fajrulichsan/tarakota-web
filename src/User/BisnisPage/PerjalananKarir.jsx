@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Fade } from "react-reveal";
-import { perjalananKarir, leftArrowBgWhite } from "../../assets/img/index";
+import { perjalananKarir, leftArrowBgWhite, bisnisProgram } from "../../assets/img/index";
 
 const programList = [
   {
@@ -59,9 +59,11 @@ const PerjalananKarir = () => {
         <Fade left>
           <div className="col-span-1 relative">
             <div
-              className="w-full h-60 md:h-80 lg:h-96 bg-cover bg-no-repeat bg-center"
-              style={{ backgroundImage: `url(${perjalananKarir})` }}
-            ></div>
+              className="w-full flex justify-center bg-no-repeat bg-center"
+              // style={{ backgroundImage: `url(${bisnisProgram})` }}
+            >
+              <img className="h-60 md:h-80 lg:h-96" src={bisnisProgram}></img>
+            </div>
 
             {programList.map((data) => (
               <div

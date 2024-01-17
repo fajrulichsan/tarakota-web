@@ -93,6 +93,15 @@ export {default as rightArrowBgWhite} from './icon/right-arrow-bg-white.svg';
 export {default as leftArrowBgTera} from './icon/left-arrow-bg-tera.svg';
 export {default as bisnisAlur} from './bisnis-alur.webp';
 export {default as bisnisIntro1} from './bisnis-intro1.webp';
+export {default as bagibagi1} from './icon/bagi-bagi-1.webp';
+export {default as bagibagi2} from './icon/bagi-bagi-2.webp';
+export {default as bisnisKarir} from './icon/bisnis-karir.webp';
+export {default as bisnisMasterplan} from './icon/bisnis-masterplan.webp';
+export {default as bisnisProgram} from './icon/bisnis-program.webp';
+
+
+
+
 
 
 

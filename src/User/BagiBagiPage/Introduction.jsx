@@ -6,7 +6,7 @@ import "./css/slider-project.css";
 import { Fade } from "react-reveal";
 
 import { dataBagiBagiPage } from "../../data/Index";
-import { bangunIntroduction } from "../../assets/img/index";
+import { bagibagi1, bagibagi2, bangunIntroduction } from "../../assets/img/index";
 
 
 const styleCardTesti = {
@@ -233,7 +233,7 @@ const Introduction = () => {
                 <div className="col-span-1 flex items-center justify-center">
                   <img
                     className="h-32 md:h-44 lg:h-60"
-                    src={bangunIntroduction}
+                    src={bagibagi1}
                   ></img>
                 </div>
                 <div className="col-span-1 md:col-span-2 text-2xl flex items-center justify-center">
@@ -265,7 +265,7 @@ const Introduction = () => {
                 <div className="col-span-1 flex items-center justify-center md:order-2">
                   <img
                     className="h-32 md:h-44 lg:h-60"
-                    src={bangunIntroduction}
+                    src={bagibagi2}
                   ></img>
                 </div>
                 <div className="col-span-1 md:col-span-2 text-2xl flex items-center justify-center">

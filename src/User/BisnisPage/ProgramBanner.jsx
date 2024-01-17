@@ -1,6 +1,6 @@
 import React from "react";
 import { Fade } from "react-reveal";
-import { bangunIntroduction } from "../../assets/img/index";
+import { bangunIntroduction, bisnisKarir } from "../../assets/img/index";
 
 const ProgramBanner = () => {
   return (
@@ -10,8 +10,11 @@ const ProgramBanner = () => {
           <div className="col-span-1 flex justify-center">
             <div
               className="w-32 h-40 md:w-56 md:h-64 lg:w-72 lg:h-80 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${bangunIntroduction})` }}
-            ></div>
+              // style={{ backgroundImage: `url(${bisnisKarir})` }}
+            >
+              <img src={bisnisKarir}>
+              </img>
+            </div>
           </div>
         </Fade>
         <Fade right>
