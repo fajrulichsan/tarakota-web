@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./css/slider-project.css";
 
-import { reasonImage } from "../../assets/img/index";
+import { img103, img13, reasonImage } from "../../assets/img/index";
 import {dataLandingPage} from '../../data/Index'
 
 const styleCardTesti = {
@@ -141,9 +141,9 @@ const Reason = () => {
         </div>
         <Fade left>
           <div
-            className="col-span-12 md:col-span-4 lg:col-span-1 h-[12em] md:h-full bg-cover bg-center bg-no-repeat shadow-md md:shadow-lg shadow-gold md:shadow-gold "
+            className="col-span-12 md:col-span-4 lg:col-span-1 h-[12em] md:h-full bg-cover bg-center bg-no-repeat shadow-md md:shadow-lg shadow-gold md:shadow-gold md:rounded-md "
             style={{
-              backgroundImage: `url(${reasonImage})`,
+              backgroundImage: `url(${img13})`,
             }}
           ></div>
         </Fade>

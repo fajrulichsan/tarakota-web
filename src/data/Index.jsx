@@ -137,10 +137,10 @@ const sosialMedia = [
 
 const projectsSliderList = [
   {
-    id: 1,
-    title: "Interior",
-    description: "Mr. MI",
-    image: img11,
+    id: 13,
+    title : "Arsitektur",
+    description: "Pak M.R.H",
+    image : img131
   },
   {
     id: 2,
@@ -155,16 +155,16 @@ const projectsSliderList = [
     image: img152,
   },
   {
-    id: 4,
-    title: "Interior",
-    description: "Mr. VR",
-    image: img41,
-  },
-  {
     id: 5,
     title: "Interior",
     description: "Mr. RA",
     image: img51,
+  },
+  {
+    id: 16,
+    title: "Arsitektur",
+    description: " Pak R.D",
+    image : img163
   },
   {
     id: 6,
@@ -177,18 +177,28 @@ const projectsSliderList = [
 const serviceList = [
   {
     id: 1,
-    title: "INTERIOR",
-    img : img12
+    title: "ARSITEKTUR",
+    img :img151
   },
   {
     id: 2,
-    title: "ARSITEKTUR",
-    img :img151
+    title: "INTERIOR",
+    img : img12
   },
   {
     id: 3,
     title: "LANSEKAP",
     img : img133
+  },
+  {
+    id: 4,
+    title: "FURNITUR",
+    img : img23
+  },
+  {
+    id: 5,
+    title: "JASA PENGAWAS",
+    img : img82
   },
 ];
 

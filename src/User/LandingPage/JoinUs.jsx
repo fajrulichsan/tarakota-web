@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Fade } from "react-reveal";
+import { img151 } from "../../assets/img";
 import bgJoinUs from "../../assets/img/bg-join.svg";
 
 const JoinUs = () => {
@@ -7,7 +8,7 @@ const JoinUs = () => {
     <div
       className="bg-cover bg-center h-[20em] md:h-[30em] lg:h-[40em] my-10"
       style={{
-        backgroundImage: `url(${bgJoinUs})`,
+        backgroundImage: `url(${img151})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",

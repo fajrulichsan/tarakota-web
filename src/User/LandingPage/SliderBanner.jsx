@@ -127,14 +127,14 @@ const SliderBanner = () => {
                 >
                   <Fade bottom>
 
-                  <div className="w-full flex space-x-6 text-left">
+                  {/* <div className="w-full flex space-x-6 text-left">
                     <p className="text-md md:text-2xl text-white font-medium">
                       Arsitektur Komersial
                     </p>
                     <p className="text-md md:text-2xl text-white font-medium">
                       Arsitektur Residensial
                     </p>
-                  </div>
+                  </div> */}
                   <h1 className="text-4xl md:text-5xl font-bold lg:text-6xl text-white tracking-wide">
                     {data.title}
                   </h1>
