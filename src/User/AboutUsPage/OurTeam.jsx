@@ -13,14 +13,14 @@ const OurTeam = () => {
       <hr className="w-20 lg:w-28 border lg:border-2 border-tera mx-auto"></hr>
       </Fade>
       <div
-        className="grid grid-cols-1 md:grid-cols-12 lg:grid-cols-11 gap-5 md:gap-2 mt-5 md:mt-6 lg:mt-10
-      shadow-lg shadow-gold mx-5 rounded-2xl p-10 md:p-2 md:mx-0 "
+        className="grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-5 md:gap-2 mt-5 md:mt-6 lg:mt-10
+       mx-5 rounded-2xl p-10 md:p-2 md:mx-0 "
       >
         <Fade right cascade>
         {dataAboutUsPage.ourTeamList.map((data) => (
           <div
             className={`col-span-4 lg:col-span-3 md:py-5 lg:py-10 flex justify-center ${
-              data.id === 1 ? "lg:col-start-2" : ""
+              data.id === 1 ? "lg:col-start-1" : ""
             } `}
           >
             <div className="flex flex-col items-center space-y-3">
@@ -28,7 +28,8 @@ const OurTeam = () => {
                 className="w-20 h-20 md:w-32 md:h-32 lg:w-40 lg:h-40 relative bg-[#E85738] rounded-full bg-center bg-cover bg-no-repeat"
                 style={{
                   backgroundImage: `url(${data.image})`,
-                  backgroundPositionY: `${data.id === 2 ? '12px' : '1px'}`,
+                  backgroundPositionY: `${data.id === 2 ? '16px' : '1px'}`,
+                  backgroundPositionX: `${data.id === 4 ? '3px' : '0px'}`,
                 }}
               ></div>
               <div className="flex flex-col justify-center items-center">

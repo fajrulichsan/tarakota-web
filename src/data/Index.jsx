@@ -78,7 +78,8 @@ import {
   img153,
   img161,
   img162,
-  img163
+  img163,
+  aboutCMO
 } from "../assets/img/index";
 
 
@@ -282,6 +283,12 @@ const ourTeamList = [
     name: "Muhammad Rafif Fajri S.Si M.Si",
     position: "CTO",
     image: aboutCTO,
+  },
+  {
+    id: 4,
+    name: "Alfian Insani Fadhil, S.T.",
+    position: "CMO",
+    image: aboutCMO,
   },
 ];
 
