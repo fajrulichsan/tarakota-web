@@ -1,5 +1,5 @@
 import React from "react";
-import { bangunBanner } from "../../assets/img/index";
+import { bangunBanner, img132, img133 } from "../../assets/img/index";
 import { Fade } from "react-reveal";
 
 const Banner = () => {
@@ -22,8 +22,8 @@ const Banner = () => {
         <div className="col-span-1 lg:row-span-2 flex justify-center">
           <Fade right>
             <div
-              className="bg-cover w-11/12 md:w-9/12 lg:w-11/12 h-[12em] md:h-[15em] lg:h-[20em] bg-no-repeat bg-center"
-              style={{ backgroundImage: `url(${bangunBanner})` }}
+              className="bg-cover w-11/12 md:w-9/12 lg:w-10/12 h-[12em] md:h-[15em] lg:h-[20em] bg-no-repeat bg-center rounded-xl"
+              style={{ backgroundImage: `url(${img132})` }}
             ></div>
           </Fade>
         </div>

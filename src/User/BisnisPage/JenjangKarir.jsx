@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Fade } from "react-reveal";
-import { bgBannerSlider } from "../../assets/img/index";
+import { img113 } from "../../assets/img/index";
 
 const JenjangKarirList = [
   {
@@ -35,7 +35,7 @@ const JenjangKarir = () => {
     <Fragment>
       <div
         className="w-full h-[10em] md:h-[20em] relative bg-center bg-cover bg-no-repeat md:mb-6"
-        style={{ backgroundImage: `url(${bgBannerSlider})` }}
+        style={{ backgroundImage: `url(${img113})` }}
       >
         <div
           className="inset-0 absolute "

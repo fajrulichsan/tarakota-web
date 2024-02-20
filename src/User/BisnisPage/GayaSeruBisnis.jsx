@@ -1,6 +1,6 @@
 import React from "react";
 import { Fade } from "react-reveal";
-import { bgVisiMisiAboutUs } from "../../assets/img/index";
+import { bgVisiMisiAboutUs, img102 } from "../../assets/img/index";
 
 const GayaSeruBisnis = () => {
   return (
@@ -26,7 +26,7 @@ const GayaSeruBisnis = () => {
           <div className="col-span-1 flex items-center">
             <div
               className="w-full h-60 h:72 lg:h-80 rounded-2xl bg-center bg-cover bg-no-repeat"
-              style={{ backgroundImage: `url(${bgVisiMisiAboutUs})` }}
+              style={{ backgroundImage: `url(${img102})` }}
             ></div>
           </div>
         </Fade>

@@ -18,7 +18,7 @@ const MasterPlan = () => {
               Representatif BisnisTarakota.{" "}
               <span className="font-bold">
                 Syarat utamanya, kamu harus join program BisnisTarakota lewat
-                website withu.tarakota.com”
+                website <a href="http://tarakota.co.id/bisnis-tarakota"> http://tarakota.co.id/bisnis-tarakota</a>”
               </span>
             </p>
           </div>

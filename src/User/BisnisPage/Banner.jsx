@@ -9,7 +9,7 @@ import {
   twitter,
   youtube,
   instagram,
-  bgBannerSlider,
+  img152,
 } from "../../assets/img/index";
 
 const Banner = () => {
@@ -21,7 +21,7 @@ const Banner = () => {
           <div
             className="h-[20em] md:h-[25em] lg:h-[30em] bg-center bg-cover bg-no-repeat  relative"
             style={{
-              backgroundImage: `url(${bgBannerSlider})`,
+              backgroundImage: `url(${img152})`,
             }}
           >
             <div
