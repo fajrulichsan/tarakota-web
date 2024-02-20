@@ -108,6 +108,8 @@ export {default as bisnisProgram} from './icon/bisnis-program.webp';
 
 // bersama page
 export {default as pengantarBersama} from './pengantar-bersama.svg';
+export {default as bersamaBanner} from './bersama-banner.png'
+export {default as bersamaProgram} from './bersama-program.png'
 
 //image project
 export {default as img11} from './project/1.1.webp';

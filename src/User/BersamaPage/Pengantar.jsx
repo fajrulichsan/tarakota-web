@@ -1,6 +1,6 @@
 import React from "react";
 import { Fade } from "react-reveal";
-import { pengantarBersama } from "../../assets/img/index";
+import { bersamaBanner, pengantarBersama } from "../../assets/img/index";
 
 const Pengantar = () => {
   return (
@@ -20,11 +20,13 @@ const Pengantar = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:h-[18em] lg:-mt-20">
         <div className="col-span-1 flex justify-center">
           <Fade left>
-            <img
+            <div
               className="h-[18em] md:h-[20em] lg:h-[25em]"
-              src={pengantarBersama}
               alt="pengantar-bersama"
-            />
+            >
+              <img className="h-[21em] rounded-2xl" src={bersamaBanner}>
+              </img>
+            </div>
           </Fade>
         </div>
         <div className="col-span-1 flex flex-col justify-center -mt-8">

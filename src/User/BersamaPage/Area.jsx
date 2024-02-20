@@ -1,27 +1,32 @@
 import React from 'react'
 import { Fade } from 'react-reveal'
-import {bgVisiMisiAboutUs} from '../../assets/img'
+import {bgVisiMisiAboutUs, img11, img21, img31, img41, img51, img61} from '../../assets/img'
 
 const areaList = [
     {
         id : 1,
-        area : "Jakarta"
+        area : "Jakarta",
+        image : img11
     },
     {
         id : 2,
-        area : "Bandung"
+        area : "Bandung",
+        image : img21
     },
     {
         id : 3,
-        area : "Surabaya"
+        area : "Surabaya",
+        image : img31
     },
     {
         id : 4,
-        area : "Medan"
+        area : "Medan",
+        image : img61
     },
     {
         id : 5,
-        area : "Makasar"
+        area : "Makasar",
+        image : img51
     }
 ]
 
@@ -39,7 +44,7 @@ const Area = () => {
                 <div key={data.id} className='col-span-1'>
                 <div
                 className='h-40 md:h-60 lg:h-80 bg-cover bg-center relative'
-                style={{backgroundImage : `url(${bgVisiMisiAboutUs})`}}
+                style={{backgroundImage : `url(${data.image})`}}
                 >
                     <div className='absolute inset-0 flex justify-center items-center'
                     style={{background: 'linear-gradient(0deg, #E85738 -22.21%, rgba(0, 0, 0, 0.79) 100%)'}}

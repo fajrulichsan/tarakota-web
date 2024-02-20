@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Fade } from "react-reveal";
-import { perjalananKarir, leftArrowBgWhite } from "../../assets/img/index";
+import { perjalananKarir, leftArrowBgWhite, bersamaProgram } from "../../assets/img/index";
 
 const programList = [
   {
@@ -82,10 +82,10 @@ const Alasan = () => {
       </Fade>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <Fade bottom>
-          <div className="col-span-1 relative">
+          <div className="col-span-1 relative ">
             <div
-              className="w-full h-96 bg-cover bg-no-repeat bg-center"
-              style={{ backgroundImage: `url(${perjalananKarir})` }}
+              className="w-72 h-96 bg-cover bg-no-repeat bg-center mx-auto rounded-2xl"
+              style={{ backgroundImage: `url(${bersamaProgram})` }}
             ></div>
 
             {programList.map((data) => (
