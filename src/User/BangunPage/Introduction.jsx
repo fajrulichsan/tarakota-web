@@ -1,5 +1,5 @@
 import React from "react";
-import { bangunIntroduction } from "../../assets/img/index";
+import { img82 } from "../../assets/img/index";
 import { Fade } from "react-reveal";
 
 const Introduction = () => {
@@ -7,7 +7,11 @@ const Introduction = () => {
     <div className="grid grid-cols-2 px-5 md:px-20 lg:px-32 my-10 md:my-16 lg:my-24">
       <Fade bottom>
         <div className="col-span-1 flex justify-center items-center">
-          <img className="w-40 md:w-60 lg:w-80" src={bangunIntroduction}></img>
+          <div className="w-40 md:w-60 lg:w-80 lg:h-80 bg-cover bg-center rounded-full"
+            style={{ backgroundImage: `url(${img82})` }}
+          >
+          </div>
+          {/* <img className="w-40 md:w-60 lg:w-80" src={bangunIntroduction}></img> */}
         </div>
         <div className="col-span-1 flex items-center justify-start">
           <p className="text-justify md:text-right text-lg md:text-2xl lg:text-3xl">
