@@ -399,15 +399,19 @@ const introList = [
     mikirin properti, sampe ada yang ngecek harga emas tiap hari.
   </p>
   <p className="font-semibold" style="color:#E85738; font-weight: 600">Semua seru-seru aja sih!</p>`,
+    image : img101
   },
   {
     id: 2,
     body: `<p>Tapi, gak semua orang punya keberanian buat mulai investasi. <span style="font-weight: 600">Kebanyakan dari mereka ngerasa takut kehilangan duitnya</span>.</p>
     <p>Emang sih, takutnya itu wajar banget, soalnya <span style="font-weight: 600">investasi tuh sebaiknya dateng dari diri sendiri, bukan karena tekanan orang</span> lain atau cuma pengen ikutan tren aja.</p>`,
+    image : img121
+  
   },
   {
     id: 3,
     body: `<p>Jadi, <span  style="font-weight: 600">investasi itu enggak sekadar soal untung-untungan</span>. Di dunia investasi, kamu mesti ngerelain segala yang kamu punya, gak cuma duit, tapi juga tenaga, pikiran, dan impian finansial kamu.</p>`,
+    image : img141
   },
 ];
 
@@ -418,18 +422,22 @@ const introList2 = [
     Kalo ada yang nawarin investasi dengan omongan, "Santai aja, tinggal serahkan duitnya ke kita, pasti untung," <span style="font-weight: 600">kamu harus hati-hati banget</span>. 
   </p>
   <p className="font-semibold" style="color:#E85738; font-weight: 600">Investasi tuh gak semudah itu!</p>`,
+  image : img51
   },
   {
     id: 2,
     body: `<p>Ingat, ada dua hal yang selalu nemenin setiap produk investasi, yaitu <span style="font-weight: 600">risiko dan imbalan</span>, atau yang sering disebut <span style="font-weight: 600">risk and return.</span></p>`,
+    image : img21
   },
   {
     id: 3,
     body: `Produk investasi yang nawarin imbalan gede, biasanya punya risiko gede juga. Dan sebaliknya, produk investasi yang risikonya rendah, biasanya imbalannya juga lebih kecil.`,
+    image: img161
   },
   {
     id: 4,
     body: `Nah, kenapa penting banget ngerti konsep risk and return ini? Karena investasi itu sesuatu yang sangat personal.<span style="font-weight: 600">Setiap orang punya selera risiko yang beda-beda sesuai tujuan finansial</span> masing-masing, jadi enggak bisa disamain begitu aja.`,
+    image : img83
   },
 ];
 

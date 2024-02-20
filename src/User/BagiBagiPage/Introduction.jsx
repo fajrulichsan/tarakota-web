@@ -232,8 +232,8 @@ const Introduction = () => {
               >
                 <div className="col-span-1 flex items-center justify-center">
                   <img
-                    className="h-32 md:h-44 lg:h-60"
-                    src={bagibagi1}
+                    className="h-32 md:h-44 lg:h-60 lg:w-60 rounded-full"
+                    src={item.image}
                   ></img>
                 </div>
                 <div className="col-span-1 md:col-span-2 text-2xl flex items-center justify-center">
@@ -264,8 +264,8 @@ const Introduction = () => {
               >
                 <div className="col-span-1 flex items-center justify-center md:order-2">
                   <img
-                    className="h-32 md:h-44 lg:h-60"
-                    src={bagibagi2}
+                    className="h-32 md:h-44 lg:h-60 lg:w-60 rounded-full"
+                    src={item.image}
                   ></img>
                 </div>
                 <div className="col-span-1 md:col-span-2 text-2xl flex items-center justify-center">
