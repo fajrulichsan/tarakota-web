@@ -99,11 +99,7 @@ export {default as bagibagi2} from './icon/bagi-bagi-2.webp';
 export {default as bisnisKarir} from './icon/bisnis-karir.webp';
 export {default as bisnisMasterplan} from './icon/bisnis-masterplan.webp';
 export {default as bisnisProgram} from './icon/bisnis-program.webp';
-
-
-
-
-
+export {default as bisnisTarakota} from './bg-bisnis-tarakota.png'
 
 
 // bersama page

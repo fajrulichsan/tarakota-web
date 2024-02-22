@@ -149,7 +149,7 @@ const Introduction = () => {
                 <div className="col-span-1 md:col-span-1 lg:col-span-1 ">
                   <div
                     className="w-full h-60 lg:h-80  rounded-2xl bg-cover bg-center bg-no-repeat"
-                    style={{ backgroundImage: `url(${data.image})` }}
+                    style={{ backgroundImage: `url(${data.image})`}}
                   ></div>
                 </div>
                 <div

@@ -1,6 +1,6 @@
 import React from "react";
 import { Fade } from "react-reveal";
-import { bangunIntroduction, bisnisMasterplan } from "../../assets/img/index";
+import { bangunIntroduction, bisnisMasterplan, img151, img71 } from "../../assets/img/index";
 
 const MasterPlan = () => {
   return (
@@ -26,8 +26,8 @@ const MasterPlan = () => {
         <div className="col-span-1 flex justify-center">
           <Fade>
             <div
-              className="w-32 h-40 md:w-56 md:h-60 lg:w-72 lg:h-80 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${bisnisMasterplan})` }}
+              className="w-40 h-40  md:w-56 md:h-56 lg:w-72 lg:h-72 rounded-full bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: `url(${img71})` }}
             ></div>
           </Fade>
         </div>
