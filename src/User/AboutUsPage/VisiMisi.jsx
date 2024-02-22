@@ -29,7 +29,6 @@ const VisiMisi = () => {
       </Fade>
 
       <div className="grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-x-10">
-        <Fade bottom>
         <div className="col-span-1 md:col-span-5 col-start-1 ">
           <div
             className="w-full h-[15em] md:h-[17em] lg:h-[25em] bg-cover rounded-xl md:rounded-2xl relative"
@@ -76,7 +75,6 @@ const VisiMisi = () => {
           </div>
         </div>
         </> : <></>}
-       </Fade>
       </div>
 
       <div
