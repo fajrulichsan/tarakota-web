@@ -141,7 +141,7 @@ const Reason = () => {
         </div>
         <Fade left>
           <div
-            className="col-span-12 md:col-span-4 lg:col-span-1 h-[12em] md:h-full bg-cover bg-center bg-no-repeat shadow-md md:shadow-lg shadow-gold md:shadow-gold md:rounded-md "
+            className="col-span-12 md:col-span-4 lg:col-span-1 h-[12em] md:h-full bg-cover md:bg-center bg-no-repeat shadow-md md:shadow-lg shadow-gold md:shadow-gold md:rounded-md "
             style={{
               backgroundImage: `url(${img13})`,
             }}

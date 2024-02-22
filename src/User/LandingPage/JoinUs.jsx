@@ -23,9 +23,9 @@ const JoinUs = () => {
           <div className="text-xl md:text-5xl font-bold text-tera tracking-widest">
             TARAKOTA
           </div>
-          <div className="text-sm md:text-xl lg:text-2xl md:w-80 font-medium tracking-wide">
-            Kami bertujuan untuk menjadi Firma Arsitektur dan Manufaktur
-            Furnitur terbesar di Indonesia.
+          <div className="text-sm md:text-xl lg:text-2xl md:max-w-96 font-medium tracking-wide">
+            <p>Kami bertujuan untuk menjadi Firma Arsitektur dan</p> 
+            <p>Manufaktur Furnitur terbesar di Indonesia.</p>
           </div>
           <button 
           onClick={() => window.location.href = "/estimasi"}
