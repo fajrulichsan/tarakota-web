@@ -232,7 +232,7 @@ const Introduction = () => {
               >
                 <div className="col-span-1 flex items-center justify-center">
                   <img
-                    className="h-32 md:h-44 lg:h-60 lg:w-60 rounded-full"
+                    className="w-32 h-32 md:w-40 md:h-40 lg:h-60 lg:w-60 rounded-full"
                     src={item.image}
                   ></img>
                 </div>
@@ -264,7 +264,7 @@ const Introduction = () => {
               >
                 <div className="col-span-1 flex items-center justify-center md:order-2">
                   <img
-                    className="h-32 md:h-44 lg:h-60 lg:w-60 rounded-full"
+                    className="w-32 h-32 md:w-40 md:h-40 lg:h-60 lg:w-60 rounded-full"
                     src={item.image}
                   ></img>
                 </div>
