@@ -24,7 +24,7 @@ const Pengantar = () => {
               className="h-[18em] md:h-[20em] lg:h-[25em]"
               alt="pengantar-bersama"
             >
-              <img className="h-[21em] rounded-2xl" src={bersamaBanner}>
+              <img className="h-[15em] md:h-[21em] rounded-2xl" src={bersamaBanner}>
               </img>
             </div>
           </Fade>

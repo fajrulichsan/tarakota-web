@@ -84,7 +84,7 @@ const Alasan = () => {
         <Fade bottom>
           <div className="col-span-1 relative ">
             <div
-              className="w-72 h-96 bg-cover bg-no-repeat bg-center mx-auto rounded-2xl"
+              className="w-64 h-72 md:w-72 md:h-96 bg-cover bg-no-repeat bg-center mx-auto rounded-2xl"
               style={{ backgroundImage: `url(${bersamaProgram})` }}
             ></div>
 
